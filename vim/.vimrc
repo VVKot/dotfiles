@@ -11,8 +11,12 @@ set nocompatible
 " Use UTF8.
 set encoding=utf-8
 
-" Sets how many lines of history VIM has to remember
+" Sets how many lines of history VIM has to remember.
 set history=500
+
+" Set to auto read when a file is changed from the outside.
+set autoread
+au FocusGained,BufEnter * checktime
 
 " Do not use backups and undo files.
 set nobackup
