@@ -9,7 +9,6 @@ source $VIMRUNTIME/defaults.vim
 
 " Use UTF8.
 set encoding=utf-8
-set LANG=en_US.utf-8
 
 " Do not use backups and undo files.
 set nobackup
