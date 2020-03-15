@@ -13,7 +13,7 @@ set encoding=utf-8
 
 " Do not use backups and undo files.
 set nobackup
-set undofile
+set nowritebackup
 
 " Global line numbers.
 set nu
