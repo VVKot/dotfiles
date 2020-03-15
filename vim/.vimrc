@@ -1,4 +1,5 @@
-" When started as "evim", evim.vim will already have done these settings, bail
+" When started as "evim", evim.vim will already have done these settings,
+" bail.
 " out.
 if v:progname =~? "evim"
   finish
@@ -17,6 +18,15 @@ set history=500
 " Set to auto read when a file is changed from the outside.
 set autoread
 au FocusGained,BufEnter * checktime
+
+" With a map leader it's possible to do extra key combinations.
+let mapleader = ","
+
+" Fast saving.
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file.
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Do not use backups and undo files.
 set nobackup
