@@ -6,7 +6,8 @@ endif
 
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
-
+" Disable compatibility mode.
+set nocompatible
 " Use UTF8.
 set encoding=utf-8
 
