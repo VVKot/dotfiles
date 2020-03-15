@@ -11,6 +11,9 @@ set nocompatible
 " Use UTF8.
 set encoding=utf-8
 
+" Sets how many lines of history VIM has to remember
+set history=500
+
 " Do not use backups and undo files.
 set nobackup
 set nowritebackup
