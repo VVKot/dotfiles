@@ -15,8 +15,6 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 
-" Global line numbers.
-set nu
 " Relative line numbers.
 set rnu
 " Highlight search.
