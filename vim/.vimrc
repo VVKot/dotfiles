@@ -64,6 +64,7 @@ endif
 " Plugins.
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " COC configuration.
