@@ -14,6 +14,8 @@ set encoding=utf-8
 
 " Sets how many lines of history VIM has to remember.
 set history=500
+" Automatically paste from the system clipboard and copy to it.
+set clipboard=unnamed
 
 " Set to auto read when a file is changed from the outside.
 set autoread
