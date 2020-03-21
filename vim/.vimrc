@@ -26,6 +26,11 @@ set history=500
 " Hard wrap at 120.
 set textwidth=120
 
+" Don't show mode.
+set noshowmode
+" Don't display last command.
+set noshowcmd
+
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
