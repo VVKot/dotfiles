@@ -17,6 +17,9 @@ set history=500
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
+" No visual blink on error.
+set visualbell t_vb=
+
 " Set to auto read when a file is changed from the outside.
 set autoread
 au FocusGained,BufEnter * checktime
@@ -77,6 +80,7 @@ set hidden
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
+set noswapfile
 
 " Give more space for displaying messages.
 set cmdheight=2
