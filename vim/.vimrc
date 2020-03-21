@@ -1,10 +1,28 @@
-" Disable compatibility mode.
+" NO VI.
 set nocompatible
+
+" INSTALL VIM PLUG.
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" INSTALL PLUGINS.
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
+" EDITOR-WIDE SETTINGS.
+
 " Use UTF8.
 set encoding=utf-8
 
 " Sets how many lines of history VIM has to remember.
 set history=500
+
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
@@ -26,52 +44,34 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Relative line numbers.
 set rnu
+
 " Highlight search.
 set hls
 " Incremental search.
 set is
 " Only make search case-sensetive if pattern has uppercase letters.
 set smartcase
+
 " Split below and to the right by default.
 set splitbelow
 set splitright
+
+" Don't use backups and swapfiles.
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Set filetype detection and indentation on.
 filetype plugin indent on
 " Enable syntax highlighting.
 syntax on
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
+" PLUGIN SETTINGS.
 
-" Install Vim Plug if it is not present.
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" PLUGIN - coc.nvim.
 
-" Plugins.
-call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
-Plug 'junegunn/goyo.vim'
-call plug#end()
-
-" COC configuration.
 " TextEdit might fail if hidden is not set.
 set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-set noswapfile
 
 " Give more space for displaying messages.
 set cmdheight=2
