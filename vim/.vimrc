@@ -16,10 +16,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Tree plugin.
 Plug 'preservim/nerdtree'
 
-" Color theme.
+" Zen mode and color theme(work best together - same author).
 Plug 'junegunn/seoul256.vim'
-
-" Zen mode.
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 call plug#end()
@@ -89,6 +87,19 @@ set noswapfile
 filetype plugin indent on
 " Enable syntax highlighting.
 syntax on
+
+" Movement in insert mode.
+inoremap <C-h> <C-o>h
+inoremap <C-l> <C-o>a
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-^> <C-o><C-^>
+
+" Make Y behave like other capitals.
+nnoremap Y y$
+
+" Use qq to record, Q to replay.
+nnoremap Q @q
 
 " PLUGIN SETTINGS.
 
@@ -242,5 +253,5 @@ autocmd! User GoyoLeave Limelight!
 " PLUGIN - junegunn/goyo.vim.
 
 " Enter Zen mode.
-map <leader>z :Goyo 121<CR>
+map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white<CR>
 
