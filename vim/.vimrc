@@ -1,12 +1,3 @@
-" When started as "evim", evim.vim will already have done these settings,
-" bail.
-" out.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
 " Disable compatibility mode.
 set nocompatible
 " Use UTF8.
