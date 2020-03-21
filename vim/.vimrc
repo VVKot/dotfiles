@@ -67,6 +67,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " COC configuration.
