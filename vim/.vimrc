@@ -10,9 +10,18 @@ endif
 
 " INSTALL PLUGINS.
 call plug#begin('~/.vim/plugged')
+" Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Tree plugin.
 Plug 'preservim/nerdtree'
+
+" Color theme.
+Plug 'junegunn/seoul256.vim'
+
+" Zen mode.
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -83,7 +92,7 @@ syntax on
 
 " PLUGIN SETTINGS.
 
-" PLUGIN - coc.nvim.
+" PLUGIN - neoclide/coc.nvim.
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -218,4 +227,20 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" PLUGIN - junegunn/seoul256.vim.
+
+" The lightest one.
+let g:seoul256_background = 256
+colo seoul256
+
+" PLUGIN - junegunn/limelight.vim.
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" PLUGIN - junegunn/goyo.vim.
+
+" Enter Zen mode.
+map <leader>z :Goyo 121<CR>
 
