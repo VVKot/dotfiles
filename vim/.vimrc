@@ -23,11 +23,18 @@ set encoding=utf-8
 " Sets how many lines of history VIM has to remember.
 set history=500
 
+" Hard wrap at 120.
+set textwidth=120
+
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
 " No visual blink on error.
 set visualbell t_vb=
+
+" Hide empty line markers and end of file markers.
+highlight EndOfBuffer ctermfg=white
+highlight StatusLineNC ctermfg=white
 
 " Set to auto read when a file is changed from the outside.
 set autoread
