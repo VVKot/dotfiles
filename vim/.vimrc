@@ -64,6 +64,9 @@ set is
 " Only make search case-sensetive if pattern has uppercase letters.
 set smartcase
 
+" Make backspace behave like it does in other editors.
+set backspace=indent,eol,start
+
 " Split below and to the right by default.
 set splitbelow
 set splitright
