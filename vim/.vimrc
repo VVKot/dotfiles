@@ -44,10 +44,6 @@ set clipboard=unnamed
 " No visual blink on error.
 set visualbell t_vb=
 
-" Hide empty line markers and end of file markers.
-highlight EndOfBuffer ctermfg=white
-highlight StatusLineNC ctermfg=white
-
 " Set to auto read when a file is changed from the outside.
 set autoread
 au FocusGained,BufEnter * checktime
@@ -244,6 +240,9 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " The lightest one.
 let g:seoul256_background = 256
 colo seoul256
+" Visually remove end of buffer and status line.
+highlight StatusLineNC ctermfg=bg guifg=bg
+highlight EndOfBuffer ctermfg=bg guifg=bg
 
 " PLUGIN - junegunn/limelight.vim.
 
@@ -253,5 +252,6 @@ autocmd! User GoyoLeave Limelight!
 " PLUGIN - junegunn/goyo.vim.
 
 " Enter Zen mode.
-map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white<CR>
+map <leader>z :Goyo 121 <CR>
+
 
