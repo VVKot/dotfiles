@@ -53,9 +53,11 @@ au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations.
 let mapleader = " "
+let maplocalleader = " "
 
-" Fast saving.
+" Fast saving and quitting.
 nmap <leader>w :w!<cr>
+nnoremap <Leader>q :q<cr>
 
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
