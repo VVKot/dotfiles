@@ -16,6 +16,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Tree plugin.
 Plug 'preservim/nerdtree'
 
+" Git plugin.
+Plug 'tpope/vim-fugitive'
+
 " Zen mode and color theme(work best together - same author).
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
@@ -49,7 +52,7 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations.
-let mapleader = ","
+let mapleader = " "
 
 " Fast saving.
 nmap <leader>w :w!<cr>
@@ -254,4 +257,7 @@ autocmd! User GoyoLeave Limelight!
 " Enter Zen mode.
 map <leader>z :Goyo 121 <CR>
 
+" PLUGIN - tpope/vim-fugitive.
+nmap <Leader>g :Git<CR>gg<c-n>
+nnoremap <Leader>d :Gvdiffsplit<CR>
 
