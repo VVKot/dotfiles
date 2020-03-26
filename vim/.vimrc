@@ -23,6 +23,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+" Comments.
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
