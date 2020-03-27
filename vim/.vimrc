@@ -206,7 +206,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>af  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -252,6 +252,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " PLUGIN - junegunn/fzf.vim.
 set rtp+=/usr/local/opt/fzf
+nnoremap <C-t> :Files<CR>
 
 " PLUGIN - junegunn/seoul256.vim.
 
