@@ -19,6 +19,10 @@ Plug 'preservim/nerdtree'
 " Git plugin.
 Plug 'tpope/vim-fugitive'
 
+" Fuzzy search for everything.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Zen mode and color theme(work best together - same author).
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
@@ -26,6 +30,9 @@ Plug 'junegunn/limelight.vim'
 
 " Comments.
 Plug 'tpope/vim-commentary'
+
+" Add/remove/change surroundings.
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -242,6 +249,9 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" PLUGIN - junegunn/fzf.vim.
+set rtp+=/usr/local/opt/fzf
 
 " PLUGIN - junegunn/seoul256.vim.
 
