@@ -1,5 +1,5 @@
-" NO VI.
-set nocompatible
+let mapleader = " "
+let maplocalleader = " "
 
 " INSTALL VIM PLUG.
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -37,6 +37,9 @@ call plug#end()
 
 " EDITOR-WIDE SETTINGS.
 
+" Scroll the buffer to align to create space around cursor position.
+set scrolloff=5
+
 " Use UTF8.
 set encoding=utf-8
 
@@ -61,13 +64,9 @@ set visualbell t_vb=
 set autoread
 au FocusGained,BufEnter * checktime
 
-" With a map leader it's possible to do extra key combinations.
-let mapleader = " "
-let maplocalleader = " "
-
 " Fast saving and quitting.
-nmap <leader>w :w!<cr>
-nnoremap <Leader>q :q<cr>
+nnoremap <leader>w :update<cr>
+nnoremap <leader>q :q<cr>
 
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
