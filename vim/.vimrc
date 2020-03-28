@@ -33,6 +33,9 @@ Plug 'tpope/vim-commentary'
 
 " Add/remove/change surroundings.
 Plug 'tpope/vim-surround'
+
+" Repeat plugin commands.
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -104,6 +107,10 @@ inoremap <C-l> <C-o>a
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-^> <C-o><C-^>
+
+" Move between buffers using Tab.
+nnoremap <tab>   <c-w>w
+nnoremap <s-tab> <c-w>W
 
 " Make Y behave like other capitals.
 nnoremap Y y$
