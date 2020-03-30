@@ -112,10 +112,6 @@ nnoremap Y y$
 " Use qq to record, Q to replay.
 nnoremap Q @q
 
-" Map H and L to stard and end respectively.
-nnoremap H ^
-nnoremap L $
-
 " PLUGIN SETTINGS.
 
 " PLUGIN - neoclide/coc.nvim.
@@ -221,6 +217,8 @@ nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
+nnoremap <leader>ff :Rg<CR>
+nnoremap <leader>fc :Commands<CR>
 " PLUGIN - junegunn/seoul256.vim.
 
 " The lightest one.
@@ -245,4 +243,5 @@ nmap <Leader>g :Git<CR>gg<c-n>
 nnoremap <Leader>d :Gvdiffsplit<CR>
 
 " PLUGIN - preservim/nerdtree.
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>tt :NERDTreeToggle<cr>
+nnoremap <leader>tf :NERDTreeFind<cr>
