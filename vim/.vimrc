@@ -216,17 +216,11 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " PLUGIN - junegunn/fzf.vim.
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
-
+nnoremap <leader><leader> :GFiles<CR>
 " PLUGIN - junegunn/seoul256.vim.
 
 " The lightest one.
