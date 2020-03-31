@@ -23,11 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Zen mode and color theme(work best together - same author).
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
 " Comments.
 Plug 'tpope/vim-commentary'
 
@@ -42,6 +37,7 @@ call plug#end()
 
 " Scroll the buffer to align to create space around cursor position.
 set scrolloff=5
+set sidescrolloff=5
 
 " Use UTF8.
 set encoding=utf-8
@@ -156,7 +152,7 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
+" Use `[e` and `]e` to navigate diagnostics
 nmap <silent> [e <Plug>(coc-diagnostic-prev)
 nmap <silent> ]e <Plug>(coc-diagnostic-next)
 
@@ -219,24 +215,6 @@ nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>fc :Commands<CR>
-" PLUGIN - junegunn/seoul256.vim.
-
-" The lightest one.
-let g:seoul256_background = 256
-colo seoul256
-" Visually remove end of buffer and status line.
-highlight StatusLineNC ctermfg=bg guifg=bg
-highlight EndOfBuffer ctermfg=bg guifg=bg
-
-" PLUGIN - junegunn/limelight.vim.
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-" PLUGIN - junegunn/goyo.vim.
-
-" Enter Zen mode.
-map <leader>z :Goyo 121 <CR>
 
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>g :Git<CR>gg<c-n>
