@@ -31,6 +31,10 @@ Plug 'tpope/vim-surround'
 
 " Repeat plugin commands.
 Plug 'tpope/vim-repeat'
+
+" Status line.
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -223,3 +227,6 @@ nnoremap <Leader>d :Gvdiffsplit<CR>
 " PLUGIN - preservim/nerdtree.
 nnoremap <leader>tt :NERDTreeToggle<cr>
 nnoremap <leader>tf :NERDTreeFind<cr>
+
+" PLUGIN -  vim-airline/vim-airline-themes.
+let g:airline_theme='light'
