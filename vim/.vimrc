@@ -46,6 +46,9 @@ call plug#end()
 set scrolloff=5
 set sidescrolloff=5
 
+" 256 colors.
+set t_Co=256
+
 " Use UTF8.
 set encoding=utf-8
 
@@ -73,17 +76,34 @@ nnoremap <leader>q :q<cr>
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Relative line numbers.
-set rnu
+set relativenumber
 
-" Highlight search.
-set hls
-" Incremental search.
-set is
+" Set tab to 4 spaces that are automatically expanded/deleted.
+set smarttab expandtab tabstop=4 softtabstop=4 shiftwidth=4
+
+" Highlight search results, show them as they are processed.
+set hlsearch incsearch
+
 " Only make search case-sensetive if pattern has uppercase letters.
 set ignorecase smartcase
 
+" Automatically copy indentation from the previous line, possibly with an extra level.
+set autoindent smartindent
+
 " Make backspace behave like it does in other editors.
 set backspace=indent,eol,start
+
+" Instead of failing on unsaved changes provide a dialog.
+set confirm
+
+" Only redraw when needed.
+set lazyredraw
+
+" Highlight matching parenthesis.
+set showmatch
+
+" Add visual autocomlete menu.
+set wildmenu
 
 " Split below and to the right by default.
 set splitbelow
