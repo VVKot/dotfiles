@@ -16,12 +16,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Tree plugin.
 Plug 'preservim/nerdtree'
 
-" Git plugin.
-Plug 'tpope/vim-fugitive'
-
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Git plugin.
+Plug 'tpope/vim-fugitive'
 
 " Comments.
 Plug 'tpope/vim-commentary'
@@ -35,6 +35,9 @@ Plug 'tpope/vim-repeat'
 " Status line.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Zen mode.
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -230,3 +233,6 @@ nnoremap <leader>tf :NERDTreeFind<cr>
 
 " PLUGIN -  vim-airline/vim-airline-themes.
 let g:airline_theme='light'
+
+" PLUGIN - junegunn/goyo.
+map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white<CR>
