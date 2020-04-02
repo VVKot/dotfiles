@@ -53,7 +53,7 @@ set t_Co=256
 set encoding=utf-8
 
 " Sets how many lines of history VIM has to remember.
-set history=500
+set history=10000
 
 " Hard wrap at 120.
 set textwidth=120
@@ -121,10 +121,15 @@ syntax on
 
 " Movement in insert mode.
 inoremap <C-h> <C-o>h
-inoremap <C-l> <C-o>a
+inoremap <C-l> <C-o>l
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 
+" Move between tabs using hjkl.
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
 " Move between buffers using Tab.
 nnoremap <tab>   <c-w>w
 nnoremap <s-tab> <c-w>W
@@ -139,6 +144,9 @@ nnoremap Q @q
 
 " PLUGIN - neoclide/coc.nvim.
 
+" Define default extensions to install.
+let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier"]
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -147,7 +155,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
