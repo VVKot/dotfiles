@@ -145,6 +145,9 @@ nnoremap Q @q
 
 " PLUGIN SETTINGS.
 
+" PLUGIN - preservim/nerdtree.
+let g:NERDTreeWinSize=60
+
 " PLUGIN - neoclide/coc.nvim.
 
 " Define default extensions to install.
