@@ -137,6 +137,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <tab>   <c-w>w
 nnoremap <s-tab> <c-w>W
 
+" Add shortcut to clear highlight.
+nnoremap <silent> <C-L> :noh<CR>
+
 " Make Y behave like other capitals.
 nnoremap Y y$
 
