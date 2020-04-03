@@ -32,6 +32,9 @@ Plug 'tpope/vim-surround'
 " Repeat plugin commands.
 Plug 'tpope/vim-repeat'
 
+" Autodetect indentation.
+Plug 'tpope/vim-sleuth'
+
 " Status line.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
