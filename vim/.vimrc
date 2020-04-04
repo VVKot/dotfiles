@@ -64,8 +64,9 @@ set textwidth=120
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
-" No visual blink on error.
+" No visual blink on error and no sound.
 set visualbell t_vb=
+set belloff=all
 
 " Set to auto read when a file is changed from the outside.
 set autoread
@@ -145,6 +146,9 @@ nnoremap Y y$
 
 " Use qq to record, Q to replay.
 nnoremap Q @q
+
+" Remove noisy autocompleting from the included files.
+set complete-=i
 
 " PLUGIN SETTINGS.
 
@@ -272,4 +276,4 @@ nnoremap <leader>tf :NERDTreeFind<cr>
 let g:airline_theme='light'
 
 " PLUGIN - junegunn/goyo.
-map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white<CR>
+map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white <bar> set spell<CR>
