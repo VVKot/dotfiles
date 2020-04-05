@@ -158,7 +158,7 @@ let g:NERDTreeWinSize=60
 " PLUGIN - neoclide/coc.nvim.
 
 " Define default extensions to install.
-let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier"]
+let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier", "coc-yank"]
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -247,15 +247,17 @@ command! -nargs=0 Format :call CocAction('format')
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
+" Yank history.
+nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<CR>
 
 " PLUGIN - junegunn/fzf.vim.
 set rtp+=/usr/local/opt/fzf
