@@ -41,6 +41,9 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Zen mode.
 Plug 'junegunn/goyo.vim'
+
+" Fancy start screen.
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
