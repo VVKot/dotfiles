@@ -227,8 +227,6 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
   autocmd!
@@ -239,9 +237,13 @@ augroup mygroup
 augroup end
 
 " Applying codeAction to the selected region.
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>as <Plug>(coc-codeaction-selected)
+xmap <leader>as <Plug>(coc-codeaction-selected)
+
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>aa  <Plug>(coc-codeaction)
+" Symbol renaming.
+nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
 
@@ -250,11 +252,11 @@ command! -nargs=0 Format :call CocAction('format')
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>ca :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent> <leader>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ce :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>cc :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
@@ -268,10 +270,11 @@ nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>fc :Commands<CR>
+nnoremap <leader>fb :Buffers<CR>
 
 " PLUGIN - tpope/vim-fugitive.
-nmap <Leader>g :Git<CR>gg<c-n>
-nnoremap <Leader>d :Gvdiffsplit<CR>
+nmap <Leader>gg :Git<CR>gg<c-n>
+nnoremap <Leader>gd :Gvdiffsplit<CR>
 
 " PLUGIN - preservim/nerdtree.
 nnoremap <leader>tt :NERDTreeToggle<cr>
