@@ -142,7 +142,7 @@ nnoremap <tab>   <c-w>w
 nnoremap <s-tab> <c-w>W
 
 " Add shortcut to clear highlight.
-nnoremap <silent> <C-L> :noh<CR>
+nnoremap <silent> <C-;> :noh<CR>
 
 " Make Y behave like other capitals.
 nnoremap Y y$
@@ -280,6 +280,8 @@ nnoremap <Leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>tt :NERDTreeToggle<cr>
 nnoremap <leader>tf :NERDTreeFind<cr>
 
+" PLUGIN -  vim-airline/vim-airline.
+let g:airline#extensions#tabline#enabled = 1
 " PLUGIN -  vim-airline/vim-airline-themes.
 let g:airline_theme='light'
 
