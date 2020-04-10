@@ -141,9 +141,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <tab>   :bnext<CR>
 nnoremap <s-tab> :bprev<CR>
 
-" Add shortcut to clear highlight.
-nnoremap <silent> <C-;> :noh<CR>
-
 " Make Y behave like other capitals.
 nnoremap Y y$
 
@@ -239,7 +236,6 @@ augroup end
 " Applying codeAction to the selected region.
 nmap <leader>as <Plug>(coc-codeaction-selected)
 xmap <leader>as <Plug>(coc-codeaction-selected)
-
 " Remap keys for applying codeAction to the current line.
 nmap <leader>aa  <Plug>(coc-codeaction)
 " Symbol renaming.
