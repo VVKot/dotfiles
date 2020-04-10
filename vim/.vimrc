@@ -49,8 +49,8 @@ call plug#end()
 " EDITOR-WIDE SETTINGS.
 
 " Scroll the buffer to align to create space around cursor position.
-set scrolloff=5
-set sidescrolloff=5
+set scrolloff=3
+set sidescrolloff=3
 
 " 256 colors.
 set t_Co=256
@@ -132,14 +132,14 @@ inoremap <C-l> <C-o>l
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 
-" Move between tabs using hjkl.
+" Move between splits using hjkl.
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 " Move between buffers using Tab.
-nnoremap <tab>   <c-w>w
-nnoremap <s-tab> <c-w>W
+nnoremap <tab>   :bnext<CR>
+nnoremap <s-tab> :bprev<CR>
 
 " Add shortcut to clear highlight.
 nnoremap <silent> <C-;> :noh<CR>
