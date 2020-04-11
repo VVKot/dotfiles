@@ -231,12 +231,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
 " Applying codeAction to the selected region.
 nmap <leader>as <Plug>(coc-codeaction-selected)
 xmap <leader>as <Plug>(coc-codeaction-selected)
@@ -264,7 +261,7 @@ nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
 " Yank history.
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<CR>
 
-" CoC Plugin - coc-ject.
+" CoC Plugin - coc-jest.
 " Init jest in current cwd, require global jest command exists.
 command! JestInit :call CocAction('runCommand', 'jest.init')
 " Run jest for current project.
