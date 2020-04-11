@@ -163,7 +163,7 @@ let g:NERDTreeWinSize=60
 " PLUGIN - neoclide/coc.nvim.
 
 " Define default extensions to install.
-let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier", "coc-yank"]
+let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier", "coc-yank", "coc-jest"]
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -264,6 +264,18 @@ nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
 " Yank history.
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<CR>
 
+" CoC Plugin - coc-ject.
+" Init jest in current cwd, require global jest command exists.
+command! JestInit :call CocAction('runCommand', 'jest.init')
+" Run jest for current project.
+command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+" Run jest for current file.
+command! -nargs=0 JestCurrentFile :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+nnoremap <leader>jj :JestCurrentFile<CR>
+" Run jest for current test.
+command! -nargs=0 JestCurrentTest :call  CocAction('runCommand', 'jest.singleTest')
+nnoremap <leader>jt :JestCurrentTest<CR>
+
 " PLUGIN - junegunn/fzf.vim.
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
@@ -291,3 +303,4 @@ let g:airline_theme='papercolor'
 
 " PLUGIN - junegunn/goyo.
 map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white <bar> set spell<CR>
+
