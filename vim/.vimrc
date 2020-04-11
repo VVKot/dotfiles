@@ -22,6 +22,8 @@ Plug 'junegunn/fzf.vim'
 
 " Git plugin.
 Plug 'tpope/vim-fugitive'
+" Git hunks.
+Plug 'airblade/vim-gitgutter'
 
 " Comments.
 Plug 'tpope/vim-commentary'
@@ -120,6 +122,9 @@ set splitright
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Don't show mode - there is a statusline for that.
+set noshowmode
 
 " Set filetype detection and indentation on.
 filetype plugin indent on
@@ -224,7 +229,6 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -272,6 +276,10 @@ nnoremap <leader>fb :Buffers<CR>
 nmap <Leader>gg :Git<CR>gg<c-n>
 nnoremap <Leader>gd :Gvdiffsplit<CR>
 
+" PLUGIN - airblade/vim-gitgutter.
+nmap <silent> ]h <Plug>(GitGutterNextHunk)
+nmap <silent> [h <Plug>(GitGutterPrevHunk)
+
 " PLUGIN - preservim/nerdtree.
 nnoremap <leader>tt :NERDTreeToggle<cr>
 nnoremap <leader>tf :NERDTreeFind<cr>
@@ -279,7 +287,7 @@ nnoremap <leader>tf :NERDTreeFind<cr>
 " PLUGIN -  vim-airline/vim-airline.
 let g:airline#extensions#tabline#enabled = 1
 " PLUGIN -  vim-airline/vim-airline-themes.
-let g:airline_theme='light'
+let g:airline_theme='papercolor'
 
 " PLUGIN - junegunn/goyo.
 map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white <bar> set spell<CR>
