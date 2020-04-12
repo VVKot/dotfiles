@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
