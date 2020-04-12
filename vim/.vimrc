@@ -56,6 +56,8 @@ set sidescrolloff=3
 
 " 256 colors.
 set t_Co=256
+" 24-bit colors.
+set termguicolors
 
 " Use UTF8.
 set encoding=utf-8
