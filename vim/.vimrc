@@ -47,6 +47,9 @@ Plug 'junegunn/goyo.vim'
 
 " Fancy start screen.
 Plug 'mhinz/vim-startify'
+
+" Scratch window.
+Plug 'mtth/scratch.vim'
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -302,3 +305,5 @@ let g:airline_theme='papercolor'
 " PLUGIN - junegunn/goyo.
 map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white <bar> set spell<CR>
 
+" PLUGIN - mtth/scratch.vim.
+let g:scratch_persistence_file = '~/.vim/scratch'
