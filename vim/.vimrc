@@ -75,6 +75,10 @@ set textwidth=120
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
+" Don't way for command after Esc.
+set ttimeout
+set ttimeoutlen=0
+
 " No visual blink on error and no sound.
 set visualbell t_vb=
 set belloff=all
