@@ -216,10 +216,10 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev)
 nmap <silent> ]e <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
+nmap <silent> gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
+nmap <silent> gr :<C-u>call CocActionAsync('jumpReferences')<CR>
+nmap <silent> gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
