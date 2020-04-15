@@ -11,7 +11,7 @@ endif
 " INSTALL PLUGINS.
 call plug#begin('~/.vim/plugged')
 " Autocompletion engine utilizing LSP from VSCode.
-Plug 'neoclide/coc.nvim', {'commit': 'cae9778'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
@@ -228,7 +228,7 @@ function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
@@ -251,7 +251,7 @@ nmap <leader>ar <Plug>(coc-rename)
 nmap <leader>af  <Plug>(coc-fix-current)
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 
 " Mappings using CoCList:
 " Show all diagnostics.
@@ -269,14 +269,14 @@ nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<CR>
 
 " CoC Plugin - coc-jest.
 " Init jest in current cwd, require global jest command exists.
-command! JestInit :call CocAction('runCommand', 'jest.init')
+command! JestInit :call CocActionAsync('runCommand', 'jest.init')
 " Run jest for current project.
-command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+command! -nargs=0 Jest :call  CocActionAsync('runCommand', 'jest.projectTest')
 " Run jest for current file.
-command! -nargs=0 JestCurrentFile :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+command! -nargs=0 JestCurrentFile :call  CocActionAsync('runCommand', 'jest.fileTest', ['%'])
 nnoremap <leader>jj :JestCurrentFile<CR>
 " Run jest for current test.
-command! -nargs=0 JestCurrentTest :call  CocAction('runCommand', 'jest.singleTest')
+command! -nargs=0 JestCurrentTest :call  CocActionAsync('runCommand', 'jest.singleTest')
 nnoremap <leader>jt :JestCurrentTest<CR>
 
 " PLUGIN - junegunn/fzf.vim.
