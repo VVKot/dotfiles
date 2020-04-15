@@ -55,6 +55,7 @@ call plug#end()
 " Scroll the buffer to align to create space around cursor position.
 set scrolloff=3
 set sidescrolloff=3
+set sidescroll=1
 
 " 256 colors.
 set t_Co=256
