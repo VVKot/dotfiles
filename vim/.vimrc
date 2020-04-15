@@ -11,7 +11,7 @@ endif
 " INSTALL PLUGINS.
 call plug#begin('~/.vim/plugged')
 " Autocompletion engine utilizing LSP from VSCode.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'commit': 'cae9778'}
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
