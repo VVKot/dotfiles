@@ -15,7 +15,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -23,8 +22,6 @@ Plug 'junegunn/fzf.vim'
 
 " Git plugin.
 Plug 'tpope/vim-fugitive'
-" Git hunks.
-Plug 'airblade/vim-gitgutter'
 
 " Comments.
 Plug 'tpope/vim-commentary'
@@ -50,6 +47,7 @@ Plug 'mhinz/vim-startify'
 
 " Scratch window.
 Plug 'mtth/scratch.vim'
+
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -294,10 +292,6 @@ nnoremap <leader>fb :Buffers<CR>
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :Git<CR>gg<c-n>
 nnoremap <Leader>gd :Gvdiffsplit<CR>
-
-" PLUGIN - airblade/vim-gitgutter.
-nmap <silent> ]h <Plug>(GitGutterNextHunk)
-nmap <silent> [h <Plug>(GitGutterPrevHunk)
 
 " PLUGIN - preservim/nerdtree.
 nnoremap <leader>tt :NERDTreeToggle<cr>
