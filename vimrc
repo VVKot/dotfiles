@@ -87,8 +87,9 @@ nnoremap <leader>q :q<cr>
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-" Relative line numbers.
+" Relative line numbers + current line number.
 set relativenumber
+set number
 
 " Set tab to 4 spaces that are automatically expanded/deleted.
 set smarttab expandtab tabstop=4 softtabstop=4 shiftwidth=4
