@@ -84,7 +84,7 @@ set belloff=all
 
 " Set to auto read when a file is changed from the outside.
 set autoread
-au FocusGained,BufEnter * checktime
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 
 " Fast saving and quitting.
 nnoremap <leader>w :update<cr>
