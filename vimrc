@@ -297,6 +297,7 @@ nnoremap <leader>tf :NERDTreeFind<cr>
 
 " PLUGIN -  vim-airline/vim-airline.
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = ''
 " PLUGIN -  vim-airline/vim-airline-themes.
 let g:airline_theme='papercolor'
 
