@@ -126,8 +126,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Don't show mode - there is a statusline for that.
+" Don't show mode or ruler - there is a statusline for that.
 set noshowmode
+set noruler
 
 " Set filetype detection and indentation on.
 filetype plugin indent on
