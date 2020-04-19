@@ -164,6 +164,9 @@ nnoremap Q @q
 " Remove noisy autocompleting from the included files.
 set complete-=i
 
+" Reset search highlights.
+nnoremap <leader>l :noh<CR>
+
 " PLUGIN SETTINGS.
 
 " PLUGIN - preservim/nerdtree.
