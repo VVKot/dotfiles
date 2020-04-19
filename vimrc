@@ -184,7 +184,8 @@ set cmdheight=2
 set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
+" Don't specify filename when opening file.
+set shortmess+=cF
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
