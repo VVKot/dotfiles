@@ -287,9 +287,21 @@ nnoremap <leader>jt :JestCurrentTest<CR>
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
-nnoremap <leader>ff :Rg<CR>
+nnoremap <leader>ff :RG<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fb :Buffers<CR>
+" Put the preview window in the middle of the screen.
+let g:fzf_layout = { 'up': '~50%' }
+" Use Rg in the preview mode.
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :Git<CR>gg<c-n>
