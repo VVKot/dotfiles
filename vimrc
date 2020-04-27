@@ -290,8 +290,6 @@ nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :RG<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fb :Buffers<CR>
-" Put the preview window in the middle of the screen.
-let g:fzf_layout = { 'up': '~50%' }
 " Use Rg in the preview mode.
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
