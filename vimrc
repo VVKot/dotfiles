@@ -155,8 +155,8 @@ nnoremap <s-tab> :bprev<CR>
 " Make Y behave like other capitals.
 nnoremap Y y$
 
-" Use qq to record, Q to replay.
-nnoremap Q @q
+" Use Q to execute current line in shell and replace it with the output.
+noremap Q !!$SHELL<CR>
 
 " Remove noisy autocompleting from the included files.
 set complete-=i
