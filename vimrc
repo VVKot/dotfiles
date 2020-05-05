@@ -54,8 +54,6 @@ set sidescroll=1
 " 256 colors + light background.
 set t_Co=256
 set background=light
-" Always use light background.
-set background=light
 
 " Use UTF8.
 set encoding=utf-8
