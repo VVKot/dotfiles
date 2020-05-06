@@ -1,5 +1,6 @@
 {
   "https.rejectUnauthorized": false,
+  "coc.preferences.bracketEnterImprove": true,
   "prettier.tslintIntegration": true,
   "prettier.printWidth": 120,
   "prettier.tabWidth": 4,
