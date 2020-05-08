@@ -162,6 +162,10 @@ set complete-=i
 " Reset search highlights.
 nnoremap <leader>l :noh<CR>
 
+" Easier indenting in visual mode.
+vmap < <gv
+vmap > >gv
+
 " PLUGIN SETTINGS.
 
 " PLUGIN - preservim/nerdtree.
