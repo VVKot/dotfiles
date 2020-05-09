@@ -49,9 +49,10 @@ set scrolloff=3
 set sidescrolloff=3
 set sidescroll=1
 
-" 256 colors + light background.
+" 256 colors + light background + true color support.
 set t_Co=256
 set background=light
+set termguicolors
 
 " Use UTF8.
 set encoding=utf-8
