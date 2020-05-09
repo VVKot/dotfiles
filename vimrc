@@ -22,16 +22,14 @@ Plug 'junegunn/fzf.vim'
 
 " Git plugin.
 Plug 'tpope/vim-fugitive'
-
 " Comments.
 Plug 'tpope/vim-commentary'
-
 " Add/remove/change surroundings.
 Plug 'tpope/vim-surround'
-
+" Useful pair-wise mappings.
+Plug 'tpope/vim-unimpaired'
 " Repeat plugin commands.
 Plug 'tpope/vim-repeat'
-
 " Autodetect indentation.
 Plug 'tpope/vim-sleuth'
 
@@ -135,20 +133,11 @@ filetype plugin indent on
 " Enable syntax highlighting.
 syntax on
 
-" Movement in insert mode.
-inoremap <C-h> <C-o>h
-inoremap <C-l> <C-o>l
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-
 " Move between splits using hjkl.
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-" Move between buffers using Tab.
-nnoremap <tab>   :bnext<CR>
-nnoremap <s-tab> :bprev<CR>
 
 " Make Y behave like other capitals.
 nnoremap Y y$
@@ -158,9 +147,6 @@ noremap Q !!$SHELL<CR>
 
 " Remove noisy autocompleting from the included files.
 set complete-=i
-
-" Reset search highlights.
-nnoremap <leader>l :noh<CR>
 
 " Easier indenting in visual mode.
 vmap < <gv
