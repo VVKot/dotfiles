@@ -49,4 +49,5 @@ nnoremap <leader>gr :action GotoRelated<cr>
 nnoremap <leader>gb :action Annotate<cr>
 nnoremap ]e :action GotoNextError<cr>
 nnoremap [e :action GotoPreviousError<cr>
+nnoremap <leader>aa ShowIntentionActions<cr>
 
