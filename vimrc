@@ -57,7 +57,7 @@ set background=light
 set encoding=utf-8
 
 " Sets how many lines of history VIM has to remember.
-set history=10000
+set history=1000
 
 " Hard wrap at 120.
 set textwidth=120
