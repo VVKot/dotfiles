@@ -40,6 +40,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
+" tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
@@ -133,12 +136,6 @@ set noruler
 filetype plugin indent on
 " Enable syntax highlighting.
 syntax on
-
-" Move between splits using hjkl.
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
 
 " Make Y behave like other capitals.
 nnoremap Y y$
