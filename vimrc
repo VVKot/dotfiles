@@ -85,10 +85,6 @@ set belloff=all
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 
-" Fast saving and quitting.
-nnoremap <leader>w :update<cr>
-nnoremap <leader>q :q<cr>
-
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
