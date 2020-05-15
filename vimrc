@@ -20,6 +20,8 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Sensible defaults.
+Plug 'tpope/vim-sensible'
 " Git plugin.
 Plug 'tpope/vim-fugitive'
 " Comments.
@@ -47,11 +49,6 @@ call plug#end()
 
 " EDITOR-WIDE SETTINGS.
 
-" Scroll the buffer to align to create space around cursor position.
-set scrolloff=3
-set sidescrolloff=3
-set sidescroll=1
-
 " 256 colors + light background + true color support.
 set t_Co=256
 set background=light
@@ -61,12 +58,6 @@ if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
     set termguicolors
 endif
 
-" Use UTF8.
-set encoding=utf-8
-
-" Sets how many lines of history VIM has to remember.
-set history=1000
-
 " Hard wrap at 120.
 set textwidth=120
 
@@ -74,7 +65,6 @@ set textwidth=120
 set clipboard=unnamed
 
 " Don't way for command after Esc.
-set ttimeout
 set ttimeoutlen=0
 
 " No visual blink on error and no sound.
@@ -93,19 +83,16 @@ set relativenumber
 set number
 
 " Set tab to 4 spaces that are automatically expanded/deleted.
-set smarttab expandtab tabstop=4 softtabstop=4 shiftwidth=4
+set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-" Highlight search results, show them as they are processed.
-set hlsearch incsearch
+" Highlight search results.
+set hlsearch
 
 " Only make search case-sensetive if pattern has uppercase letters.
 set ignorecase smartcase
 
-" Automatically copy indentation from the previous line, possibly with an extra level.
-set autoindent smartindent
-
-" Make backspace behave like it does in other editors.
-set backspace=indent,eol,start
+" Automatically copy indentation from the previous line with an extra level.
+set smartindent
 
 " Instead of failing on unsaved changes provide a dialog.
 set confirm
@@ -116,9 +103,6 @@ set lazyredraw
 " Highlight matching parenthesis.
 set showmatch
 
-" Add visual autocomlete menu.
-set wildmenu
-
 " Split below and to the right by default.
 set splitbelow
 set splitright
@@ -128,23 +112,14 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Don't show mode or ruler - there is a statusline for that.
+" Don't show mode - there is a statusline for that.
 set noshowmode
-set noruler
-
-" Set filetype detection and indentation on.
-filetype plugin indent on
-" Enable syntax highlighting.
-syntax on
 
 " Make Y behave like other capitals.
 nnoremap Y y$
 
 " Use Q to execute current line in shell and replace it with the output.
 noremap Q !!$SHELL<CR>
-
-" Remove noisy autocompleting from the included files.
-set complete-=i
 
 " Easier indenting in visual mode.
 vmap < <gv
