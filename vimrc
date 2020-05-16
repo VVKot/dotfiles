@@ -42,9 +42,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
-" tmux navigation
-Plug 'christoomey/vim-tmux-navigator'
-
 call plug#end()
 
 " EDITOR-WIDE SETTINGS.
