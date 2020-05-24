@@ -122,6 +122,9 @@ noremap Q !!$SHELL<CR>
 vmap < <gv
 vmap > >gv
 
+" Set correct backspace options.
+set backspace=indent,eol,start
+
 " PLUGIN SETTINGS.
 
 " PLUGIN - preservim/nerdtree.
