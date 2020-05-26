@@ -124,6 +124,7 @@ vmap > >gv
 
 " Set correct backspace options.
 set backspace=indent,eol,start
+imap <C-h> <BS>
 
 " PLUGIN SETTINGS.
 
