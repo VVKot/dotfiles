@@ -34,6 +34,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Autodetect indentation.
 Plug 'tpope/vim-sleuth'
+" Simplifies working with variants of the word.
+Plug 'tpope/vim-abolish'
 
 " Status line.
 Plug 'vim-airline/vim-airline'
