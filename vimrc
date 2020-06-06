@@ -134,7 +134,7 @@ let g:NERDTreeWinSize=60
 " PLUGIN - neoclide/coc.nvim.
 
 " Define default extensions to install.
-let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier", "coc-yank", "coc-jest"]
+let g:coc_global_extensions = ["coc-java", "coc-tsserver", "coc-json", "coc-css", "coc-html", "coc-yaml", "coc-snippets", "coc-pairs", "coc-prettier", "coc-jest"]
 
 " TextEdit might fail if hidden is not set.
 set hidden
