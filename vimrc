@@ -52,6 +52,7 @@ call plug#end()
 set t_Co=256
 set background=light
 highlight SignColumn guibg=white ctermbg=white
+highlight VertSplit guifg=white guibg=black
 if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -287,7 +288,6 @@ function! s:goyo_enter()
   highlight EndOfBuffer guifg=white ctermfg=white
   highlight StatusLine guifg=white ctermfg=white
   highlight StatusLineNC guifg=white ctermfg=white
-  highlight VertSplit guifg=white ctermfg=white
 endfunction
 
 function! s:goyo_leave()
@@ -298,7 +298,6 @@ function! s:goyo_leave()
   highlight EndOfBuffer guifg=black ctermfg=black
   highlight StatusLine guifg=black ctermfg=black
   highlight StatusLineNC guifg=black ctermfg=black
-  highlight VertSplit guifg=black ctermfg=black
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
