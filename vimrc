@@ -226,11 +226,9 @@ nnoremap <silent> <leader>ce :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent> <leader>cc :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
-" Yank history.
-nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<CR>
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 
 " CoC Plugin - coc-jest.
 " Init jest in current cwd, require global jest command exists.
