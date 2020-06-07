@@ -37,10 +37,6 @@ Plug 'tpope/vim-sleuth'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
 
-" Status line.
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
@@ -54,6 +50,8 @@ set background=light
 highlight SignColumn guibg=white ctermbg=white
 highlight EndOfBuffer guifg=white ctermfg=white
 highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
+highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
+highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
 
 set t_Co=256
 if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
@@ -135,6 +133,26 @@ vmap > >gv
 " Set correct backspace options.
 set backspace=indent,eol,start
 imap <C-h> <BS>
+
+" STATUSLINE SETTINGS.
+set laststatus=2
+set statusline=
+set statusline+=%F
+set statusline+=%r
+set statusline+=%m
+set statusline+=%=
+set statusline+=%y
+set statusline+=\ 
+set statusline+=%{strlen(&fenc)?&fenc:'none'}
+set statusline+=\ 
+set statusline+=|
+set statusline+=\ 
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
+set statusline+=\ 
+set statusline+=:
+set statusline+=%c
 
 " PLUGIN SETTINGS.
 
@@ -276,11 +294,6 @@ nnoremap <Leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>tt :NERDTreeToggle<cr>
 nnoremap <leader>tf :NERDTreeFind<cr>
 
-" PLUGIN -  vim-airline/vim-airline.
-let g:airline_section_b = ''
-" PLUGIN -  vim-airline/vim-airline-themes.
-let g:airline_theme='papercolor'
-
 " PLUGIN - junegunn/goyo.
 nnoremap <leader>zz :Goyo<CR>
 
@@ -291,9 +304,9 @@ function! s:goyo_enter()
     silent !tmux set status off
     silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
-  highlight StatusLine guifg=white ctermfg=white
-  highlight StatusLineNC guifg=white ctermfg=white
 
+  highlight StatusLine guifg=white guibg=white ctermfg=white ctermbg=white
+  highlight StatusLineNC guifg=white guibg=white ctermfg=white ctermbg=white
   highlight VertSplit guifg=white guibg=white ctermfg=white ctermbg=white
 endfunction
 
@@ -302,12 +315,12 @@ function! s:goyo_leave()
     silent !tmux set status on
     silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
-  highlight StatusLine guifg=black ctermfg=black
-  highlight StatusLineNC guifg=black ctermfg=black
 
   highlight SignColumn guibg=white ctermbg=white
   highlight EndOfBuffer guifg=white ctermfg=white
   highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
+  highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
+  highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
