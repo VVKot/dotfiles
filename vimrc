@@ -65,6 +65,9 @@ endif
 " Hard wrap at 120.
 set textwidth=120
 
+" Increase the context on the top/bottom.
+set scrolloff=5
+
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
