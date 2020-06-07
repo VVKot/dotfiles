@@ -276,5 +276,31 @@ let g:airline_section_b = ''
 let g:airline_theme='papercolor'
 
 " PLUGIN - junegunn/goyo.
-map <leader>z :Goyo 121 <bar> highlight StatusLineNC ctermfg=white <bar> highlight EndOfBuffer ctermfg=white <bar> set spell<CR>
+nnoremap <leader>zz :Goyo<CR>
 
+let g:goyo_width=121
+
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  highlight EndOfBuffer guifg=white
+  highlight StatusLine guifg=white
+  highlight StatusLineNC guifg=white
+  highlight VertSplit guifg=white
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  highlight EndOfBuffer guifg=black
+  highlight StatusLine guifg=black
+  highlight StatusLineNC guifg=black
+  highlight VertSplit guifg=black
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
