@@ -137,7 +137,7 @@ imap <C-h> <BS>
 " STATUSLINE SETTINGS.
 set laststatus=2
 set statusline=
-set statusline+=%F
+set statusline+=%f
 set statusline+=%r
 set statusline+=%m
 set statusline+=%=
