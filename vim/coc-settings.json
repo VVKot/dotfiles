@@ -1,12 +1,16 @@
 {
-  "http.proxyStrictSSL": false,
-  "coc.preferences.bracketEnterImprove": true,
-  "prettier.tslintIntegration": true,
-  "prettier.printWidth": 120,
-  "prettier.tabWidth": 4,
-  "prettier.arrowParens": "avoid",
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescriptreact", "json", "css"],
-  "yank.highlight.enable": false,
-  "yank.enableCompletion": false,
-  "yank.list.maxsize": 10000
+    "http.proxyStrictSSL": false,
+    "coc.preferences.bracketEnterImprove": true,
+    "prettier.tslintIntegration": true,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "prettier.arrowParens": "avoid",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+        "json",
+        "css"
+    ]
 }
