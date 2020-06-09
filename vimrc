@@ -287,7 +287,7 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " PLUGIN - tpope/vim-fugitive.
-nmap <Leader>gg :Git<CR>gg<c-n>
+nmap <Leader>gg :vertical Git<CR>gg<c-n>
 nnoremap <Leader>gd :Gvdiffsplit<CR>
 
 " PLUGIN - preservim/nerdtree.
