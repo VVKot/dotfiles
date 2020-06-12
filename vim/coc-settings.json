@@ -1,7 +1,7 @@
 {
     "http.proxyStrictSSL": false,
     "coc.preferences.bracketEnterImprove": true,
-    "prettier.tslintIntegration": true,
+    "prettier.eslintIntegration": true,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
     "prettier.arrowParens": "avoid",
