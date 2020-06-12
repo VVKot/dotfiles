@@ -169,7 +169,6 @@ let g:coc_global_extensions = [
   \ "coc-css", 
   \ "coc-html", 
   \ "coc-yaml", 
-  \ "coc-snippets", 
   \ "coc-pairs", 
   \ "coc-prettier", 
   \ "coc-jest"
