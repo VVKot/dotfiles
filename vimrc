@@ -108,10 +108,6 @@ set lazyredraw
 " Highlight matching parenthesis.
 set showmatch
 
-" Split below and to the right by default.
-set splitbelow
-set splitright
-
 " Don't use backups and swapfiles.
 set nobackup
 set nowritebackup
