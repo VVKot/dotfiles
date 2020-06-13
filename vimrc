@@ -314,6 +314,7 @@ function! s:goyo_enter()
     silent !tmux set status off
     silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
+  setlocal spell
 
   highlight StatusLine guifg=white guibg=white ctermfg=white ctermbg=white
   highlight StatusLineNC guifg=white guibg=white ctermfg=white ctermbg=white
@@ -325,6 +326,7 @@ function! s:goyo_leave()
     silent !tmux set status on
     silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
+  setlocal nospell
 
   highlight SignColumn guibg=white ctermbg=white
   highlight EndOfBuffer guifg=white ctermfg=white
