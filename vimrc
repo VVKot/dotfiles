@@ -212,15 +212,15 @@ endfunction
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `[e` and `]e` to navigate diagnostics
-nmap <silent> [e <Plug>(coc-diagnostic-prev)
-nmap <silent> ]e <Plug>(coc-diagnostic-next)
+" Navigate diagnostics.
+nmap <silent> <leader>gE <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>ge <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
-nmap <silent> gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
-nmap <silent> gr :<C-u>call CocActionAsync('jumpReferences')<CR>
-nmap <silent> gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
+nmap <silent> <leader>gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
+nmap <silent> <leader>gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
+nmap <silent> <leader>gr :<C-u>call CocActionAsync('jumpReferences')<CR>
+nmap <silent> <leader>gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -298,7 +298,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
-nnoremap <Leader>gd :Gvdiffsplit<CR>
+nnoremap <Leader>gs :Gvdiffsplit<CR>
 
 " PLUGIN - preservim/nerdtree.
 nnoremap <leader>tt :NERDTreeToggle<cr>
