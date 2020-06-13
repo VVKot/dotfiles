@@ -1,10 +1,8 @@
 {
     "http.proxyStrictSSL": false,
     "coc.preferences.bracketEnterImprove": true,
-    "prettier.eslintIntegration": true,
-    "prettier.printWidth": 120,
-    "prettier.tabWidth": 4,
-    "prettier.arrowParens": "avoid",
+    "eslint.autoFixOnSave": true,
+    "tslint.autoFixOnSave": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
         "typescript",

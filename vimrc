@@ -37,6 +37,9 @@ Plug 'tpope/vim-sleuth'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
 
+" Editor config support.
+Plug 'editorconfig/editorconfig-vim'
+
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
@@ -166,7 +169,8 @@ let g:coc_global_extensions = [
   \ "coc-html", 
   \ "coc-yaml", 
   \ "coc-pairs", 
-  \ "coc-prettier", 
+  \ "coc-eslint",
+  \ "coc-tslint-plugin",
   \ "coc-jest"
   \ ]
 
@@ -333,3 +337,7 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" PLUGIN - editorconfig/editorconfig-vim.
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
