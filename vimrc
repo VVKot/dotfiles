@@ -153,6 +153,10 @@ set statusline+=\
 set statusline+=:
 set statusline+=%c
 
+" Split below and to the right by default.
+set splitbelow
+set splitright
+
 " PLUGIN SETTINGS.
 
 " PLUGIN - preservim/nerdtree.
