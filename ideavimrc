@@ -4,47 +4,39 @@ set rnu
 set incsearch hlsearch
 set ignorecase smartcase
 set clipboard=unnamed
-set scrolloff=3
-set sidescrolloff=3
-set showmode
+set scrolloff=5
+set sidescrolloff=1
 set surround
-
-nnoremap <tab> <c-w>w
-nnoremap <s-tab> <c-w>W
 
 nnoremap Y y$
 nnoremap Q @q
 
 nnoremap [n :action VcsShowPrevChangeMarker<cr>
 nnoremap ]n :action VcsShowNextChangeMarker<cr>
-
 nnoremap gcc :action CommentByLineComment<cr>
 
 nnoremap <leader><leader> :action SearchEverywhere<cr>
 nnoremap <leader>ff :action FindInPath<cr>
+nnoremap <leader>ga :action GotoAction<cr>
+nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>gs :action GotoSuperMethod<cr>
+nnoremap <leader>gd :action GotoDeclaration<cr>
+nnoremap <leader>gr :action GotoRelated<cr>
+nnoremap <leader>gt :action GotoTest<cr>
+nnoremap <leader>ge :action GotoNextError<cr>
+nnoremap <leader>gE :action GotoPreviousError<cr>
+nnoremap <leader>aa ShowIntentionActions<cr>
+nnoremap <leader>ar :action RenameElement<cr>
+
 nnoremap <leader>fu :action FindUsages<cr>
 nnoremap <leader>su :action ShowUsages<cr>
 nnoremap <leader>cv :action ChangeView<cr>
 nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
 nnoremap <leader>br :action ViewBreakpoints<cr>
-nnoremap <leader>ic :action InspectCode<cr>
-nnoremap <leader>oi :action OptimizeImports<cr>
-nnoremap <leader>re :action RenameElement<cr>
 nnoremap <leader>rf :action RenameFile<cr>
-nnoremap <leader>gq :action ReformatCode<cr>
 nnoremap <leader>dd :action Debug<cr>
 nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
 nnoremap <leader>rr :action Run<cr>
 nnoremap <leader>rc :action ChooseRunConfiguration<cr>
-nnoremap <leader>q  :action CloseActiveTab<cr>
-nnoremap <leader>ga :action GotoAction<cr>
-nnoremap <leader>gi :action GotoImplementation<cr>
-nnoremap <leader>gs :action GotoSuperMethod<cr>
-nnoremap <leader>gd :action GotoDeclaration<cr>
-nnoremap <leader>gt :action GotoTest<cr>
-nnoremap <leader>gr :action GotoRelated<cr>
 nnoremap <leader>gb :action Annotate<cr>
-nnoremap ]e :action GotoNextError<cr>
-nnoremap [e :action GotoPreviousError<cr>
-nnoremap <leader>aa ShowIntentionActions<cr>
 
