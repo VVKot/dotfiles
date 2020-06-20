@@ -127,8 +127,8 @@ set noshowmode
 " Make Y behave like other capitals.
 nnoremap Y y$
 
-" Use Q to execute current line in shell and replace it with the output.
-noremap Q !!$SHELL<CR>
+" Use Q to execute macros.
+nnoremap Q @q
 
 " Easier indenting in visual mode.
 vmap < <gv
