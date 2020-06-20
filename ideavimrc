@@ -1,6 +1,7 @@
 let mapleader = ' '
 
-set rnu
+set relativenumber
+set number
 set incsearch hlsearch
 set ignorecase smartcase
 set clipboard=unnamed
