@@ -36,6 +36,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
+" More convenient make.
+Plug 'tpope/vim-dispatch'
 
 " Editor config support.
 Plug 'editorconfig/editorconfig-vim'
