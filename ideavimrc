@@ -15,11 +15,8 @@ nnoremap <s-tab> <c-w>W
 nnoremap Y y$
 nnoremap Q @q
 
-nnoremap [c :action VcsShowPrevChangeMarker<cr>
-nnoremap ]c :action VcsShowNextChangeMarker<cr>
-
-nnoremap [d :action QuickImplementations<cr>
-nnoremap ]d :action QuickImplementations<cr>
+nnoremap [n :action VcsShowPrevChangeMarker<cr>
+nnoremap ]n :action VcsShowNextChangeMarker<cr>
 
 nnoremap gcc :action CommentByLineComment<cr>
 
