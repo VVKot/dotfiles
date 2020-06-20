@@ -40,6 +40,9 @@ Plug 'tpope/vim-abolish'
 " Editor config support.
 Plug 'editorconfig/editorconfig-vim'
 
+" Gradle compiler support.
+Plug 'tfnico/vim-gradle'
+
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
@@ -344,3 +347,5 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " PLUGIN - editorconfig/editorconfig-vim.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" PLUGIN - tfnico/vim-gradle.
+autocmd FileType java,groovy compiler gradlew
