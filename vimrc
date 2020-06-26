@@ -350,4 +350,4 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " PLUGIN - tfnico/vim-gradle.
-autocmd FileType java,groovy compiler gradlew
+compiler gradlew
