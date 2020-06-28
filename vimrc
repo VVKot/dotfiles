@@ -60,6 +60,7 @@ highlight EndOfBuffer guifg=white ctermfg=white
 highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
+highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermfg=lightgray
 
 set t_Co=256
 if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
@@ -128,7 +129,7 @@ set noshowmode
 nnoremap Y y$
 
 " Use Q to execute macros.
-nnoremap Q @q
+noremap Q !!$SHELL<CR>
 
 " Easier indenting in visual mode.
 vmap < <gv
@@ -341,6 +342,7 @@ function! s:goyo_leave()
   highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
+  highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermfg=lightgray
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
