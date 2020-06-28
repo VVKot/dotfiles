@@ -103,7 +103,7 @@ set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set hlsearch
 
 " Only make search case-sensetive if pattern has uppercase letters.
-set ignorecase smartcase
+set ignorecase smartcase infercase
 
 " Automatically copy indentation from the previous line with an extra level.
 set smartindent
