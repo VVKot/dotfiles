@@ -1,6 +1,7 @@
 {
     "http.proxyStrictSSL": false,
     "coc.preferences.bracketEnterImprove": true,
+    "coc.preferences.useQuickfixForLocations": true,
     "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
     "coc.preferences.formatOnSaveFiletypes": [
