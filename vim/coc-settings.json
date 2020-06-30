@@ -4,6 +4,12 @@
     "coc.preferences.useQuickfixForLocations": true,
     "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
+    "stylelint.filetypes": [
+        "css",
+        "sass",
+        "scss",
+        "less"
+    ],
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
         "typescript",

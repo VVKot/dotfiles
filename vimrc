@@ -184,6 +184,7 @@ let g:coc_global_extensions = [
   \ "coc-pairs", 
   \ "coc-eslint",
   \ "coc-tslint-plugin",
+  \ "coc-stylelint",
   \ "coc-jest"
   \ ]
 
