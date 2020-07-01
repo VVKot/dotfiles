@@ -1,4 +1,5 @@
 bindkey '\e' vi-cmd-mode
+export KEYTIMEOUT=1 # * 10 ms
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000000
