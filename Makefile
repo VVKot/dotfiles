@@ -6,6 +6,7 @@ sync:
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux.conf ~/.tmux.conf
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
+	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 
 clean:
 	rm -f ~/.vimrc 
@@ -13,5 +14,6 @@ clean:
 	rm -f ~/.tmux.conf
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc
+	rm -f ~/.zshrc
 
 .PHONY: all clean sync build run kill
