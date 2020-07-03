@@ -13,3 +13,4 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
