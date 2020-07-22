@@ -216,6 +216,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use `<C-a>` to trigger completion.
+inoremap <silent><expr> <C-a> coc#refresh()
+
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " Send coc#on_enter() to use improved bracket spacing.
@@ -354,3 +357,4 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " PLUGIN - tfnico/vim-gradle.
 autocmd FileType * compiler gradlew
+
