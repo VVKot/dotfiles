@@ -9,7 +9,6 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gradle", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
-
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -31,3 +30,6 @@ setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias ls='ls -GpF'
+alias ll='ls -alGpF'
