@@ -22,6 +22,7 @@ zplug load
 export EDITOR="vim"
 bindkey '\e' vi-cmd-mode
 export KEYTIMEOUT=1 # * 10 ms
+bindkey -e
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
