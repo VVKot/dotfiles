@@ -23,6 +23,7 @@ brew "yarn"
 brew "zsh"
 brew "zplug"
 
+cask "amethyst"
 cask "docker"
 cask "google-chrome"
 cask "iterm2"
