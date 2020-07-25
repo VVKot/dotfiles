@@ -6,10 +6,9 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/gradle-completion", from:oh-my-zsh
+zplug "plugins/gradle", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
-compdef gw='gradle'
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
