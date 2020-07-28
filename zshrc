@@ -19,9 +19,11 @@ fi
 zplug load
 
 export EDITOR="vim"
-bindkey '\e' vi-cmd-mode
 export KEYTIMEOUT=1 # * 10 ms
-bindkey -e
+bindkey -v
+bindkey '\e' vi-cmd-mode
+bindkey '^y' autosuggest-accept
+bindkey '^e' autosuggest-clear
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
