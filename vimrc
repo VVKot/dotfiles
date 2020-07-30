@@ -60,7 +60,7 @@ highlight EndOfBuffer guifg=white ctermfg=white
 highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
-highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermfg=lightgray
+highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 
 set t_Co=256
 if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
@@ -346,7 +346,7 @@ function! s:goyo_leave()
   highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
-  highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermfg=lightgray
+  highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermbg=lightgray
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
