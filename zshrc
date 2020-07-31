@@ -25,6 +25,9 @@ bindkey '\e' vi-cmd-mode
 bindkey '^y' autosuggest-accept
 bindkey '^e' autosuggest-clear
 
+autoload edit-command-line;zle -N edit-command-line
+bindkey -M vicmd '^v' edit-command-line
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
