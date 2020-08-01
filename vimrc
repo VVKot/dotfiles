@@ -185,7 +185,8 @@ let g:coc_global_extensions = [
   \ "coc-eslint",
   \ "coc-tslint-plugin",
   \ "coc-stylelint",
-  \ "coc-jest"
+  \ "coc-jest",
+  \ "coc-react-refactor"
   \ ]
 
 " TextEdit might fail if hidden is not set.
