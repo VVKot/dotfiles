@@ -10,6 +10,23 @@ endif
 
 " INSTALL PLUGINS.
 call plug#begin('~/.vim/plugged')
+
+" Sensible defaults.
+Plug 'tpope/vim-sensible'
+" Comments.
+Plug 'tpope/vim-commentary'
+" Add/remove/change surroundings.
+Plug 'tpope/vim-surround'
+" Useful pair-wise mappings.
+Plug 'tpope/vim-unimpaired'
+" Repeat plugin commands.
+Plug 'tpope/vim-repeat'
+" Simplifies working with variants of the word.
+Plug 'tpope/vim-abolish'
+
+" VSCode-unsafe plugins.
+if !exists('g:vscode')
+
 " Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -20,22 +37,12 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Sensible defaults.
-Plug 'tpope/vim-sensible'
 " Git plugin.
 Plug 'tpope/vim-fugitive'
-" Comments.
-Plug 'tpope/vim-commentary'
-" Add/remove/change surroundings.
-Plug 'tpope/vim-surround'
-" Useful pair-wise mappings.
-Plug 'tpope/vim-unimpaired'
-" Repeat plugin commands.
-Plug 'tpope/vim-repeat'
+
 " Autodetect indentation.
 Plug 'tpope/vim-sleuth'
-" Simplifies working with variants of the word.
-Plug 'tpope/vim-abolish'
+
 " More convenient make.
 Plug 'tpope/vim-dispatch'
 
@@ -47,6 +54,8 @@ Plug 'tfnico/vim-gradle'
 
 " Zen mode.
 Plug 'junegunn/goyo.vim'
+
+endif
 
 call plug#end()
 
@@ -139,6 +148,20 @@ vmap > >gv
 set backspace=indent,eol,start
 imap <C-h> <BS>
 
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=100
+
+" Don't pass messages to |ins-completion-menu|.
+" Don't specify filename when opening file.
+set shortmess+=cF
+
 " STATUSLINE SETTINGS.
 set laststatus=2
 set statusline=
@@ -168,6 +191,8 @@ set signcolumn=no
 
 " PLUGIN SETTINGS.
 
+if !exists('g:vscode')
+
 " PLUGIN - preservim/nerdtree.
 let g:NERDTreeWinSize=60
 
@@ -188,20 +213,6 @@ let g:coc_global_extensions = [
   \ "coc-jest",
   \ "coc-react-refactor"
   \ ]
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=100
-
-" Don't pass messages to |ins-completion-menu|.
-" Don't specify filename when opening file.
-set shortmess+=cF
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -362,3 +373,4 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " PLUGIN - tfnico/vim-gradle.
 autocmd FileType * compiler gradlew
 
+endif
