@@ -15,6 +15,8 @@
         "typescript",
         "javascriptreact",
         "typescriptreact",
+        "javascript.jsx",
+        "typescript.tsx",
         "json",
         "css"
     ]

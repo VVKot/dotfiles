@@ -292,6 +292,9 @@ nnoremap <leader>jj :JestCurrentFile<CR>
 command! -nargs=0 JestCurrentTest :call  CocActionAsync('runCommand', 'jest.singleTest')
 nnoremap <leader>jt :JestCurrentTest<CR>
 
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+
 " PLUGIN - junegunn/fzf.vim.
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
