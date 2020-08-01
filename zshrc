@@ -25,8 +25,30 @@ bindkey '\e' vi-cmd-mode
 bindkey '^y' autosuggest-accept
 bindkey '^e' autosuggest-clear
 
+# Bind <C-v> to open command in $EDITOR.
 autoload edit-command-line;zle -N edit-command-line
 bindkey -M vicmd '^v' edit-command-line
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with a beam cursor
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+precmd_functions+=(_fix_cursor)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
