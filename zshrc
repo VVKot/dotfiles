@@ -22,6 +22,7 @@ export EDITOR="vim"
 export KEYTIMEOUT=1 # * 10 ms
 bindkey -v
 bindkey '\e' vi-cmd-mode
+bindkey '^k' autosuggest-execute
 bindkey '^y' autosuggest-accept
 bindkey '^e' autosuggest-clear
 
