@@ -1,3 +1,4 @@
+set nocompatible
 let mapleader = " "
 let maplocalleader = " "
 
@@ -23,9 +24,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
-
-" VSCode-unsafe plugins.
-if !exists('g:vscode')
 
 " Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -54,8 +52,6 @@ Plug 'tfnico/vim-gradle'
 
 " Zen mode.
 Plug 'junegunn/goyo.vim'
-
-endif
 
 call plug#end()
 
@@ -190,8 +186,6 @@ set splitright
 set signcolumn=no
 
 " PLUGIN SETTINGS.
-
-if !exists('g:vscode')
 
 " PLUGIN - preservim/nerdtree.
 let g:NERDTreeWinSize=60
@@ -374,5 +368,3 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " PLUGIN - tfnico/vim-gradle.
 autocmd FileType * compiler gradlew
-
-endif
