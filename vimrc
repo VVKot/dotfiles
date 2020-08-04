@@ -356,12 +356,14 @@ function! s:goyo_leave()
   endif
   setlocal nospell
 
+  set background=light
+
   highlight SignColumn guibg=white ctermbg=white
   highlight EndOfBuffer guifg=white ctermfg=white
   highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
-  highlight Pmenu guifg=black guibg=lightgray ctermfg=black ctermbg=lightgray
+  highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
