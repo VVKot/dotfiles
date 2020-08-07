@@ -191,6 +191,7 @@ set signcolumn=no
 
 " PLUGIN - preservim/nerdtree.
 let g:NERDTreeWinSize=60
+let NERDTreeHijackNetrw=1
 
 " PLUGIN - neoclide/coc.nvim.
 
