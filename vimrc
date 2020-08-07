@@ -32,6 +32,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
+" Alternative explorer plugin
+Plug 'justinmk/vim-dirvish'
 
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
