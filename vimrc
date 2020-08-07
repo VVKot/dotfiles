@@ -24,6 +24,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
+" Handful shortcuts for *nix commands.
+Plug 'tpope/vim-eunuch'
 
 " Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
