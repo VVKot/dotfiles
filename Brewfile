@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 brew "bash"
+brew "bat"
 brew "curl"
 brew "fzf"
 brew "gdub"
