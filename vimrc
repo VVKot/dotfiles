@@ -281,15 +281,13 @@ command! -nargs=0 Format :call CocActionAsync('format')
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <leader>ca :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <leader>ce :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ca :<C-u>CocFzfList diagnostics<cr>
 " Show commands.
-nnoremap <silent> <leader>cc :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>cc :<C-u>CocFzfList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>cs  :<C-u>CocFzfList -I symbols<cr>
 
 " CoC Plugin - coc-jest.
 " Init jest in current cwd, require global jest command exists.
