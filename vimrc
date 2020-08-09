@@ -276,9 +276,6 @@ nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
 
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocActionAsync('format')
-
 " Mappings using CoCList:
 " Show all diagnostics.
 nnoremap <silent> <leader>ca :<C-u>CocFzfList diagnostics<cr>
@@ -287,7 +284,7 @@ nnoremap <silent> <leader>cc :<C-u>CocFzfList commands<cr>
 " Find symbol of current document.
 nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <leader>cs  :<C-u>CocFzfList -I symbols<cr>
+nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
 
 " CoC Plugin - coc-jest.
 " Init jest in current cwd, require global jest command exists.
