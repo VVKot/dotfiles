@@ -202,6 +202,7 @@ let NERDTreeHijackNetrw=1
 let g:coc_global_extensions = [
   \ "coc-java", 
   \ "coc-tsserver", 
+  \ "coc-actions",
   \ "coc-json", 
   \ "coc-css", 
   \ "coc-html", 
@@ -266,11 +267,15 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-" Applying codeAction to the selected region.
-nmap <leader>as <Plug>(coc-codeaction-selected)
-xmap <leader>as <Plug>(coc-codeaction-selected)
-" Remap keys for applying codeAction to the current line.
-nmap <leader>aa  <Plug>(coc-codeaction)
+" Actions
+if has('nvim')
+    xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+    nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+else
+    nmap <leader>as <Plug>(coc-codeaction-selected)
+    xmap <leader>as <Plug>(coc-codeaction-selected)
+    nmap <leader>aa  <Plug>(coc-codeaction)
+endif
 " Symbol renaming.
 nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
