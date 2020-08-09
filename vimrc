@@ -329,6 +329,10 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" PLUGIN antoinemadec/coc-fzf
+let g:coc_fzf_preview = ''
+let g:coc_fzf_opts = []
+
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
 nnoremap <Leader>gs :Gvdiffsplit<CR>
