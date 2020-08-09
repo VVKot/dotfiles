@@ -51,6 +51,9 @@ _fix_cursor() {
 }
 precmd_functions+=(_fix_cursor)
 
+# fzf
+export FZF_DEFAULT_OPTS='--layout=reverse'
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
