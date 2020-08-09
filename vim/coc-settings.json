@@ -2,6 +2,7 @@
     "http.proxyStrictSSL": false,
     "coc.preferences.bracketEnterImprove": true,
     "coc.preferences.useQuickfixForLocations": true,
+    "jest.watchman": true,
     "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
     "stylelint.filetypes": [
