@@ -312,6 +312,7 @@ nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg 
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fb :Buffers<CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
