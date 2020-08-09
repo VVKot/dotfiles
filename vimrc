@@ -38,6 +38,7 @@ Plug 'justinmk/vim-dirvish'
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
 
 " Git plugin.
 Plug 'tpope/vim-fugitive'
