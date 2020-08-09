@@ -24,8 +24,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
-" Gradle compiler support.
-Plug 'tfnico/vim-gradle'
+" Handful shortcuts for *nix commands.
+Plug 'tpope/vim-eunuch'
 
 call plug#end()
 
@@ -66,7 +66,6 @@ set belloff=all
 
 " Set to auto read when a file is changed from the outside.
 set autoread
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -159,7 +158,3 @@ set splitright
 " Do not show sign column.
 set signcolumn=no
 
-" PLUGIN SETTINGS.
-
-" PLUGIN - tfnico/vim-gradle.
-autocmd FileType * compiler gradlew
