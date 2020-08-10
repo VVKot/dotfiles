@@ -13,6 +13,7 @@ sync:
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
+	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
 
 clean:
@@ -25,6 +26,7 @@ clean:
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc
 	rm -f ~/.zshrc
+	rm -f ~/.zprofile
 	rm -f ~/.config/bat/config
 
 .PHONY: all clean sync build run kill
