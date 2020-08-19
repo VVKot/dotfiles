@@ -333,6 +333,9 @@ let g:fzf_action = {
 let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
 
+" PLUGIN junegunn/fzf.vim
+let g:dirvish_mode = ':sort ,^.*[\/],'
+
 " PLUGIN - tpope/vim-fugitive.
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
 nnoremap <Leader>gs :Gvdiffsplit<CR>
