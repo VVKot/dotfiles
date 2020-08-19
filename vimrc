@@ -267,9 +267,17 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 " Actions
-nmap <leader>as <Plug>(coc-codeaction-selected)
-xmap <leader>as <Plug>(coc-codeaction-selected)
-nmap <leader>aa  <Plug>(coc-codeaction)
+if has('nvim')
+    function! s:cocActionsOpenFromSelected(type) abort
+      execute 'CocCommand actions.open ' . a:type
+    endfunction
+    xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+    nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+else
+    nmap <leader>as <Plug>(coc-codeaction-selected)
+    xmap <leader>as <Plug>(coc-codeaction-selected)
+    nmap <leader>aa  <Plug>(coc-codeaction)
+endif
 " Symbol renaming.
 nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
