@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "editor.renderWhitespace": "all",
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "vscode-neovim.neovimPath": "/usr/local/Cellar/neovim/0.4.3/bin/nvim",
+}

@@ -15,7 +15,7 @@ sync:
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
-
+	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 clean:
 	rm -f ~/.config/nvim/init.vim 
 	rm -f ~/.config/nvim/coc-settings.json
@@ -28,5 +28,6 @@ clean:
 	rm -f ~/.zshrc
 	rm -f ~/.zprofile
 	rm -f ~/.config/bat/config
+	rm -f ~/Library/Application\ Support/Code/User/settings.json
 
 .PHONY: all clean sync build run kill
