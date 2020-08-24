@@ -18,7 +18,9 @@ fi
 
 zplug load
 
-export EDITOR="vim -u ~/.mini.vimrc"
+alias vi="nvim"
+alias vim="nvim"
+export EDITOR="nvim -u ~/.mini.vimrc"
 export KEYTIMEOUT=1 # * 10 ms
 bindkey -v
 bindkey '\e' vi-cmd-mode
