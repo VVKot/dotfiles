@@ -29,6 +29,8 @@ Plug 'tpope/vim-eunuch'
 
 " Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Additional syntax support
+Plug 'sheerun/vim-polyglot'
 
 " Tree plugin.
 Plug 'preservim/nerdtree'
