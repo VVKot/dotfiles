@@ -54,7 +54,7 @@ _fix_cursor() {
 precmd_functions+=(_fix_cursor)
 
 # fzf
-export FZF_DEFAULT_OPTS="--layout=reverse --history='$HOME/.fzf_history' --bind ctrl-a:select-all"
+export FZF_DEFAULT_OPTS="--layout=reverse --history='$HOME/.fzf_history' --bind ctrl-a:select-all --color=light"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
