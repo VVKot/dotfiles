@@ -140,7 +140,7 @@ set noshowmode
 nnoremap Y y$
 
 " Use Q to execute macros.
-noremap Q !!$SHELL<CR>
+noremap Q @q
 
 " Easier indenting in visual mode.
 vmap < <gv
