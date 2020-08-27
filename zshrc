@@ -7,6 +7,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gradle", from:oh-my-zsh
+zplug "plugins/yarn", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
 if ! zplug check --verbose; then
