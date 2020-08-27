@@ -205,22 +205,6 @@ let NERDTreeMinimalUI = 1
 
 " PLUGIN - neoclide/coc.nvim. {{{2
 
-" Define default extensions to install.
-let g:coc_global_extensions = [
-  \ "coc-java", 
-  \ "coc-tsserver", 
-  \ "coc-json", 
-  \ "coc-css", 
-  \ "coc-html", 
-  \ "coc-yaml", 
-  \ "coc-pairs", 
-  \ "coc-eslint",
-  \ "coc-tslint-plugin",
-  \ "coc-stylelint",
-  \ "coc-jest",
-  \ "coc-react-refactor"
-  \ ]
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

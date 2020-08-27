@@ -1,11 +1,13 @@
 all: sync
 
 sync:
-	mkdir -p ~/.config/nvim
 	mkdir -p ~/.config/bat
+	mkdir -p ~/.config/coc/extensions
+	mkdir -p ~/.config/nvim
 
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
+	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/.config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	[ -f ~/.mini.vimrc ] || ln -s $(PWD)/mini.vimrc ~/.mini.vimrc
 	[ -f ~/.vim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.vim/coc-settings.json
@@ -16,9 +18,11 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
 clean:
 	rm -f ~/.config/nvim/init.vim 
 	rm -f ~/.config/nvim/coc-settings.json
+	rm -f ~/.config/coc/extensions/package.json
 	rm -f ~/.vimrc 
 	rm -f ~/.mini.vimrc
 	rm -f ~/.vim/coc-settings.json
