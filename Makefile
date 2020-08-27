@@ -4,6 +4,7 @@ sync:
 	mkdir -p ~/.config/bat
 	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.config/nvim
+	mkdir -p ~/.gradle
 
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
@@ -12,6 +13,7 @@ sync:
 	[ -f ~/.mini.vimrc ] || ln -s $(PWD)/mini.vimrc ~/.mini.vimrc
 	[ -f ~/.vim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.vim/coc-settings.json
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux.conf ~/.tmux.conf
+	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
@@ -27,6 +29,7 @@ clean:
 	rm -f ~/.mini.vimrc
 	rm -f ~/.vim/coc-settings.json
 	rm -f ~/.tmux.conf
+	rm -f ~/.gradle/gradle.properties
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc
 	rm -f ~/.zshrc
