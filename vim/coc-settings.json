@@ -4,7 +4,8 @@
     "jest.watchman": true,
     "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
-    "stylelint.filetypes": [
+    "stylelintplus.autoFixOnSave": true,
+    "stylelintplus.filetypes": [
         "css",
         "sass",
         "scss",
