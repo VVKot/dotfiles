@@ -21,7 +21,7 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
-	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
+	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/iterm/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
 
 clean:
 	rm -f ~/.config/nvim/init.vim 
