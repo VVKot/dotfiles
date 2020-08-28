@@ -637,7 +637,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>FiraCode-Regular 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -708,6 +708,7 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Monaco</string>
 		<string>Fira Code</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
