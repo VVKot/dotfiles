@@ -5,5 +5,5 @@
     "explorer.confirmDelete": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "vscode-neovim.neovimPath": "/usr/local/Cellar/neovim/0.4.3/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/Cellar/neovim/0.4.4/bin/nvim",
 }
