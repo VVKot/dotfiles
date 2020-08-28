@@ -5,6 +5,7 @@ sync:
 	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.config/nvim
 	mkdir -p ~/.gradle
+	mkdir -p ~/.iterm
 
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
@@ -20,6 +21,7 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
 
 clean:
 	rm -f ~/.config/nvim/init.vim 
@@ -36,5 +38,6 @@ clean:
 	rm -f ~/.zprofile
 	rm -f ~/.config/bat/config
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
+	rm -f ~/.iterm/com.googlecode.iterm2.plist
 
 .PHONY: all clean sync build run kill
