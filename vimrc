@@ -1,4 +1,5 @@
 set nocompatible
+set secure
 let mapleader = " "
 let maplocalleader = " "
 
