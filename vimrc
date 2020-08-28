@@ -51,6 +51,9 @@ Plug 'tpope/vim-sleuth'
 " More convenient make.
 Plug 'tpope/vim-dispatch'
 
+" Matching tags.
+Plug 'gregsexton/MatchTag'
+
 " Editor config support.
 Plug 'editorconfig/editorconfig-vim'
 
