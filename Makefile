@@ -7,7 +7,7 @@ sync:
 	mkdir -p ~/.gradle
 	mkdir -p ~/.iterm
 
-	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/bat.config ~/.config/bat/config
+	[ -f ~/.config/bat/config ] || ln -s $(PWD)/.config/bat/config ~/.config/bat/config
 	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/.config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
