@@ -1,72 +1,9 @@
+" EDITOR-WIDE SETTINGS. {{{1
+
 set nocompatible
 set secure
 let mapleader = " "
 let maplocalleader = " "
-
-" INSTALL VIM PLUG. {{{1
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" INSTALL PLUGINS. {{{1
-call plug#begin()
-
-" Sensible defaults.
-Plug 'tpope/vim-sensible'
-" Comments.
-Plug 'tpope/vim-commentary'
-" Add/remove/change surroundings.
-Plug 'tpope/vim-surround'
-" Useful pair-wise mappings.
-Plug 'tpope/vim-unimpaired'
-" Repeat plugin commands.
-Plug 'tpope/vim-repeat'
-" Simplifies working with variants of the word.
-Plug 'tpope/vim-abolish'
-" Handful shortcuts for *nix commands.
-Plug 'tpope/vim-eunuch'
-
-" Autocompletion engine utilizing LSP from VSCode.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Additional syntax support
-Plug 'sheerun/vim-polyglot'
-
-" Tree plugin.
-Plug 'preservim/nerdtree'
-" Alternative explorer plugin
-Plug 'justinmk/vim-dirvish'
-
-" Fuzzy search for everything.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
-
-" Git plugin.
-Plug 'tpope/vim-fugitive'
-
-" Autodetect indentation.
-Plug 'tpope/vim-sleuth'
-
-" More convenient make.
-Plug 'tpope/vim-dispatch'
-
-" Matching tags.
-Plug 'gregsexton/MatchTag'
-
-" Editor config support.
-Plug 'editorconfig/editorconfig-vim'
-
-" Gradle compiler support.
-Plug 'tfnico/vim-gradle'
-
-" Zen mode.
-Plug 'junegunn/goyo.vim'
-
-call plug#end()
-
-" EDITOR-WIDE SETTINGS. {{{1
 
 " Light background + true color support.
 set background=light
@@ -183,6 +120,69 @@ set statusline+=%L
 set statusline+=\ 
 set statusline+=:
 set statusline+=%c
+
+" INSTALL VIM PLUG. {{{1
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" INSTALL PLUGINS. {{{1
+call plug#begin()
+
+" Sensible defaults.
+Plug 'tpope/vim-sensible'
+" Comments.
+Plug 'tpope/vim-commentary'
+" Add/remove/change surroundings.
+Plug 'tpope/vim-surround'
+" Useful pair-wise mappings.
+Plug 'tpope/vim-unimpaired'
+" Repeat plugin commands.
+Plug 'tpope/vim-repeat'
+" Simplifies working with variants of the word.
+Plug 'tpope/vim-abolish'
+" Handful shortcuts for *nix commands.
+Plug 'tpope/vim-eunuch'
+
+" Autocompletion engine utilizing LSP from VSCode.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Additional syntax support
+Plug 'sheerun/vim-polyglot'
+
+" Tree plugin.
+Plug 'preservim/nerdtree'
+" Alternative explorer plugin
+Plug 'justinmk/vim-dirvish'
+
+" Fuzzy search for everything.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
+
+" Git plugin.
+Plug 'tpope/vim-fugitive'
+
+" Autodetect indentation.
+Plug 'tpope/vim-sleuth'
+
+" More convenient make.
+Plug 'tpope/vim-dispatch'
+
+" Matching tags.
+Plug 'gregsexton/MatchTag'
+
+" Editor config support.
+Plug 'editorconfig/editorconfig-vim'
+
+" Gradle compiler support.
+Plug 'tfnico/vim-gradle'
+
+" Zen mode.
+Plug 'junegunn/goyo.vim'
+
+call plug#end()
 
 " PLUGIN SETTINGS. {{{1
 
