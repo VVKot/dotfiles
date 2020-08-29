@@ -4,14 +4,14 @@ let mapleader = " "
 let maplocalleader = " "
 
 " INSTALL VIM PLUG. {{{1
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " INSTALL PLUGINS. {{{1
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Sensible defaults.
 Plug 'tpope/vim-sensible'
@@ -68,7 +68,7 @@ call plug#end()
 
 " EDITOR-WIDE SETTINGS. {{{1
 
-" 256 colors + light background + true color support.
+" Light background + true color support.
 set background=light
 
 highlight SignColumn guibg=white ctermbg=white
