@@ -9,9 +9,14 @@ sync:
 
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/.config/bat/config ~/.config/bat/config
 	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/.config/coc/extensions/package.json ~/.config/coc/extensions/package.json
+	[ -f ~/.config/nvim/advanced.plugins.vim ] || ln -s $(PWD)/.config/nvim/advanced.plugins.vim ~/.config/nvim/advanced.plugins.vim
+	[ -f ~/.config/nvim/basic.plugins.vim ] || ln -s $(PWD)/.config/nvim/basic.plugins.vim ~/.config/nvim/basic.plugins.vim
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
+	[ -f ~/.config/nvim/common.vim ] || ln -s $(PWD)/.config/nvim/common.vim ~/.config/nvim/common.vim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/.config/nvim/init.vim ~/.config/nvim/init.vim
+	[ -f ~/.config/nvim/install.vimplug.vim ] || ln -s $(PWD)/.config/nvim/install.vimplug.vim ~/.config/nvim/install.vimplug.vim
 	[ -f ~/.config/nvim/mini.init.vim ] || ln -s $(PWD)/.config/nvim/mini.init.vim ~/.config/nvim/mini.init.vim
+	[ -f ~/.config/nvim/settings.plugins.vim ] || ln -s $(PWD)/.config/nvim/settings.plugins.vim ~/.config/nvim/settings.plugins.vim
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
@@ -24,9 +29,15 @@ sync:
 clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.config/coc/extensions/package.json
+	rm -f ~/.config/nvim/advanced.plugins.vim 
+	rm -f ~/.config/nvim/basic.plugins.vim 
 	rm -f ~/.config/nvim/coc-settings.json
+	rm -f ~/.config/nvim/common.vim 
 	rm -f ~/.config/nvim/init.vim 
+	rm -f ~/.config/nvim/install.vimplug.vim
+	rm -f ~/.config/nvim/install.vimplug.vim 
 	rm -f ~/.config/nvim/mini.init.vim
+	rm -f ~/.config/nvim/settings.plugins.vim 
 	rm -f ~/.gradle/gradle.properties
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc
