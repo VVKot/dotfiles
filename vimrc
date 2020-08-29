@@ -87,21 +87,13 @@ endif
 " Hard wrap at 120.
 set textwidth=120
 
-" Increase the context on the top/bottom.
-set scrolloff=5
-
 " Automatically paste from the system clipboard and copy to it.
 set clipboard=unnamed
 
-" Don't way for command after Esc.
-set ttimeoutlen=0
-
 " No visual blink on error and no sound.
 set visualbell t_vb=
-set belloff=all
 
 " Set to auto read when a file is changed from the outside.
-set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 
 " :W sudo saves the file.
@@ -113,9 +105,6 @@ set number
 
 " Set tab to 4 spaces that are automatically expanded/deleted.
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
-
-" Highlight search results.
-set hlsearch
 
 " Only make search case-sensetive if pattern has uppercase letters.
 set ignorecase smartcase infercase
@@ -137,7 +126,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Don't show mode - there is a statusline for that.
+" Don't show mode - cursor indicates that.
 set noshowmode
 
 " Make Y behave like other capitals.
@@ -151,7 +140,6 @@ vmap < <gv
 vmap > >gv
 
 " Set correct backspace options.
-set backspace=indent,eol,start
 imap <C-h> <BS>
 
 " TextEdit might fail if hidden is not set.
@@ -166,7 +154,7 @@ set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 " Don't specify filename when opening file.
-set shortmess+=cF
+set shortmess+=c
 
 " Split below and to the right by default.
 set splitbelow
@@ -175,7 +163,7 @@ set splitright
 " Do not show sign column.
 set signcolumn=no
 
-" Fold by markers
+" Fold by markers.
 set foldmethod=marker
 
 " STATUSLINE SETTINGS. {{{2
