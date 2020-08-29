@@ -1,5 +1,6 @@
 {
     "http.proxyStrictSSL": false,
+    "tsserver.maxTsServerMemory": 8192,
     "coc.preferences.bracketEnterImprove": true,
     "jest.watchman": true,
     "eslint.autoFixOnSave": true,
