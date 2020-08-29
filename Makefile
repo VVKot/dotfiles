@@ -11,7 +11,7 @@ sync:
 	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/.config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.config/nvim/advanced.plugins.vim ] || ln -s $(PWD)/.config/nvim/advanced.plugins.vim ~/.config/nvim/advanced.plugins.vim
 	[ -f ~/.config/nvim/basic.plugins.vim ] || ln -s $(PWD)/.config/nvim/basic.plugins.vim ~/.config/nvim/basic.plugins.vim
-	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/vim/coc-settings.json ~/.config/nvim/coc-settings.json
+	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 	[ -f ~/.config/nvim/common.vim ] || ln -s $(PWD)/.config/nvim/common.vim ~/.config/nvim/common.vim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/.config/nvim/init.vim ~/.config/nvim/init.vim
 	[ -f ~/.config/nvim/install.vimplug.vim ] || ln -s $(PWD)/.config/nvim/install.vimplug.vim ~/.config/nvim/install.vimplug.vim
