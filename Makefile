@@ -19,14 +19,15 @@ sync:
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
-	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat.config ~/.config/bat/config
+	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/bat.config ~/.config/bat/config
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/iterm/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
 
 clean:
+	rm -f ~/.config/bat/config
+	rm -f ~/.config/coc/extensions/package.json
 	rm -f ~/.config/nvim/init.vim 
 	rm -f ~/.config/nvim/coc-settings.json
-	rm -f ~/.config/coc/extensions/package.json
 	rm -f ~/.vimrc 
 	rm -f ~/.mini.vimrc
 	rm -f ~/.vim/coc-settings.json
@@ -36,7 +37,6 @@ clean:
 	rm -f ~/.inputrc
 	rm -f ~/.zshrc
 	rm -f ~/.zprofile
-	rm -f ~/.config/bat/config
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/.iterm/com.googlecode.iterm2.plist
 
