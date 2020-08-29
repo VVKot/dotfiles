@@ -322,6 +322,8 @@ nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
 
 " PLUGIN - justinmk/vim-dirvish. {{{2
+
+" Show directories on top
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " PLUGIN - tpope/vim-fugitive. {{{2
