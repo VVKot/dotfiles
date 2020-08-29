@@ -78,11 +78,9 @@ highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
 highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 
-if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
 " Hard wrap at 120.
 set textwidth=120
