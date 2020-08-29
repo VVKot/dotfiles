@@ -1,18 +1,17 @@
 set nocompatible
+set secure
 let mapleader = " "
 let maplocalleader = " "
 
 " INSTALL VIM PLUG.
-set rtp +=~/.vim
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " INSTALL PLUGINS.
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Sensible defaults.
 Plug 'tpope/vim-sensible'
@@ -26,8 +25,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
-" Handful shortcuts for *nix commands.
-Plug 'tpope/vim-eunuch'
 
 call plug#end()
 
