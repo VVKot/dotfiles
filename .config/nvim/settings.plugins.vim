@@ -1,11 +1,11 @@
-" PLUGIN - preservim/nerdtree. {{{2
+" PLUGIN - preservim/nerdtree. {{{1
 nnoremap <leader>tt :NERDTreeToggle<cr>
 nnoremap <leader>tf :NERDTreeFind<cr>
 let g:NERDTreeWinSize=60
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 
-" PLUGIN - neoclide/coc.nvim. {{{2
+" PLUGIN - neoclide/coc.nvim. {{{1
 
 " Make sure I don't OOM.
 let g:coc_node_args = ['--max-old-space-size=8192']
@@ -82,7 +82,7 @@ nmap <leader>af  <Plug>(coc-fix-current)
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-" CoC PLUGIN - coc-jest. {{{3
+" CoC PLUGIN - coc-jest. {{{2
 " Init jest in current cwd, require global jest command exists.
 command! JestInit :call CocActionAsync('runCommand', 'jest.init')
 " Run jest for current project.
@@ -94,7 +94,7 @@ nnoremap <leader>jj :JestCurrentFile<CR>
 command! -nargs=0 JestCurrentTest :call  CocActionAsync('runCommand', 'jest.singleTest')
 nnoremap <leader>jt :JestCurrentTest<CR>
 
-" PLUGIN - junegunn/fzf.vim. {{{2
+" PLUGIN - junegunn/fzf.vim. {{{1
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
@@ -117,7 +117,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" PLUGIN - antoinemadec/coc-fzf. {{{2
+" PLUGIN - antoinemadec/coc-fzf. {{{1
 " Reset to defaults
 let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
@@ -131,16 +131,16 @@ nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols.
 nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
 
-" PLUGIN - justinmk/vim-dirvish. {{{2
+" PLUGIN - justinmk/vim-dirvish. {{{1
 
 " Show directories on top
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
-" PLUGIN - tpope/vim-fugitive. {{{2
+" PLUGIN - tpope/vim-fugitive. {{{1
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
 nnoremap <Leader>gs :Gvdiffsplit<CR>
 
-" PLUGIN - junegunn/goyo. {{{2
+" PLUGIN - junegunn/goyo. {{{1
 nnoremap <leader>zz :Goyo<CR>
 
 let g:goyo_width=121
@@ -177,8 +177,8 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-" PLUGIN - editorconfig/editorconfig-vim. {{{2
+" PLUGIN - editorconfig/editorconfig-vim. {{{1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" PLUGIN - tfnico/vim-gradle. {{{2
+" PLUGIN - tfnico/vim-gradle. {{{1
 autocmd FileType * compiler gradlew
