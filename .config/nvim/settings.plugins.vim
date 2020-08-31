@@ -32,8 +32,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Navigate diagnostics.
-nmap <silent> <leader>gE <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>ge <Plug>(coc-diagnostic-next)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> <leader>gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
