@@ -21,5 +21,12 @@
         "typescript.tsx",
         "json",
         "css"
-    ]
+    ],
+    "go.goplsPath": "~/go/bin/gopls",
+    "go.goplsOptions": {
+        "usePlaceholders": true,
+        "completionDocumentation": true,
+        "completeUnimported": true,
+        "fuzzyMatching": true
+    }
 }
