@@ -88,6 +88,10 @@ set signcolumn=no
 " Fold by markers.
 set foldmethod=marker
 
+" RG setup.
+set grepprg=rg\ -S\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
 " COLOR SETTINGS {{{1
 set background=light
 
