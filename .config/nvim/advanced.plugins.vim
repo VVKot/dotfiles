@@ -36,3 +36,6 @@ Plug 'tfnico/vim-gradle'
 
 " Zen mode.
 Plug 'junegunn/goyo.vim'
+
+" Go support.
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

@@ -185,3 +185,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " PLUGIN - tfnico/vim-gradle. {{{1
 autocmd FileType * compiler gradlew
+
+" PLUGIN - fatih/vim-go. {{{1
+let g:go_gopls_enabled=0
