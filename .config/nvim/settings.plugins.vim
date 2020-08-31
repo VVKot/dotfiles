@@ -101,6 +101,9 @@ nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg 
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>f: :History:<CR>
+nnoremap <leader>f/ :History/<CR>
+
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
 " CTRL-A CTRL-Q to select all and build quickfix list
