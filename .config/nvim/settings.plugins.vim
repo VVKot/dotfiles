@@ -1,10 +1,3 @@
-" PLUGIN - preservim/nerdtree. {{{1
-nnoremap <leader>tt :NERDTreeToggle<cr>
-nnoremap <leader>tf :NERDTreeFind<cr>
-let g:NERDTreeWinSize=60
-let NERDTreeQuitOnOpen = 1
-let NERDTreeMinimalUI = 1
-
 " PLUGIN - neoclide/coc.nvim. {{{1
 
 " Make sure I don't OOM.

@@ -6,9 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Additional syntax support
 Plug 'sheerun/vim-polyglot'
 
-" Tree plugin.
-Plug 'preservim/nerdtree'
-" Alternative explorer plugin
+" Explorer that adheres to Vim philosophy.
 Plug 'justinmk/vim-dirvish'
 
 " Fuzzy search for everything.
