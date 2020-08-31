@@ -103,7 +103,7 @@ set rtp+=/usr/local/opt/fzf
 nnoremap <C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg 
-nnoremap <leader>fc :Commands<CR>
+nnoremap <leader>fc :Commits<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>f: :History:<CR>
 nnoremap <leader>f/ :History/<CR>
