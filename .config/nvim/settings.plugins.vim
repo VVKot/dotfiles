@@ -11,8 +11,6 @@ let NERDTreeMinimalUI = 1
 let g:coc_node_args = ['--max-old-space-size=8192']
 
 " Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -42,6 +40,16 @@ nmap <silent> <leader>gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
 nmap <silent> <leader>gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
 nmap <silent> <leader>gr :<C-u>call CocActionAsync('jumpReferences')<CR>
 nmap <silent> <leader>gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
+
+" Map function and class text objects.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
