@@ -16,6 +16,7 @@ Plug 'antoinemadec/coc-fzf'
 
 " Git plugin.
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Autodetect indentation.
 Plug 'tpope/vim-sleuth'
