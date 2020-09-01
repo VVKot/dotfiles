@@ -134,7 +134,7 @@ nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
 " PLUGIN - justinmk/vim-dirvish. {{{1
 
 " Show directories on top
-let g:dirvish_mode = ':sort ,^.*[\/],'
+let g:dirvish_mode = ':sort ,^\v(.*[\/])|\ze,'
 
 " PLUGIN - tpope/vim-fugitive. {{{1
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
