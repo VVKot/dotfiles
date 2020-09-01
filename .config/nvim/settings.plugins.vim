@@ -133,8 +133,14 @@ nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
 
 " PLUGIN - justinmk/vim-dirvish. {{{1
 
-" Show directories on top
+" Show directories on top.
 let g:dirvish_mode = ':sort ,^\v(.*[\/])|\ze,'
+
+" Hijack netrw.
+let g:loaded_netrwPlugin = 1
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 
 " PLUGIN - tpope/vim-fugitive. {{{1
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
