@@ -31,6 +31,9 @@ set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 " Only make search case-sensetive if pattern has uppercase letters.
 set ignorecase smartcase infercase
 
+" Highlight and visualize substitute command.
+set inccommand=nosplit
+
 " Automatically copy indentation from the previous line with an extra level.
 set smartindent
 
