@@ -186,7 +186,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " PLUGIN - editorconfig/editorconfig-vim. {{{1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" PLUGIN - tfnico/vim-gradle. {{{1
+" PLUGIN - sheerun/vim-polyglot. {{{1
 
 " Default to gradle if it is found at the root.
 if findfile('gradlew', system('git rev-parse --show-toplevel')[:-2]) == 'gradlew'

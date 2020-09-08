@@ -30,9 +30,6 @@ Plug 'gregsexton/MatchTag'
 " Editor config support.
 Plug 'editorconfig/editorconfig-vim'
 
-" Gradle compiler support.
-Plug 'tfnico/vim-gradle'
-
 " Zen mode.
 Plug 'junegunn/goyo.vim'
 
