@@ -194,5 +194,9 @@ augroup CheckForGradlew
   autocmd Filetype,BufEnter * if findfile('gradlew', system('git rev-parse --show-toplevel')[:-2]) == 'gradlew' | compiler! gradlew | endif
 augroup END
 
+" PLUGIN - tpope/vim-dispatch. {{{1
+let g:dispatch_compilers = {
+      \ 'go': 'go'}
+
 " PLUGIN - fatih/vim-go. {{{1
 let g:go_gopls_enabled=0
