@@ -12,16 +12,6 @@
         "scss",
         "less"
     ],
-    "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "typescript",
-        "javascriptreact",
-        "typescriptreact",
-        "javascript.jsx",
-        "typescript.tsx",
-        "json",
-        "css"
-    ],
     "go.goplsPath": "~/go/bin/gopls",
     "go.goplsOptions": {
         "usePlaceholders": true,
