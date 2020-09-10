@@ -35,3 +35,6 @@ Plug 'junegunn/goyo.vim'
 
 " Go support.
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Tree for undo history.
+Plug 'mbbill/undotree'
