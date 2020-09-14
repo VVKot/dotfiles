@@ -12,7 +12,6 @@
         "scss",
         "less"
     ],
-    "go.goplsPath": "~/go/bin/gopls",
     "go.goplsOptions": {
         "usePlaceholders": true,
         "completionDocumentation": true,
