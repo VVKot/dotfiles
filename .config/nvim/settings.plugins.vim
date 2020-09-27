@@ -139,8 +139,8 @@ let g:dirvish_mode = ':sort ,^\v(.*[\/])|\ze,'
 " Hijack netrw.
 let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
-command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
-command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
 
 " PLUGIN - tpope/vim-fugitive. {{{1
 nmap <Leader>gg :vertical Git<CR>gg<c-n>
