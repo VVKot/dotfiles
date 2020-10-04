@@ -1,5 +1,6 @@
 let mapleader = ' '
 
+set gdefault
 set relativenumber
 set number
 set incsearch hlsearch
