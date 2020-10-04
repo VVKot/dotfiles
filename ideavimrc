@@ -16,21 +16,22 @@ nnoremap Q @q
 
 nnoremap [n :action VcsShowPrevChangeMarker<cr>
 nnoremap ]n :action VcsShowNextChangeMarker<cr>
+nnoremap g] :action GotoNextError<cr>
+nnoremap g[ :action GotoPreviousError<cr>
 nnoremap gcc :action CommentByLineComment<cr>
 
 nnoremap <leader><leader> :action SearchEverywhere<cr>
 nnoremap <leader>ff :action FindInPath<cr>
+
 nnoremap <leader>ga :action GotoAction<cr>
+nnoremap <leader>aw :action ShowIntentionActions<CR>
+nnoremap <leader>ar :action RenameElement<cr>
+
 nnoremap <leader>gi :action GotoImplementation<cr>
 nnoremap <leader>gs :action GotoSuperMethod<cr>
 nnoremap <leader>gd :action GotoDeclaration<cr>
 nnoremap <leader>gr :action GotoRelated<cr>
 nnoremap <leader>gt :action GotoTest<cr>
-nnoremap g] :action GotoNextError<cr>
-nnoremap g[ :action GotoPreviousError<cr>
-nnoremap <leader>aa ShowIntentionActions<cr>
-nnoremap <leader>ar :action RenameElement<cr>
-
 nnoremap <leader>fu :action FindUsages<cr>
 nnoremap <leader>su :action ShowUsages<cr>
 nnoremap <leader>cv :action ChangeView<cr>
