@@ -17,36 +17,36 @@ set commentary
 nnoremap Y y$
 nnoremap Q @q
 
-nnoremap [n :action VcsShowPrevChangeMarker<cr>
-nnoremap ]n :action VcsShowNextChangeMarker<cr>
-nnoremap g] :action GotoNextError<cr>
-nnoremap g[ :action GotoPreviousError<cr>
-nnoremap gcc :action CommentByLineComment<cr>
-nnoremap <C-o> :action Back<cr>
-nnoremap <C-i> :action Forward<cr>
+nnoremap [n :<C-u>action VcsShowPrevChangeMarker<cr>
+nnoremap ]n :<C-u>action VcsShowNextChangeMarker<cr>
+nnoremap g] :<C-u>action GotoNextError<cr>
+nnoremap g[ :<C-u>action GotoPreviousError<cr>
+nnoremap gcc :<C-u>action CommentByLineComment<cr>
+nnoremap <C-o> :<C-u>action Back<cr>
+nnoremap <C-i> :<C-u>action Forward<cr>
 
-nnoremap <leader><leader> :action GotoFile<cr>
-nnoremap <leader>ff :action FindInPath<cr>
-nnoremap - :action SelectInProjectView<CR>
+nnoremap <leader><leader> :<C-u>action GotoFile<cr>
+nnoremap <leader>ff :<C-u>action FindInPath<cr>
+nnoremap - :<C-u>action SelectInProjectView<CR>
 
-nnoremap <leader>ga :action GotoAction<cr>
-nnoremap <leader>aw :action ShowIntentionActions<CR>
-nnoremap <leader>ar :action RenameElement<cr>
+nnoremap <leader>ga :<C-u>action GotoAction<cr>
+nnoremap <leader>aw :<C-u>action ShowIntentionActions<CR>
+nnoremap <leader>ar :<C-u>action RenameElement<cr>
 
-nnoremap <leader>gi :action GotoImplementation<cr>
-nnoremap <leader>gs :action GotoSuperMethod<cr>
-nnoremap <leader>gd :action GotoDeclaration<cr>
-nnoremap <leader>gr :action GotoRelated<cr>
-nnoremap <leader>gt :action GotoTest<cr>
-nnoremap <leader>fu :action FindUsages<cr>
-nnoremap <leader>su :action ShowUsages<cr>
-nnoremap <leader>cv :action ChangeView<cr>
-nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
-nnoremap <leader>br :action ViewBreakpoints<cr>
-nnoremap <leader>rf :action RenameFile<cr>
-nnoremap <leader>dd :action Debug<cr>
-nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
-nnoremap <leader>rr :action Run<cr>
-nnoremap <leader>rc :action ChooseRunConfiguration<cr>
-nnoremap <leader>gb :action Annotate<cr>
+nnoremap <leader>gi :<C-u>action GotoImplementation<cr>
+nnoremap <leader>gs :<C-u>action GotoSuperMethod<cr>
+nnoremap <leader>gd :<C-u>action GotoDeclaration<cr>
+nnoremap <leader>gr :<C-u>action GotoRelated<cr>
+nnoremap <leader>gt :<C-u>action GotoTest<cr>
+nnoremap <leader>fu :<C-u>action FindUsages<cr>
+nnoremap <leader>su :<C-u>action ShowUsages<cr>
+nnoremap <leader>cv :<C-u>action ChangeView<cr>
+nnoremap <leader>bb :<C-u>action ToggleLineBreakpoint<cr>
+nnoremap <leader>br :<C-u>action ViewBreakpoints<cr>
+nnoremap <leader>rf :<C-u>action RenameFile<cr>
+nnoremap <leader>dd :<C-u>action Debug<cr>
+nnoremap <leader>dc :<C-u>action ChooseDebugConfiguration<cr>
+nnoremap <leader>rr :<C-u>action Run<cr>
+nnoremap <leader>rc :<C-u>action ChooseRunConfiguration<cr>
+nnoremap <leader>gb :<C-u>action Annotate<cr>
 
