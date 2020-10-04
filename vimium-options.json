@@ -4,7 +4,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "unmap r\nunmap t\nunmap x\n\nunmap T\nmap <C-t> Vomnibar.activateTabSelection\n\nunmap <a-p>\nmap gp togglePinTab\n\nunmap <a-m>\nmap gm toggleMuteTab",
+  "keyMappings": "unmap r\nunmap t\nunmap x\n\nunmap T\nmap <C-t> Vomnibar.activateTabSelection\n\nunmap <a-p>\nmap gp togglePinTab\n\nunmap <a-m>\nmap gm toggleMuteTab\n\nmap <Space><Space> Vomnibar.activateInNewTab",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
