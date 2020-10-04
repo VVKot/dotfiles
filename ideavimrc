@@ -27,7 +27,8 @@ nnoremap gcc :<C-u>action CommentByLineComment<cr>
 nnoremap <C-o> :<C-u>action Back<cr>
 nnoremap <C-i> :<C-u>action Forward<cr>
 
-nnoremap <leader><leader> :<C-u>action GotoFile<cr>
+nnoremap <leader><leader> :<C-u>action GotoClass<cr>
+nnoremap <C-t> :<C-u>action GotoFile<cr>
 nnoremap <leader>ff :<C-u>action FindInPath<cr>
 nnoremap - :<C-u>action SelectInProjectView<CR>
 
