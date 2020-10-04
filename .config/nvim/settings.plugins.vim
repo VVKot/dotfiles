@@ -33,6 +33,7 @@ nmap <silent> <leader>gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
 nmap <silent> <leader>gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
 nmap <silent> <leader>gr :<C-u>call CocActionAsync('jumpReferences')<CR>
 nmap <silent> <leader>gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
+nmap <silent> <leader>ga  <Plug>(coc-codeaction)
 
 " Map function and class text objects.
 xmap if <Plug>(coc-funcobj-i)
