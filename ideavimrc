@@ -25,6 +25,7 @@ nnoremap gcc :action CommentByLineComment<cr>
 
 nnoremap <leader><leader> :action SearchEverywhere<cr>
 nnoremap <leader>ff :action FindInPath<cr>
+nnoremap - :action SelectInProjectView<CR>
 
 nnoremap <leader>ga :action GotoAction<cr>
 nnoremap <leader>aw :action ShowIntentionActions<CR>
