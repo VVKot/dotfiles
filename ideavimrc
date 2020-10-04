@@ -23,7 +23,7 @@ nnoremap g] :action GotoNextError<cr>
 nnoremap g[ :action GotoPreviousError<cr>
 nnoremap gcc :action CommentByLineComment<cr>
 
-nnoremap <leader><leader> :action SearchEverywhere<cr>
+nnoremap <leader><leader> :action GotoFile<cr>
 nnoremap <leader>ff :action FindInPath<cr>
 nnoremap - :action SelectInProjectView<CR>
 
