@@ -37,6 +37,8 @@ nnoremap <leader>ga :<C-u>action GotoAction<cr>
 nnoremap <leader>aw :<C-u>action ShowIntentionActions<CR>
 nnoremap <leader>ar :<C-u>action RenameElement<cr>
 
+nnoremap <C-l> :noh<cr>
+
 nnoremap <leader>gi :<C-u>action GotoImplementation<cr>
 nnoremap <leader>gs :<C-u>action GotoSuperMethod<cr>
 nnoremap <leader>gd :<C-u>action GotoDeclaration<cr>
