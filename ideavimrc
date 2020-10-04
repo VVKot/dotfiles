@@ -26,8 +26,8 @@ nnoremap <leader>gs :action GotoSuperMethod<cr>
 nnoremap <leader>gd :action GotoDeclaration<cr>
 nnoremap <leader>gr :action GotoRelated<cr>
 nnoremap <leader>gt :action GotoTest<cr>
-nnoremap <leader>ge :action GotoNextError<cr>
-nnoremap <leader>gE :action GotoPreviousError<cr>
+nnoremap g] :action GotoNextError<cr>
+nnoremap g[ :action GotoPreviousError<cr>
 nnoremap <leader>aa ShowIntentionActions<cr>
 nnoremap <leader>ar :action RenameElement<cr>
 
