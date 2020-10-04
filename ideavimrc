@@ -21,6 +21,8 @@ nnoremap [n :<C-u>action VcsShowPrevChangeMarker<cr>
 nnoremap ]n :<C-u>action VcsShowNextChangeMarker<cr>
 nnoremap g] :<C-u>action GotoNextError<cr>
 nnoremap g[ :<C-u>action GotoPreviousError<cr>
+nnoremap g; :<C-u>action JumpToLastChange<cr>
+nnoremap g, :<C-u>action JumpToNextChange<cr>
 nnoremap gcc :<C-u>action CommentByLineComment<cr>
 nnoremap <C-o> :<C-u>action Back<cr>
 nnoremap <C-i> :<C-u>action Forward<cr>
