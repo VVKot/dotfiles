@@ -42,3 +42,6 @@ Plug 'mbbill/undotree'
 " Session management.
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+
+" Syntax highlighting.
+Plug 'nvim-treesitter/nvim-treesitter'
