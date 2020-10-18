@@ -5,7 +5,7 @@
     "explorer.confirmDelete": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/Cellar/neovim/0.4.4/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/mini.init.vim",
     "java.semanticHighlighting.enabled": true,
 }
