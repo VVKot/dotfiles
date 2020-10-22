@@ -1,3 +1,4 @@
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -7,6 +8,7 @@ tap "homebrew/services"
 
 brew "bash"
 brew "bat"
+brew "cmake"
 brew "curl"
 brew "fzf"
 brew "gdub"
