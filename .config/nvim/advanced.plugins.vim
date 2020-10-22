@@ -3,8 +3,6 @@ Plug 'tpope/vim-eunuch'
 
 " Autocompletion engine utilizing LSP from VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Additional syntax support
-Plug 'sheerun/vim-polyglot'
 
 " Explorer that adheres to Vim philosophy.
 Plug 'justinmk/vim-dirvish'
@@ -14,7 +12,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf'
 
-" Git plugin.
+" Git plugins.
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
