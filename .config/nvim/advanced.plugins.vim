@@ -43,3 +43,6 @@ Plug 'dhruvasagar/vim-prosession'
 
 " Syntax highlighting.
 Plug 'nvim-treesitter/nvim-treesitter'
+
+" Gradle compiler support.
+Plug 'tfnico/vim-gradle'
