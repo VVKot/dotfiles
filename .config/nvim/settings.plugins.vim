@@ -124,7 +124,9 @@ let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
 
 " Show all diagnostics.
-nnoremap <silent> <leader>ca :<C-u>CocFzfList diagnostics<cr>
+nnoremap <silent> <leader>cg :<C-u>CocFzfList diagnostics<cr>
+" Show all actions.
+nnoremap <silent> <leader>ca :<C-u>CocFzfList actions<cr>
 " Show commands.
 nnoremap <silent> <leader>cc :<C-u>CocFzfList commands<cr>
 " Find symbol of current document.
@@ -187,7 +189,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " PLUGIN - editorconfig/editorconfig-vim. {{{1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" PLUGIN - sheerun/vim-polyglot. {{{1
+" PLUGIN - tfnico/vim-gradle. {{{1
 
 " Default to gradle if it is found at the root.
 augroup CheckForGradlew

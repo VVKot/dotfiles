@@ -10,7 +10,7 @@ Plug 'justinmk/vim-dirvish'
 " Fuzzy search for everything.
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
 " Git plugins.
 Plug 'tpope/vim-fugitive'
@@ -43,3 +43,6 @@ Plug 'dhruvasagar/vim-prosession'
 
 " Syntax highlighting.
 Plug 'nvim-treesitter/nvim-treesitter'
+
+" Gradle compiler support.
+Plug 'tfnico/vim-gradle'
