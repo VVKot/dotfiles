@@ -10,3 +10,5 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " Simplifies working with variants of the word.
 Plug 'tpope/vim-abolish'
+" Exchange two motions.
+Plug 'tommcdo/vim-exchange'
