@@ -146,7 +146,7 @@ command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
 
 " PLUGIN - tpope/vim-fugitive. {{{1
-nmap <Leader>gg :vertical Git<CR>gg<c-n>
+nmap <Leader>gg :tab Git<CR>gg<c-n>
 nnoremap <Leader>gs :Gvdiffsplit<CR>
 
 " PLUGIN - junegunn/goyo. {{{1
