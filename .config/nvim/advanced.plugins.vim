@@ -10,7 +10,7 @@ Plug 'justinmk/vim-dirvish'
 " Fuzzy search for everything.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
 " Git plugins.
 Plug 'tpope/vim-fugitive'
