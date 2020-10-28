@@ -4,6 +4,7 @@ sync:
 	mkdir -p ~/.config/bat
 	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.config/nvim
+	mkdir -p ~/.config/nvim/lua
 	mkdir -p ~/.gradle
 	mkdir -p ~/.iterm
 
@@ -14,6 +15,7 @@ sync:
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 	[ -f ~/.config/nvim/common.vim ] || ln -s $(PWD)/.config/nvim/common.vim ~/.config/nvim/common.vim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/.config/nvim/init.vim ~/.config/nvim/init.vim
+	[ -f ~/.config/nvim/lua/init.lua ] || ln -s $(PWD)/.config/nvim/lua/init.lua ~/.config/nvim/lua/init.lua
 	[ -f ~/.config/nvim/install.vimplug.vim ] || ln -s $(PWD)/.config/nvim/install.vimplug.vim ~/.config/nvim/install.vimplug.vim
 	[ -f ~/.config/nvim/mini.init.vim ] || ln -s $(PWD)/.config/nvim/mini.init.vim ~/.config/nvim/mini.init.vim
 	[ -f ~/.config/nvim/settings.plugins.vim ] || ln -s $(PWD)/.config/nvim/settings.plugins.vim ~/.config/nvim/settings.plugins.vim

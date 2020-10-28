@@ -202,16 +202,3 @@ let g:go_gopls_enabled=0
 " PLUGIN - dhruvasagar/vim-prosession. {{{1
 let g:prosession_dir = '~/.config/nvim/session/'
 
-" PLUGIN - nvim-treesitter/nvim-treesitter. {{{1
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  highlight = {
-    enable = true,
-    use_languagetree = true,
-  },
-  indent = {
-    enable = true,
-  },
-}
-EOF
