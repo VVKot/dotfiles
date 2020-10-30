@@ -95,6 +95,9 @@ set foldmethod=marker
 set grepprg=rg\ -S\ --vimgrep
 set grepformat^=%f:%l:%c:%m
 
+" Reload config shortcut.
+nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
+
 " COLOR SETTINGS {{{1
 set background=light
 
