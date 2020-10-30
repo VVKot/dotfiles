@@ -45,6 +45,27 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
+" STATUSLINE SETTINGS. {{{2
+set statusline=
+set statusline+=%f
+set statusline+=%r
+set statusline+=%m
+set statusline+=%=
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline+=\ 
+set statusline+=%y
+set statusline+=\ 
+set statusline+=%{strlen(&fenc)?&fenc:'none'}
+set statusline+=\ 
+set statusline+=\|
+set statusline+=\ 
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
+set statusline+=\ 
+set statusline+=:
+set statusline+=%c
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
