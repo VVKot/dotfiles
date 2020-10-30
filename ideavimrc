@@ -29,7 +29,7 @@ nnoremap <C-o> :<C-u>action Back<CR>
 nnoremap <C-i> :<C-u>action Forward<CR>
 
 nnoremap <leader><leader> :<C-u>action GotoClass<CR>
-nnoremap <C-t> :<C-u>action GotoFile<CR>
+nnoremap <leader><C-t> :<C-u>action GotoFile<CR>
 nnoremap <leader>ff :<C-u>action FindInPath<CR>
 nnoremap - :<C-u>action SelectInProjectView<CR>
 

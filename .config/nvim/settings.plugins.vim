@@ -94,7 +94,7 @@ nnoremap <leader>jt :JestCurrentTest<CR>
 
 " PLUGIN - junegunn/fzf.vim. {{{1
 set rtp+=/usr/local/opt/fzf
-nnoremap <C-t> :Files<CR>
+nnoremap <leader><C-t> :Files<CR>
 nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff :Rg 
 nnoremap <leader>fc :Commits<CR>
