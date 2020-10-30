@@ -118,10 +118,6 @@ set statusline=
 set statusline+=%f
 set statusline+=%r
 set statusline+=%m
-set statusline+=%=
-set statusline+=%y
-set statusline+=\ 
-set statusline+=%{strlen(&fenc)?&fenc:'none'}
 set statusline+=\ 
 set statusline+=\|
 set statusline+=\ 
@@ -131,4 +127,8 @@ set statusline+=%L
 set statusline+=\ 
 set statusline+=:
 set statusline+=%c
+set statusline+=%=
+set statusline+=%y
+set statusline+=\ 
+set statusline+=%{strlen(&fenc)?&fenc:'none'}
 
