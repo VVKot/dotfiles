@@ -35,11 +35,11 @@ inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(
 inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " GoTo code navigation.
-nmap <silent> <leader>gd :<C-u>call CocActionAsync('jumpDefinition')<CR>
-nmap <silent> <leader>gi :<C-u>call CocActionAsync('jumpImplementation')<CR>
-nmap <silent> <leader>gr :<C-u>call CocActionAsync('jumpReferences')<CR>
-nmap <silent> <leader>gy :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>
-nmap <silent> <leader>ga  <Plug>(coc-codeaction)
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>ga <Plug>(coc-codeaction)
 
 " STATUSLINE SETTINGS. {{{2
 set statusline=
