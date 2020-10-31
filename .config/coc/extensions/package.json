@@ -9,7 +9,6 @@
     "coc-java": ">=1.5.0",
     "coc-jest": ">=1.1.1",
     "coc-json": ">=1.3.2",
-    "coc-lua": ">=0.2.1",
     "coc-pairs": ">=1.2.21",
     "coc-react-refactor": ">=0.3.0",
     "coc-sh": ">=0.6.0",
