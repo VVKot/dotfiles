@@ -15,6 +15,7 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 " Git plugins.
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'rhysd/git-messenger.vim'
 
 " Autodetect indentation.
 Plug 'tpope/vim-sleuth'
