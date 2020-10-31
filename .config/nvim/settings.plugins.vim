@@ -124,15 +124,15 @@ let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
 
 " Show all diagnostics.
-nnoremap <silent> <leader>cg :<C-u>CocFzfList diagnostics<cr>
+nnoremap <silent> <leader>lg :<C-u>CocFzfList diagnostics<cr>
 " Show all actions.
-nnoremap <silent> <leader>ca :<C-u>CocFzfList actions<cr>
+nnoremap <silent> <leader>la :<C-u>CocFzfList actions<cr>
 " Show commands.
-nnoremap <silent> <leader>cc :<C-u>CocFzfList commands<cr>
+nnoremap <silent> <leader>lc :<C-u>CocFzfList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
+nnoremap <silent> <leader>lo  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <leader>cs  :<C-u>CocFzfList symbols<cr>
+nnoremap <silent> <leader>ls  :<C-u>CocFzfList symbols<cr>
 
 " PLUGIN - justinmk/vim-dirvish. {{{1
 
