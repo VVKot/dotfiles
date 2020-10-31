@@ -47,9 +47,17 @@ nmap <silent> <leader>ga <Plug>(coc-codeaction)
 " STATUSLINE SETTINGS. {{{2
 source ~/.config/nvim/left.status.vim
 set statusline+=%=
-set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline+=%{LspStatus()}
 set statusline+=\ 
 source ~/.config/nvim/right.status.vim
+
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return coc#status()
+endfunction
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

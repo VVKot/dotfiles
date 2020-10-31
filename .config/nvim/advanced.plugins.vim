@@ -46,5 +46,12 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
+" Neovim LSP.
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'nvim-lua/lsp-status.nvim'
+Plug 'nvim-treesitter/completion-treesitter'
+
 " Gradle compiler support.
 Plug 'tfnico/vim-gradle'
