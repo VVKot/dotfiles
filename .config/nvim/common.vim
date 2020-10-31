@@ -113,22 +113,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 " STATUSLINE SETTINGS {{{1
-set laststatus=2
-set statusline=
-set statusline+=%f
-set statusline+=%r
-set statusline+=%m
-set statusline+=\ 
-set statusline+=\|
-set statusline+=\ 
-set statusline+=%l
-set statusline+=/
-set statusline+=%L
-set statusline+=\ 
-set statusline+=:
-set statusline+=%c
+source ~/.config/nvim/left.status.vim
 set statusline+=%=
-set statusline+=%y
-set statusline+=\ 
-set statusline+=%{strlen(&fenc)?&fenc:'none'}
+source ~/.config/nvim/right.status.vim
 

@@ -19,6 +19,8 @@ sync:
 	[ -f ~/.config/nvim/install.vimplug.vim ] || ln -s $(PWD)/.config/nvim/install.vimplug.vim ~/.config/nvim/install.vimplug.vim
 	[ -f ~/.config/nvim/mini.init.vim ] || ln -s $(PWD)/.config/nvim/mini.init.vim ~/.config/nvim/mini.init.vim
 	[ -f ~/.config/nvim/settings.plugins.vim ] || ln -s $(PWD)/.config/nvim/settings.plugins.vim ~/.config/nvim/settings.plugins.vim
+	[ -f ~/.config/nvim/left.status.vim ] || ln -s $(PWD)/.config/nvim/left.status.vim ~/.config/nvim/left.status.vim
+	[ -f ~/.config/nvim/right.status.vim ] || ln -s $(PWD)/.config/nvim/right.status.vim ~/.config/nvim/right.status.vim
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
