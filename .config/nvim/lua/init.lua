@@ -77,7 +77,7 @@ lsp.sumneko_lua.setup{
   },
 }
 
-local servers = { 'vimls', 'dockerls', 'bashls' }
+local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls' }
 
 for _, server in ipairs(servers) do
   lsp_status.config({
