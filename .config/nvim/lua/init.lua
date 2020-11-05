@@ -83,10 +83,6 @@ lsp.gopls.setup{
   settings = {
     gopls = {
       usePlaceholders = true,
-      completionDocumentation = true,
-      completeUnimported = true,
-      matcher = "fuzzy",
-      symbolMatcher = "fuzzy",
       analyses = {
         unusedparams = true,
       },
