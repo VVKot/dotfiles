@@ -75,3 +75,7 @@ alias loadnvm='[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.s
 
 # for pnpm completion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# go
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOBIN

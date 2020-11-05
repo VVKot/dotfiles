@@ -77,6 +77,24 @@ lsp.sumneko_lua.setup{
   },
 }
 
+lsp.gopls.setup{
+  on_attach = custom_attach,
+  capabilities = lsp_status.capabilities,
+  settings = {
+    gopls = {
+      usePlaceholders = true,
+      completionDocumentation = true,
+      completeUnimported = true,
+      matcher = "fuzzy",
+      symbolMatcher = "fuzzy",
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    }
+  },
+}
+
 local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls' }
 
 for _, server in ipairs(servers) do
