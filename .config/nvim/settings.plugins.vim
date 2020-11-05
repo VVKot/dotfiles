@@ -220,6 +220,7 @@ augroup END
 
 " PLUGIN - fatih/vim-go. {{{1
 let g:go_gopls_enabled=0
+let g:go_def_mapping_enabled=0
 " PLUGIN - dhruvasagar/vim-prosession. {{{1
 let g:prosession_dir = '~/.config/nvim/session/'
 
