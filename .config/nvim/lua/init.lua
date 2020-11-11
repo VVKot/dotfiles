@@ -3,7 +3,18 @@ local lsp = require("nvim_lsp")
 local completion = require("completion")
 local diagnostic = require("diagnostic")
 local lsp_status = require("lsp-status")
+
+-- LSP status. {{{2
 lsp_status.register_progress()
+lsp_status.config({
+  status_symbol = '',
+  indicator_errors = '❌',
+  indicator_warnings = '⚠️ ',
+  indicator_info = 'ℹ️',
+  indicator_hint = '💡',
+  indicator_ok = '✔️',
+  kind_labels = vim.g.completion_customize_lsp_label,
+})
 
 -- Helper functions. {{{2
 local map_key = function(bufnr, mode, key, command, opts)
@@ -94,15 +105,6 @@ lsp.gopls.setup{
 local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls' }
 
 for _, server in ipairs(servers) do
-  lsp_status.config({
-    status_symbol = '',
-    indicator_errors = '❌',
-    indicator_warnings = '⚠️ ',
-    indicator_info = 'ℹ️',
-    indicator_hint = '💡',
-    indicator_ok = '✔️',
-    kind_labels = vim.g.completion_customize_lsp_label,
-  })
   lsp[server].setup {
     on_attach = custom_attach,
     capabilities = lsp_status.capabilities,
