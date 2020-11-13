@@ -1,7 +1,6 @@
 -- LSP. {{{1
 local lsp = require("nvim_lsp")
 local completion = require("completion")
-local diagnostic = require("diagnostic")
 local lsp_status = require("lsp-status")
 
 -- LSP status. {{{2
@@ -51,9 +50,9 @@ local setup_key_mappings = function(bufnr)
 
   nnoremap(bufnr, '<Leader>lo', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
   nnoremap(bufnr, '<Leader>ls', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-  nnoremap(bufnr, '<Leader>lg', '<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>')
-  nnoremap(bufnr, ']g', '<cmd>NextDiagnosticCycle<CR>')
-  nnoremap(bufnr, '[g', '<cmd>PrevDiagnosticCycle<CR>')
+  nnoremap(bufnr, '<Leader>lg', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+  nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+  nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
   imap(bufnr, '<C-a>', '<Plug>(completion_trigger)')
   inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
@@ -65,7 +64,6 @@ end
 local custom_attach = function(client, bufnr)
   print("LSP started.")
   completion.on_attach()
-  diagnostic.on_attach()
 
   lsp_status.on_attach(client)
   vim.cmd [[augroup update_lsp_status_function]]
