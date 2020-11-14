@@ -4,6 +4,8 @@
     "coc.preferences.bracketEnterImprove": true,
     "jest.watchman": true,
     "eslint.autoFixOnSave": true,
+    "eslint.nodePath": "node_modules/.pnpm/eslint@7.3.0/node_modules",
+    "tslint.packageManager": "pnpm",
     "tslint.autoFixOnSave": true,
     "stylelintplus.autoFixOnSave": true,
     "stylelintplus.filetypes": [
