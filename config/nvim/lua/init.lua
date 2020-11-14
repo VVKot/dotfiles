@@ -193,5 +193,3 @@ settings.lua_tree_bindings = {
   prev_git_item = dummy_binding,
   next_git_item = dummy_binding,
 }
-nnoremap(current_buffer, '<Leader>tt', ':LuaTreeToggle<CR>')
-nnoremap(current_buffer, '<Leader>tf', ':LuaTreeFindFile<CR>')

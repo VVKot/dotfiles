@@ -156,6 +156,13 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
 
+" PLUGIN - kyazdani42/nvim-tree.lua {{{1
+nnoremap <Leader>tt :LuaTreeToggle<CR>
+nnoremap <Leader>tf :LuaTreeFindFile<CR>
+
+" PLUGIN - mbbill/undotree {{{1
+nnoremap <Leader>tu :UndotreeToggle<CR>
+
 " PLUGIN - tpope/vim-fugitive. {{{1
 nmap <Leader>gg :tab Git<CR>gg<c-n>
 nnoremap <Leader>gs :Gvdiffsplit<CR>
