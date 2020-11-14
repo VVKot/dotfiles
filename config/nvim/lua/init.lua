@@ -198,6 +198,7 @@ local settings = vim.g
 local dummy_binding = "<Leader>000" -- need to fix upstream
 
 settings.lua_tree_width = 60
+settings.lua_tree_quit_on_open = 1
 settings.lua_tree_show_icons = {
   git = 0,
   folders = 1,
