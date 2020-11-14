@@ -6,6 +6,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Explorer that adheres to Vim philosophy.
 Plug 'justinmk/vim-dirvish'
+" Readonly tree view.
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Fuzzy search for everything.
 Plug '/usr/local/opt/fzf'
@@ -59,3 +61,4 @@ Plug 'tfnico/vim-gradle'
 " Icons.
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+
