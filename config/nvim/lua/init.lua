@@ -190,6 +190,7 @@ telescope.setup {
   defaults = {
     sorting_strategy = "ascending",
     prompt_position = "top",
+    prompt_prefix = "🔭",
     mappings = {
       i = telescope_mappings,
       n = telescope_mappings,
