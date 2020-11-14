@@ -43,6 +43,7 @@ nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>ga <Plug>(coc-codeaction)
+nmap <silent> <M-Enter> <Plug>(coc-codeaction)
 
 " STATUSLINE SETTINGS. {{{2
 source ~/.config/nvim/left.status.vim
