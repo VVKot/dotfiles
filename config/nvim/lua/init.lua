@@ -276,12 +276,6 @@ require('el').setup {
       },
       sections.split,
       '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
-      sections.collapse_builtin {
-        '[',
-        builtin.help_list,
-        builtin.readonly_list,
-        ']',
-      },
       builtin.filetype,
     }
   end
