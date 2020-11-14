@@ -246,10 +246,7 @@ local lsp_segment = subscribe.buf_autocmd("el_lsp_segment", "CursorHold", functi
   end
   local status = lsp_status.status()
   -- strip the current function
-  if status and status[0] == '(' then
-    return string.match(status, "%)(.*)")
-  end
-  return status
+  return string.gsub(status, "%(.*%) ", "")
 end)
 
 local file_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
