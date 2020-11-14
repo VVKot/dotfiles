@@ -65,6 +65,8 @@ local setup_key_mappings = function(bufnr)
   nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 
   -- telescope
+  nnoremap(bufnr, '<Leader><Leader>', '<cmd>lua require"telescope.builtin".git_files{}<CR>')
+  nnoremap(bufnr, '<Leader><C-t>', '<cmd>lua require"telescope.builtin".find_files{}<CR>')
   nnoremap(bufnr, '<Leader>gR', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
 end
 
