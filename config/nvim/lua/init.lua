@@ -164,7 +164,6 @@ require'nvim-treesitter.configs'.setup {
 
 -- Tree. {{{1
 local settings = vim.g
-local current_buffer = 0
 local dummy_binding = "<Leader>000" -- need to fix upstream
 
 settings.lua_tree_width = 60
