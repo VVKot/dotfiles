@@ -67,6 +67,7 @@ local setup_key_mappings = function(bufnr)
   -- telescope
   nnoremap(bufnr, '<Leader><Leader>', '<cmd>lua require"telescope.builtin".git_files{}<CR>')
   nnoremap(bufnr, '<Leader><C-t>', '<cmd>lua require"telescope.builtin".find_files{}<CR>')
+  nnoremap(bufnr, '<Leader>gA', '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
   nnoremap(bufnr, '<Leader>gR', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
   nnoremap(bufnr, '<Leader>lO', '<cmd>lua require"telescope.builtin".lsp_document_symbols{}<CR>')
   nnoremap(bufnr, '<Leader>lS', '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>')

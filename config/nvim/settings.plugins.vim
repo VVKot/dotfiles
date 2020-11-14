@@ -133,7 +133,7 @@ nnoremap <Leader>lq :Telescope quickfix<CR>
 nnoremap <Leader>ll :Telescope loclist<CR>
 nnoremap <Leader>fF :Telescope live_grep<CR>
 nnoremap <Leader>fb :Telescope buffers<CR>
-nnoremap <Leader>fc :Telescope commands<CR>
+nnoremap <Leader>fm :Telescope marks<CR>
 nnoremap <Leader>f: :Telescope command_history<CR>
 
 " PLUGIN - antoinemadec/coc-fzf. {{{1
