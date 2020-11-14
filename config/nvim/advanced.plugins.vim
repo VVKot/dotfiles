@@ -14,6 +14,11 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
+" Lua-based fuzzy search.
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Git plugins.
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'

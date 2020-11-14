@@ -37,6 +37,7 @@ end
 
 -- Key maps. {{{2
 local setup_key_mappings = function(bufnr)
+  -- references
   nnoremap(bufnr, '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
   nnoremap(bufnr, '<Leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
   nnoremap(bufnr, '<Leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
@@ -44,21 +45,27 @@ local setup_key_mappings = function(bufnr)
   nnoremap(bufnr, '<Leader>gy', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
   nnoremap(bufnr, '<Leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 
+  -- actions
   nnoremap(bufnr, '<M-Enter>', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   nnoremap(bufnr, '<Leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   nnoremap(bufnr, '<Leader>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
   nnoremap(bufnr, '<Leader>ar', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
+  -- lists
   nnoremap(bufnr, '<Leader>lo', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
   nnoremap(bufnr, '<Leader>ls', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
   nnoremap(bufnr, '<Leader>lg', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
   nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
   nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
+  -- completion
   imap(bufnr, '<C-Space>', '<Plug>(completion_trigger)')
   inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+
+  -- telescope
+  nnoremap(bufnr, '<Leader>gR', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
 end
 
 -- Attach handler. {{{2

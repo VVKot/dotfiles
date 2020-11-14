@@ -106,9 +106,7 @@ nnoremap <leader>jt :JestCurrentTest<CR>
 
 " PLUGIN - junegunn/fzf.vim. {{{1
 set rtp+=/usr/local/opt/fzf
-nnoremap <leader><C-t> :Files<CR>
-nnoremap <leader><leader> :GFiles<CR>
-nnoremap <leader>ff :Rg 
+nnoremap <leader>fF :Rg 
 nnoremap <leader>fc :Commits<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>f: :History:<CR>
@@ -129,6 +127,13 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+" PLUGIN - nvim-telescope/telescope.nvim. {{{1
+nnoremap <Leader><Leader> <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <Leader><C-t> <cmd>lua require'telescope.builtin'.find_files{}<CR>
+nnoremap <Leader>lq <cmd>lua require'telescope.builtin'.quickfix{}<CR>
+nnoremap <Leader>ll <cmd>lua require'telescope.builtin'.loclist{}<CR>
+nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 
 " PLUGIN - antoinemadec/coc-fzf. {{{1
 " Reset to defaults
