@@ -54,7 +54,7 @@ local setup_key_mappings = function(bufnr)
   nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
   nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
-  imap(bufnr, '<C-a>', '<Plug>(completion_trigger)')
+  imap(bufnr, '<C-Space>', '<Plug>(completion_trigger)')
   inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')

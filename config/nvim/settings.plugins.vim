@@ -18,8 +18,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use `<C-a>` to trigger completion.
-inoremap <silent><expr> <C-a> coc#refresh()
+" Use `<C-Space>` to trigger completion.
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
