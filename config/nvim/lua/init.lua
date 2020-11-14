@@ -77,12 +77,7 @@ end
 local custom_attach = function(client, bufnr)
   print("LSP started.")
   completion.on_attach()
-
   lsp_status.on_attach(client)
-  vim.cmd [[augroup update_lsp_status_function]]
-  vim.cmd [[  autocmd CursorHold,BufEnter <buffer> lua require('lsp-status').update_current_function()]]
-  vim.cmd [[augroup END]]
-
   setup_key_mappings(bufnr)
   print("LSP attached.")
 end
@@ -227,4 +222,70 @@ settings.lua_tree_bindings = {
   paste = dummy_binding,
   prev_git_item = dummy_binding,
   next_git_item = dummy_binding,
+}
+
+-- Statusline. {{{1
+require('el').reset_windows()
+
+local builtin = require('el.builtin')
+local extensions = require('el.extensions')
+local sections = require('el.sections')
+local subscribe = require('el.subscribe')
+local lsp_statusline = require('el.plugins.lsp_status')
+
+local maybe_coc_status = subscribe.buf_autocmd("el_coc_status", "BufRead,CursorHold", function(_, buffer)
+  if buffer.lsp then
+    return ''
+  end
+  return vim.fn['coc#status']()
+end)
+
+local lsp_segment = subscribe.buf_autocmd("el_lsp_segment", "CursorHold", function(_, buffer)
+  if buffer.lsp == false then
+    return ''
+  end
+  local status = lsp_status.status()
+  -- strip the current function
+  if status and status[0] == '(' then
+    return string.match(status, "%)(.*)")
+  end
+  return status
+end)
+
+local file_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
+  local icon = extensions.file_icon(_, bufnr)
+  if icon then
+    return icon .. ' '
+  end
+
+  return ''
+end)
+
+require('el').setup {
+  generator = function(_, _)
+    return {
+      maybe_coc_status,
+      lsp_segment,
+      lsp_statusline.server_progress,
+      sections.split,
+      file_icon,
+      sections.maximum_width(
+        builtin.responsive_file(140, 90),
+        0.30
+      ),
+      sections.collapse_builtin {
+        ' ',
+        builtin.modified_flag
+      },
+      sections.split,
+      '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
+      sections.collapse_builtin {
+        '[',
+        builtin.help_list,
+        builtin.readonly_list,
+        ']',
+      },
+      builtin.filetype,
+    }
+  end
 }

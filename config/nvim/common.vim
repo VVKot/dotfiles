@@ -111,9 +111,3 @@ highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
-
-" STATUSLINE SETTINGS {{{1
-source ~/.config/nvim/left.status.vim
-set statusline+=%=
-source ~/.config/nvim/right.status.vim
-

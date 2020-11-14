@@ -67,3 +67,5 @@ Plug 'tfnico/vim-gradle'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" Statusline.
+Plug 'tjdevries/express_line.nvim'
