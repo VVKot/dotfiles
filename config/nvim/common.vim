@@ -92,7 +92,7 @@ set signcolumn=no
 set foldmethod=marker
 
 " RG setup.
-set grepprg=rg\ -S\ --vimgrep
+set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
 set grepformat^=%f:%l:%c:%m
 
 " Reload config shortcut.
