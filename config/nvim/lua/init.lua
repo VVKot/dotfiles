@@ -1,5 +1,5 @@
 -- LSP. {{{1
-local lsp = require("nvim_lsp")
+local lsp = require("lspconfig")
 local completion = require("completion")
 local lsp_status = require("lsp-status")
 
