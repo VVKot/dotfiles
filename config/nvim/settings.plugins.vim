@@ -149,11 +149,6 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
 
-augroup dirvish_config
-  autocmd!
-  autocmd FileType dirvish set statusline=%F
-augroup END
-
 " PLUGIN - kyazdani42/nvim-tree.lua {{{1
 nnoremap <Leader>tt :LuaTreeToggle<CR>
 nnoremap <Leader>tf :LuaTreeFindFile<CR>
