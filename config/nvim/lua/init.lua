@@ -127,7 +127,7 @@ local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
 
 local maybe_coc_status = subscribe.buf_autocmd("el_coc_status", "BufRead,CursorHold", function(_, buffer)
-  if buffer.lsp then
+  if buffer.lsp or not vim.g.did_coc_loaded then
     return ''
   end
   return vim.fn['coc#status']()
