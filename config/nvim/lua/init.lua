@@ -7,6 +7,7 @@ local lsp_status = require("lsp-status")
 lsp_status.register_progress()
 lsp_status.config({
   status_symbol = '',
+  current_function = false,
   indicator_errors = '❌',
   indicator_warnings = '⚠️ ',
   indicator_info = 'ℹ️',
@@ -133,15 +134,6 @@ local maybe_coc_status = subscribe.buf_autocmd("el_coc_status", "BufRead,CursorH
   return vim.fn['coc#status']()
 end)
 
-local lsp_segment = subscribe.buf_autocmd("el_lsp_segment", "CursorHold", function(_, buffer)
-  if buffer.lsp == false then
-    return ''
-  end
-  local status = lsp_status.status()
-  -- strip the current function
-  return string.gsub(status, "%(.*%) ", "")
-end)
-
 local file_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
   local icon = extensions.file_icon(_, bufnr)
   if icon then
@@ -155,7 +147,7 @@ require('el').setup {
   generator = function(_, _)
     return {
       maybe_coc_status,
-      lsp_segment,
+      lsp_status.status,
       lsp_statusline.server_progress,
       sections.split,
       file_icon,
