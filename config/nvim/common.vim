@@ -113,6 +113,8 @@ highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
 highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
+highlight TabLineFill guifg=white guibg=white ctermfg=white ctermbg=white
+highlight TabLine guifg=black guibg=white ctermfg=black ctermbg=white
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"

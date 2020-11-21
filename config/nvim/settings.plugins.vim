@@ -192,6 +192,8 @@ function! s:goyo_leave()
   highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
   highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
   highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
+  highlight TabLineFill guifg=white guibg=white ctermfg=white ctermbg=white
+  highlight TabLine guifg=black guibg=white ctermfg=black ctermbg=white
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
