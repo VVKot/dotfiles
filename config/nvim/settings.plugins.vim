@@ -225,3 +225,4 @@ nnoremap <Leader>zm :Glow<CR>
 
 " PLUGIN - mhinz/vim-startify. {{{1
 let g:startify_session_persistence = 1
+nnoremap <Leader>ss :Startify<CR>
