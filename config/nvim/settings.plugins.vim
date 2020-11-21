@@ -216,3 +216,5 @@ let g:go_def_mapping_enabled=0
 " PLUGIN - dhruvasagar/vim-prosession. {{{1
 let g:prosession_dir = '~/.config/nvim/session/'
 
+" PLUGIN - npxbr/glow.nvim. {{{1
+nnoremap <Leader>zm :Glow<CR>
