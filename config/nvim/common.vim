@@ -57,6 +57,10 @@ set noswapfile
 " Don't show mode - cursor indicates that.
 set noshowmode
 
+" Show excessive whitespace.
+set list
+set listchars=tab:»\ ,trail:·,extends:<,precedes:>,conceal:┊,nbsp:␣
+
 " Make Y behave like other capitals.
 nnoremap Y y$
 
@@ -110,6 +114,8 @@ nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 " COLOR SETTINGS {{{1
 set background=light
 
+highlight NonText guifg=gray ctermfg=gray
+highlight Whitespace guifg=gray ctermfg=gray
 highlight SignColumn guibg=white ctermbg=white
 highlight EndOfBuffer guifg=white ctermfg=white
 highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
