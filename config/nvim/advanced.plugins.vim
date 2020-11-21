@@ -69,3 +69,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Statusline.
 Plug 'tjdevries/express_line.nvim'
+
+" Markdown previewer.
+Plug 'npxbr/glow.nvim'

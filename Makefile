@@ -27,6 +27,7 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
 
 clean:
 	rm -f ~/.config/bat/config
@@ -49,5 +50,6 @@ clean:
 	rm -f ~/.zprofile
 	rm -f ~/.zshrc
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
+	rm -f ~/Library/Preferences/glow/glow.yml
 
 .PHONY: all clean sync build run kill
