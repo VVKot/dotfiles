@@ -15,6 +15,9 @@ set clipboard=unnamed
 " No visual blink on error and no sound.
 set visualbell t_vb=
 
+" Enable mouse.
+set mouse+=a
+
 " Set to auto read when a file is changed from the outside.
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 
