@@ -172,6 +172,9 @@ function! s:goyo_enter()
   endif
   setlocal spell
 
+  highlight Title ctermfg=blue guifg=blue
+  highlight NonText guifg=gray ctermfg=gray
+  highlight Whitespace guifg=gray ctermfg=gray
   highlight StatusLine guifg=white guibg=white ctermfg=white ctermbg=white
   highlight StatusLineNC guifg=white guibg=white ctermfg=white ctermbg=white
   highlight VertSplit guifg=white guibg=white ctermfg=white ctermbg=white
@@ -186,6 +189,9 @@ function! s:goyo_leave()
 
   set background=light
 
+  highlight Title ctermfg=blue guifg=blue
+  highlight NonText guifg=gray ctermfg=gray
+  highlight Whitespace guifg=gray ctermfg=gray
   highlight SignColumn guibg=white ctermbg=white
   highlight EndOfBuffer guifg=white ctermfg=white
   highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
@@ -213,8 +219,6 @@ augroup END
 " PLUGIN - fatih/vim-go. {{{1
 let g:go_gopls_enabled=0
 let g:go_def_mapping_enabled=0
-" PLUGIN - dhruvasagar/vim-prosession. {{{1
-let g:prosession_dir = '~/.config/nvim/session/'
 
 " PLUGIN - npxbr/glow.nvim. {{{1
 nnoremap <Leader>zm :Glow<CR>

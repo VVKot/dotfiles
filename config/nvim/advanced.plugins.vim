@@ -45,9 +45,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Tree for undo history.
 Plug 'mbbill/undotree'
 
-" Session management.
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
+" Fancy start screen.
+Plug 'mhinz/vim-startify'
 
 " Syntax highlighting.
 Plug 'nvim-treesitter/nvim-treesitter'

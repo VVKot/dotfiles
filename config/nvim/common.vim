@@ -114,6 +114,7 @@ nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 " COLOR SETTINGS {{{1
 set background=light
 
+highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
 highlight Whitespace guifg=gray ctermfg=gray
 highlight SignColumn guibg=white ctermbg=white
