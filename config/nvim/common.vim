@@ -60,6 +60,9 @@ nnoremap Y y$
 " Use Q to execute macros.
 noremap Q @q
 
+" Sane mapping to get out terminal mode.
+tnoremap <C-[><C-[> <C-\><C-n>
+
 " Easier indenting in visual mode.
 vmap < <gv
 vmap > >gv
