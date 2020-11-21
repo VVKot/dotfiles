@@ -94,6 +94,9 @@ set signcolumn=no
 " Fold by markers.
 set foldmethod=marker
 
+" Show comments in italics.
+highlight Comment cterm=italic gui=italic
+
 " RG setup.
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
 set grepformat^=%f:%l:%c:%m
