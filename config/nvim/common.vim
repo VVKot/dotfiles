@@ -126,6 +126,4 @@ highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 highlight TabLineFill guifg=white guibg=white ctermfg=white ctermbg=white
 highlight TabLine guifg=black guibg=white ctermfg=black ctermbg=white
 
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
