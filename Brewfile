@@ -36,6 +36,7 @@ brew "zsh"
 
 cask "amethyst"
 cask "docker"
+cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "iterm2"
