@@ -62,6 +62,9 @@ Plug 'nvim-treesitter/completion-treesitter'
 " Gradle compiler support.
 Plug 'tfnico/vim-gradle'
 
+" Lua scratchpad.
+Plug 'rafcamlet/nvim-luapad'
+
 " Icons.
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
