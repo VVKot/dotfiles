@@ -227,9 +227,6 @@ augroup END
 let g:go_gopls_enabled=0
 let g:go_def_mapping_enabled=0
 
-" PLUGIN - npxbr/glow.nvim. {{{1
-nnoremap <Leader>zm :Glow<CR>
-
 " PLUGIN - mhinz/vim-startify. {{{1
 let g:startify_session_persistence = 1
 nnoremap <Leader>ss :Startify<CR>
