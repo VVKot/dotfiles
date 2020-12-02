@@ -111,6 +111,9 @@ set grepformat^=%f:%l:%c:%m
 " Reload config shortcut.
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
 " COLOR SETTINGS {{{1
 set background=light
 

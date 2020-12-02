@@ -3,9 +3,6 @@
 " Make sure I don't OOM.
 let g:coc_node_args = ['--max-old-space-size=8192']
 
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
