@@ -29,8 +29,7 @@ sync:
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
-
-	[ -f ~/.config/nvim/after] || ln -s $(PWD)/config/nvim/after ~/.config/nvim/after
+	[ -f ~/.config/nvim/after ] || ln -s $(PWD)/config/nvim/after ~/.config/nvim/after
 
 clean:
 	rm -f ~/.config/bat/config
@@ -54,7 +53,6 @@ clean:
 	rm -f ~/.zshrc
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Preferences/glow/glow.yml
-
-	unlink ~/.config/nvim/after
+	unlink ~/.config/nvim/after/after
 
 .PHONY: all clean sync build run kill
