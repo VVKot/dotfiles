@@ -14,3 +14,6 @@ if filereadable(expand("~/.config/nvim/extra.vim"))
 endif
 
 lua require 'init'
+
+" Show comments in italics.
+highlight Comment cterm=italic gui=italic
