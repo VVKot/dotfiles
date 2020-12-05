@@ -34,7 +34,6 @@ return require('packer').startup {
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
-
     -- Git plugins.
     use "tpope/vim-fugitive"
     use "tpope/vim-rhubarb"
@@ -65,7 +64,7 @@ return require('packer').startup {
     use "mhinz/vim-startify"
 
     -- Syntax highlighting.
-    use "nvim-treesitter/nvim-treesitter"
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use "nvim-treesitter/nvim-treesitter-refactor"
     use "nvim-treesitter/nvim-treesitter-textobjects"
 
