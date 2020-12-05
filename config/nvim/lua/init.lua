@@ -127,7 +127,7 @@ for _, server in ipairs(servers) do
 }
 end
 
--- Statusline. {{{2
+-- Statusline. {{{1
 require('el').reset_windows()
 
 local builtin = require('el.builtin')
