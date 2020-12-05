@@ -161,7 +161,7 @@ require('el').setup {
       sections.split,
       file_icon,
       sections.maximum_width(
-        builtin.responsive_file(80, 60),
+        builtin.responsive_file(100, 80),
         0.60
       ),
       sections.collapse_builtin {
