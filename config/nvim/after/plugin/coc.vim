@@ -69,19 +69,6 @@ nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
 
-" CoC PLUGIN - coc-jest.
-
-" Init jest in current cwd, require global jest command exists.
-command! JestInit :call CocActionAsync('runCommand', 'jest.init')
-" Run jest for current project.
-command! -nargs=0 Jest :call  CocActionAsync('runCommand', 'jest.projectTest')
-" Run jest for current file.
-command! -nargs=0 JestCurrentFile :call  CocActionAsync('runCommand', 'jest.fileTest', ['%'])
-nnoremap <leader>jj :JestCurrentFile<CR>
-" Run jest for current test.
-command! -nargs=0 JestCurrentTest :call  CocActionAsync('runCommand', 'jest.singleTest')
-nnoremap <leader>jt :JestCurrentTest<CR>
-
 " PLUGIN - antoinemadec/coc-fzf.
 
 " Reset to defaults
