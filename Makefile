@@ -4,7 +4,6 @@ sync:
 	mkdir -p ~/.config/bat
 	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.config/nvim
-	mkdir -p ~/.config/nvim/lua
 	mkdir -p ~/.gradle
 	mkdir -p ~/.iterm
 	mkdir -p ~/Library/Preferences/glow
@@ -30,6 +29,7 @@ sync:
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
 	[ -f ~/.config/nvim/after ] || ln -s $(PWD)/config/nvim/after ~/.config/nvim/after
+	[ -f ~/.config/nvim/lua ] || ln -s $(PWD)/config/nvim/lua ~/.config/nvim/lua
 
 clean:
 	rm -f ~/.config/bat/config
@@ -39,7 +39,6 @@ clean:
 	rm -f ~/.config/nvim/coc-settings.json
 	rm -f ~/.config/nvim/common.vim 
 	rm -f ~/.config/nvim/init.vim 
-	rm -f ~/.config/nvim/lua/init.lua
 	rm -f ~/.config/nvim/install.vimplug.vim
 	rm -f ~/.config/nvim/install.vimplug.vim 
 	rm -f ~/.config/nvim/mini.init.vim
@@ -54,5 +53,6 @@ clean:
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Preferences/glow/glow.yml
 	unlink ~/.config/nvim/after/after
+	unlink ~/.config/nvim/lua/lua
 
 .PHONY: all clean sync build run kill
