@@ -4,8 +4,6 @@
     "coc.preferences.bracketEnterImprove": true,
     "jest.watchman": true,
     "eslint.autoFixOnSave": true,
-    "eslint.nodePath": "node_modules/.pnpm/eslint@7.3.0/node_modules",
-    "tsserver.tsdk": "node_modules/.pnpm/typescript@4.0.5/node_modules/typescript/lib",
     "tslint.packageManager": "pnpm",
     "tslint.autoFixOnSave": true,
     "stylelintplus.autoFixOnSave": true,
