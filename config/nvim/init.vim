@@ -1,12 +1,7 @@
 source ~/.config/nvim/common.vim
 
 lua require "vkot/install_packer"
-source ~/.config/nvim/install.vimplug.vim
-
-call plug#begin()
-source ~/.config/nvim/basic.plugins.vim
-source ~/.config/nvim/advanced.plugins.vim
-call plug#end()
+lua require "vkot/all_plugins"
 
 source ~/.config/nvim/settings.plugins.vim
 

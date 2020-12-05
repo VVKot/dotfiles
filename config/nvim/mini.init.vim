@@ -1,7 +1,4 @@
 source ~/.config/nvim/common.vim
 
-source ~/.config/nvim/install.vimplug.vim
-
-call plug#begin()
-source ~/.config/nvim/basic.plugins.vim
-call plug#end()
+lua require "vkot/install_packer"
+lua require "vkot/basic_plugins"
