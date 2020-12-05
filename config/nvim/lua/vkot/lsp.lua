@@ -1,4 +1,4 @@
-local lsp = require("lspconfig")
+local lspconfig = require("lspconfig")
 local completion = require("completion")
 local lsp_status = require("lsp-status")
 
@@ -93,7 +93,7 @@ end
 
 -- Servers. {{{2
 
-lsp.sumneko_lua.setup{
+lspconfig.sumneko_lua.setup{
   on_attach = custom_attach,
   capabilities = lsp_status.capabilities,
   settings = {
@@ -103,7 +103,7 @@ lsp.sumneko_lua.setup{
   },
 }
 
-lsp.gopls.setup{
+lspconfig.gopls.setup{
   on_attach = custom_attach,
   capabilities = lsp_status.capabilities,
   settings = {
@@ -117,10 +117,25 @@ lsp.gopls.setup{
   },
 }
 
+lspconfig.clangd.setup({
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--suggest-missing-includes",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+  },
+  on_attach = custom_attach,
+
+  -- Required for lsp-status
+  handlers = lsp_status.extensions.clangd.setup(),
+  capabilities = lsp_status.capabilities,
+})
+
 local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls' }
 
 for _, server in ipairs(servers) do
-  lsp[server].setup {
+  lspconfig[server].setup {
     on_attach = custom_attach,
     capabilities = lsp_status.capabilities,
 }

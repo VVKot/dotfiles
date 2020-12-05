@@ -80,3 +80,6 @@ alias loadnvm='[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.s
 # go
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
+
+# clangd
+export PATH="/usr/local/opt/llvm/bin:$PATH"
