@@ -89,5 +89,8 @@ return require('packer').startup {
 
     -- Markdown previewer.
     use "npxbr/glow.nvim"
+
+    -- Floating terminal.
+    use 'numtostr/FTerm.nvim'
   end
 }
