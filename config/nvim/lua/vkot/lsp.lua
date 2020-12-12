@@ -1,3 +1,20 @@
+vim.g.completion_customize_lsp_label = {
+  Function = " [function]",
+  Method = " [method]",
+  Reference = " [reference]",
+  Enum = " [enum]",
+  Field = "ﰠ [field]",
+  Keyword = " [key]",
+  Variable = " [variable]",
+  Folder = " [folder]",
+  Snippet = " [snippet]",
+  Operator = " [operator]",
+  Module = " [module]",
+  Text = "ﮜ [text]",
+  Class = " [class]",
+  Interface = " [interface]"
+}
+
 local lspconfig = require("lspconfig")
 local completion = require("completion")
 local lsp_status = require("lsp-status")
