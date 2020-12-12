@@ -74,7 +74,7 @@ local setup_key_mappings = function(bufnr)
   -- actions
   buf_nnoremap(bufnr, '<M-Enter>', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   buf_nnoremap(bufnr, '<Leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-  buf_nnoremap(bufnr, '<Leader>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  buf_nnoremap(bufnr, '<Leader>gq', '<cmd>lua vim.lsp.buf.formatting()<CR>')
   buf_nnoremap(bufnr, '<Leader>ar', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
   -- lists
