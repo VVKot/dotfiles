@@ -1,3 +1,5 @@
+vim.g.completion_confirm_key = ""
+vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 vim.g.completion_customize_lsp_label = {
   Function = " [function]",
   Method = " [method]",
