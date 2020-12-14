@@ -1,5 +1,7 @@
 return require('packer').startup {
   function(use)
+    -- Manage packer itself.
+    use {'wbthomason/packer.nvim', opt = true}
     -- Sensible defaults.
     use "tpope/vim-sensible"
     -- Comments.
