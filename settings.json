@@ -9,4 +9,5 @@
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/mini.init.vim",
     "java.semanticHighlighting.enabled": true,
     "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+    "npm.packageManager": "pnpm",
 }
