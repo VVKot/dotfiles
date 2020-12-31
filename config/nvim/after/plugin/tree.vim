@@ -1,2 +1,2 @@
-nnoremap <Leader>tt :LuaTreeToggle<CR>
-nnoremap <Leader>tf :LuaTreeFindFile<CR>
+nnoremap <Leader>tt :NvimTreeToggle<CR>
+nnoremap <Leader>tf :NvimTreeFindFile<CR>
