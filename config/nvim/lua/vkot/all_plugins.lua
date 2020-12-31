@@ -56,6 +56,10 @@ return require("packer").startup {
     -- Zen mode.
     use "junegunn/goyo.vim"
 
+    -- Writing tools.
+    use "dbmrq/vim-ditto"
+    use "reedes/vim-wordy"
+
     -- Go support.
     use { "fatih/vim-go", run = ":GoUpdateBinaries" }
 
