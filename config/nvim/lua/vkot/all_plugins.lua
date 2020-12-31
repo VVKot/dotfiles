@@ -1,7 +1,7 @@
-return require('packer').startup {
+return require("packer").startup {
   function(use)
     -- Manage packer itself.
-    use {'wbthomason/packer.nvim', opt = true}
+    use {"wbthomason/packer.nvim", opt = true}
     -- Sensible defaults.
     use "tpope/vim-sensible"
     -- Comments.
@@ -93,6 +93,9 @@ return require('packer').startup {
     use "npxbr/glow.nvim"
 
     -- Floating terminal.
-    use 'numtostr/FTerm.nvim'
+    use "numtostr/FTerm.nvim"
+
+    -- Better text objects.
+    use "wellle/targets.vim"
   end
 }
