@@ -162,3 +162,4 @@ end
 
 -- Other keymaps. {{{1
 nnoremap('<Leader>fp', '<cmd>lua require("telescope.builtin").grep_string { search = vim.fn.input(":RG "), }<CR>')
+nnoremap('<Leader>gt', '<cmd>lua require("telescope.builtin").git_status{}<CR>')
