@@ -83,11 +83,7 @@ return require("packer").startup {
     -- Gradle compiler support.
     use "tfnico/vim-gradle"
 
-    -- Lua scratchpad.
-    use "rafcamlet/nvim-luapad"
-
     -- Icons.
-    use "ryanoasis/vim-devicons"
     use "kyazdani42/nvim-web-devicons"
 
     -- Statusline.
@@ -95,9 +91,6 @@ return require("packer").startup {
 
     -- Markdown previewer.
     use "npxbr/glow.nvim"
-
-    -- Floating terminal.
-    use "numtostr/FTerm.nvim"
 
     -- Better text objects.
     use "wellle/targets.vim"
