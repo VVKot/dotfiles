@@ -94,5 +94,7 @@ return require("packer").startup {
 
     -- Better text objects.
     use "wellle/targets.vim"
+
+    use "tyru/open-browser.vim"
   end
 }

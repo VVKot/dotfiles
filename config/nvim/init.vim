@@ -13,3 +13,5 @@ lua require "init"
 
 " Show comments in italics.
 highlight Comment cterm=italic gui=italic
+
+command! -nargs=1 Browse OpenBrowser <args>
