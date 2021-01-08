@@ -13,6 +13,7 @@ telescope.setup {
     sorting_strategy = "ascending",
     prompt_position = "top",
     prompt_prefix = "🔭",
+    scroll_strategy = "cycle",
     mappings = {
       i = telescope_mappings,
       n = telescope_mappings,
