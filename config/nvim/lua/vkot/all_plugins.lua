@@ -84,6 +84,7 @@ return require("packer").startup {
     use "tfnico/vim-gradle"
 
     -- Icons.
+    use "ryanoasis/vim-devicons"
     use "kyazdani42/nvim-web-devicons"
 
     -- Statusline.
