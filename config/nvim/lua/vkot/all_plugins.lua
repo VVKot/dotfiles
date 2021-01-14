@@ -104,5 +104,8 @@ return require("packer").startup {
 
     -- Snippets engine.
     use "SirVer/ultisnips"
+
+    -- Autopairs plugin.
+    use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }
   end
 }

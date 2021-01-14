@@ -103,7 +103,7 @@ _packer_load = function(names, cause)
     end
 
     if cause.prefix then
-      local prefix = vim.v.count and vim.v.count or ''
+      local prefix = vim.v.count ~= 0 and vim.v.count or ''
       prefix = prefix .. '"' .. vim.v.register .. cause.prefix
       if vim.fn.mode('full') == 'no' then
         if vim.v.operator == 'c' then
@@ -131,6 +131,8 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
+-- Config for: nvim-autopairs
+require('nvim-autopairs').setup()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END
