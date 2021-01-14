@@ -1,8 +1,3 @@
-autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-
-nnoremap <Leader>gf :FTermToggle<CR>
-
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
     silent !tmux set status off

@@ -88,6 +88,8 @@ local setup_key_mappings = function(bufnr)
 
   -- completion
   buf_imap(bufnr, '<C-Space>', '<Plug>(completion_trigger)')
+  buf_imap(bufnr, '<Tab>', '<Plug>(completion_smart_tab)')
+  buf_imap(bufnr, '<S-Tab>', '<Plug>(completion_smart_s_tab)')
   buf_inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   buf_nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')

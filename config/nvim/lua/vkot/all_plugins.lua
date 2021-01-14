@@ -96,6 +96,13 @@ return require("packer").startup {
     -- Better text objects.
     use "wellle/targets.vim"
 
+    -- Need for opening git file on remote.
     use "tyru/open-browser.vim"
+
+    -- Snippets source.
+    use "honza/vim-snippets"
+
+    -- Snippets engine.
+    use "SirVer/ultisnips"
   end
 }
