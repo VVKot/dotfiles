@@ -35,13 +35,18 @@ function! s:goyo_leave()
   highlight TabLine guifg=black guibg=white ctermfg=black ctermbg=white
 endfunction
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup goyo_config
+  autocmd!
+
+  autocmd User GoyoEnter nested call <SID>goyo_enter()
+  autocmd User GoyoLeave nested call <SID>goyo_leave()
+augroup END
 
 " PLUGIN - tfnico/vim-gradle. {{{1
 
 " Default to gradle if it is found at the root.
-augroup CheckForGradlew
+augroup check_for_gradlew
   autocmd!
+
   autocmd Filetype,BufEnter * if findfile('gradlew', system('git rev-parse --show-toplevel')[:-2]) == 'gradlew' | compiler! gradlew | endif
 augroup END

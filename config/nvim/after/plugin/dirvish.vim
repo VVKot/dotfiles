@@ -8,7 +8,7 @@ command! -nargs=? -complete=dir Vexplore vsplit | silent Dirvish <args>
 
 " Add icons.
 augroup dirvish_config
-  au!
+  autocmd!
 
   autocmd FileType dirvish 
         \ call dirvish#add_icon_fn(

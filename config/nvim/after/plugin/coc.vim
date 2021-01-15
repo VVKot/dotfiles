@@ -51,8 +51,9 @@ function! s:show_documentation()
   endif
 endfunction
 
-augroup mygroup
+augroup custom_coc_config
   autocmd!
+
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end

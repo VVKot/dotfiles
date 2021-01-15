@@ -19,7 +19,11 @@ set visualbell t_vb=
 set mouse+=a
 
 " Set to auto read when a file is changed from the outside.
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
+augroup read_file_on_change
+  autocmd!
+
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
+augroup END
 
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
