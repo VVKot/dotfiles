@@ -23,7 +23,7 @@ alias vi="nvim"
 alias vim="nvim"
 export VISUAL="nvim"
 export EDITOR="nvim"
-export MANPAGER="nvim -u ~/.config/nvim/mini.init.vim +Man!"
+export MANPAGER="nvim +Man!"
 export KEYTIMEOUT=1 # * 10 ms
 bindkey -v
 bindkey '\e' vi-cmd-mode
