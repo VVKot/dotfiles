@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local telescope_actions = require("telescope.actions")
+local telescope_sorters = require("telescope.sorters")
 local telescope_mappings = {
   ["j"] = false,
   ["k"] = false,
@@ -22,6 +23,8 @@ telescope.setup {
       i = telescope_mappings,
       n = telescope_mappings,
     },
+    file_sorter = telescope_sorters.get_fzy_sorter,
+    generic_sorter = telescope_sorters.get_fzy_sorter,
     file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
     grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
     qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
