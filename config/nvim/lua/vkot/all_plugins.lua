@@ -74,7 +74,7 @@ return require("packer").startup {
     use { "mbbill/undotree", cmd = { "UndotreeShow", "UndotreeToggle" } }
 
     -- Fancy start screen.
-    use { "mhinz/vim-startify", cmd = "Startify" }
+    use "mhinz/vim-startify"
 
     -- Syntax highlighting.
     use {
