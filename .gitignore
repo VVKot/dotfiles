@@ -1,3 +1,4 @@
 config/nvim/extra.vim
 config/nvim/spell/*
 config/nvim/Ditto/*
+config/nvim/plugin/*
