@@ -83,3 +83,20 @@ export PATH=$PATH:$GOBIN
 
 # clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+grebase() {
+  local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+  local current=$(git rev-parse --abbrev-ref HEAD)
+  echo "==> Checking out $default"
+  git checkout $default
+  echo ""
+  echo "==> Updating $default"
+  git pull
+  echo ""
+  echo "==> Checking back to $current"
+  git checkout -
+  echo ""
+  echo "==> Rebasing $default onto $current"
+  git rebase $default $current
+  echo "Done!"
+}
