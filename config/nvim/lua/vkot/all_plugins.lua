@@ -23,9 +23,9 @@ return require("packer").startup {
     use { "neoclide/coc.nvim", branch = "release" }
 
     -- Explorer that adheres to Vim philosophy.
-    use { "justinmk/vim-dirvish", cmd = "Dirvish" }
+    use "justinmk/vim-dirvish"
     -- Readonly tree view.
-    use { "kyazdani42/nvim-tree.lua", cmd = { "NvimTreeOpen", "NvimTreeToggle" } }
+    use "kyazdani42/nvim-tree.lua"
 
     -- Fuzzy search for everything.
     use "/usr/local/opt/fzf"
@@ -40,7 +40,7 @@ return require("packer").startup {
 
     -- Git plugins.
     use "tpope/vim-fugitive"
-    use { "rhysd/git-messenger.vim", cmd = "GitMessenger" }
+    use "rhysd/git-messenger.vim"
     use {
       "tpope/vim-rhubarb",
       -- Need for opening git file on remote.
@@ -61,17 +61,17 @@ return require("packer").startup {
     use "editorconfig/editorconfig-vim"
 
     -- Zen mode.
-    use { "junegunn/goyo.vim", cmd = "Goyo" }
+    use "junegunn/goyo.vim"
 
     -- Writing tools.
-    use { "dbmrq/vim-ditto", cmd = "Ditto" }
+    use "dbmrq/vim-ditto"
     use "reedes/vim-wordy"
 
     -- Go support.
     use { "fatih/vim-go", ft = { "go" }, run = ":GoUpdateBinaries" }
 
     -- Tree for undo history.
-    use { "mbbill/undotree", cmd = { "UndotreeShow", "UndotreeToggle" } }
+    use "mbbill/undotree"
 
     -- Fancy start screen.
     use "mhinz/vim-startify"
@@ -104,7 +104,7 @@ return require("packer").startup {
     use "tjdevries/express_line.nvim"
 
     -- Markdown previewer.
-    use { "npxbr/glow.nvim", cmd = "Glow" }
+    use "npxbr/glow.nvim"
 
     -- Better text objects.
     use "wellle/targets.vim"
