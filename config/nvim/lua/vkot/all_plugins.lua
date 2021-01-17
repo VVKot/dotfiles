@@ -53,6 +53,7 @@ return require("packer").startup {
 
     -- More convenient make.
     use "tpope/vim-dispatch"
+    use "radenling/vim-dispatch-neovim"
 
     -- Matching tags.
     use "gregsexton/MatchTag"
