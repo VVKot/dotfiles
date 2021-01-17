@@ -72,7 +72,7 @@ nnoremap Y y$
 noremap Q @q
 
 " Sane mapping to get out terminal mode.
-tnoremap <C-\><C-\> <C-\><C-n>
+tnoremap <C-o> <C-\><C-n>
 
 " Easier indenting in visual mode.
 vmap < <gv
