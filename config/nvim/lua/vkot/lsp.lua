@@ -106,6 +106,9 @@ end
 -- Attach handler. {{{2
 local custom_attach = function(client, bufnr)
   print("LSP started.")
+  if client.config.flags then
+    client.config.flags.allow_incremental_sync = true
+  end
   completion.on_attach()
   lsp_status.on_attach(client)
   setup_key_mappings(bufnr)
