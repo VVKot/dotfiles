@@ -78,7 +78,8 @@ alias loadnvm='[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.s
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # go
-export GOBIN=$HOME/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 # clangd
