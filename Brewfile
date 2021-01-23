@@ -50,4 +50,4 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "visual-studio-code"
 
-
+whalebrew "whalebrew/neuron"

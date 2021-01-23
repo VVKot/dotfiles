@@ -117,5 +117,7 @@ return require("packer").startup {
 
     -- Autopairs plugin.
     use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }
+
+    use { "oberblastmeister/neuron.nvim", branch = "unstable" }
   end
 }
