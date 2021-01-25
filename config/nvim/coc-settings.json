@@ -1,8 +1,8 @@
 {
     "http.proxyStrictSSL": false,
+    "tsserver.tsdk": "stash/typescript-fork/lib",
     "tsserver.maxTsServerMemory": 8192,
     "coc.preferences.bracketEnterImprove": true,
-    "jest.watchman": true,
     "eslint.autoFixOnSave": true,
     "tslint.packageManager": "pnpm",
     "tslint.autoFixOnSave": true,
