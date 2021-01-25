@@ -6,8 +6,10 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/mini.init.vim",
     "java.semanticHighlighting.enabled": true,
     "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
     "npm.packageManager": "pnpm",
+    "eslint.packageManager": "pnpm",
+    "tslint.packageManager": "pnpm",
+    "stylelint.packageManager": "pnpm",
 }
