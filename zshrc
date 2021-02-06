@@ -74,6 +74,8 @@ alias ll='ls -alGpF'
 export NVM_DIR="$HOME/.nvm"
 alias loadnvm='[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"'
 
+export NODE_OPTIONS=--max_old_space_size=8192
+
 # for pnpm completion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 

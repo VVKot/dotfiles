@@ -20,7 +20,7 @@ return require("packer").startup {
     use "tpope/vim-eunuch"
 
     -- Autocompletion engine utilizing LSP from VSCode.
-    use { "neoclide/coc.nvim", branch = "release" }
+    -- use { "neoclide/coc.nvim", branch = "release" }
 
     -- Explorer that adheres to Vim philosophy.
     use "justinmk/vim-dirvish"
@@ -30,7 +30,7 @@ return require("packer").startup {
     -- Fuzzy search for everything.
     use "/usr/local/opt/fzf"
     use "junegunn/fzf.vim"
-    use { "antoinemadec/coc-fzf", branch = "release" }
+    -- use { "antoinemadec/coc-fzf", branch = "release" }
 
     -- Lua-based fuzzy search.
     use {
