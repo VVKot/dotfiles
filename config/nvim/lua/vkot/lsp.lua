@@ -21,6 +21,8 @@ local lspconfig = require("lspconfig")
 local completion = require("completion")
 local lsp_status = require("lsp-status")
 
+-- Light bulb for actions.
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb({sign = {enabled=false}, float = {enabled=true, win_opts = {winblend=100, anchor="SE", pad_bottom=1}}})]]
 -- LSP status. {{{2
 lsp_status.register_progress()
 lsp_status.config({

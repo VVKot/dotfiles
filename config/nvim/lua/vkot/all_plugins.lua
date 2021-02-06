@@ -89,6 +89,7 @@ return require("packer").startup {
       "neovim/nvim-lspconfig",
       requires = {{"nvim-lua/completion-nvim"},{"nvim-lua/lsp-status.nvim"}}
     }
+    use 'kosayoda/nvim-lightbulb'
 
     -- Gradle compiler support.
     use "tfnico/vim-gradle"
