@@ -210,6 +210,12 @@ lspconfig.clangd.setup({
   capabilities = lsp_status.capabilities,
 })
 
+lspconfig.tsserver.setup{
+  on_attach = custom_attach,
+  capabilities = lsp_status.capabilities,
+  cmd = { "typescript-language-server", "--stdio", "--tsserver-path", "stash/typescript-fork/lib/tsserver.js" }
+}
+
 -- Diagnostics. {{{3
 lspconfig.diagnosticls.setup {
   on_attach = custom_attach,
@@ -320,7 +326,7 @@ lspconfig.diagnosticls.setup {
 }
 
 -- Servers with default setup. {{{3
-local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls', 'cssls', 'html', 'tsserver' }
+local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls', 'cssls', 'html' }
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
