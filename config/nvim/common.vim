@@ -113,7 +113,14 @@ set grepformat^=%f:%l:%c:%m
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
+
+augroup set_js_filetypes
+  autocmd!
+
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
 
 " COLOR SETTINGS {{{1
 set background=light

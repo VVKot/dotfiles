@@ -87,7 +87,7 @@ return require("packer").startup {
     -- Neovim LSP.
     use {
       "neovim/nvim-lspconfig",
-      requires = {{"nvim-lua/completion-nvim"},{"nvim-lua/lsp-status.nvim"}}
+      requires = {{"hrsh7th/nvim-compe"},{"nvim-lua/lsp-status.nvim"}}
     }
     use 'kosayoda/nvim-lightbulb'
 
@@ -112,6 +112,7 @@ return require("packer").startup {
       "SirVer/ultisnips",
       requires = {{"honza/vim-snippets"}}
     }
+    use "hrsh7th/vim-vsnip"
 
     -- Autopairs plugin.
     use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }

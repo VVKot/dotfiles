@@ -18,8 +18,25 @@ vim.g.completion_customize_lsp_label = {
 }
 
 local lspconfig = require("lspconfig")
-local completion = require("completion")
 local lsp_status = require("lsp-status")
+lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  min_length = 1;
+  preselect = 'enable';
+  documentation = true;
+
+  source = {
+    path = true;
+    buffer = true;
+    vsnip = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    treesitter = true;
+    ultisnips = true;
+  };
+}
 
 -- Light bulb for actions.
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb({sign = {enabled=false}, float = {enabled=true, win_opts = {winblend=100, anchor="SE", pad_bottom=1}}})]]
@@ -89,10 +106,11 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
   buf_nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
-  -- completion
-  buf_imap(bufnr, '<C-Space>', '<Plug>(completion_trigger)')
-  buf_imap(bufnr, '<Tab>', '<Plug>(completion_smart_tab)')
-  buf_imap(bufnr, '<S-Tab>', '<Plug>(completion_smart_s_tab)')
+  vim.cmd [[inoremap <silent><expr> <C-Space> compe#complete()]]
+  vim.cmd [[inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')]]
+  vim.cmd [[inoremap <silent><expr> <C-e>     compe#close('<C-e>')]]
+  vim.cmd [[inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })]]
+  vim.cmd [[inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })]]
   buf_inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   buf_nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -126,7 +144,6 @@ local custom_attach = function(client, bufnr)
   if client.config.flags then
     client.config.flags.allow_incremental_sync = true
   end
-  completion.on_attach()
   lsp_status.on_attach(client)
   setup_key_mappings(bufnr)
 
