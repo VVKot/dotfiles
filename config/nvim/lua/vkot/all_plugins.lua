@@ -107,6 +107,7 @@ return require("packer").startup {
     -- Better text objects.
     use "wellle/targets.vim"
 
+    -- Snippets integration.
     use {
       "SirVer/ultisnips",
       requires = {{"honza/vim-snippets"}}
@@ -115,6 +116,7 @@ return require("packer").startup {
     -- Autopairs plugin.
     use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }
 
-    use { "oberblastmeister/neuron.nvim", branch = "unstable" }
+    -- Zettelkasten plugin.
+    use { "oberblastmeister/neuron.nvim", commit = "77878703540e3fbd1313b6ba3f959807fc2845e7" }
   end
 }
