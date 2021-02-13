@@ -2,11 +2,13 @@ all: sync
 
 sync:
 	mkdir -p ~/.config/bat
+	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.gradle
 	mkdir -p ~/.iterm
 	mkdir -p ~/Library/Preferences/glow
 
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/config/bat/config ~/.config/bat/config
+	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
@@ -20,6 +22,7 @@ sync:
 
 clean:
 	rm -f ~/.config/bat/config
+	rm -f ~/.config/coc/extensions/package.json
 	rm -f ~/.gradle/gradle.properties
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc

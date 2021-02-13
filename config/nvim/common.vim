@@ -113,7 +113,7 @@ set grepformat^=%f:%l:%c:%m
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 
 " Set completeopt to have a better completion experience
-set completeopt=menu,menuone,noselect
+" set completeopt=menu,menuone,noselect
 
 augroup set_js_filetypes
   autocmd!
