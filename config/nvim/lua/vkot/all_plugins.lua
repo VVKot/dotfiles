@@ -119,5 +119,8 @@ return require("packer").startup {
 
     -- Zettelkasten plugin.
     use { "oberblastmeister/neuron.nvim", commit = "77878703540e3fbd1313b6ba3f959807fc2845e7" }
+
+    -- DOcumentation GEnerator.
+    use "kkoomen/vim-doge"
   end
 }
