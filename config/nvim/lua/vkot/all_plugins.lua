@@ -65,7 +65,7 @@ return require("packer").startup {
     use "junegunn/goyo.vim"
 
     -- Go support.
-    use { "fatih/vim-go", ft = { "go" }, run = ":GoUpdateBinaries" }
+    use { "fatih/vim-go", ft = { "go" } }
 
     -- Tree for undo history.
     use "mbbill/undotree"
