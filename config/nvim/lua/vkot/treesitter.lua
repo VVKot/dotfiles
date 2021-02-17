@@ -42,12 +42,5 @@ treesitter.setup {
         ["[]"] = "@class.outer",
       },
     },
-    lsp_interop = {
-      enable = true,
-      peek_definition_code = {
-        ["<Leader>df"] = "@function.outer",
-        ["<Leader>dF"] = "@class.outer",
-      },
-    },
   },
 }
