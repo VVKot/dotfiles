@@ -43,9 +43,8 @@ return require("packer").startup {
     use "rhysd/git-messenger.vim"
     use {
       "tpope/vim-rhubarb",
-      -- Need for opening git file on remote.
-      requires = {{"tyru/open-browser.vim"}},
-      config = "vim.cmd[[command! -nargs=1 Browse OpenBrowser <args>]]"
+      -- Needed for opening git files on remote as I disable netrw.
+      requires = {{"tyru/open-browser.vim"}}
     }
 
     -- Autodetect indentation.
