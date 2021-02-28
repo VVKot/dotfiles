@@ -90,6 +90,9 @@ return require("packer").startup {
     }
     use 'kosayoda/nvim-lightbulb'
 
+    -- Tags/LSP symbols viewer.
+    use "liuchengxu/vista.vim"
+
     -- Gradle compiler support.
     use "tfnico/vim-gradle"
 
