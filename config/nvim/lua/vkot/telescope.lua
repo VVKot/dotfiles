@@ -7,10 +7,6 @@ local telescope_mappings = {
   ["<C-j>"] = telescope_actions.move_selection_next,
   ["<C-k>"] = telescope_actions.move_selection_previous,
   ["<esc>"] = telescope_actions.close,
-
-  ["<tab>"] = telescope_actions.toggle_selection,
-  ["<C-q>"] = telescope_actions.send_to_qflist + telescope_actions.open_qflist,
-  ["<M-q>"] = telescope_actions.send_selected_to_qflist + telescope_actions.open_qflist,
 }
 
 telescope.setup {
