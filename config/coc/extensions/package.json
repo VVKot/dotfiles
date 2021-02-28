@@ -8,8 +8,8 @@
     "coc-react-refactor": ">=0.3.0",
     "coc-snippets": ">=2.4.0",
     "coc-stylelintplus": ">=1.4.0",
-    "coc-tslint-plugin": ">=1.1.2",
-    "coc-tsserver": ">=1.6.7",
-    "coc-yaml": ">=1.3.0"
+    "coc-tslint-plugin": ">=1.2.0",
+    "coc-tsserver": ">=1.6.8",
+    "coc-yaml": ">=1.3.1"
   }
 }
