@@ -1,3 +1,6 @@
+local nnoremap = vim.keymap.nnoremap
+nnoremap { "<Leader>tf", function() vim.api.nvim_command [[NvimTreeFindFile]] end }
+
 local settings = vim.g
 local dummy_binding = "<Leader>000" -- need to fix upstream
 

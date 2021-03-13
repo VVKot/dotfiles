@@ -116,7 +116,6 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 
   -- telescope
-  buf_nnoremap(bufnr, '<Leader><C-t>', '<cmd>lua require"telescope.builtin".find_files{}<CR>')
   buf_nnoremap(bufnr, '<Leader>ga', '<cmd>lua require"telescope.builtin".lsp_code_actions(require("telescope.themes").get_dropdown({winblend=10}))<CR>')
   buf_nnoremap(bufnr, '<M-Enter>', '<cmd>lua require"telescope.builtin".lsp_code_actions(require("telescope.themes").get_dropdown({winblend=10}))<CR>')
   buf_nnoremap(bufnr, '<Leader>gr', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
@@ -355,7 +354,3 @@ for _, server in ipairs(servers) do
 end
 
 
--- Other keymaps. {{{1
-nnoremap('<Leader>tt', '<cmd>lua require("telescope.builtin").git_files{show_untracked=false}<CR>')
-nnoremap('<Leader>ft', '<cmd>lua require("telescope.builtin").grep_string { search = vim.fn.input(":RG "), }<CR>')
-nnoremap('<Leader>gt', '<cmd>lua require("telescope.builtin").git_status{}<CR>')

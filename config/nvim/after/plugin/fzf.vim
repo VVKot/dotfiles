@@ -1,6 +1,5 @@
 set rtp+=/usr/local/opt/fzf
 nnoremap <leader><leader> :GFiles<CR>
-nnoremap <leader><C-t> :Files<CR>
 nnoremap <leader>ff :Rg 
 nnoremap <leader>fc :Commits<CR>
 nnoremap <leader>f/ :History/<CR>

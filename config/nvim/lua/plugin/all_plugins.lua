@@ -125,6 +125,10 @@ return require("packer").startup {
     -- DOcumentation GEnerator.
     use "kkoomen/vim-doge"
 
+    -- Debug utils for Vimscript.
     use "tpope/vim-scriptease"
+
+    -- Some shims for Lua that should be eventually merged upstream.
+    use "tjdevries/astronauta.nvim"
   end
 }
