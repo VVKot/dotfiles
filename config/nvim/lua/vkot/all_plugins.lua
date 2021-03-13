@@ -120,9 +120,11 @@ return require("packer").startup {
     use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }
 
     -- Zettelkasten plugin.
-    use { "oberblastmeister/neuron.nvim", commit = "77878703540e3fbd1313b6ba3f959807fc2845e7" }
+    use { "oberblastmeister/neuron.nvim", branch = "unstable" }
 
     -- DOcumentation GEnerator.
     use "kkoomen/vim-doge"
+
+    use "tpope/vim-scriptease"
   end
 }
