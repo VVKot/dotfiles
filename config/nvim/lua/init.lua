@@ -1,6 +1,0 @@
-require("vkot.lsp")
-require("vkot.statusline")
-require("vkot.treesitter")
-require("vkot.telescope")
-require("vkot.tree")
-require("vkot.neuron")
