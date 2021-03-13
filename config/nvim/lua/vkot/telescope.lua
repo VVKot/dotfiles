@@ -6,6 +6,8 @@ local telescope_mappings = {
   ["k"] = false,
   ["<C-j>"] = telescope_actions.move_selection_next,
   ["<C-k>"] = telescope_actions.move_selection_previous,
+  ["<C-q>"] = telescope_actions.smart_send_to_qflist + telescope_actions.open_qflist,
+  ["<A-q>"] = telescope_actions.smart_add_to_qflist + telescope_actions.open_qflist,
   ["<esc>"] = telescope_actions.close,
 }
 
