@@ -182,8 +182,6 @@ lspconfig.sumneko_lua.setup{
               version = 'LuaJIT',
               -- Setup your lua path
               path = vim.split(package.path, ';'),
-          },
-          diagnostics = {
                 enable = true,
               -- Get the language server to recognize the `vim` global
               globals = {'vim'},
@@ -344,7 +342,7 @@ lspconfig.clangd.setup({
 -- }
 
 -- Servers with default setup. {{{3
-local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls' }
+local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls', 'pyls' }
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
