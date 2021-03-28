@@ -10,7 +10,7 @@ treesitter.setup {
     enable = true,
   },
   refactor = {
-    highlight_definitions = { enable = true },
+    highlight_definitions = { enable = false },
     highlight_current_scope = { enable = false },
   },
   textobjects = {
