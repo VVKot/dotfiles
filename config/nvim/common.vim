@@ -122,6 +122,14 @@ augroup set_js_filetypes
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
+" Shortcuts for moving lines around
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
 " COLOR SETTINGS {{{1
 set background=light
 
