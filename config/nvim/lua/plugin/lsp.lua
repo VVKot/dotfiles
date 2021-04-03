@@ -110,33 +110,35 @@ local setup_key_mappings = function(bufnr)
 end
 
 -- Attach handler. {{{2
-function DoFormat()
-  vim.lsp.buf.formatting_sync(nil, 3000)
-  vim.api.nvim_command [[e]]
-end
+-- function DoFormat()
+--   vim.lsp.buf.formatting_sync(nil, 3000)
+--   vim.api.nvim_command [[e]]
+-- end
 
-local attach_formatting = function(client)
-  vim.api.nvim_command [[augroup Format]]
-  vim.api.nvim_command [[autocmd! * <buffer>]]
-  vim.api.nvim_command [[autocmd BufWritePost <buffer> lua DoFormat()]]
-  vim.api.nvim_command [[augroup END]]
+-- local attach_formatting = function(client)
+--   vim.api.nvim_command [[augroup Format]]
+--   vim.api.nvim_command [[autocmd! * <buffer>]]
+--   vim.api.nvim_command [[autocmd BufWritePost <buffer> lua DoFormat()]]
+--   vim.api.nvim_command [[augroup END]]
 
-  print(string.format('%s formatting attached', client.name))
+--   print(string.format('%s formatting attached', client.name))
+-- end
+
+local custom_init = function(client)
+  print("LSP started.")
+  client.config.flags = client.config.flags or {}
+  client.config.flags.allow_incremental_sync = true
 end
 
 local custom_attach = function(client, bufnr)
-  print("LSP started.")
-  if client.config.flags then
-    client.config.flags.allow_incremental_sync = true
-  end
   lsp_status.on_attach(client)
   setup_key_mappings(bufnr)
 
-  if client.resolved_capabilities.document_formatting then
-    print(string.format("%s formatting supported", client.name))
+  -- if client.resolved_capabilities.document_formatting then
+  --   print(string.format("%s formatting supported", client.name))
 
-    attach_formatting(client)
-  end
+  --   attach_formatting(client)
+  -- end
 
   print("LSP attached.")
 end
@@ -159,6 +161,7 @@ local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-s
 
 lspconfig.sumneko_lua.setup{
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+  on_init = custom_init,
   on_attach = custom_attach,
   capabilities = lsp_status.capabilities,
   settings = {
@@ -186,6 +189,7 @@ lspconfig.sumneko_lua.setup{
 }
 
 lspconfig.gopls.setup{
+  on_init = custom_init,
   on_attach = custom_attach,
   capabilities = lsp_status.capabilities,
   settings = {
@@ -207,6 +211,7 @@ lspconfig.clangd.setup({
     "--clang-tidy",
     "--header-insertion=iwyu",
   },
+  on_init = custom_init,
   on_attach = custom_attach,
 
   -- Required for lsp-status
@@ -215,6 +220,7 @@ lspconfig.clangd.setup({
 })
 
 -- lspconfig.tsserver.setup{
+--   on_init = custom_init,
 --   on_attach = custom_attach,
 --   capabilities = lsp_status.capabilities,
 --   cmd = { "typescript-language-server", "--stdio", "--tsserver-path", "stash/typescript-fork/lib/tsserver.js" }
@@ -222,6 +228,7 @@ lspconfig.clangd.setup({
 
 -- Diagnostics. {{{3
 -- lspconfig.diagnosticls.setup {
+--   on_init = custom_init,
 --   on_attach = custom_attach,
 --   capabilities = lsp_status.capabilities,
 --   filetypes = {
@@ -334,6 +341,7 @@ local servers = { 'vimls', 'dockerls', 'bashls', 'jdtls', 'pyls' }
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
+    on_init = custom_init,
     on_attach = custom_attach,
     capabilities = lsp_status.capabilities,
 }
