@@ -102,9 +102,6 @@ set splitright
 " Do not show sign column.
 set signcolumn=no
 
-" Fold by markers.
-set foldmethod=marker
-
 " RG setup.
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
 set grepformat^=%f:%l:%c:%m
