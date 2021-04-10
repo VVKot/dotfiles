@@ -86,7 +86,7 @@ local setup_key_mappings = function(bufnr)
   -- lists
   buf_nnoremap(bufnr, '<Leader>lO', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
   buf_nnoremap(bufnr, '<Leader>lS', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-  buf_nnoremap(bufnr, '<Leader>lg', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+  buf_nnoremap(bufnr, '<Leader>lG', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
   buf_nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
   buf_nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
@@ -107,6 +107,7 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, '<Leader>gr', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
   buf_nnoremap(bufnr, '<Leader>lo', '<cmd>lua require"telescope.builtin".lsp_document_symbols{}<CR>')
   buf_nnoremap(bufnr, '<Leader>ls', '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>')
+  buf_nnoremap(bufnr, '<Leader>lg', '<cmd>lua require"telescope.builtin".lsp_document_diagnostics{}<CR>')
 end
 
 -- Attach handler. {{{2
