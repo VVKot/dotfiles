@@ -34,7 +34,7 @@ local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")
 
 nnoremap { '<Leader><C-t>', function () builtin.git_files{} end }
-nnoremap { '<Leader>tt', function() builtin.git_files{show_untracked=false} end }
+nnoremap { '<Leader><Leader>', function() builtin.git_files{show_untracked=false} end }
 nnoremap { '<Leader>ft', function() builtin.grep_string { search = vim.fn.input(":RG ") } end }
 nnoremap { '<Leader>gt', function() builtin.git_status{} end }
 nnoremap { '<Leader>lq', function() builtin.quickfix{} end }
