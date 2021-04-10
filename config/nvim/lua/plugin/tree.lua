@@ -4,14 +4,14 @@ nnoremap { "<Leader>tf", function() vim.api.nvim_command [[NvimTreeFindFile]] en
 local settings = vim.g
 local dummy_binding = "<Leader>000" -- need to fix upstream
 
-settings.lua_tree_width = 60
-settings.lua_tree_quit_on_open = 1
-settings.lua_tree_show_icons = {
+settings.nvim_tree_width = 60
+settings.nvim_tree_quit_on_open = 1
+settings.nvim_tree_show_icons = {
   git = 0,
   folders = 1,
   files = 1,
 }
-settings.lua_tree_bindings = {
+settings.nvim_tree_bindings = {
   edit = { '<CR>', 'i' },
   edit_vsplit = 'a',
   edit_split = 'o',
