@@ -1,34 +1,12 @@
 local nnoremap = vim.keymap.nnoremap
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
 nnoremap { "<Leader>tf", function() vim.api.nvim_command [[NvimTreeFindFile]] end }
 
-local settings = vim.g
-local dummy_binding = "<Leader>000" -- need to fix upstream
-
-settings.nvim_tree_width = 60
-settings.nvim_tree_quit_on_open = 1
-settings.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
+vim.g.nvim_tree_width = 60
+vim.g.nvim_tree_bindings = {
+  ["i"]           = tree_cb("edit"),
+  ["a"]           = tree_cb("vsplit"),
+  ["o"]           = tree_cb("split"),
+  ["p"]           = tree_cb("preview"),
 }
-settings.nvim_tree_bindings = {
-  edit = { '<CR>', 'i' },
-  edit_vsplit = 'a',
-  edit_split = 'o',
-  refresh = 'R',
-  preview = 'p',
-
-  edit_tab = dummy_binding,
-  toggle_ignored = dummy_binding,
-  toggle_dotfiles = dummy_binding,
-  cd = dummy_binding,
-  create = dummy_binding,
-  remove = dummy_binding,
-  rename = dummy_binding,
-  cut = dummy_binding,
-  copy = dummy_binding,
-  paste = dummy_binding,
-  prev_git_item = dummy_binding,
-  next_git_item = dummy_binding,
-}
-
