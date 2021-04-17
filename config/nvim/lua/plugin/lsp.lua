@@ -17,6 +17,22 @@ vim.g.completion_customize_lsp_label = {
   Interface = " [interface]"
 }
 
+vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "single"
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+  vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {
+    border = "single"
+  }
+)
+
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
 lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -87,8 +103,9 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, '<Leader>lO', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
   buf_nnoremap(bufnr, '<Leader>lS', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
   buf_nnoremap(bufnr, '<Leader>lG', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
-  buf_nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-  buf_nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+  buf_nnoremap(bufnr, '<C-Space>', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "single" })<CR>')
+  buf_nnoremap(bufnr, ']g', '<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>')
+  buf_nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>')
 
   -- Light bulb for actions.
   vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb({sign = {enabled=false}, float = {enabled=true, win_opts = {winblend=100, anchor="SE", pad_bottom=1}}})]]
