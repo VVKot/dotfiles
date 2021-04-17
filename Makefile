@@ -10,6 +10,7 @@ sync:
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/config/bat/config ~/.config/bat/config
 	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
+	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
@@ -23,6 +24,7 @@ sync:
 clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.config/coc/extensions/package.json
+	rm -f ~/.config/starship.toml
 	rm -f ~/.gradle/gradle.properties
 	rm -f ~/.ideavimrc
 	rm -f ~/.inputrc

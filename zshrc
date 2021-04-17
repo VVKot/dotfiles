@@ -123,3 +123,5 @@ gmerge() {
   git merge $default
   echo "Done!"
 }
+
+eval "$(starship init zsh)"
