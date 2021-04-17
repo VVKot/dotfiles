@@ -1,2 +1,5 @@
 [directory]
 style = "bold blue"
+
+[cmd_duration]
+style = "bold blue"
