@@ -10,3 +10,6 @@ endif
 highlight Comment cterm=italic gui=italic
 " Built-in filter for quickfix/location lists
 packadd cfilter
+" More convenient log of changes to the current file
+command! Glog Git log -p --follow -- %
+command! GlogSummary Git log --follow -- %
