@@ -2,4 +2,7 @@
 style = "bold blue"
 
 [cmd_duration]
-style = "bold blue"
+style = "bold green"
+
+[git_state]
+style = "bold green"
