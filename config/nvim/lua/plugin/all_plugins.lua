@@ -28,7 +28,7 @@ return require("packer").startup {
     use "kyazdani42/nvim-tree.lua"
 
     -- Fuzzy search for everything.
-    use "/usr/local/opt/fzf"
+    use "junegunn/fzf"
     use "junegunn/fzf.vim"
     use { "antoinemadec/coc-fzf", branch = "release" }
 
