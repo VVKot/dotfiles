@@ -52,6 +52,7 @@ return require("packer").startup {
         "nvim-lua/plenary.nvim"
       }
     }
+    use "rhysd/conflict-marker.vim"
 
     -- Autodetect indentation.
     use "tpope/vim-sleuth"
