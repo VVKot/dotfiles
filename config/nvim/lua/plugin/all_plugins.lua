@@ -124,7 +124,7 @@ return require("packer").startup {
     use "hrsh7th/vim-vsnip"
 
     -- Autopairs plugin.
-    use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup()" }
+    use "windwp/nvim-autopairs"
 
     -- Zettelkasten plugin.
     use { "oberblastmeister/neuron.nvim", branch = "unstable" }
