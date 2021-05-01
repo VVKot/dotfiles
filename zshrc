@@ -1,23 +1,26 @@
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# OS-specific setup
+case "$OSTYPE" in
+  darwin*)
+    source $(brew --prefix)/share/antigen/antigen.zsh
+    alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+    alias ls='ls -GpF'
+    alias ll='ls -alGpF'
+  ;;
+  linux*)
+    alias ls='ls --color'
+    alias ll='ls -laF --color'
+esac
 
-zplug "plugins/fzf", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/gradle", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
-zplug "zsh-users/zsh-autosuggestions", defer:2
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle docker
+antigen bundle gradle
+antigen bundle zsh-users/zsh-autosuggestions
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
+antigen apply
 
 alias vi="nvim"
 alias vim="nvim"
@@ -65,10 +68,6 @@ SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
-
-alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
-alias ls='ls -GpF'
-alias ll='ls -alGpF'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
