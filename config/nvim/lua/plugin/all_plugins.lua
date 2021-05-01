@@ -100,9 +100,6 @@ return require("packer").startup {
     -- Tags/LSP symbols viewer.
     use "liuchengxu/vista.vim"
 
-    -- Gradle compiler support.
-    use "tfnico/vim-gradle"
-
     -- Icons.
     use "ryanoasis/vim-devicons"
     use "kyazdani42/nvim-web-devicons"
