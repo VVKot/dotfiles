@@ -9,6 +9,7 @@ tap "homebrew/services"
 
 brew "antigen"
 brew "automake"
+brew "bat"
 brew "cmake"
 brew "curl"
 brew "gettext"
