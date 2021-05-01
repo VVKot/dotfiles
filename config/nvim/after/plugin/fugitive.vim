@@ -1,6 +1,6 @@
 nmap <Leader>gg :tab Git<CR>gg<c-n>
 nmap <Leader>gb :Gbrowse<CR>
-nnoremap <Leader>gs :Gvdiffsplit<CR>
+nnoremap <Leader>gs :vert Gdiffsplit!<CR>
 
 " Native support for Dispatch was dropped from Fugitive
 command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
