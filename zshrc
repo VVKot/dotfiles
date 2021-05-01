@@ -10,6 +10,7 @@ case "$OSTYPE" in
     alias ll='ls -alGpF'
   ;;
   linux*)
+    source $HOME/antigen.zsh
     alias ls='ls --color'
     alias ll='ls -laF --color'
 esac
