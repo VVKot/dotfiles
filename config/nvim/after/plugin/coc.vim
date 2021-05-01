@@ -1,3 +1,6 @@
+" All used extensions
+let g:coc_global_extensions = ["coc-actions", "coc-css", "coc-eslint", "coc-html", "coc-json", "coc-react-refactor",
+  \"coc-snippets", "coc-stylelintplus", "coc-tslint-plugin", "coc-tsserver", "coc-yaml"]
 " Integrate with tag navigation
 set tagfunc=CocTagFunc
 
