@@ -42,6 +42,10 @@ augroup goyo_config
   autocmd User GoyoLeave nested call <SID>goyo_leave()
 augroup END
 
+" More convenient log of changes to the current file
+command! Glog Git log -p --follow -- %
+command! GlogSummary Git log --follow -- %
+
 " PLUGIN - tfnico/vim-gradle. {{{1
 
 " Default to gradle if it is found at the root.

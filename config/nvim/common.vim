@@ -130,6 +130,18 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 " Autofix last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+" Show comments in italics.
+highlight Comment cterm=italic gui=italic
+
+" Built-in filter for quickfix/location lists
+packadd cfilter
+
+" Highligh on yank
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup end
+
 " COLOR SETTINGS {{{1
 set background=light
 
