@@ -46,6 +46,12 @@ return require("packer").startup {
       -- Needed for opening git files on remote as I disable netrw.
       requires = {{"tyru/open-browser.vim"}}
     }
+    use {
+      "lewis6991/gitsigns.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim"
+      }
+    }
 
     -- Autodetect indentation.
     use "tpope/vim-sleuth"

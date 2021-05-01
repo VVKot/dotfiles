@@ -99,8 +99,8 @@ set shortmess+=c
 set splitbelow
 set splitright
 
-" Do not show sign column.
-set signcolumn=no
+" Show sign column.
+set signcolumn=yes
 
 " RG setup.
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
@@ -156,5 +156,9 @@ highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
 highlight Pmenu guifg=black guibg=white ctermfg=black ctermbg=white
 highlight TabLineFill guifg=white guibg=white ctermfg=white ctermbg=white
 highlight TabLine guifg=black guibg=white ctermfg=black ctermbg=white
+
+highlight GitSignsAdd guifg=green guibg=white ctermfg=green ctermbg=white
+highlight GitSignsChange guifg=blue guibg=white ctermfg=blue ctermbg=white
+highlight GitSignsDelete guifg=red guibg=white ctermfg=red ctermbg=white
 
 set termguicolors
