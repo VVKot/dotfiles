@@ -131,7 +131,7 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Show comments in italics.
-highlight Comment cterm=italic gui=italic
+highlight Comment cterm=italic gui=italic guifg=blue ctermfg=blue
 
 " Built-in filter for quickfix/location lists
 packadd cfilter
