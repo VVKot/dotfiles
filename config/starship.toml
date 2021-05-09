@@ -6,3 +6,6 @@ style = "bold green"
 
 [git_state]
 style = "bold green"
+
+[git_status]
+disabled = true
