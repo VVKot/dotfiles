@@ -125,6 +125,8 @@ return require("packer").startup {
 
     -- Zettelkasten plugin.
     use { "oberblastmeister/neuron.nvim", branch = "unstable" }
+    -- Better markdown display.
+    use "plasticboy/vim-markdown"
 
     -- DOcumentation GEnerator.
     use "kkoomen/vim-doge"
