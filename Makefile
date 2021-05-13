@@ -2,12 +2,10 @@ all: sync
 
 sync:
 	mkdir -p ~/.config/bat
-	mkdir -p ~/.config/coc/extensions
 	mkdir -p ~/.gradle
 	mkdir -p ~/Library/Preferences/glow
 
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/config/bat/config ~/.config/bat/config
-	[ -f ~/.config/coc/extensions/package.json ] || ln -s $(PWD)/config/coc/extensions/package.json ~/.config/coc/extensions/package.json
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
@@ -25,7 +23,6 @@ sync-mac:
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 clean:
-	rm -f ~/.config/coc/extensions/package.json || true
 	rm -f ~/.config/starship.toml || true
 	rm -f ~/.gradle/gradle.properties || true
 	rm -f ~/.ideavimrc || true

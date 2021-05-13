@@ -19,8 +19,9 @@ return require("packer").startup {
     -- Handful shortcuts for *nix commands.
     use "tpope/vim-eunuch"
 
-    -- Autocompletion engine utilizing LSP from VSCode.
-    use { "neoclide/coc.nvim", branch = "release" }
+    -- Completion for native LSP.
+    use "hrsh7th/nvim-compe"
+    use "onsails/lspkind-nvim"
 
     -- Explorer that adheres to Vim philosophy.
     use "justinmk/vim-dirvish"
@@ -30,7 +31,6 @@ return require("packer").startup {
     -- Fuzzy search for everything.
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
-    use { "antoinemadec/coc-fzf", branch = "release" }
 
     -- Lua-based fuzzy search.
     use {
@@ -86,7 +86,6 @@ return require("packer").startup {
       requires = {
         {"nvim-treesitter/nvim-treesitter-refactor"},
         {"nvim-treesitter/nvim-treesitter-textobjects"},
-        {"nvim-treesitter/completion-treesitter"}
       }
     }
 

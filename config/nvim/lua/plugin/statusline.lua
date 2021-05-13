@@ -15,17 +15,9 @@ local file_icon = subscribe.buf_autocmd("el_file_icon", "BufNewFile,BufRead", fu
   return ''
 end)
 
-local maybe_coc_status = subscribe.buf_autocmd("el_coc_status", "BufNewFile,BufRead,CursorHold,CursorHoldI,InsertLeave", function(_, buffer)
-  if buffer.lsp or not vim.g.did_coc_loaded then
-    return ''
-  end
-  return vim.fn['coc#status']()
-end)
-
 require('el').setup {
   generator = function(_, _)
     return {
-      maybe_coc_status,
       lsp_statusline.segment,
       lsp_statusline.server_progress,
       sections.split,
