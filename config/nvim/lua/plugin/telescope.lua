@@ -1,6 +1,5 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
-local sorters = require("telescope.sorters")
 local mappings = {
   ["j"] = false,
   ["k"] = false,
@@ -21,14 +20,16 @@ telescope.setup {
       i = mappings,
       n = mappings,
     },
-    file_sorter = sorters.get_fzy_sorter,
-    generic_sorter = sorters.get_fzy_sorter,
-    file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
-    grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-    qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
     winblend = 10,
+    extensions = {
+      fzf = {
+        override_generic_sorter = true,
+        override_file_sorter = true,
+      }
+    }
   }
 }
+require("telescope").load_extension("fzf")
 
 local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")
