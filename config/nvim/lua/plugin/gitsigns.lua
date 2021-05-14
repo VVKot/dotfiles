@@ -1,3 +1,1 @@
-require("gitsigns").setup {
-  use_internal_diff = false
-}
+require("gitsigns").setup()
