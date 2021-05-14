@@ -45,3 +45,4 @@ nnoremap { '<Leader>fb', function() builtin.buffers{} end }
 nnoremap { '<Leader>fm', function() builtin.marks{} end }
 nnoremap { '<Leader>fw', function() builtin.grep_string{} end }
 nnoremap { '<Leader>f:', function() builtin.command_history{} end }
+nnoremap { '<Leader>f/', function() builtin.search_history{} end }

@@ -1,7 +1,6 @@
 set rtp+=/usr/local/opt/fzf
 nnoremap <leader>ff :Rg 
 nnoremap <leader>fc :Commits<CR>
-nnoremap <leader>f/ :History/<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
