@@ -127,3 +127,7 @@ gmerge() {
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+dadjoke() {
+  curl -s -H "Accept: application/json" https://icanhazdadjoke.com/ | jq -r '.joke'
+}
