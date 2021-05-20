@@ -13,4 +13,6 @@
     "eslint.packageManager": "pnpm",
     "tslint.packageManager": "pnpm",
     "stylelint.packageManager": "pnpm",
+    "eslint.alwaysShowStatus": true,
+    "terminal.integrated.shell.linux": "/bin/zsh",
 }
