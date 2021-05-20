@@ -4,24 +4,32 @@ export LANG="en_US.UTF-8"
 # OS-specific setup
 case "$OSTYPE" in
   darwin*)
-    source $(brew --prefix)/share/antigen/antigen.zsh
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
   ;;
   linux*)
-    source $HOME/antigen.zsh
     alias ls='ls --color'
     alias ll='ls -laF --color'
 esac
 
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle docker
-antigen bundle gradle
-antigen bundle zsh-users/zsh-autosuggestions
+export ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
 
-antigen apply
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/gradle", from:oh-my-zsh
+zplug "plugins/yarn", from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions", defer:2
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
 
 alias vi="nvim"
 alias vim="nvim"
