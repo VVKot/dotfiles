@@ -9,3 +9,9 @@ style = "bold green"
 
 [git_status]
 disabled = true
+
+[username]
+style_user = "bold blue"
+
+[hostname]
+style = "bold green"
