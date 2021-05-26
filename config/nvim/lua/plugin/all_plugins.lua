@@ -136,5 +136,8 @@ return require("packer").startup {
 
     -- Some shims for Lua that should be eventually merged upstream.
     use "tjdevries/astronauta.nvim"
+
+    -- Testing.
+    use "vim-test/vim-test"
   end
 }
