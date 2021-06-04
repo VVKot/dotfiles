@@ -80,7 +80,7 @@ setopt HIST_IGNORE_DUPS
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-alias loadnvm='[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"'
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 
 export NODE_OPTIONS=--max_old_space_size=8192
 
