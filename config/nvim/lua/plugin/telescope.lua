@@ -42,7 +42,7 @@ nnoremap { '<Leader>gt', function() builtin.git_status{} end }
 nnoremap { '<Leader>lq', function() builtin.quickfix{} end }
 nnoremap { '<Leader>ll', function() builtin.loclist{} end }
 nnoremap { '<Leader>f<Leader>', function() builtin.current_buffer_fuzzy_find{} end }
-nnoremap { '<Leader>fb', function() builtin.buffers{} end }
+nnoremap { '<Leader>fb', function() builtin.buffers({ sort_lastused = true }) end }
 nnoremap { '<Leader>fm', function() builtin.marks{} end }
 nnoremap { '<Leader>fw', function() builtin.grep_string{} end }
 nnoremap { '<Leader>f:', function() builtin.command_history{} end }
