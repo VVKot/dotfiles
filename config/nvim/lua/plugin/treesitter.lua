@@ -2,6 +2,7 @@ local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup {
   ensure_installed = "all",
+  ignore_install = { "haskell" },
   highlight = {
     enable = true,
     use_languagetree = true,
