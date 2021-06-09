@@ -25,7 +25,13 @@ require("lspkind").init()
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
 lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport = true
-
+lsp_status.capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
