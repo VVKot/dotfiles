@@ -129,6 +129,11 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, '<Leader>lo', '<cmd>lua require"telescope.builtin".lsp_document_symbols{}<CR>')
   buf_nnoremap(bufnr, '<Leader>ls', '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>')
   buf_nnoremap(bufnr, '<Leader>lg', '<cmd>lua require"telescope.builtin".lsp_document_diagnostics{}<CR>')
+
+  -- Typescript utils
+  buf_nnoremap(bufnr, '<Leader>af', ':TSLspFixCurrent<CR>')
+  buf_nnoremap(bufnr, '<Leader>ao', ':TSLspOrganize<CR>')
+  buf_nnoremap(bufnr, '<Leader>ai', ':TSLspImportAll<CR>')
 end
 
 -- Attach handler. {{{2
@@ -234,11 +239,23 @@ lspconfig.clangd.setup({
   capabilities = lsp_status.capabilities,
 })
 
+require("null-ls").setup {
+  on_attach = function(client)
+    custom_attach(client)
+    client.resolved_capabilities.document_formatting = false
+  end,
+}
 lspconfig.tsserver.setup{
   on_init = custom_init,
   on_attach = function(client)
     custom_attach(client)
     client.resolved_capabilities.document_formatting = false
+    local ts_utils = require("nvim-lsp-ts-utils")
+    ts_utils.setup {
+        eslint_enable_code_actions = true,
+        eslint_enable_disable_comments = true,
+    }
+    ts_utils.setup_client(client)
   end,
   capabilities = lsp_status.capabilities,
   cmd = { "typescript-language-server", "--stdio" }
