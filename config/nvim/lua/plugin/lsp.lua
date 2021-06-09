@@ -111,7 +111,7 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>')
 
   -- Light bulb for actions.
-  vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+  -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
   vim.cmd [[inoremap <silent><expr> <C-Space> compe#complete()]]
   vim.cmd [[inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')]]
   vim.cmd [[inoremap <silent><expr> <CR>     compe#confirm('<CR>')]]
