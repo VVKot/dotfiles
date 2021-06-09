@@ -118,7 +118,6 @@ return require("packer").startup {
       "SirVer/ultisnips",
       requires = {{"honza/vim-snippets"}}
     }
-    use "hrsh7th/vim-vsnip"
 
     -- Autopairs plugin.
     use "windwp/nvim-autopairs"

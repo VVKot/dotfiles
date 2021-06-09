@@ -32,6 +32,7 @@ lsp_status.capabilities.textDocument.completion.completionItem.resolveSupport = 
     'additionalTextEdits',
   }
 }
+
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -42,7 +43,6 @@ require'compe'.setup {
   source = {
     path = true;
     buffer = true;
-    vsnip = false;
     nvim_lsp = true;
     nvim_lua = true;
     treesitter = false;
