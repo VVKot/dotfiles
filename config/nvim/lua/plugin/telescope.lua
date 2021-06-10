@@ -27,6 +27,17 @@ telescope.setup {
         override_file_sorter = true,
       }
     }
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true,
+    },
+    git_files = {
+      show_untracked = false,
+    },
+    lsp_code_actions = {
+      theme = "dropdown"
+    }
   }
 }
 require("telescope").load_extension("fzf")
@@ -35,14 +46,14 @@ local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")
 
 nnoremap { '<Leader><C-t>', function () builtin.git_files{} end }
-nnoremap { '<Leader><Leader>', function() builtin.git_files{show_untracked=false} end }
+nnoremap { '<Leader><Leader>', function() builtin.git_files{} end }
 nnoremap { '<Leader>tt', function() builtin.builtin{} end }
 nnoremap { '<Leader>ft', function() builtin.grep_string { search = vim.fn.input(":RG ") } end }
 nnoremap { '<Leader>gt', function() builtin.git_status{} end }
 nnoremap { '<Leader>lq', function() builtin.quickfix{} end }
 nnoremap { '<Leader>ll', function() builtin.loclist{} end }
 nnoremap { '<Leader>f<Leader>', function() builtin.current_buffer_fuzzy_find{} end }
-nnoremap { '<Leader>fb', function() builtin.buffers({ sort_lastused = true }) end }
+nnoremap { '<Leader>fb', function() builtin.buffers({}) end }
 nnoremap { '<Leader>fm', function() builtin.marks{} end }
 nnoremap { '<Leader>fw', function() builtin.grep_string{} end }
 nnoremap { '<Leader>f:', function() builtin.command_history{} end }

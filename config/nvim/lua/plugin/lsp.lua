@@ -123,8 +123,8 @@ local setup_key_mappings = function(bufnr)
   buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 
   -- telescope
-  buf_nnoremap(bufnr, '<Leader>ga', '<cmd>lua require"telescope.builtin".lsp_code_actions(require("telescope.themes").get_dropdown({winblend=10}))<CR>')
-  buf_nnoremap(bufnr, '<M-Enter>', '<cmd>lua require"telescope.builtin".lsp_code_actions(require("telescope.themes").get_dropdown({winblend=10}))<CR>')
+  buf_nnoremap(bufnr, '<Leader>ga', '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
+  buf_nnoremap(bufnr, '<M-Enter>', '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
   buf_nnoremap(bufnr, '<Leader>gr', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
   buf_nnoremap(bufnr, '<Leader>lo', '<cmd>lua require"telescope.builtin".lsp_document_symbols{}<CR>')
   buf_nnoremap(bufnr, '<Leader>ls', '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>')
