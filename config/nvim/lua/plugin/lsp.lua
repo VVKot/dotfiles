@@ -1,18 +1,6 @@
-vim.lsp.handlers["textDocument/hover"] =
-  vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
-    border = "single"
-  }
-)
-
-vim.lsp.handlers["textDocument/signatureHelp"] =
-  vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {
-    border = "single"
-  }
-)
+local popup_opts = { border = "single" }
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, popup_opts)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -20,6 +8,18 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = false,
   }
 )
+
+local peek_definition = function()
+  vim.lsp.buf_request(0, "textDocument/definition", vim.lsp.util.make_position_params(), function(_, _, result)
+    if result == nil or vim.tbl_isempty(result) then
+      return nil
+    end
+    vim.lsp.util.preview_location(result[1], popup_opts)
+  end)
+end
+
+local nnoremap = vim.keymap.nnoremap
+nnoremap { "<Leader>gh", peek_definition }
 
 require("lspkind").init()
 local lspconfig = require("lspconfig")
