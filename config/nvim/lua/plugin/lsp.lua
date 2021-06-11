@@ -382,8 +382,8 @@ lspconfig.diagnosticls.setup {
 
 -- Servers with default setup. {{{3
 local servers = {
-    'vimls', 'dockerls', 'bashls', 'jdtls', 'pyls', 'yamlls', 'html', 'jsonls',
-    'cssls'
+    'vimls', 'dockerls', 'bashls', 'jdtls', 'pyright', 'yamlls', 'html',
+    'jsonls', 'cssls'
 }
 
 for _, server in ipairs(servers) do
