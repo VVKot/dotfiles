@@ -11,7 +11,7 @@ treesitter.setup {
     enable = true,
   },
   refactor = {
-    highlight_definitions = { enable = false },
+    highlight_definitions = { enable = true },
     highlight_current_scope = { enable = false },
   },
   textobjects = {
@@ -42,6 +42,15 @@ treesitter.setup {
         ["[M"] = "@function.outer",
         ["[]"] = "@class.outer",
       },
+    },
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection    = '<M-w>',
+      node_incremental  = '<M-w>',
+      scope_incremental = '<M-e>',
+      node_decremental  = '<M-C-w>',
     },
   },
 }
