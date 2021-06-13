@@ -109,6 +109,7 @@ return require("packer").startup {
 
         -- Snippets integration.
         use {"SirVer/ultisnips", requires = {{"honza/vim-snippets"}}}
+        use "fhill2/telescope-ultisnips.nvim"
 
         -- Autopairs plugin.
         use "windwp/nvim-autopairs"

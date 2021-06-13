@@ -1,4 +1,5 @@
 local telescope = require("telescope")
+
 local actions = require("telescope.actions")
 local mappings = {
     ["j"] = false,
@@ -28,7 +29,9 @@ telescope.setup {
         lsp_code_actions = {theme = "dropdown", width = 0.6}
     }
 }
-require("telescope").load_extension("fzf")
+
+telescope.load_extension('ultisnips')
+telescope.load_extension("fzf")
 
 local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")
@@ -51,3 +54,6 @@ nnoremap {'<Leader>fm', function() builtin.marks {} end}
 nnoremap {'<Leader>fw', function() builtin.grep_string {} end}
 nnoremap {'<Leader>f:', function() builtin.command_history {} end}
 nnoremap {'<Leader>f/', function() builtin.search_history {} end}
+nnoremap {
+    '<Leader>fu', function() telescope.extensions.ultisnips.ultisnips {} end
+}
