@@ -23,14 +23,18 @@ nnoremap {"<Leader>gh", peek_definition}
 require("lspkind").init()
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
-lsp_status.capabilities.textDocument.completion.completionItem.snippetSupport =
-    true
-lsp_status.capabilities.textDocument.completion.completionItem.resolveSupport =
-    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
+local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
+custom_capabilities = vim.tbl_extend("keep", custom_capabilities or {},
+                                     lsp_status.capabilities)
+custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
+custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {"documentation", "detail", "additionalTextEdits"}
+}
 
 require'compe'.setup {
     enabled = true,
     autocomplete = true,
+    resolve = true,
     debug = false,
     min_length = 1,
     preselect = 'enable',
@@ -195,7 +199,7 @@ lspconfig.sumneko_lua.setup {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     on_init = custom_init,
     on_attach = custom_attach,
-    capabilities = lsp_status.capabilities,
+    capabilities = custom_capabilities,
     settings = {
         Lua = {
             runtime = {
@@ -223,7 +227,7 @@ lspconfig.sumneko_lua.setup {
 lspconfig.gopls.setup {
     on_init = custom_init,
     on_attach = custom_attach,
-    capabilities = lsp_status.capabilities,
+    capabilities = custom_capabilities,
     settings = {
         gopls = {
             usePlaceholders = true,
@@ -243,7 +247,7 @@ lspconfig.clangd.setup({
 
     -- Required for lsp-status
     handlers = lsp_status.extensions.clangd.setup(),
-    capabilities = lsp_status.capabilities
+    capabilities = custom_capabilities
 })
 
 require("null-ls").setup {
@@ -264,7 +268,7 @@ lspconfig.tsserver.setup {
         }
         ts_utils.setup_client(client)
     end,
-    capabilities = lsp_status.capabilities,
+    capabilities = custom_capabilities,
     cmd = {"typescript-language-server", "--stdio"}
 }
 
@@ -272,7 +276,7 @@ lspconfig.tsserver.setup {
 lspconfig.diagnosticls.setup {
     on_init = custom_init,
     on_attach = custom_attach,
-    capabilities = lsp_status.capabilities,
+    capabilities = custom_capabilities,
     filetypes = {
         "javascript", "javascriptreact", "javascript.jsx", "typescript",
         "typescriptreact", "typescript.tsx", "css", "scss", "sass", "less",
@@ -390,7 +394,7 @@ for _, server in ipairs(servers) do
     lspconfig[server].setup {
         on_init = custom_init,
         on_attach = custom_attach,
-        capabilities = lsp_status.capabilities
+        capabilities = custom_capabilities
     }
 end
 
