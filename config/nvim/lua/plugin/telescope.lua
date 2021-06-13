@@ -25,7 +25,7 @@ telescope.setup {
     pickers = {
         buffers = {sort_lastused = true},
         git_files = {show_untracked = false},
-        lsp_code_actions = {theme = "dropdown"}
+        lsp_code_actions = {theme = "dropdown", width = 0.6}
     }
 }
 require("telescope").load_extension("fzf")
