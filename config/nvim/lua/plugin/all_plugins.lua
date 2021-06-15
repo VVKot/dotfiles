@@ -130,5 +130,7 @@ return require("packer").startup {
 
         -- Testing.
         use "vim-test/vim-test"
+
+        use "ThePrimeagen/harpoon"
     end
 }
