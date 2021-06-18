@@ -131,6 +131,10 @@ return require("packer").startup {
         -- Testing.
         use "vim-test/vim-test"
 
+        -- Utils to quick navigate to & reuse terminals.
         use "ThePrimeagen/harpoon"
+
+        -- gq/yq wrapper.
+        use "gennaro-tedesco/nvim-jqx"
     end
 }
