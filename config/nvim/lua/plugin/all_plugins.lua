@@ -81,7 +81,8 @@ return require("packer").startup {
             run = ":TSUpdate",
             requires = {
                 {"nvim-treesitter/nvim-treesitter-refactor"},
-                {"nvim-treesitter/nvim-treesitter-textobjects"}
+                {"nvim-treesitter/nvim-treesitter-textobjects"},
+                {"RRethy/nvim-treesitter-textsubjects"}
             }
         }
 

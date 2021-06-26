@@ -39,6 +39,10 @@ treesitter.setup {
             }
         }
     },
+    textsubjects = {
+        enable = true,
+        keymaps = {["<C-\\>"] = "textsubjects-smart"}
+    },
     incremental_selection = {
         enable = true,
         keymaps = {
