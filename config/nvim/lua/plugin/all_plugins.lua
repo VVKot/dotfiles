@@ -137,5 +137,7 @@ return require("packer").startup {
 
         -- gq/yq wrapper.
         use "gennaro-tedesco/nvim-jqx"
+
+        use {"folke/which-key.nvim"}
     end
 }
