@@ -147,12 +147,12 @@ set conceallevel=2
 
 " COLOR SETTINGS {{{1
 set background=light
+set fillchars=eob:\ ,
 
 highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
 highlight Whitespace guifg=gray ctermfg=gray
 highlight SignColumn guibg=white ctermbg=white
-highlight EndOfBuffer guifg=white ctermfg=white
 highlight VertSplit guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLine guifg=white guibg=black ctermfg=white ctermbg=black
 highlight StatusLineNC guifg=white guibg=black ctermfg=white ctermbg=black
