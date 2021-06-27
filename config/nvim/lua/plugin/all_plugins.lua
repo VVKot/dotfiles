@@ -64,7 +64,7 @@ return require("packer").startup {
         use "editorconfig/editorconfig-vim"
 
         -- Zen mode.
-        use "junegunn/goyo.vim"
+        use {"folke/zen-mode.nvim"}
 
         -- Go support.
         use {"fatih/vim-go", ft = {"go"}}
