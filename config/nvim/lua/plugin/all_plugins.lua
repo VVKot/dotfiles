@@ -76,15 +76,11 @@ return require("packer").startup {
         use "mhinz/vim-startify"
 
         -- Syntax highlighting.
-        use {
-            "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate",
-            requires = {
-                {"nvim-treesitter/nvim-treesitter-refactor"},
-                {"nvim-treesitter/nvim-treesitter-textobjects"},
-                {"RRethy/nvim-treesitter-textsubjects"}
-            }
-        }
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use "nvim-treesitter/nvim-treesitter-refactor"
+        use "nvim-treesitter/nvim-treesitter-textobjects"
+        use "RRethy/nvim-treesitter-textsubjects"
+        use "JoosepAlviste/nvim-ts-context-commentstring"
 
         -- Neovim LSP.
         use {"neovim/nvim-lspconfig", requires = {{"nvim-lua/lsp-status.nvim"}}}
