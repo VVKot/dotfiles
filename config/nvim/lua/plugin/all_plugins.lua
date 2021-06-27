@@ -25,6 +25,7 @@ return require("packer").startup {
 
         -- Explorer that adheres to Vim philosophy.
         use "justinmk/vim-dirvish"
+        use "bounceme/remote-viewer"
         -- Readonly tree view.
         use "kyazdani42/nvim-tree.lua"
 
