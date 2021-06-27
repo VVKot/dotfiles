@@ -26,7 +26,8 @@ telescope.setup {
     pickers = {
         buffers = {sort_lastused = true},
         git_files = {show_untracked = false},
-        lsp_code_actions = {theme = "dropdown", width = 0.6}
+        lsp_code_actions = {theme = "dropdown", width = 0.6},
+        spell_suggest = {theme = "dropdown", width = 0.6}
     }
 }
 
@@ -57,3 +58,4 @@ nnoremap {'<Leader>f/', function() builtin.search_history {} end}
 nnoremap {
     '<Leader>fu', function() telescope.extensions.ultisnips.ultisnips {} end
 }
+nnoremap {'z=', function() builtin.spell_suggest {} end}
