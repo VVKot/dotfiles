@@ -121,7 +121,6 @@ local setup_key_mappings = function(bufnr)
     -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
     vim.cmd [[inoremap <silent><expr> <C-Space> compe#complete()]]
     vim.cmd [[inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')]]
-    vim.cmd [[inoremap <silent><expr> <CR>     compe#confirm('<CR>')]]
     vim.cmd [[inoremap <silent><expr> <C-e>     compe#close('<C-e>')]]
     vim.cmd [[inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })]]
     vim.cmd [[inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })]]

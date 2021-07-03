@@ -14,7 +14,7 @@ local mappings = {
 telescope.setup {
     defaults = {
         sorting_strategy = "ascending",
-        prompt_position = "top",
+        layout_config = {prompt_position = "top"},
         prompt_prefix = "🔭",
         scroll_strategy = "cycle",
         mappings = {i = mappings, n = mappings},

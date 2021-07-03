@@ -6,9 +6,8 @@ nnoremap {
 }
 
 vim.g.nvim_tree_width = 60
+vim.g.nvim_tree_disable_window_picker = 1
 vim.g.nvim_tree_bindings = {
-    ["i"] = tree_cb("edit"),
-    ["a"] = tree_cb("vsplit"),
-    ["o"] = tree_cb("split"),
-    ["p"] = tree_cb("preview")
+    {key = "i", cb = tree_cb("edit")}, {key = "a", cb = tree_cb("vsplit")},
+    {key = "o", cb = tree_cb("split")}, {key = "p", cb = tree_cb("preview")}
 }

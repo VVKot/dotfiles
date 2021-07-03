@@ -44,6 +44,7 @@ treesitter.setup {
         keymaps = {["<C-\\>"] = "textsubjects-smart"}
     },
     context_commentstring = {enable = true, enable_autocmd = false},
+    autopairs = {enable = true},
     incremental_selection = {
         enable = true,
         keymaps = {
