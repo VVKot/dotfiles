@@ -13,6 +13,7 @@ case "$OSTYPE" in
     alias ll='ls -laF --color'
 esac
 
+export SHELL="$(which zsh)"
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
