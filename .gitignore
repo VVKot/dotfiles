@@ -1,4 +1,5 @@
 config/nvim/plugin/packer_compiled.vim
+config/nvim/plugin/packer_compiled.lua
 config/nvim/extra.vim
 config/nvim/spell/*
 config/nvim/Ditto/*
