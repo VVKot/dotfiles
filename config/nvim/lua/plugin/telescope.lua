@@ -27,8 +27,8 @@ telescope.setup {
         buffers = {sort_lastused = true},
         builtin = {include_extensions = true},
         git_files = {show_untracked = false},
-        lsp_code_actions = {theme = "dropdown", width = 0.6},
-        spell_suggest = {theme = "dropdown", width = 0.6}
+        lsp_code_actions = {theme = "dropdown", layout_config = {width = 0.6}},
+        spell_suggest = {theme = "dropdown", layout_config = {width = 0.6}}
     }
 }
 
