@@ -140,3 +140,7 @@ eval "$(starship init zsh)"
 dadjoke() {
   curl -s -H "Accept: application/json" https://icanhazdadjoke.com/ | jq -r '.joke'
 }
+
+if [ -f ~/.zshrcextra ]; then
+    source ~/.zshrcextra
+fi
