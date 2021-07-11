@@ -18,14 +18,7 @@ telescope.setup {
         prompt_prefix = "🔭",
         scroll_strategy = "cycle",
         mappings = {i = mappings, n = mappings},
-        winblend = 10,
-        extensions = {
-            fzf = {override_generic_sorter = true, override_file_sorter = true},
-            bookmarks = {
-                selected_browser = "google_chrome",
-                url_open_plugin = "open_browser"
-            }
-        }
+        winblend = 10
     },
     pickers = {
         buffers = {sort_lastused = true},
@@ -33,7 +26,15 @@ telescope.setup {
         git_files = {show_untracked = false},
         lsp_code_actions = {theme = "dropdown", layout_config = {width = 0.6}},
         spell_suggest = {theme = "dropdown", layout_config = {width = 0.6}}
+    },
+    extensions = {
+        fzf = {override_generic_sorter = true, override_file_sorter = true},
+        bookmarks = {
+            selected_browser = "google_chrome",
+            url_open_plugin = "open_browser"
+        }
     }
+
 }
 
 telescope.load_extension("bookmarks")
