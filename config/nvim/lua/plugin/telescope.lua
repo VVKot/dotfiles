@@ -20,7 +20,11 @@ telescope.setup {
         mappings = {i = mappings, n = mappings},
         winblend = 10,
         extensions = {
-            fzf = {override_generic_sorter = true, override_file_sorter = true}
+            fzf = {override_generic_sorter = true, override_file_sorter = true},
+            bookmarks = {
+                selected_browser = "google_chrome",
+                url_open_plugin = "open_browser"
+            }
         }
     },
     pickers = {
@@ -32,7 +36,8 @@ telescope.setup {
     }
 }
 
-telescope.load_extension('ultisnips')
+telescope.load_extension("bookmarks")
+telescope.load_extension("ultisnips")
 telescope.load_extension("fzf")
 
 local nnoremap = vim.keymap.nnoremap

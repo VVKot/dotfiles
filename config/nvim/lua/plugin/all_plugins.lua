@@ -39,6 +39,7 @@ return require("packer").startup {
             requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
         }
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+        use "dhruvmanila/telescope-bookmarks.nvim"
 
         -- Git plugins.
         use "tpope/vim-fugitive"
