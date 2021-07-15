@@ -25,6 +25,10 @@ telescope.setup {
         builtin = {include_extensions = true},
         git_files = {show_untracked = false},
         lsp_code_actions = {theme = "dropdown", layout_config = {width = 0.6}},
+        lsp_range_code_actions = {
+            theme = "dropdown",
+            layout_config = {width = 0.6}
+        },
         spell_suggest = {theme = "dropdown", layout_config = {width = 0.6}}
     },
     extensions = {

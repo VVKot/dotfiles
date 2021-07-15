@@ -79,6 +79,11 @@ local buf_nnoremap = function(bufnr, key, command)
     buf_map_key(bufnr, 'n', key, command, opts)
 end
 
+local buf_vnoremap = function(bufnr, key, command)
+    local opts = {noremap = true, silent = true}
+    buf_map_key(bufnr, 'v', key, command, opts)
+end
+
 local buf_inoremap = function(bufnr, key, command)
     local opts = {noremap = true, silent = true}
     buf_map_key(bufnr, 'i', key, command, opts)
@@ -100,6 +105,8 @@ local setup_key_mappings = function(bufnr)
 
     -- actions
     buf_nnoremap(bufnr, '<Leader>gA', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    buf_vnoremap(bufnr, '<Leader>gA',
+                 '<cmd>lua vim.lsp.buf.range_code_action()<CR>')
     buf_nnoremap(bufnr, '<Leader>gq', '<cmd>lua vim.lsp.buf.formatting()<CR>')
     buf_nnoremap(bufnr, '<Leader>ar', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
@@ -133,6 +140,10 @@ local setup_key_mappings = function(bufnr)
                  '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
     buf_nnoremap(bufnr, '<M-Enter>',
                  '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
+    buf_vnoremap(bufnr, '<Leader>ga',
+                 '<cmd>lua require"telescope.builtin".lsp_range_code_actions{}<CR>')
+    buf_vnoremap(bufnr, '<M-Enter>',
+                 '<cmd>lua require"telescope.builtin".lsp_range_code_actions{}<CR>')
     buf_nnoremap(bufnr, '<Leader>gr',
                  '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
     buf_nnoremap(bufnr, '<Leader>lo',
