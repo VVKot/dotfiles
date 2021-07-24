@@ -21,7 +21,7 @@ telescope.setup {
         winblend = 10
     },
     pickers = {
-        buffers = {sort_lastused = true},
+        buffers = {sort_mru = true, ignore_current_buffer = true},
         builtin = {include_extensions = true},
         git_files = {show_untracked = false},
         lsp_code_actions = {theme = "dropdown", layout_config = {width = 0.6}},
