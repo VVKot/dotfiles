@@ -54,6 +54,8 @@ return require("packer").startup {
         }
         use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
         use "rhysd/conflict-marker.vim"
+        -- Git commit browser.
+        use "junegunn/gv.vim"
 
         -- Autodetect indentation.
         use "tpope/vim-sleuth"
