@@ -8,6 +8,8 @@ local mappings = {
     ["<C-k>"] = actions.move_selection_previous,
     ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
     ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
+    ["<M-n>"] = actions.cycle_history_next,
+    ["<M-p>"] = actions.cycle_history_prev,
     ["<esc>"] = actions.close
 }
 
