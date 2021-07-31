@@ -145,13 +145,6 @@ augroup end
 " Conceal level high enough to cover markdown
 set conceallevel=2
 
-" Use Perl-based regex by default
-nnoremap / /\v
-vnoremap / /\v
-
-" Always apply substitutions globally
-set gdefault
-
 " Always move screen line-wise
 nnoremap j gj
 nnoremap k gk
