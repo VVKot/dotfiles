@@ -158,6 +158,12 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+augroup neovim_terminal
+    autocmd!
+    autocmd TermOpen * startinsert
+    autocmd TermOpen * :setlocal nonumber norelativenumber signcolumn=no
+augroup END
+
 " COLOR SETTINGS {{{1
 set background=light
 set fillchars=eob:\ ,
