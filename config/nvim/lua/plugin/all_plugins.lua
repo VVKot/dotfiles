@@ -74,7 +74,7 @@ return require("packer").startup {
         use {"folke/zen-mode.nvim"}
 
         -- Go support.
-        use {"fatih/vim-go", ft = {"go"}}
+        use "fatih/vim-go"
 
         -- Tree for undo history.
         use "mbbill/undotree"
