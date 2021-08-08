@@ -70,7 +70,7 @@ _fix_cursor() {
 precmd_functions+=(_fix_cursor)
 
 # fzf
-export FZF_DEFAULT_OPTS="--layout=reverse --bind ctrl-a:select-all --color=light"
+export FZF_DEFAULT_OPTS="--layout=reverse --bind ctrl-a:select-all --color=light --cycle"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
