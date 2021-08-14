@@ -18,7 +18,7 @@ local download_packer = function()
 end
 
 return function()
-    if not pcall(require, "packer") then
+    if not pcall(vim.cmd, [[packadd packer.nvim]]) then
         download_packer()
 
         return true
