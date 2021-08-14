@@ -144,5 +144,7 @@ return require("packer").startup {
         use "gennaro-tedesco/nvim-jqx"
 
         use {"folke/which-key.nvim"}
+
+        use "weilbith/nvim-lsp-smag"
     end
 }
