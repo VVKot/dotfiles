@@ -3,7 +3,7 @@
 local download_packer = function()
     if vim.fn.input "Download Packer? (y for yes)" ~= "y" then return end
 
-    local directory = string.format("%s/site/pack/packer/start/",
+    local directory = string.format("%s/site/pack/packer/opt/",
                                     vim.fn.stdpath "data")
 
     vim.fn.mkdir(directory, "p")
