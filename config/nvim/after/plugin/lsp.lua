@@ -92,7 +92,6 @@ end
 -- Key maps. {{{2
 local setup_key_mappings = function(bufnr)
     -- references
-    buf_nnoremap(bufnr, '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
     buf_nnoremap(bufnr, 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
     buf_nnoremap(bufnr, '<Leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
     buf_nnoremap(bufnr, 'gD', '<cmd>lua vim.lsp.buf.implementation()<CR>')
@@ -189,24 +188,8 @@ end
 
 -- Servers. {{{2
 
-local system_name
-if vim.fn.has("mac") == 1 then
-    system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-    system_name = "Linux"
-elseif vim.fn.has("win32") == 1 then
-    system_name = "Windows"
-else
-    print("Unsupported system for sumneko")
-end
-
-local sumneko_root_path = vim.fn.stdpath("cache") ..
-                              "/lspconfig/sumneko_lua/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name ..
-                           "/lua-language-server"
-
 lspconfig.sumneko_lua.setup {
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    cmd = require'lspcontainers'.command('sumneko_lua'),
     on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
@@ -235,6 +218,7 @@ lspconfig.sumneko_lua.setup {
 }
 
 lspconfig.gopls.setup {
+    cmd = require'lspcontainers'.command('gopls'),
     on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
@@ -280,6 +264,60 @@ lspconfig.tsserver.setup {
     end,
     capabilities = custom_capabilities,
     cmd = {"typescript-language-server", "--stdio"}
+}
+
+lspconfig.dockerls.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('dockerls'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
+}
+
+lspconfig.yamlls.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('yamlls'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
+}
+
+lspconfig.html.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('html'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
+}
+
+lspconfig.jsonls.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('jsonls'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
+}
+
+lspconfig.pyright.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('pyright'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
+}
+
+lspconfig.bashls.setup {
+    before_init = function(params) params.processId = vim.NIL end,
+    cmd = require'lspcontainers'.command('bashls'),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    on_init = custom_init,
+    on_attach = function(client) custom_attach(client) end,
+    capabilities = custom_capabilities
 }
 
 -- Diagnostics. {{{3
@@ -395,10 +433,7 @@ lspconfig.diagnosticls.setup {
 }
 
 -- Servers with default setup. {{{3
-local servers = {
-    'vimls', 'dockerls', 'bashls', 'jdtls', 'pyright', 'yamlls', 'html',
-    'jsonls', 'cssls'
-}
+local servers = {'vimls', 'jdtls', 'cssls'}
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup {

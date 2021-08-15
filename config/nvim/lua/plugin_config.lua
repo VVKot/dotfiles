@@ -143,8 +143,13 @@ return require("packer").startup {
         -- gq/yq wrapper.
         use "gennaro-tedesco/nvim-jqx"
 
+        -- Show all available keymaps.
         use {"folke/which-key.nvim"}
 
+        -- Add tags interop for LSP.
         use "weilbith/nvim-lsp-smag"
+
+        -- Docker images for LSP servers.
+        use "lspcontainers/lspcontainers.nvim"
     end
 }
