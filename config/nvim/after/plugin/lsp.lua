@@ -218,7 +218,6 @@ lspconfig.sumneko_lua.setup {
 }
 
 lspconfig.gopls.setup {
-    cmd = require'lspcontainers'.command('gopls'),
     on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
