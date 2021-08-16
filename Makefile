@@ -2,6 +2,7 @@ all: sync
 
 sync:
 	mkdir -p ~/.config/bat
+	mkdir -p ~/.config/glow
 	mkdir -p ~/.gradle
 	mkdir -p ~/Library/Preferences/glow
 
@@ -15,6 +16,7 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
+	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
 
 sync-mac:
 	mkdir -p ~/.iterm
@@ -33,6 +35,7 @@ clean:
 	rm -f ~/.zshrc || true
 	rm -f ~/Library/Application\ Support/Code/User/settings.json || true
 	rm -f ~/Library/Preferences/glow/glow.yml || true
+	rm -f ~/.config/glow/glow.yml || true
 	rm -rf ~/.config/nvim || true
 
 .PHONY: all clean sync sync-mac build run kill
