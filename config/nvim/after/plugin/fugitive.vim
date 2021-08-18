@@ -1,4 +1,4 @@
-nmap <Leader>gg :tab Git<CR>gg<c-n>
+nmap <Leader>gg :tab Git<CR>gg)
 nmap <Leader>gb :GBrowse<CR>
 vmap <Leader>gb :GBrowse<CR>
 nnoremap <Leader>gs :vert Gdiffsplit!<CR>
