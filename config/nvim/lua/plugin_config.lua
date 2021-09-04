@@ -92,7 +92,7 @@ return require("packer").startup {
         -- Neovim LSP.
         use {"neovim/nvim-lspconfig", requires = {{"nvim-lua/lsp-status.nvim"}}}
         use 'kosayoda/nvim-lightbulb'
-        use {"jose-elias-alvarez/nvim-lsp-ts-utils", branch = "develop"}
+        use "jose-elias-alvarez/nvim-lsp-ts-utils"
         use "jose-elias-alvarez/null-ls.nvim"
 
         -- Tags/LSP symbols viewer.
