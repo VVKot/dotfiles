@@ -149,5 +149,8 @@ return require("packer").startup {
 
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
+
+        -- Github colorscheme.
+        use "projekt0n/github-nvim-theme"
     end
 }

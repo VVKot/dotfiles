@@ -65,7 +65,7 @@ lsp_status.config({
     indicator_warnings = '⚠️ ',
     indicator_info = 'ℹ️',
     indicator_hint = '💡',
-    indicator_ok = '✔️',
+    indicator_ok = '',
     kind_labels = vim.g.completion_customize_lsp_label
 })
 
