@@ -93,9 +93,6 @@ return require("packer").startup {
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
         use "jose-elias-alvarez/null-ls.nvim"
 
-        -- Tags/LSP symbols viewer.
-        use "liuchengxu/vista.vim"
-
         -- Icons.
         use "ryanoasis/vim-devicons"
         use "kyazdani42/nvim-web-devicons"
@@ -149,8 +146,5 @@ return require("packer").startup {
 
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
-
-        -- Github colorscheme.
-        use "projekt0n/github-nvim-theme"
     end
 }

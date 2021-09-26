@@ -1,8 +1,5 @@
 -- Adapted from https://github.com/projekt0n/github-nvim-theme/blob/main/lua/lualine/themes/github.lua
-local configModule = require("github-theme.config")
-
-local config = configModule.config
-local colors = require("github-theme.colors").setup(config)
+local colors = {fg = "#24292e", bg = "#ffffff", blue = "#0451a5"}
 
 local section_color = {bg = colors.bg, fg = colors.fg}
 local section_color_bold = {bg = colors.bg, fg = colors.fg, gui = "bold"}

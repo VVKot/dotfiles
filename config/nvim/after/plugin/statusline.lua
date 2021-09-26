@@ -15,7 +15,7 @@ require'lualine'.setup {
         disabled_filetypes = {"fugitive", "startify"}
     },
     sections = {
-        lualine_a = {"hostname"},
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {{full_filename}},
         lualine_x = {require'lsp-status'.status},
