@@ -47,10 +47,10 @@ require'compe'.setup {
     documentation = true,
 
     source = {
-        path = true,
+        path = false,
         buffer = true,
         nvim_lsp = true,
-        nvim_lua = true,
+        nvim_lua = false,
         treesitter = false,
         ultisnips = true
     }
