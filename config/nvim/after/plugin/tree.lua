@@ -1,6 +1,8 @@
 local nnoremap = vim.keymap.nnoremap
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
+require'nvim-tree'.setup {update_to_buf_dir = false}
+
 nnoremap {
     "<Leader>tf", function() vim.api.nvim_command [[NvimTreeFindFile]] end
 }
