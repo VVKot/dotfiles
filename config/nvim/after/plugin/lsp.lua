@@ -266,6 +266,7 @@ require("null-ls").setup {
         client.resolved_capabilities.document_formatting = false
     end
 }
+
 lspconfig.tsserver.setup {
     on_init = custom_init,
     on_attach = function(client)
@@ -282,59 +283,20 @@ lspconfig.tsserver.setup {
     cmd = {"typescript-language-server", "--stdio"}
 }
 
-lspconfig.dockerls.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('dockerls'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
+local dockerized_servers = {
+    "bashls", "dockerls", "html", "jsonls", "pyright", "yamlls"
 }
 
-lspconfig.yamlls.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('yamlls'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
-}
-
-lspconfig.html.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('html'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
-}
-
-lspconfig.jsonls.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('jsonls'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
-}
-
-lspconfig.pyright.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('pyright'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
-}
-
-lspconfig.bashls.setup {
-    before_init = function(params) params.processId = vim.NIL end,
-    cmd = require'lspcontainers'.command('bashls'),
-    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    on_init = custom_init,
-    on_attach = function(client) custom_attach(client) end,
-    capabilities = custom_capabilities
-}
+for _, server in pairs(dockerized_servers) do
+    lspconfig[server].setup {
+        before_init = function(params) params.processId = vim.NIL end,
+        cmd = require'lspcontainers'.command(server),
+        root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+        on_init = custom_init,
+        on_attach = function(client) custom_attach(client) end,
+        capabilities = custom_capabilities
+    }
+end
 
 -- Diagnostics. {{{3
 lspconfig.diagnosticls.setup {
