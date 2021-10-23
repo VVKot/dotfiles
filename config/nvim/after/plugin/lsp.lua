@@ -66,7 +66,7 @@ cmp.setup {
             }
         }
     },
-    experimental = {native_menu = false, ghost_text = true}
+    experimental = {native_menu = false, ghost_text = false}
 }
 
 -- LSP status. {{{2
