@@ -116,12 +116,21 @@ local setup_key_mappings = function(bufnr)
                  '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
     buf_nnoremap(bufnr, '<Leader>lG',
                  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
-    buf_nnoremap(bufnr, '<C-Space>',
-                 '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "single" })<CR>')
-    buf_nnoremap(bufnr, ']g',
-                 '<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>')
-    buf_nnoremap(bufnr, '[g',
-                 '<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>')
+    nnoremap {
+        "<C-Space>",
+        function() vim.diagnostic.open_float(0, {scope = "line"}) end,
+        buffer = bufnr
+    }
+    nnoremap {
+        "]g",
+        function() vim.diagnostic.goto_next {float = {border = "single"}} end,
+        buffer = bufnr
+    }
+    nnoremap {
+        "[g",
+        function() vim.diagnostic.goto_prev {float = {border = "single"}} end,
+        buffer = bufnr
+    }
 
     -- Light bulb for actions.
     -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
