@@ -23,8 +23,13 @@ return require("packer").startup {
         use "tpope/vim-eunuch"
 
         -- Completion for native LSP.
-        use "hrsh7th/nvim-compe"
         use "onsails/lspkind-nvim"
+        use "hrsh7th/nvim-cmp"
+        use "hrsh7th/cmp-nvim-lsp"
+        use "hrsh7th/cmp-buffer"
+        use "hrsh7th/cmp-path"
+        use "hrsh7th/cmp-nvim-lua"
+        use "quangnguyen30192/cmp-nvim-ultisnips"
 
         -- Explorer that adheres to Vim philosophy.
         use "justinmk/vim-dirvish"

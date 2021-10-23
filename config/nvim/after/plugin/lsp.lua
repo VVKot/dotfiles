@@ -20,7 +20,9 @@ end
 local nnoremap = vim.keymap.nnoremap
 nnoremap {"<Leader>gh", peek_definition}
 
-require("lspkind").init()
+local lspkind = require("lspkind")
+lspkind.init()
+
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -30,30 +32,41 @@ custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
 custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = {"documentation", "detail", "additionalTextEdits"}
 }
+custom_capabilities = require('cmp_nvim_lsp').update_capabilities(
+                          custom_capabilities)
 
-require'compe'.setup {
-    enabled = true,
-    autocomplete = true,
-    resolve = true,
-    debug = false,
-    min_length = 1,
-    preselect = 'enable',
-    throttle_time = 80,
-    source_timeout = 400,
-    incomplete_delay = 400,
-    max_abbr_width = 100,
-    max_kind_width = 100,
-    max_menu_width = 100,
-    documentation = true,
-
-    source = {
-        path = false,
-        buffer = true,
-        nvim_lsp = true,
-        nvim_lua = false,
-        treesitter = false,
-        ultisnips = true
-    }
+local cmp = require("cmp")
+cmp.setup {
+    snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
+    mapping = {
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.close(),
+        ["<C-y>"] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true
+        },
+        ["<C-space>"] = cmp.mapping.complete()
+    },
+    sources = {
+        {name = "nvim_lua"}, {name = "nvim_lsp", max_item_count = 10},
+        {name = "path"}, {name = "ultisnips"},
+        {name = "buffer", keyword_length = 5, max_item_count = 5}
+    },
+    formatting = {
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                nvim_lua = "[api]",
+                nvim_lsp = "[LSP]",
+                path = "[path]",
+                ultisnips = "[snip]",
+                buffer = "[buf]"
+            }
+        }
+    },
+    experimental = {native_menu = false, ghost_text = true}
 }
 
 -- LSP status. {{{2
@@ -134,11 +147,6 @@ local setup_key_mappings = function(bufnr)
 
     -- Light bulb for actions.
     -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-    vim.cmd [[inoremap <silent><expr> <C-Space> compe#complete()]]
-    vim.cmd [[inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')]]
-    vim.cmd [[inoremap <silent><expr> <C-e>     compe#close('<C-e>')]]
-    vim.cmd [[inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })]]
-    vim.cmd [[inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })]]
     buf_inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     buf_nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
