@@ -107,7 +107,7 @@ set grepformat^=%f:%l:%c:%m
 nnoremap <leader>rr :lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>
 
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 
 augroup set_js_filetypes
   autocmd!
