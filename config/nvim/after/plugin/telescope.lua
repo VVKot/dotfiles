@@ -46,6 +46,7 @@ telescope.setup {
 telescope.load_extension("bookmarks")
 telescope.load_extension("ultisnips")
 telescope.load_extension("fzf")
+telescope.load_extension("git_worktree")
 
 local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")

@@ -61,6 +61,7 @@ return require("packer").startup {
         use "rhysd/conflict-marker.vim"
         -- Git commit browser.
         use "junegunn/gv.vim"
+        use "theprimeagen/git-worktree.nvim"
 
         -- Autodetect indentation.
         use "tpope/vim-sleuth"
