@@ -100,7 +100,7 @@ return require("packer").startup {
         use "kyazdani42/nvim-web-devicons"
 
         -- Statusline.
-        use "hoob3rt/lualine.nvim"
+        use "nvim-lualine/lualine.nvim"
 
         -- Markdown previewer.
         use "npxbr/glow.nvim"
