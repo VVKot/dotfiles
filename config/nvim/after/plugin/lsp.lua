@@ -50,8 +50,8 @@ cmp.setup {
         ["<C-space>"] = cmp.mapping.complete()
     },
     sources = {
-        {name = "nvim_lua"}, {name = "nvim_lsp", max_item_count = 10},
-        {name = "path"}, {name = "ultisnips"},
+        {name = "nvim_lua"}, {name = "nvim_lsp"}, {name = "path"},
+        {name = "ultisnips"},
         {name = "buffer", keyword_length = 5, max_item_count = 5}
     },
     formatting = {
