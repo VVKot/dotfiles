@@ -78,6 +78,7 @@ return require("packer").startup {
 
         -- Zen mode.
         use {"folke/zen-mode.nvim"}
+        use "preservim/vim-pencil"
 
         -- Go support.
         use "fatih/vim-go"
@@ -154,5 +155,6 @@ return require("packer").startup {
 
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
+        use "rhysd/vim-grammarous"
     end
 }
