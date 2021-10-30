@@ -155,6 +155,11 @@ return require("packer").startup {
 
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
+
+        -- Wrapper for languagetool.
         use "rhysd/vim-grammarous"
+
+        -- Gradle support.
+        use "tfnico/vim-gradle"
     end
 }
