@@ -260,13 +260,6 @@ lspconfig.clangd.setup({
     capabilities = custom_capabilities
 })
 
-require("null-ls").setup {
-    on_attach = function(client)
-        custom_attach(client)
-        client.resolved_capabilities.document_formatting = false
-    end
-}
-
 lspconfig.tsserver.setup {
     on_init = custom_init,
     on_attach = function(client)
@@ -411,7 +404,7 @@ lspconfig.diagnosticls.setup {
 }
 
 -- Servers with default setup. {{{3
-local servers = {'vimls', 'jdtls', 'cssls'}
+local servers = {'vimls', 'jdtls', 'cssls', 'eslint'}
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
