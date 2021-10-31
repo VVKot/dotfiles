@@ -260,6 +260,20 @@ lspconfig.clangd.setup({
     capabilities = custom_capabilities
 })
 
+local nullls = require("null-ls")
+nullls.config {
+    sources = {
+        nullls.builtins.diagnostics.proselint,
+        nullls.builtins.code_actions.proselint
+    }
+}
+lspconfig["null-ls"].setup {
+    on_attach = function(client)
+        custom_attach(client)
+        client.resolved_capabilities.document_formatting = false
+    end
+}
+
 lspconfig.tsserver.setup {
     on_init = custom_init,
     on_attach = function(client)
