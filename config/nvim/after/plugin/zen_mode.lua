@@ -8,7 +8,9 @@ require("zen-mode").setup {
         options = {enabled = true, showcmd = false},
         gitsigns = {enabled = true},
         tmux = {enabled = true}
-    }
+    },
+    on_open = function(win) vim.cmd [[SoftPencil]] end,
+    on_close = function() vim.cmd [[PencilOff]] end
 }
 
 local nnoremap = vim.keymap.nnoremap
