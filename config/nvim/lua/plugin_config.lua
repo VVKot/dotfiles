@@ -160,5 +160,8 @@ return require("packer").startup {
 
         -- Gradle support.
         use "tfnico/vim-gradle"
+
+        -- Support for remote copy-paste.
+        use "ojroques/vim-oscyank"
     end
 }
