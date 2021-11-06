@@ -1,7 +1,10 @@
 -- Temporary hack until https://github.com/neovim/neovim/issues/15176 is resolved
 vim.cmd [[set background=light]]
 
-return require("packer").startup {
+local packer = require("packer")
+packer.init({max_jobs = 50})
+
+return packer.startup {
     function(use)
         -- Manage packer itself.
         use {"wbthomason/packer.nvim", opt = true}
