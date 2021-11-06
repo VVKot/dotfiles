@@ -167,5 +167,8 @@ return packer.startup {
 
         -- Support for remote copy-paste.
         use "ojroques/vim-oscyank"
+
+        -- Cache lua modules for quicker startup.
+        use "lewis6991/impatient.nvim"
     end
 }

@@ -1,6 +1,4 @@
-if require "first_load"() then
-  return
-end
+if require "first_load"() then return end
 
 vim.cmd [[source ~/.config/nvim/common.vim]]
 
@@ -12,4 +10,5 @@ if filereadable(expand("~/.config/nvim/extra.vim"))
 endif
 ]]
 
-require "plugin_config"
+require("impatient")
+require("plugin_config")
