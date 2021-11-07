@@ -313,7 +313,7 @@ lspconfig.diagnosticls.setup {
     filetypes = {
         "javascript", "javascriptreact", "javascript.jsx", "typescript",
         "typescriptreact", "typescript.tsx", "css", "scss", "sass", "less",
-        "lua", "markdown"
+        "lua", "markdown", "rst"
     },
     init_options = {
         filetypes = {
@@ -327,7 +327,8 @@ lspconfig.diagnosticls.setup {
             scss = "stylelint",
             sass = "stylelint",
             less = "stylelint",
-            markdown = "proselint"
+            markdown = "proselint",
+            rst = "proselint"
         },
         linters = {
             eslint = {
@@ -381,7 +382,7 @@ lspconfig.diagnosticls.setup {
             },
             proselint = {
                 command = 'proselint',
-                debounce = 300,
+                debounce = 100,
                 args = {'-j', "%filepath"},
                 sourceName = 'proselint',
                 parseJson = {
