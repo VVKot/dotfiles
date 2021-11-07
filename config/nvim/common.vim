@@ -154,8 +154,6 @@ augroup neovim_terminal
     autocmd TermOpen * :setlocal nonumber norelativenumber signcolumn=no
 augroup END
 
-let g:grammarous#languagetool_cmd = 'languagetool'
-let g:grammarous#use_location_list = 1
 set thesaurus=~/.vim/thesaurus
 
 " COLOR SETTINGS {{{1

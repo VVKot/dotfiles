@@ -260,18 +260,13 @@ lspconfig.clangd.setup({
     capabilities = custom_capabilities
 })
 
-local nullls = require("null-ls")
-nullls.config {
-    sources = {
-        nullls.builtins.diagnostics.proselint,
-        nullls.builtins.code_actions.proselint
-    }
-}
-lspconfig["null-ls"].setup {
-    on_attach = function(client)
-        custom_attach(client)
-        client.resolved_capabilities.document_formatting = false
-    end
+local ltex_path = vim.fn.stdpath("data") .. "/grammar-guard/ltex/bin/ltex-ls";
+lspconfig.ltex.setup {
+    cmd = {ltex_path},
+    on_init = custom_init,
+    on_attach = custom_attach,
+    capabilities = custom_capabilities,
+    settings = {ltex = {additionalRules = {enablePickyRules = true}}}
 }
 
 lspconfig.tsserver.setup {
@@ -313,7 +308,7 @@ lspconfig.diagnosticls.setup {
     filetypes = {
         "javascript", "javascriptreact", "javascript.jsx", "typescript",
         "typescriptreact", "typescript.tsx", "css", "scss", "sass", "less",
-        "lua"
+        "lua", "markdown"
     },
     init_options = {
         filetypes = {
@@ -326,7 +321,8 @@ lspconfig.diagnosticls.setup {
             css = "stylelint",
             scss = "stylelint",
             sass = "stylelint",
-            less = "stylelint"
+            less = "stylelint",
+            markdown = "proselint"
         },
         linters = {
             eslint = {
@@ -376,6 +372,24 @@ lspconfig.diagnosticls.setup {
                     column = "column",
                     message = "[stylelint] ${text}",
                     security = "severity"
+                }
+            },
+            proselint = {
+                command = 'proselint',
+                debounce = 300,
+                args = {'-j', "%filepath"},
+                sourceName = 'proselint',
+                parseJson = {
+                    errorsRoot = 'data.errors',
+                    line = 'line',
+                    column = 'column',
+                    message = '[proselint] ${message} (${check})',
+                    security = 'severity'
+                },
+                securities = {
+                    error = 'error',
+                    warning = 'warning',
+                    info = 'suggestion'
                 }
             }
         },

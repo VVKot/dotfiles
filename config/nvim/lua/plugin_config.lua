@@ -103,7 +103,6 @@ return packer.startup {
         use {"neovim/nvim-lspconfig", requires = {{"nvim-lua/lsp-status.nvim"}}}
         use 'kosayoda/nvim-lightbulb'
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
-        use "jose-elias-alvarez/null-ls.nvim"
 
         -- Icons.
         use "ryanoasis/vim-devicons"
@@ -159,9 +158,6 @@ return packer.startup {
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
 
-        -- Wrapper for languagetool.
-        use "rhysd/vim-grammarous"
-
         -- Gradle support.
         use "tfnico/vim-gradle"
 
@@ -170,5 +166,8 @@ return packer.startup {
 
         -- Cache lua modules for quicker startup.
         use "lewis6991/impatient.nvim"
+
+        -- LTeX language server installer.
+        use "brymer-meneses/grammar-guard.nvim"
     end
 }
