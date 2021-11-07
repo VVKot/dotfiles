@@ -1,4 +1,4 @@
-local popup_opts = {border = "single"}
+local popup_opts = {border = "single", focusable = false}
 vim.lsp.handlers["textDocument/signatureHelp"] =
     vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
 vim.lsp.handlers["textDocument/hover"] =
@@ -136,12 +136,12 @@ local setup_key_mappings = function(bufnr)
     }
     nnoremap {
         "]g",
-        function() vim.diagnostic.goto_next {float = {border = "single"}} end,
+        function() vim.diagnostic.goto_next {float = popup_opts} end,
         buffer = bufnr
     }
     nnoremap {
         "[g",
-        function() vim.diagnostic.goto_prev {float = {border = "single"}} end,
+        function() vim.diagnostic.goto_prev {float = popup_opts} end,
         buffer = bufnr
     }
 
