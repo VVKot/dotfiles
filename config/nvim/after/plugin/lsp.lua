@@ -266,7 +266,12 @@ lspconfig.ltex.setup {
     on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
-    settings = {ltex = {additionalRules = {enablePickyRules = true}}}
+    settings = {
+        ltex = {
+            disabledRules = {["en-US"] = {"EN_QUOTES"}},
+            additionalRules = {enablePickyRules = true}
+        }
+    }
 }
 
 lspconfig.tsserver.setup {
