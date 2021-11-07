@@ -25,8 +25,11 @@ sync-mac:
 
 	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/iterm/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	[ -f ~/Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application\ Support/userSettings.json ] || cp $(PWD)/userSettings.json ~/Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application\ Support/userSettings.json
 
 clean:
+	rm -f ~/.config/glow/glow.yml || true
+	rm -f ~/.config/kitty/kitty.conf || true
 	rm -f ~/.config/starship.toml || true
 	rm -f ~/.gradle/gradle.properties || true
 	rm -f ~/.ideavimrc || true
@@ -36,9 +39,8 @@ clean:
 	rm -f ~/.zprofile || true
 	rm -f ~/.zshrc || true
 	rm -f ~/Library/Application\ Support/Code/User/settings.json || true
+	rm -f ~/Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application\ Support/userSettings.json || true
 	rm -f ~/Library/Preferences/glow/glow.yml || true
-	rm -f ~/.config/glow/glow.yml || true
-	rm -f ~/.config/kitty/kitty.conf || true
 	rm -rf ~/.config/nvim || true
 
 .PHONY: all clean sync sync-mac build run kill
