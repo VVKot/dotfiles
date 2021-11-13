@@ -8,79 +8,12 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
                  {signs = false, virtual_text = false})
 
-local peek_definition = function()
-    vim.lsp.buf_request(0, "textDocument/definition",
-                        vim.lsp.util.make_position_params(),
-                        function(_, _, result)
-        if result == nil or vim.tbl_isempty(result) then return nil end
-        vim.lsp.util.preview_location(result[1], popup_opts)
-    end)
-end
-
 local nnoremap = vim.keymap.nnoremap
-nnoremap {"<Leader>gh", peek_definition}
-
-local lspkind = require("lspkind")
-lspkind.init()
 
 local lspconfig = require("lspconfig")
-local lsp_status = require("lsp-status")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
-custom_capabilities = vim.tbl_extend("keep", custom_capabilities or {},
-                                     lsp_status.capabilities)
-custom_capabilities.textDocument.completion.completionItem.snippetSupport = true
-custom_capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {"documentation", "detail", "additionalTextEdits"}
-}
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(
                           custom_capabilities)
-
-local cmp = require("cmp")
-cmp.setup {
-    snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
-    mapping = {
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.close(),
-        ["<C-y>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true
-        },
-        ["<C-space>"] = cmp.mapping.complete()
-    },
-    sources = {
-        {name = "nvim_lua"}, {name = "nvim_lsp"}, {name = "path"},
-        {name = "ultisnips"},
-        {name = "buffer", keyword_length = 5, max_item_count = 5}
-    },
-    formatting = {
-        format = lspkind.cmp_format {
-            with_text = true,
-            menu = {
-                nvim_lua = "[api]",
-                nvim_lsp = "[LSP]",
-                path = "[path]",
-                ultisnips = "[snip]",
-                buffer = "[buf]"
-            }
-        }
-    },
-    experimental = {native_menu = false, ghost_text = false}
-}
-
--- LSP status. {{{2
-lsp_status.register_progress()
-lsp_status.config({
-    status_symbol = '',
-    current_function = false,
-    indicator_errors = '❌',
-    indicator_warnings = '⚠️ ',
-    indicator_info = 'ℹ️',
-    indicator_hint = '💡',
-    indicator_ok = '',
-    kind_labels = vim.g.completion_customize_lsp_label
-})
 
 -- Helper functions. {{{2
 local buf_map_key = function(bufnr, mode, key, command, opts)
@@ -145,8 +78,6 @@ local setup_key_mappings = function(bufnr)
         buffer = bufnr
     }
 
-    -- Light bulb for actions.
-    -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
     buf_inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     buf_nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     buf_nnoremap(bufnr, 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -156,10 +87,6 @@ local setup_key_mappings = function(bufnr)
                  '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
     buf_nnoremap(bufnr, '<M-Enter>',
                  '<cmd>lua require"telescope.builtin".lsp_code_actions{}<CR>')
-    buf_vnoremap(bufnr, '<Leader>ga',
-                 '<cmd>lua require"telescope.builtin".lsp_range_code_actions{}<CR>')
-    buf_vnoremap(bufnr, '<M-Enter>',
-                 '<cmd>lua require"telescope.builtin".lsp_range_code_actions{}<CR>')
     buf_nnoremap(bufnr, '<Leader>gr',
                  '<cmd>lua require"telescope.builtin".lsp_references{}<CR>')
     buf_nnoremap(bufnr, '<Leader>lo',
@@ -188,13 +115,7 @@ local attach_formatting = function()
     vim.api.nvim_command [[augroup END]]
 end
 
-local custom_init = function(client)
-    client.config.flags = client.config.flags or {}
-    client.config.flags.allow_incremental_sync = true
-end
-
 local custom_attach = function(client, bufnr)
-    lsp_status.on_attach(client)
     setup_key_mappings(bufnr)
 
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -207,7 +128,6 @@ end
 
 lspconfig.sumneko_lua.setup {
     cmd = require'lspcontainers'.command('sumneko_lua'),
-    on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
     settings = {
@@ -235,7 +155,6 @@ lspconfig.sumneko_lua.setup {
 }
 
 lspconfig.gopls.setup {
-    on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
     settings = {
@@ -252,18 +171,13 @@ lspconfig.clangd.setup({
         "clangd", "--background-index", "--suggest-missing-includes",
         "--clang-tidy", "--header-insertion=iwyu"
     },
-    on_init = custom_init,
     on_attach = custom_attach,
-
-    -- Required for lsp-status
-    handlers = lsp_status.extensions.clangd.setup(),
     capabilities = custom_capabilities
 })
 
 local ltex_path = vim.fn.stdpath("data") .. "/grammar-guard/ltex/bin/ltex-ls";
 lspconfig.ltex.setup {
     cmd = {ltex_path},
-    on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
     settings = {
@@ -275,7 +189,6 @@ lspconfig.ltex.setup {
 }
 
 lspconfig.tsserver.setup {
-    on_init = custom_init,
     on_attach = function(client)
         custom_attach(client)
         client.resolved_capabilities.document_formatting = false
@@ -299,7 +212,6 @@ for _, server in pairs(dockerized_servers) do
         before_init = function(params) params.processId = vim.NIL end,
         cmd = require'lspcontainers'.command(server),
         root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-        on_init = custom_init,
         on_attach = function(client) custom_attach(client) end,
         capabilities = custom_capabilities
     }
@@ -307,7 +219,6 @@ end
 
 -- Diagnostics. {{{3
 lspconfig.diagnosticls.setup {
-    on_init = custom_init,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
     filetypes = {
@@ -442,7 +353,6 @@ local servers = {'vimls', 'jdtls', 'cssls', 'eslint'}
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
-        on_init = custom_init,
         on_attach = custom_attach,
         capabilities = custom_capabilities
     }

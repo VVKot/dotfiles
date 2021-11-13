@@ -97,8 +97,7 @@ return packer.startup {
         use "JoosepAlviste/nvim-ts-context-commentstring"
 
         -- Neovim LSP.
-        use {"neovim/nvim-lspconfig", requires = {{"nvim-lua/lsp-status.nvim"}}}
-        use 'kosayoda/nvim-lightbulb'
+        use "neovim/nvim-lspconfig"
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
 
         -- Icons.
