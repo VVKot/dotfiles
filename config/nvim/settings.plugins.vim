@@ -2,9 +2,6 @@
 command! Glog Git log -p --follow -- %
 command! GlogSummary Git log --follow -- %
 
-" PLUGIN - ojroques/vim-oscyank. {{{1
-autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
-
 " PLUGIN - tfnico/vim-gradle. {{{1
 
 " Default to gradle if it is found at the root.

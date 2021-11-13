@@ -143,11 +143,6 @@ return packer.startup {
 
         -- Utils to quick navigate to & reuse terminals.
         use "ThePrimeagen/harpoon"
-        -- Refactoring plugin.
-        use "ThePrimeagen/refactoring.nvim"
-
-        -- gq/yq wrapper.
-        use "gennaro-tedesco/nvim-jqx"
 
         -- Show all available keymaps.
         use {"folke/which-key.nvim"}
