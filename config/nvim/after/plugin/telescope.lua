@@ -34,16 +34,11 @@ telescope.setup {
         spell_suggest = {theme = "dropdown", layout_config = {width = 0.6}}
     },
     extensions = {
-        fzf = {override_generic_sorter = true, override_file_sorter = true},
-        bookmarks = {
-            selected_browser = "google_chrome",
-            url_open_plugin = "open_browser"
-        }
+        fzf = {override_generic_sorter = true, override_file_sorter = true}
     }
 
 }
 
-telescope.load_extension("bookmarks")
 telescope.load_extension("ultisnips")
 telescope.load_extension("fzf")
 telescope.load_extension("git_worktree")
@@ -66,7 +61,6 @@ nnoremap {
 }
 nnoremap {'<Leader>fb', function() builtin.buffers({}) end}
 nnoremap {'<Leader>fm', function() builtin.marks {} end}
-nnoremap {'<Leader>fw', function() builtin.grep_string {} end}
 nnoremap {'<Leader>f:', function() builtin.command_history {} end}
 nnoremap {'<Leader>f/', function() builtin.search_history {} end}
 nnoremap {'z=', function() builtin.spell_suggest {} end}

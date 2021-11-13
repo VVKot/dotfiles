@@ -5,13 +5,10 @@ treesitter.setup {
     ignore_install = {"haskell"},
     highlight = {enable = true, use_languagetree = true},
     indent = {enable = true},
-    refactor = {
-        highlight_definitions = {enable = true},
-        highlight_current_scope = {enable = false}
-    },
     textobjects = {
         select = {
             enable = true,
+            lookahead = true,
             keymaps = {
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
@@ -21,6 +18,7 @@ treesitter.setup {
         },
         move = {
             enable = true,
+            set_jumps = true,
             goto_next_start = {
                 ["]m"] = "@function.outer",
                 ["]]"] = "@class.outer"
@@ -38,10 +36,6 @@ treesitter.setup {
                 ["[]"] = "@class.outer"
             }
         }
-    },
-    textsubjects = {
-        enable = true,
-        keymaps = {["<C-\\>"] = "textsubjects-smart"}
     },
     context_commentstring = {enable = true, enable_autocmd = false},
     autopairs = {enable = true},

@@ -50,7 +50,6 @@ return packer.startup {
             requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
         }
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
-        use "dhruvmanila/telescope-bookmarks.nvim"
 
         -- Git plugins.
         use "tpope/vim-fugitive"
@@ -94,9 +93,7 @@ return packer.startup {
 
         -- Syntax highlighting.
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-        use "nvim-treesitter/nvim-treesitter-refactor"
         use "nvim-treesitter/nvim-treesitter-textobjects"
-        use "RRethy/nvim-treesitter-textsubjects"
         use "JoosepAlviste/nvim-ts-context-commentstring"
 
         -- Neovim LSP.
