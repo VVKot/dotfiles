@@ -22,50 +22,25 @@ local setup_key_mappings = function(bufnr)
     -- references
     nnoremap {'gd', function() vim.lsp.buf.definition() end, opts}
     nnoremap {'<Leader>gd', function() vim.lsp.buf.definition() end, opts}
-    nnoremap {
-        'gD', function() vim.lsp.buf.implementation() end, {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>gi', function() vim.lsp.buf.implementation() end,
-        {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>gR', function() vim.lsp.buf.references() end, {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>gy', function() vim.lsp.buf.type_definition() end,
-        {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>gD', function() vim.lsp.buf.declaration() end, {buffer = bufnr}
-    }
+    nnoremap {'gD', function() vim.lsp.buf.implementation() end, opts}
+    nnoremap {'<Leader>gi', function() vim.lsp.buf.implementation() end, opts}
+    nnoremap {'<Leader>gR', function() vim.lsp.buf.references() end, opts}
+    nnoremap {'<Leader>gy', function() vim.lsp.buf.type_definition() end, opts}
+    nnoremap {'<Leader>gD', function() vim.lsp.buf.declaration() end, opts}
 
     -- actions
-    nnoremap {
-        '<Leader>gA', function() vim.lsp.buf.code_action() end, {buffer = bufnr}
-    }
+    nnoremap {'<Leader>gA', function() vim.lsp.buf.code_action() end, opts}
     vnoremap {
         '<Leader>gA', function() vim.lsp.buf.range_code_action() end, opts
     }
-    nnoremap {
-        '<Leader>gq', function() vim.lsp.buf.formatting() end, {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>ar', function() vim.lsp.buf.rename() end, {buffer = bufnr}
-    }
+    nnoremap {'<Leader>gq', function() vim.lsp.buf.formatting() end, opts}
+    nnoremap {'<Leader>ar', function() vim.lsp.buf.rename() end, opts}
 
     -- lists
+    nnoremap {'<Leader>lO', function() vim.lsp.buf.document_symbol() end, opts}
+    nnoremap {'<Leader>lS', function() vim.lsp.buf.workspace_symbol() end, opts}
     nnoremap {
-        '<Leader>lO', function() vim.lsp.buf.document_symbol() end,
-        {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>lS', function() vim.lsp.buf.workspace_symbol() end,
-        {buffer = bufnr}
-    }
-    nnoremap {
-        '<Leader>lG', function() vim.lsp.diagnostic.set_loclist() end,
-        {buffer = bufnr}
+        '<Leader>lG', function() vim.lsp.diagnostic.set_loclist() end, opts
     }
 
     nnoremap {
@@ -79,44 +54,35 @@ local setup_key_mappings = function(bufnr)
         "[g", function() vim.diagnostic.goto_prev {float = popup_opts} end, opts
     }
 
-    nnoremap {
-        '<C-s>', function() vim.lsp.buf.signature_help() end, {buffer = bufnr}
-    }
-    nnoremap {
-        '<C-s>', function() vim.lsp.buf.signature_help() end, {buffer = bufnr}
-    }
-    nnoremap {'K', function() vim.lsp.buf.hover() end, {buffer = bufnr}}
+    nnoremap {'<C-s>', function() vim.lsp.buf.signature_help() end, opts}
+    nnoremap {'<C-s>', function() vim.lsp.buf.signature_help() end, opts}
+    nnoremap {'K', function() vim.lsp.buf.hover() end, opts}
 
     -- telescope
     nnoremap {
         '<Leader>ga',
-        function() require"telescope.builtin".lsp_code_actions {} end,
-        {buffer = bufnr}
+        function() require"telescope.builtin".lsp_code_actions {} end, opts
     }
     nnoremap {
         '<M-Enter>',
-        function() require"telescope.builtin".lsp_code_actions {} end,
-        {buffer = bufnr}
+        function() require"telescope.builtin".lsp_code_actions {} end, opts
     }
     nnoremap {
         '<Leader>gr',
-        function() require"telescope.builtin".lsp_references {} end,
-        {buffer = bufnr}
+        function() require"telescope.builtin".lsp_references {} end, opts
     }
     nnoremap {
         '<Leader>lo',
-        function() require"telescope.builtin".lsp_document_symbols {} end,
-        {buffer = bufnr}
+        function() require"telescope.builtin".lsp_document_symbols {} end, opts
     }
     nnoremap {
         '<Leader>ls',
-        function() require"telescope.builtin".lsp_workspace_symbols {} end,
-        {buffer = bufnr}
+        function() require"telescope.builtin".lsp_workspace_symbols {} end, opts
     }
     nnoremap {
         '<Leader>lg',
         function() require"telescope.builtin".lsp_document_diagnostics {} end,
-        {buffer = bufnr}
+        opts
     }
 
     -- Typescript utils
