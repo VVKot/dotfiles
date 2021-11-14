@@ -8,8 +8,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
                  {signs = false, virtual_text = false})
 
-local nnoremap = vim.keymap.nnoremap
-
 local lspconfig = require("lspconfig")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities = require('cmp_nvim_lsp').update_capabilities(
@@ -62,21 +60,13 @@ local setup_key_mappings = function(bufnr)
                  '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
     buf_nnoremap(bufnr, '<Leader>lG',
                  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
-    nnoremap {
-        "<C-Space>",
-        function() vim.diagnostic.open_float(0, {scope = "line"}) end,
-        buffer = bufnr
-    }
-    nnoremap {
-        "]g",
-        function() vim.diagnostic.goto_next {float = popup_opts} end,
-        buffer = bufnr
-    }
-    nnoremap {
-        "[g",
-        function() vim.diagnostic.goto_prev {float = popup_opts} end,
-        buffer = bufnr
-    }
+
+    buf_nnoremap(bufnr, "<C-Space>",
+                 "lua vim.diagnostic.open_float(0, {scope = 'line'})")
+    buf_nnoremap(bufnr, "]g",
+                 "lua vim.diagnostic.goto_next {float = { border = 'single', focusable = false}}")
+    buf_nnoremap(bufnr, "[g",
+                 "lua vim.diagnostic.goto_prev {float = { border = 'single', focusable = false}}")
 
     buf_inoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     buf_nnoremap(bufnr, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')

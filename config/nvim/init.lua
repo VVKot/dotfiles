@@ -1,4 +1,4 @@
-if require "first_load"() then return end
+if require("vkot/first_load")() then return end
 
 vim.cmd [[source ~/.config/nvim/common.vim]]
 
@@ -11,4 +11,5 @@ endif
 ]]
 
 require("impatient")
-require("plugin_config")
+require("vkot/plugin_config")
+require("vkot/lsp")
