@@ -12,4 +12,7 @@ endif
 
 require("impatient")
 require("vkot/plugin_config")
+
+-- Load astronauta first so that I can use mapping functions
+vim.cmd [[runtime plugin/astronauta.vim]]
 require("vkot/lsp")
