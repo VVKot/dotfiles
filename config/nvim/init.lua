@@ -10,8 +10,8 @@ if filereadable(expand("~/.config/nvim/extra.vim"))
 endif
 ]]
 
-require("impatient")
 require("vkot/plugin_config")
+require("impatient")
 
 -- Load astronauta first so that I can use mapping functions
 vim.cmd [[runtime plugin/astronauta.vim]]
