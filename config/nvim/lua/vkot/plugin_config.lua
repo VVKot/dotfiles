@@ -143,9 +143,6 @@ return packer.startup {
         -- Show all available keymaps.
         use {"folke/which-key.nvim"}
 
-        -- Add tags interop for LSP.
-        use "weilbith/nvim-lsp-smag"
-
         -- Docker images for LSP servers.
         use "lspcontainers/lspcontainers.nvim"
 

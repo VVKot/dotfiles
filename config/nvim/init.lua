@@ -16,3 +16,5 @@ require("impatient")
 -- Load astronauta first so that I can use mapping functions
 vim.cmd [[runtime plugin/astronauta.vim]]
 require("vkot/lsp")
+
+vim.cmd [[set tagfunc=v:lua.vim.lsp.tagfunc]]
