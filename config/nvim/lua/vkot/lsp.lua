@@ -88,7 +88,7 @@ local setup_key_mappings = function(bufnr)
     -- Typescript utils
     nnoremap {'<Leader>af', function() vim.cmd [[TSLspFixCurrent]] end, opts}
     nnoremap {'<Leader>ao', function() vim.cmd [[TSLspOrganize]] end, opts}
-    nnoremap {'<Leader>ai', function() vim.cmd [[TSLspImportAll]] end, opts}
+    nnoremap {'<Leader>ai', function() vim.cmd [[TSLspImportCurrent]] end, opts}
 end
 
 -- Attach handler. {{{2
@@ -182,10 +182,7 @@ lspconfig.tsserver.setup {
         custom_attach(client)
         client.resolved_capabilities.document_formatting = false
         local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup {
-            eslint_enable_code_actions = true,
-            eslint_enable_disable_comments = true
-        }
+        ts_utils.setup()
         ts_utils.setup_client(client)
     end,
     capabilities = custom_capabilities,
