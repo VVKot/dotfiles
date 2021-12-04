@@ -116,7 +116,12 @@ end
 -- Servers. {{{2
 
 lspconfig.sumneko_lua.setup {
-    cmd = require'lspcontainers'.command('sumneko_lua'),
+    cmd = require"lspcontainers".command("sumneko_lua"),
+    on_new_config = function(new_config, new_root_dir)
+        new_config.cmd = require"lspcontainers".command("sumneko_lua", {
+            root_dir = new_root_dir
+        })
+    end,
     on_attach = custom_attach,
     capabilities = custom_capabilities,
     settings = {
@@ -197,7 +202,7 @@ for _, server in pairs(dockerized_servers) do
     lspconfig[server].setup {
         before_init = function(params) params.processId = vim.NIL end,
         cmd = require'lspcontainers'.command(server),
-        root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+        root_dir = lspconfig.util.find_git_ancestor,
         on_attach = function(client) custom_attach(client) end,
         capabilities = custom_capabilities
     }
