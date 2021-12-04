@@ -383,12 +383,12 @@ lspconfig.diagnosticls.setup {
   },
   init_options = {
     filetypes = {
-      javascript = { "eslint", "tslint" },
-      javascriptreact = { "eslint", "tslint" },
-      ["javascript.jsx"] = { "eslint", "tslint" },
-      typescript = { "eslint", "tslint" },
-      typescriptreact = { "eslint", "tslint" },
-      ["typescript.tsx"] = { "eslint", "tslint" },
+      javascript = { "tslint" },
+      javascriptreact = { "tslint" },
+      ["javascript.jsx"] = { "tslint" },
+      typescript = { "tslint" },
+      typescriptreact = { "tslint" },
+      ["typescript.tsx"] = { "tslint" },
       css = "stylelint",
       scss = "stylelint",
       sass = "stylelint",
@@ -397,29 +397,6 @@ lspconfig.diagnosticls.setup {
       rst = "proselint",
     },
     linters = {
-      eslint = {
-        command = "./node_modules/.bin/eslint",
-        rootPatterns = { ".git" },
-        debounce = 100,
-        args = {
-          "--stdin",
-          "--stdin-filename",
-          "%filepath",
-          "--format",
-          "json",
-        },
-        sourceName = "eslint",
-        parseJson = {
-          errorsRoot = "[0].messages",
-          line = "line",
-          column = "column",
-          endLine = "endLine",
-          endColumn = "endColumn",
-          message = "[eslint] ${message} (${ruleId})",
-          security = "severity",
-        },
-        securities = { [2] = "error", [1] = "warning" },
-      },
       tslint = {
         command = "./node_modules/.bin/tslint",
         rootPatterns = { ".git" },
