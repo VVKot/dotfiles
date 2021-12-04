@@ -317,9 +317,9 @@ lspconfig.diagnosticls.setup {
                 args = {"%filepath", "--fix"},
                 rootPatterns = {".git"}
             },
-            luaformatFix = {
-                command = "lua-format",
-                args = {"-i", "%filepath"},
+            styluaFix = {
+                command = "stylua",
+                args = {"%filepath", "--search-parent-directories"},
                 rootPatterns = {".git"}
             }
         },
@@ -334,7 +334,7 @@ lspconfig.diagnosticls.setup {
             scss = "stylelintFix",
             sass = "stylelintFix",
             less = "stylelintFix",
-            lua = "luaformatFix"
+            lua = "styluaFix"
         }
     }
 }
