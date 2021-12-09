@@ -1,5 +1,6 @@
 local nnoremap = vim.keymap.nnoremap
 local vnoremap = vim.keymap.vnoremap
+local inoremap = vim.keymap.inoremap
 
 local popup_opts = { border = "single", focusable = false }
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
@@ -150,7 +151,7 @@ local setup_key_mappings = function(bufnr)
     end,
     opts,
   }
-  nnoremap {
+  inoremap {
     "<C-s>",
     function()
       vim.lsp.buf.signature_help()
