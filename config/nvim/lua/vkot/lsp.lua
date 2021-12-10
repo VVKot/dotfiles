@@ -333,7 +333,7 @@ lspconfig.tsserver.setup {
     custom_attach(client)
     client.resolved_capabilities.document_formatting = false
     local ts_utils = require "nvim-lsp-ts-utils"
-    ts_utils.setup()
+    ts_utils.setup {}
     ts_utils.setup_client(client)
   end,
   capabilities = custom_capabilities,
