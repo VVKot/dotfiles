@@ -158,5 +158,8 @@ return packer.startup {
 
     -- LTeX language server installer.
     use "brymer-meneses/grammar-guard.nvim"
+
+    -- jdtls installation.
+    use "williamboman/nvim-lsp-installer"
   end,
 }

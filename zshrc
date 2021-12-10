@@ -83,7 +83,11 @@ setopt HIST_IGNORE_DUPS
 export NVM_DIR="$HOME/.nvm"
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 
+# bumping default Node memory limit
 export NODE_OPTIONS=--max_old_space_size=8192
+
+# java language server
+export JDTLS_HOME=~/.local/share/nvim/lsp_servers/jdtls
 
 # for pnpm completion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
