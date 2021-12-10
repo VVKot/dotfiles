@@ -8,8 +8,11 @@ sync:
 	mkdir -p ~/Library/Preferences/glow
 
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/config/bat/config ~/.config/bat/config
+	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
+	[ -f ~/.config/kitty/kitty.conf ] || ln -s $(PWD)/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
+	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.gradle/gradle.properties ] || ln -s $(PWD)/.gradle/gradle.properties ~/.gradle/gradle.properties
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
@@ -17,20 +20,18 @@ sync:
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
-	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
-	[ -f ~/.config/kitty/kitty.conf ] || ln -s $(PWD)/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 sync-mac:
 	mkdir -p ~/.iterm
 
 	[ -f ~/.iterm/com.googlecode.iterm2.plist ] || ln -s $(PWD)/iterm/com.googlecode.iterm2.plist ~/.iterm/com.googlecode.iterm2.plist
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/settings.json ~/Library/Application\ Support/Code/User/settings.json
-	[ -f ~/Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application\ Support/userSettings.json ] || cp $(PWD)/userSettings.json ~/Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application\ Support/userSettings.json
 
 clean:
 	rm -f ~/.config/glow/glow.yml || true
 	rm -f ~/.config/kitty/kitty.conf || true
 	rm -f ~/.config/starship.toml || true
+	rm -f ~/.digrc || true
 	rm -f ~/.gradle/gradle.properties || true
 	rm -f ~/.ideavimrc || true
 	rm -f ~/.inputrc || true
