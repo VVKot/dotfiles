@@ -108,9 +108,6 @@ return packer.startup {
     -- Statusline.
     use "nvim-lualine/lualine.nvim"
 
-    -- Markdown previewer.
-    use "npxbr/glow.nvim"
-
     -- Better text objects.
     use "wellle/targets.vim"
 
