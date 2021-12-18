@@ -21,10 +21,10 @@ brew "graphviz"
 brew "htop"
 brew "jq"
 brew "languagetool"
-brew "luajit", args: ["HEAD"]
+brew "luajit"
 brew "luarocks"
 brew "luv"
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "node"
 brew "nvim"
 brew "nvm"
