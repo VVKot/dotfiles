@@ -251,6 +251,7 @@ local custom_attach = function(client, bufnr)
   setup_key_mappings(bufnr)
 
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr")
   if client.resolved_capabilities.document_formatting then
     attach_formatting()
   end
