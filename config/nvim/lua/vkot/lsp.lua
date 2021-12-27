@@ -50,7 +50,7 @@ local setup_key_mappings = function(bufnr)
   nnoremap {
     "<Leader>gR",
     function()
-      vim.lsp.buf.references()
+      vim.lsp.buf.references { includeDeclaration = false }
     end,
     opts,
   }
