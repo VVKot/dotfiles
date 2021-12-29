@@ -205,7 +205,9 @@ local setup_key_mappings = function(bufnr)
   nnoremap({
     "<Leader>lg",
     function()
-      require("telescope.builtin").lsp_document_diagnostics({})
+      require("telescope.builtin").diagnostics({
+        bufnr = 0,
+      })
     end,
     opts,
   })
