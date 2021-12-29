@@ -18,9 +18,9 @@ local call_with_test_directory_as_cwd = function(command)
     return
   end
 
-  local cwd = vim.api.nvim_eval "getcwd()"
+  local cwd = vim.api.nvim_eval("getcwd()")
   vim.o.autochdir = true
-  last_test_cwd = vim.api.nvim_eval "getcwd()"
+  last_test_cwd = vim.api.nvim_eval("getcwd()")
   vim.api.nvim_command(command)
   vim.o.autochdir = false
   vim.api.nvim_command("cd " .. cwd)
@@ -32,39 +32,39 @@ local call_with_last_test_cwd = function(command)
     return
   end
 
-  local cwd = vim.api.nvim_eval "getcwd()"
+  local cwd = vim.api.nvim_eval("getcwd()")
   vim.api.nvim_command("cd " .. last_test_cwd)
   vim.api.nvim_command(command)
   vim.api.nvim_command("cd " .. cwd)
 end
 
-nnoremap {
+nnoremap({
   "<Leader>jh",
   function()
-    call_with_test_directory_as_cwd "TestSuite"
+    call_with_test_directory_as_cwd("TestSuite")
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>jj",
   function()
-    call_with_test_directory_as_cwd "TestFile"
+    call_with_test_directory_as_cwd("TestFile")
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>jk",
   function()
-    call_with_test_directory_as_cwd "TestNearest"
+    call_with_test_directory_as_cwd("TestNearest")
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>jl",
   function()
-    call_with_last_test_cwd "TestLast"
+    call_with_last_test_cwd("TestLast")
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>j;",
   function()
-    call_with_last_test_cwd "TestVisit"
+    call_with_last_test_cwd("TestVisit")
   end,
-}
+})

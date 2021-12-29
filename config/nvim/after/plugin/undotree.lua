@@ -1,7 +1,7 @@
 local nnoremap = vim.keymap.nnoremap
-nnoremap {
+nnoremap({
   "<Leader>tu",
   function()
-    vim.api.nvim_command [[UndotreeToggle]]
+    vim.api.nvim_command([[UndotreeToggle]])
   end,
-}
+})

@@ -1,4 +1,4 @@
-require("zen-mode").setup {
+require("zen-mode").setup({
   window = {
     width = 121,
     height = 0.9,
@@ -10,17 +10,17 @@ require("zen-mode").setup {
     tmux = { enabled = true },
   },
   on_open = function(win)
-    vim.cmd [[SoftPencil]]
+    vim.cmd([[SoftPencil]])
   end,
   on_close = function()
-    vim.cmd [[PencilOff]]
+    vim.cmd([[PencilOff]])
   end,
-}
+})
 
 local nnoremap = vim.keymap.nnoremap
-nnoremap {
+nnoremap({
   "<Leader>zz",
   function()
-    vim.api.nvim_command [[ZenMode]]
+    vim.api.nvim_command([[ZenMode]])
   end,
-}
+})

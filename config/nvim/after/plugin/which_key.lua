@@ -1,8 +1,8 @@
-local wk = require "which-key"
+local wk = require("which-key")
 
 wk.setup()
 
-wk.register {
+wk.register({
   ["<Leader>f"] = {
     name = "+file",
     f = { "Find with FZF" },
@@ -40,4 +40,4 @@ wk.register {
     l = { "Test last" },
     [";"] = { "Test visit" },
   },
-}
+})

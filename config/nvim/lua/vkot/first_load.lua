@@ -1,11 +1,11 @@
 -- Thanks to @tjdevries for his config_manager!
 -- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/lua/tj/plugins.lua
 local download_packer = function()
-  if vim.fn.input "Download Packer? (y for yes)" ~= "y" then
+  if vim.fn.input("Download Packer? (y for yes)") ~= "y" then
     return
   end
 
-  local directory = string.format("%s/site/pack/packer/start/", vim.fn.stdpath "data")
+  local directory = string.format("%s/site/pack/packer/start/", vim.fn.stdpath("data"))
 
   vim.fn.mkdir(directory, "p")
 
@@ -14,8 +14,8 @@ local download_packer = function()
   )
 
   print(out)
-  print "Downloading packer.nvim..."
-  print "( You'll need to restart now )"
+  print("Downloading packer.nvim...")
+  print("( You'll need to restart now )")
 end
 
 return function()

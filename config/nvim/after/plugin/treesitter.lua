@@ -1,6 +1,6 @@
-local treesitter = require "nvim-treesitter.configs"
+local treesitter = require("nvim-treesitter.configs")
 
-treesitter.setup {
+treesitter.setup({
   ensure_installed = "all",
   ignore_install = { "haskell" },
   highlight = { enable = true, use_languagetree = true },
@@ -48,9 +48,9 @@ treesitter.setup {
       node_decremental = "<M-C-w>",
     },
   },
-}
+})
 
 -- Disable context by default.
-require("treesitter-context").setup { enable = false }
+require("treesitter-context").setup({ enable = false })
 -- Visually distinguish tree-sitter context from regular text.
-vim.cmd [[hi TreesitterContext guibg=lightgrey]]
+vim.cmd([[hi TreesitterContext guibg=lightgrey]])

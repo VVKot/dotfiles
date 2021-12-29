@@ -11,7 +11,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   { signs = false, virtual_text = false }
 )
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 custom_capabilities = require("cmp_nvim_lsp").update_capabilities(custom_capabilities)
 
@@ -19,232 +19,232 @@ custom_capabilities = require("cmp_nvim_lsp").update_capabilities(custom_capabil
 local setup_key_mappings = function(bufnr)
   local opts = { buffer = bufnr }
   -- references
-  nnoremap {
+  nnoremap({
     "gd",
     function()
       vim.lsp.buf.definition()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gd",
     function()
       vim.lsp.buf.definition()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "gD",
     function()
       vim.lsp.buf.implementation()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gi",
     function()
       vim.lsp.buf.implementation()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gR",
     function()
-      vim.lsp.buf.references { includeDeclaration = false }
+      vim.lsp.buf.references({ includeDeclaration = false })
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gy",
     function()
       vim.lsp.buf.type_definition()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gD",
     function()
       vim.lsp.buf.declaration()
     end,
     opts,
-  }
+  })
 
   -- actions
-  nnoremap {
+  nnoremap({
     "<Leader>gA",
     function()
       vim.lsp.buf.code_action()
     end,
     opts,
-  }
-  vnoremap {
+  })
+  vnoremap({
     "<Leader>gA",
     function()
       vim.lsp.buf.range_code_action()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gq",
     function()
       vim.lsp.buf.formatting()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>ar",
     function()
       vim.lsp.buf.rename()
     end,
     opts,
-  }
+  })
 
   -- lists
-  nnoremap {
+  nnoremap({
     "<Leader>lO",
     function()
       vim.lsp.buf.document_symbol()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>lS",
     function()
       vim.lsp.buf.workspace_symbol()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>lG",
     function()
       vim.lsp.diagnostic.set_loclist()
     end,
     opts,
-  }
+  })
 
-  nnoremap {
+  nnoremap({
     "<C-Space>",
     function()
       vim.diagnostic.open_float(0, { scope = "line" })
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "]g",
     function()
-      vim.diagnostic.goto_next { float = popup_opts }
+      vim.diagnostic.goto_next({ float = popup_opts })
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "[g",
     function()
-      vim.diagnostic.goto_prev { float = popup_opts }
+      vim.diagnostic.goto_prev({ float = popup_opts })
     end,
     opts,
-  }
+  })
 
-  nnoremap {
+  nnoremap({
     "<C-s>",
     function()
       vim.lsp.buf.signature_help()
     end,
     opts,
-  }
-  inoremap {
+  })
+  inoremap({
     "<C-s>",
     function()
       vim.lsp.buf.signature_help()
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "K",
     function()
       vim.lsp.buf.hover()
     end,
     opts,
-  }
+  })
 
   -- telescope
-  nnoremap {
+  nnoremap({
     "<Leader>ga",
     function()
-      require("telescope.builtin").lsp_code_actions {}
+      require("telescope.builtin").lsp_code_actions({})
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<M-Enter>",
     function()
-      require("telescope.builtin").lsp_code_actions {}
+      require("telescope.builtin").lsp_code_actions({})
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>gr",
     function()
-      require("telescope.builtin").lsp_references {}
+      require("telescope.builtin").lsp_references({})
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>lo",
     function()
-      require("telescope.builtin").lsp_document_symbols {}
+      require("telescope.builtin").lsp_document_symbols({})
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>ls",
     function()
-      require("telescope.builtin").lsp_workspace_symbols {}
+      require("telescope.builtin").lsp_workspace_symbols({})
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>lg",
     function()
-      require("telescope.builtin").lsp_document_diagnostics {}
+      require("telescope.builtin").lsp_document_diagnostics({})
     end,
     opts,
-  }
+  })
 
   -- Typescript utils
-  nnoremap {
+  nnoremap({
     "<Leader>af",
     function()
-      vim.cmd [[TSLspFixCurrent]]
+      vim.cmd([[TSLspFixCurrent]])
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>ao",
     function()
-      vim.cmd [[TSLspOrganize]]
+      vim.cmd([[TSLspOrganize]])
     end,
     opts,
-  }
-  nnoremap {
+  })
+  nnoremap({
     "<Leader>ai",
     function()
-      vim.cmd [[TSLspImportCurrent]]
+      vim.cmd([[TSLspImportCurrent]])
     end,
     opts,
-  }
+  })
 end
 
 -- Attach handler. {{{2
 function DoFormat()
   vim.lsp.buf.formatting_sync(nil, 3000)
-  vim.api.nvim_command [[e]]
+  vim.api.nvim_command([[e]])
 end
 
 local attach_formatting = function()
-  vim.api.nvim_command [[augroup Format]]
-  vim.api.nvim_command [[autocmd! * <buffer>]]
-  vim.api.nvim_command [[autocmd BufWritePost <buffer> lua DoFormat()]]
-  vim.api.nvim_command [[augroup END]]
+  vim.api.nvim_command([[augroup Format]])
+  vim.api.nvim_command([[autocmd! * <buffer>]])
+  vim.api.nvim_command([[autocmd BufWritePost <buffer> lua DoFormat()]])
+  vim.api.nvim_command([[augroup END]])
 end
 
 local custom_attach = function(client, bufnr)
@@ -259,8 +259,8 @@ end
 
 -- Servers. {{{2
 
-lspconfig.sumneko_lua.setup {
-  cmd = require("lspcontainers").command "sumneko_lua",
+lspconfig.sumneko_lua.setup({
+  cmd = require("lspcontainers").command("sumneko_lua"),
   on_new_config = function(new_config, new_root_dir)
     new_config.cmd = require("lspcontainers").command("sumneko_lua", {
       root_dir = new_root_dir,
@@ -284,15 +284,15 @@ lspconfig.sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
         },
       },
     },
   },
-}
+})
 
-lspconfig.gopls.setup {
+lspconfig.gopls.setup({
   on_attach = custom_attach,
   capabilities = custom_capabilities,
   settings = {
@@ -302,9 +302,9 @@ lspconfig.gopls.setup {
       staticcheck = true,
     },
   },
-}
+})
 
-lspconfig.clangd.setup {
+lspconfig.clangd.setup({
   cmd = {
     "clangd",
     "--background-index",
@@ -314,10 +314,10 @@ lspconfig.clangd.setup {
   },
   on_attach = custom_attach,
   capabilities = custom_capabilities,
-}
+})
 
-local ltex_path = vim.fn.stdpath "data" .. "/grammar-guard/ltex/bin/ltex-ls"
-lspconfig.ltex.setup {
+local ltex_path = vim.fn.stdpath("data") .. "/grammar-guard/ltex/bin/ltex-ls"
+lspconfig.ltex.setup({
   cmd = { ltex_path },
   on_attach = custom_attach,
   capabilities = custom_capabilities,
@@ -327,19 +327,19 @@ lspconfig.ltex.setup {
       additionalRules = { enablePickyRules = true },
     },
   },
-}
+})
 
-lspconfig.tsserver.setup {
+lspconfig.tsserver.setup({
   on_attach = function(client)
     custom_attach(client)
     client.resolved_capabilities.document_formatting = false
-    local ts_utils = require "nvim-lsp-ts-utils"
-    ts_utils.setup {}
+    local ts_utils = require("nvim-lsp-ts-utils")
+    ts_utils.setup({})
     ts_utils.setup_client(client)
   end,
   capabilities = custom_capabilities,
   cmd = { "typescript-language-server", "--stdio" },
-}
+})
 
 local dockerized_servers = {
   "bashls",
@@ -351,7 +351,7 @@ local dockerized_servers = {
 }
 
 for _, server in pairs(dockerized_servers) do
-  lspconfig[server].setup {
+  lspconfig[server].setup({
     before_init = function(params)
       params.processId = vim.NIL
     end,
@@ -361,11 +361,11 @@ for _, server in pairs(dockerized_servers) do
       custom_attach(client)
     end,
     capabilities = custom_capabilities,
-  }
+  })
 end
 
 -- Diagnostics. {{{3
-lspconfig.diagnosticls.setup {
+lspconfig.diagnosticls.setup({
   on_attach = custom_attach,
   capabilities = custom_capabilities,
   filetypes = {
@@ -483,14 +483,14 @@ lspconfig.diagnosticls.setup {
       lua = "styluaFix",
     },
   },
-}
+})
 
 -- Servers with default setup. {{{3
 local servers = { "vimls", "jdtls", "cssls", "eslint" }
 
 for _, server in ipairs(servers) do
-  lspconfig[server].setup {
+  lspconfig[server].setup({
     on_attach = custom_attach,
     capabilities = custom_capabilities,
-  }
+  })
 end

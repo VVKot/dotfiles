@@ -1,6 +1,6 @@
 -- Needs a custom function to prevent unnecessary shortening of the path
 local function full_filename()
-  local data = vim.fn.expand "%:~:."
+  local data = vim.fn.expand("%:~:.")
   if vim.bo.modified then
     data = data .. " [+]"
   elseif vim.bo.modifiable == false or vim.bo.readonly == true then
@@ -9,7 +9,7 @@ local function full_filename()
   return data
 end
 
-require("lualine").setup {
+require("lualine").setup({
   options = {
     theme = "github_vkot",
     disabled_filetypes = { "fugitive", "startify" },
@@ -30,4 +30,4 @@ require("lualine").setup {
     lualine_y = {},
     lualine_z = { "location" },
   },
-}
+})

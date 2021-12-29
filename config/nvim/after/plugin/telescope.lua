@@ -1,6 +1,6 @@
-local telescope = require "telescope"
+local telescope = require("telescope")
 
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 local mappings = {
   ["j"] = false,
   ["k"] = false,
@@ -12,11 +12,11 @@ local mappings = {
   ["<M-p>"] = actions.cycle_history_prev,
   ["<esc>"] = actions.close,
   ["<C-w>"] = function()
-    vim.cmd [[normal! bcw]]
+    vim.cmd([[normal! bcw]])
   end,
 }
 
-telescope.setup {
+telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     layout_config = { prompt_position = "top" },
@@ -39,90 +39,90 @@ telescope.setup {
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },
   },
-}
+})
 
-telescope.load_extension "ultisnips"
-telescope.load_extension "fzf"
-telescope.load_extension "git_worktree"
+telescope.load_extension("ultisnips")
+telescope.load_extension("fzf")
+telescope.load_extension("git_worktree")
 
 local nnoremap = vim.keymap.nnoremap
-local builtin = require "telescope.builtin"
+local builtin = require("telescope.builtin")
 
-nnoremap {
+nnoremap({
   "<Leader><C-t>",
   function()
-    builtin.git_files {}
+    builtin.git_files({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader><Leader>",
   function()
-    builtin.git_files {}
+    builtin.git_files({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>tt",
   function()
-    builtin.builtin {}
+    builtin.builtin({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>ft",
   function()
-    builtin.grep_string { search = vim.fn.input ":RG " }
+    builtin.grep_string({ search = vim.fn.input(":RG ") })
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>gt",
   function()
-    builtin.git_status {}
+    builtin.git_status({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>lq",
   function()
-    builtin.quickfix {}
+    builtin.quickfix({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>ll",
   function()
-    builtin.loclist {}
+    builtin.loclist({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>f<Leader>",
   function()
-    builtin.current_buffer_fuzzy_find {}
+    builtin.current_buffer_fuzzy_find({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>fb",
   function()
-    builtin.buffers {}
+    builtin.buffers({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>fm",
   function()
-    builtin.marks {}
+    builtin.marks({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>f:",
   function()
-    builtin.command_history {}
+    builtin.command_history({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "<Leader>f/",
   function()
-    builtin.search_history {}
+    builtin.search_history({})
   end,
-}
-nnoremap {
+})
+nnoremap({
   "z=",
   function()
-    builtin.spell_suggest {}
+    builtin.spell_suggest({})
   end,
-}
+})
