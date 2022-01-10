@@ -70,7 +70,9 @@ _fix_cursor() {
 precmd_functions+=(_fix_cursor)
 
 # fzf
-export FZF_DEFAULT_OPTS="--layout=reverse --bind ctrl-a:select-all --color=light,gutter:-1 --cycle"
+export FZF_DEFAULT_OPTS="--no-mouse --layout=reverse --color=light,gutter:-1 --cycle
+\--bind f2:toggle-preview,ctrl-a:select-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down
+\--preview='$HOME/.local/share/nvim/site/pack/packer/start/fzf.vim/bin/preview.sh {}' --preview-window='wrap'"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
