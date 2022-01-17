@@ -69,7 +69,7 @@ nnoremap({
 nnoremap({
   "<Leader>ft",
   function()
-    builtin.grep_string({ search = vim.fn.input(":RG ") })
+    builtin.grep_string({ search = vim.fn.input(":RG "), use_regex = true })
   end,
 })
 nnoremap({
