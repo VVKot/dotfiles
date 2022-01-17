@@ -103,9 +103,6 @@ set signcolumn=yes
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
 set grepformat^=%f:%l:%c:%m
 
-" Reload config shortcut.
-nnoremap <leader>rr :lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>
-
 " Set completeopt to have a better completion experience
 set completeopt=menu,menuone,noselect
 
