@@ -237,15 +237,10 @@ local setup_key_mappings = function(bufnr)
 end
 
 -- Attach handler. {{{2
-function DoFormat()
-  vim.lsp.buf.formatting_sync(nil, 3000)
-  vim.api.nvim_command([[e]])
-end
-
 local attach_formatting = function()
   vim.api.nvim_command([[augroup Format]])
   vim.api.nvim_command([[autocmd! * <buffer>]])
-  vim.api.nvim_command([[autocmd BufWritePost <buffer> lua DoFormat()]])
+  vim.api.nvim_command([[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync(nil, 3000)]])
   vim.api.nvim_command([[augroup END]])
 end
 
