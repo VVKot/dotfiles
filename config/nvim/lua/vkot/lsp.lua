@@ -181,6 +181,21 @@ local setup_key_mappings = function(bufnr)
     end,
     opts,
   })
+  vnoremap({
+    "<Leader>ga",
+    function()
+      require("telescope.builtin").lsp_range_code_actions({})
+    end,
+    opts,
+  })
+  vnoremap({
+    "<M-Enter>",
+    function()
+      require("telescope.builtin").lsp_range_code_actions({})
+    end,
+    opts,
+  })
+
   nnoremap({
     "<Leader>gr",
     function()
