@@ -71,14 +71,28 @@ local setup_key_mappings = function(bufnr)
 
   -- actions
   nnoremap({
-    "<Leader>gA",
+    "<Leader>ga",
+    function()
+      vim.lsp.buf.code_action()
+    end,
+    opts,
+  })
+  nnoremap({
+    "<M-Enter>",
     function()
       vim.lsp.buf.code_action()
     end,
     opts,
   })
   vnoremap({
-    "<Leader>gA",
+    "<Leader>ga",
+    function()
+      vim.lsp.buf.range_code_action()
+    end,
+    opts,
+  })
+  vnoremap({
+    "<M-Enter>",
     function()
       vim.lsp.buf.range_code_action()
     end,
@@ -168,35 +182,6 @@ local setup_key_mappings = function(bufnr)
 
   -- telescope
   nnoremap({
-    "<Leader>ga",
-    function()
-      require("telescope.builtin").lsp_code_actions({})
-    end,
-    opts,
-  })
-  nnoremap({
-    "<M-Enter>",
-    function()
-      require("telescope.builtin").lsp_code_actions({})
-    end,
-    opts,
-  })
-  vnoremap({
-    "<Leader>ga",
-    function()
-      require("telescope.builtin").lsp_range_code_actions({})
-    end,
-    opts,
-  })
-  vnoremap({
-    "<M-Enter>",
-    function()
-      require("telescope.builtin").lsp_range_code_actions({})
-    end,
-    opts,
-  })
-
-  nnoremap({
     "<Leader>gr",
     function()
       require("telescope.builtin").lsp_references({ includeDeclaration = false })
@@ -231,7 +216,7 @@ local setup_key_mappings = function(bufnr)
   nnoremap({
     "<Leader>af",
     function()
-      vim.cmd([[TSLspFixCurrent]])
+      vim.cmd([[TSLspImportAll]])
     end,
     opts,
   })
