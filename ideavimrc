@@ -1,6 +1,5 @@
 let mapleader = ' '
 
-set gdefault
 set visualbell
 set noerrorbells
 set relativenumber
