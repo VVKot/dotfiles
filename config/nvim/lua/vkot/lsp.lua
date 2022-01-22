@@ -314,17 +314,19 @@ lspconfig.clangd.setup({
 })
 
 local ltex_path = vim.fn.stdpath("data") .. "/grammar-guard/ltex/bin/ltex-ls"
-lspconfig.ltex.setup({
-  cmd = { ltex_path },
-  on_attach = custom_attach,
-  capabilities = custom_capabilities,
-  settings = {
-    ltex = {
-      disabledRules = { ["en-US"] = { "EN_QUOTES" } },
-      additionalRules = { enablePickyRules = true },
+if vim.fn.exepath(ltex_path) ~= "" then
+  lspconfig.ltex.setup({
+    cmd = { ltex_path },
+    on_attach = custom_attach,
+    capabilities = custom_capabilities,
+    settings = {
+      ltex = {
+        disabledRules = { ["en-US"] = { "EN_QUOTES" } },
+        additionalRules = { enablePickyRules = true },
+      },
     },
-  },
-})
+  })
+end
 
 lspconfig.tsserver.setup({
   on_attach = function(client)
