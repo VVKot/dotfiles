@@ -19,7 +19,6 @@ if vim.fn.executable("neuron") == 1 then
         "<C-o>",
       })
 
-      -- note: local fork required
       nnoremap({
         "gzr",
         function()
