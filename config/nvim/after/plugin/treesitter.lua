@@ -3,8 +3,8 @@ local treesitter = require("nvim-treesitter.configs")
 treesitter.setup({
   ensure_installed = "all",
   ignore_install = { "haskell", "phpdoc" },
-  highlight = { enable = true, use_languagetree = true },
-  indent = { enable = true },
+  highlight = { enable = true },
+  indent = { enable = false },
   textobjects = {
     select = {
       enable = true,
