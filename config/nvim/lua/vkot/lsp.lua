@@ -146,14 +146,14 @@ local setup_key_mappings = function(bufnr)
   nnoremap({
     "]g",
     function()
-      vim.diagnostic.goto_next({ float = popup_opts, severity = { min = vim.diagnostic.severity.WARN } })
+      vim.diagnostic.goto_next({ float = popup_opts })
     end,
     opts,
   })
   nnoremap({
     "[g",
     function()
-      vim.diagnostic.goto_prev({ float = popup_opts, severity = { min = vim.diagnostic.severity.WARN } })
+      vim.diagnostic.goto_prev({ float = popup_opts })
     end,
     opts,
   })
