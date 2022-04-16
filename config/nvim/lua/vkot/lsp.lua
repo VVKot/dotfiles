@@ -1,7 +1,3 @@
-local nnoremap = vim.keymap.nnoremap
-local vnoremap = vim.keymap.vnoremap
-local inoremap = vim.keymap.inoremap
-
 local popup_opts = { border = "single", focusable = false }
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, popup_opts)
@@ -19,221 +15,105 @@ custom_capabilities = require("cmp_nvim_lsp").update_capabilities(custom_capabil
 local setup_key_mappings = function(bufnr)
   local opts = { buffer = bufnr }
   -- references
-  nnoremap({
-    "gd",
-    function()
-      vim.lsp.buf.definition()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gd",
-    function()
-      vim.lsp.buf.definition()
-    end,
-    opts,
-  })
-  nnoremap({
-    "gD",
-    function()
-      vim.lsp.buf.implementation()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gi",
-    function()
-      vim.lsp.buf.implementation()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gR",
-    function()
-      vim.lsp.buf.references({ includeDeclaration = false })
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gy",
-    function()
-      vim.lsp.buf.type_definition()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gD",
-    function()
-      vim.lsp.buf.declaration()
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "gd", function()
+    vim.lsp.buf.definition()
+  end, opts)
+  vim.keymap.set("n", "<Leader>gd", function()
+    vim.lsp.buf.definition()
+  end, opts)
+  vim.keymap.set("n", "gD", function()
+    vim.lsp.buf.implementation()
+  end, opts)
+  vim.keymap.set("n", "<Leader>gi", function()
+    vim.lsp.buf.implementation()
+  end, opts)
+  vim.keymap.set("n", "<Leader>gR", function()
+    vim.lsp.buf.references({ includeDeclaration = false })
+  end, opts)
+  vim.keymap.set("n", "<Leader>gy", function()
+    vim.lsp.buf.type_definition()
+  end, opts)
+  vim.keymap.set("n", "<Leader>gD", function()
+    vim.lsp.buf.declaration()
+  end, opts)
 
   -- actions
-  nnoremap({
-    "<Leader>ga",
-    function()
-      vim.lsp.buf.code_action()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<M-Enter>",
-    function()
-      vim.lsp.buf.code_action()
-    end,
-    opts,
-  })
-  vnoremap({
-    "<Leader>ga",
-    function()
-      vim.lsp.buf.range_code_action()
-    end,
-    opts,
-  })
-  vnoremap({
-    "<M-Enter>",
-    function()
-      vim.lsp.buf.range_code_action()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>gq",
-    function()
-      vim.lsp.buf.formatting()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>ar",
-    function()
-      vim.lsp.buf.rename()
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<Leader>ga", function()
+    vim.lsp.buf.code_action()
+  end, opts)
+  vim.keymap.set("n", "<M-Enter>", function()
+    vim.lsp.buf.code_action()
+  end, opts)
+  vim.keymap.set("v", "<Leader>ga", function()
+    vim.lsp.buf.range_code_action()
+  end, opts)
+  vim.keymap.set("v", "<M-Enter>", function()
+    vim.lsp.buf.range_code_action()
+  end, opts)
+  vim.keymap.set("n", "<Leader>gq", function()
+    vim.lsp.buf.formatting()
+  end, opts)
+  vim.keymap.set("n", "<Leader>ar", function()
+    vim.lsp.buf.rename()
+  end, opts)
 
   -- lists
-  nnoremap({
-    "<Leader>lO",
-    function()
-      vim.lsp.buf.document_symbol()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>lS",
-    function()
-      vim.lsp.buf.workspace_symbol()
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>lG",
-    function()
-      vim.lsp.diagnostic.set_loclist()
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<Leader>lO", function()
+    vim.lsp.buf.document_symbol()
+  end, opts)
+  vim.keymap.set("n", "<Leader>lS", function()
+    vim.lsp.buf.workspace_symbol()
+  end, opts)
+  vim.keymap.set("n", "<Leader>lG", function()
+    vim.lsp.diagnostic.set_loclist()
+  end, opts)
 
-  nnoremap({
-    "<C-Space>",
-    function()
-      vim.diagnostic.open_float(0, { scope = "line" })
-    end,
-    opts,
-  })
-  nnoremap({
-    "]g",
-    function()
-      vim.diagnostic.goto_next({ float = popup_opts })
-    end,
-    opts,
-  })
-  nnoremap({
-    "[g",
-    function()
-      vim.diagnostic.goto_prev({ float = popup_opts })
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<C-Space>", function()
+    vim.diagnostic.open_float(0, { scope = "line" })
+  end, opts)
+  vim.keymap.set("n", "]g", function()
+    vim.diagnostic.goto_next({ float = popup_opts })
+  end, opts)
+  vim.keymap.set("n", "[g", function()
+    vim.diagnostic.goto_prev({ float = popup_opts })
+  end, opts)
 
-  nnoremap({
-    "<C-s>",
-    function()
-      vim.lsp.buf.signature_help()
-    end,
-    opts,
-  })
-  inoremap({
-    "<C-s>",
-    function()
-      vim.lsp.buf.signature_help()
-    end,
-    opts,
-  })
-  nnoremap({
-    "K",
-    function()
-      vim.lsp.buf.hover()
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<C-s>", function()
+    vim.lsp.buf.signature_help()
+  end, opts)
+  vim.keymap.set("i", "<C-s>", function()
+    vim.lsp.buf.signature_help()
+  end, opts)
+  vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover()
+  end, opts)
 
   -- telescope
-  nnoremap({
-    "<Leader>gr",
-    function()
-      require("telescope.builtin").lsp_references({ includeDeclaration = false })
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>lo",
-    function()
-      require("telescope.builtin").lsp_document_symbols({})
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>ls",
-    function()
-      require("telescope.builtin").lsp_workspace_symbols({})
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>lg",
-    function()
-      require("telescope.builtin").diagnostics({
-        bufnr = 0,
-      })
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<Leader>gr", function()
+    require("telescope.builtin").lsp_references({ includeDeclaration = false })
+  end, opts)
+  vim.keymap.set("n", "<Leader>lo", function()
+    require("telescope.builtin").lsp_document_symbols({})
+  end, opts)
+  vim.keymap.set("n", "<Leader>ls", function()
+    require("telescope.builtin").lsp_workspace_symbols({})
+  end, opts)
+  vim.keymap.set("n", "<Leader>lg", function()
+    require("telescope.builtin").diagnostics({
+      bufnr = 0,
+    })
+  end, opts)
 
   -- Typescript utils
-  nnoremap({
-    "<Leader>af",
-    function()
-      vim.cmd([[TSLspImportAll]])
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>ao",
-    function()
-      vim.cmd([[TSLspOrganize]])
-    end,
-    opts,
-  })
-  nnoremap({
-    "<Leader>ai",
-    function()
-      vim.cmd([[TSLspImportCurrent]])
-    end,
-    opts,
-  })
+  vim.keymap.set("n", "<Leader>af", function()
+    vim.cmd([[TSLspImportAll]])
+  end, opts)
+  vim.keymap.set("n", "<Leader>ao", function()
+    vim.cmd([[TSLspOrganize]])
+  end, opts)
+  vim.keymap.set("n", "<Leader>ai", function()
+    vim.cmd([[TSLspImportCurrent]])
+  end, opts)
 end
 
 -- Attach handler. {{{2

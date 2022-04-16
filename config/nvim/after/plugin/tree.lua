@@ -1,4 +1,3 @@
-local nnoremap = vim.keymap.nnoremap
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 local bindings = {
@@ -16,11 +15,8 @@ require("nvim-tree").setup({
   },
 })
 
-nnoremap({
-  "<Leader>tf",
-  function()
-    vim.api.nvim_command([[NvimTreeFindFile]])
-  end,
-})
+vim.keymap.set("n", "<Leader>tf", function()
+  vim.api.nvim_command([[NvimTreeFindFile]])
+end)
 
 vim.g.nvim_tree_disable_window_picker = 1

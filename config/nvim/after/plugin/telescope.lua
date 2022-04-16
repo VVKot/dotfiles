@@ -45,84 +45,44 @@ telescope.load_extension("ultisnips")
 telescope.load_extension("fzf")
 telescope.load_extension("git_worktree")
 
-local nnoremap = vim.keymap.nnoremap
 local builtin = require("telescope.builtin")
 
-nnoremap({
-  "<Leader><C-t>",
-  function()
-    builtin.git_files({})
-  end,
-})
-nnoremap({
-  "<Leader><Leader>",
-  function()
-    builtin.git_files({})
-  end,
-})
-nnoremap({
-  "<Leader>tt",
-  function()
-    builtin.builtin({})
-  end,
-})
-nnoremap({
-  "<Leader>ft",
-  function()
-    builtin.grep_string({ search = vim.fn.input(":RG "), use_regex = true })
-  end,
-})
-nnoremap({
-  "<Leader>gt",
-  function()
-    builtin.git_status({})
-  end,
-})
-nnoremap({
-  "<Leader>lq",
-  function()
-    builtin.quickfix({})
-  end,
-})
-nnoremap({
-  "<Leader>ll",
-  function()
-    builtin.loclist({})
-  end,
-})
-nnoremap({
-  "<Leader>f<Leader>",
-  function()
-    builtin.current_buffer_fuzzy_find({})
-  end,
-})
-nnoremap({
-  "<Leader>fb",
-  function()
-    builtin.buffers({})
-  end,
-})
-nnoremap({
-  "<Leader>fm",
-  function()
-    builtin.marks({})
-  end,
-})
-nnoremap({
-  "<Leader>f:",
-  function()
-    builtin.command_history({})
-  end,
-})
-nnoremap({
-  "<Leader>f/",
-  function()
-    builtin.search_history({})
-  end,
-})
-nnoremap({
-  "z=",
-  function()
-    builtin.spell_suggest({})
-  end,
-})
+vim.keymap.set("n", "<Leader><C-t>", function()
+  builtin.git_files({})
+end)
+vim.keymap.set("n", "<Leader><Leader>", function()
+  builtin.git_files({})
+end)
+vim.keymap.set("n", "<Leader>tt", function()
+  builtin.builtin({})
+end)
+vim.keymap.set("n", "<Leader>ft", function()
+  builtin.grep_string({ search = vim.fn.input(":RG "), use_regex = true })
+end)
+vim.keymap.set("n", "<Leader>gt", function()
+  builtin.git_status({})
+end)
+vim.keymap.set("n", "<Leader>lq", function()
+  builtin.quickfix({})
+end)
+vim.keymap.set("n", "<Leader>ll", function()
+  builtin.loclist({})
+end)
+vim.keymap.set("n", "<Leader>f<Leader>", function()
+  builtin.current_buffer_fuzzy_find({})
+end)
+vim.keymap.set("n", "<Leader>fb", function()
+  builtin.buffers({})
+end)
+vim.keymap.set("n", "<Leader>fm", function()
+  builtin.marks({})
+end)
+vim.keymap.set("n", "<Leader>f:", function()
+  builtin.command_history({})
+end)
+vim.keymap.set("n", "<Leader>f/", function()
+  builtin.search_history({})
+end)
+vim.keymap.set("n", "z=", function()
+  builtin.spell_suggest({})
+end)

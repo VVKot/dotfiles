@@ -17,10 +17,6 @@ require("zen-mode").setup({
   end,
 })
 
-local nnoremap = vim.keymap.nnoremap
-nnoremap({
-  "<Leader>zz",
-  function()
-    vim.api.nvim_command([[ZenMode]])
-  end,
-})
+vim.keymap.set("n", "<Leader>zz", function()
+  vim.api.nvim_command([[ZenMode]])
+end)

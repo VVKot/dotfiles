@@ -129,9 +129,6 @@ return packer.startup({
     -- Debug utils for Vimscript.
     use("tpope/vim-scriptease")
 
-    -- Some shims for Lua that should be eventually merged upstream.
-    use("tjdevries/astronauta.nvim")
-
     -- Testing.
     use("vim-test/vim-test")
 
