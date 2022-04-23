@@ -87,11 +87,11 @@ local attach_formatting = function()
   vim.api.nvim_command([[augroup END]])
 end
 
-local custom_attach = function(client, bufnr)
-  setup_key_mappings(bufnr)
+local custom_attach = function(client)
+  setup_key_mappings(0)
 
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr")
+  vim.api.nvim_buf_set_option(0, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_option(0, "formatexpr", "v:lua.vim.lsp.formatexpr")
   if client.resolved_capabilities.document_formatting then
     attach_formatting()
   end
