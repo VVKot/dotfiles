@@ -13,6 +13,7 @@ require("lualine").setup({
   options = {
     theme = "github_vkot",
     disabled_filetypes = { "fugitive", "startify" },
+    globalstatus = true,
   },
   sections = {
     lualine_a = {},

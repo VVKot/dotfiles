@@ -153,6 +153,8 @@ augroup END
 
 set thesaurus=~/.vim/thesaurus
 
+set laststatus=3
+
 " COLOR SETTINGS {{{1
 set background=light
 set fillchars=eob:\ ,
