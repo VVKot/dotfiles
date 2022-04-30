@@ -9,6 +9,7 @@ tap "homebrew/services"
 
 brew "bash"
 brew "bat"
+brew "certigo"
 brew "coreutils"
 brew "curl"
 brew "fd"
