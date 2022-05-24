@@ -46,7 +46,6 @@ brew "yq"
 brew "zplug"
 brew "zsh"
 
-cask "amethyst"
 cask "docker"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
