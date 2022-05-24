@@ -1,21 +1,23 @@
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
+export SHELL="$(which zsh)"
+
 # OS-specific setup
 case "$OSTYPE" in
   darwin*)
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
+    export ZPLUG_HOME=/opt/homebrew/opt/zplug
+    source $ZPLUG_HOME/init.zsh
   ;;
   linux*)
     alias ls='ls --color'
     alias ll='ls -laF --color'
+    export ZPLUG_HOME=~/.zplug
+    source $ZPLUG_HOME/init.zsh
 esac
-
-export SHELL="$(which zsh)"
-export ZPLUG_HOME=~/.zplug
-source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
