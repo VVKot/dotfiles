@@ -34,6 +34,7 @@ fi
 
 zplug load
 
+alias k="kubectl"
 alias vi="nvim"
 alias vim="nvim"
 export VISUAL="nvim"
