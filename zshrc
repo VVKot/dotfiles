@@ -104,6 +104,9 @@ export PATH=$PATH:$GOBIN
 # clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
+# krew
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 grebase() {
   local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
   local current=$(git rev-parse --abbrev-ref HEAD)
