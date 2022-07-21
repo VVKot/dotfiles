@@ -19,9 +19,11 @@ case "$OSTYPE" in
     source $ZPLUG_HOME/init.zsh
 esac
 
-zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/gradle", from:oh-my-zsh
+zplug "plugins/kubectl", from:oh-my-zsh
+zplug "plugins/kubectx", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
