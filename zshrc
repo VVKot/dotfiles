@@ -21,9 +21,12 @@ esac
 
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/gh", from:oh-my-zsh
+zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/gradle", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/kubectx", from:oh-my-zsh
+zplug "plugins/minikube", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
@@ -102,9 +105,6 @@ export JDTLS_HOME=~/.local/share/nvim/lsp_servers/jdtls
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-
-# kubectl completion
-source <(kubectl completion zsh)
 
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
