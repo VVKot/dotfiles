@@ -106,6 +106,9 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# kubectl completion
+source <(kubectl completion zsh)
+
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
 
