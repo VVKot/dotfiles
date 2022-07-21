@@ -1,5 +1,5 @@
 [directory]
-style = "bold blue"
+style = "bold green"
 
 [cmd_duration]
 style = "bold green"
@@ -15,3 +15,7 @@ style_user = "bold blue"
 
 [hostname]
 style = "bold green"
+
+[kubernetes]
+disabled = false
+style = "bold blue"
