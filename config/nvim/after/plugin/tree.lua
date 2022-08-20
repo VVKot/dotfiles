@@ -7,7 +7,7 @@ local bindings = {
   { mode = "n", key = "p", cb = tree_cb("preview") },
 }
 require("nvim-tree").setup({
-  update_to_buf_dir = { enable = false, auto_open = false },
+  hijack_directories = { enable = false, auto_open = false },
   view = {
     width = 60,
     side = "left",
