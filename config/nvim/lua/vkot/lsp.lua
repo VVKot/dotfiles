@@ -328,8 +328,14 @@ lspconfig.diagnosticls.setup({
   },
 })
 
+lspconfig.jdtls.setup({
+  on_attach = custom_attach,
+  capabilities = custom_capabilities,
+  use_lombok_agent = true,
+})
+
 -- Servers with default setup. {{{3
-local servers = { "vimls", "jdtls", "cssls", "eslint" }
+local servers = { "vimls", "cssls", "eslint" }
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
