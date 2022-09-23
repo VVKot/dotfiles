@@ -23,35 +23,5 @@ nnoremap ]g :<C-u>action GotoNextError<CR>
 nnoremap [g :<C-u>action GotoPreviousError<CR>
 nnoremap g; :<C-u>action JumpToLastChange<CR>
 nnoremap g, :<C-u>action JumpToNextChange<CR>
-nnoremap gcc :<C-u>action CommentByLineComment<CR>
-nnoremap <C-o> :<C-u>action Back<CR>
-nnoremap <C-i> :<C-u>action Forward<CR>
-
-nnoremap <leader><leader> :<C-u>action GotoClass<CR>
-nnoremap <leader><C-t> :<C-u>action GotoFile<CR>
-nnoremap <leader>ff :<C-u>action FindInPath<CR>
-nnoremap - :<C-u>action SelectInProjectView<CR>
-
-nnoremap <leader>ga :<C-u>action GotoAction<CR>
-nnoremap <leader>aw :<C-u>action ShowIntentionActions<CR>
-nnoremap <leader>ar :<C-u>action RenameElement<CR>
 
 nnoremap <C-l> :noh<CR>
-
-nnoremap <leader>gi :<C-u>action GotoImplementation<CR>
-nnoremap <leader>gs :<C-u>action GotoSuperMethod<CR>
-nnoremap <leader>gd :<C-u>action GotoDeclaration<CR>
-nnoremap <leader>gr :<C-u>action GotoRelated<CR>
-nnoremap <leader>gt :<C-u>action GotoTest<CR>
-nnoremap <leader>fu :<C-u>action FindUsages<CR>
-nnoremap <leader>su :<C-u>action ShowUsages<CR>
-nnoremap <leader>cv :<C-u>action ChangeView<CR>
-nnoremap <leader>bb :<C-u>action ToggleLineBreakpoint<CR>
-nnoremap <leader>br :<C-u>action ViewBreakpoints<CR>
-nnoremap <leader>rf :<C-u>action RenameFile<CR>
-nnoremap <leader>dd :<C-u>action Debug<CR>
-nnoremap <leader>dc :<C-u>action ChooseDebugConfiguration<CR>
-nnoremap <leader>rr :<C-u>action Run<CR>
-nnoremap <leader>rc :<C-u>action ChooseRunConfiguration<CR>
-nnoremap <leader>gb :<C-u>action Annotate<CR>
-
