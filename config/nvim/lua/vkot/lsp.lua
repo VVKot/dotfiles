@@ -1,3 +1,5 @@
+require("nvim-lsp-installer").setup({})
+
 local popup_opts = { border = "single", focusable = false }
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, popup_opts)
