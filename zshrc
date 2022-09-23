@@ -97,6 +97,7 @@ export NODE_OPTIONS=--max_old_space_size=8192
 
 # java language server
 export JDTLS_HOME=~/.local/share/nvim/lsp_servers/jdtls
+export PATH=$PATH:$JDTLS_HOME/bin
 
 # for pnpm completion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
@@ -117,6 +118,9 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
+
+# python 3.9
+export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
 grebase() {
   local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
