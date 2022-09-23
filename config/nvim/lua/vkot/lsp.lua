@@ -2,10 +2,8 @@ local popup_opts = { border = "single", focusable = false }
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, popup_opts)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, popup_opts)
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  { signs = false, virtual_text = false }
-)
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { signs = false, virtual_text = false })
 
 local lspconfig = require("lspconfig")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -329,7 +327,11 @@ lspconfig.diagnosticls.setup({
 })
 
 lspconfig.jdtls.setup({
-  on_attach = custom_attach,
+  on_attach = function(client)
+    custom_attach(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end,
   capabilities = custom_capabilities,
   use_lombok_agent = true,
 })
