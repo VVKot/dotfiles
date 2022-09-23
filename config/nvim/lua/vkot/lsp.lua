@@ -154,7 +154,7 @@ lspconfig.clangd.setup({
   capabilities = custom_capabilities,
 })
 
-local ltex_path = vim.fn.stdpath("data") .. "/grammar-guard/ltex/bin/ltex-ls"
+local ltex_path = vim.fn.stdpath("data") .. "/lsp_servers/ltex/ltex-ls"
 if vim.fn.exepath(ltex_path) ~= "" then
   lspconfig.ltex.setup({
     cmd = { ltex_path },

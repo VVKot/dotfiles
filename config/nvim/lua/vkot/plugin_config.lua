@@ -150,10 +150,7 @@ return packer.startup({
     -- Cache lua modules for quicker startup.
     use("lewis6991/impatient.nvim")
 
-    -- LTeX language server installer.
-    use("brymer-meneses/grammar-guard.nvim")
-
-    -- jdtls installation.
+    -- Server installation.
     use("williamboman/nvim-lsp-installer")
   end,
 })
