@@ -11,6 +11,7 @@ local mappings = {
   ["<M-n>"] = actions.cycle_history_next,
   ["<M-p>"] = actions.cycle_history_prev,
   ["<esc>"] = actions.close,
+  ["<C-[>"] = actions.close,
   ["<C-w>"] = function()
     vim.cmd([[normal! bcw]])
   end,
