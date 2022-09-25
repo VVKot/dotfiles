@@ -51,6 +51,6 @@ treesitter.setup({
 })
 
 -- Disable context by default.
-require("treesitter-context").setup({ enable = false })
+require("treesitter-context").setup({ enable = true })
 -- Visually distinguish tree-sitter context from regular text.
 vim.cmd([[hi TreesitterContext guibg=lightgrey]])
