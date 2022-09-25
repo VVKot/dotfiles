@@ -3,9 +3,6 @@ set secure
 let mapleader = " "
 let maplocalleader = " "
 
-" Increase scrolloff.
-set scrolloff=5
-
 " Hard wrap at 120.
 set textwidth=120
 
