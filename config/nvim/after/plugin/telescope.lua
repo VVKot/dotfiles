@@ -34,9 +34,11 @@ telescope.setup({
     builtin = { include_extensions = true, theme = "dropdown", previewer = false },
     lsp_code_actions = { theme = "cursor" },
     lsp_range_code_actions = { theme = "cursor" },
-    marks = { theme = "dropdown" },
+    marks = { theme = "dropdown", previewer = false },
     command_history = { theme = "dropdown" },
     search_history = { theme = "dropdown" },
+    lsp_document_symbols = { theme = "dropdown", previewer = false },
+    diagnostics = { theme = "dropdown", previewer = false },
   },
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },

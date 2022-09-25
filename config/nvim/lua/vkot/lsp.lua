@@ -59,7 +59,7 @@ local setup_key_mappings = function(bufnr)
     require("telescope.builtin").lsp_document_symbols({})
   end, opts)
   vim.keymap.set("n", "<Leader>ls", function()
-    require("telescope.builtin").lsp_workspace_symbols({})
+    require("telescope.builtin").lsp_dynamic_workspace_symbols({})
   end, opts)
   vim.keymap.set("n", "<Leader>lg", function()
     require("telescope.builtin").diagnostics({
