@@ -228,12 +228,6 @@ lspconfig.diagnosticls.setup({
   },
   init_options = {
     filetypes = {
-      javascript = { "tslint" },
-      javascriptreact = { "tslint" },
-      ["javascript.jsx"] = { "tslint" },
-      typescript = { "tslint" },
-      typescriptreact = { "tslint" },
-      ["typescript.tsx"] = { "tslint" },
       css = "stylelint",
       scss = "stylelint",
       sass = "stylelint",
@@ -242,21 +236,6 @@ lspconfig.diagnosticls.setup({
       rst = "proselint",
     },
     linters = {
-      tslint = {
-        command = "./node_modules/.bin/tslint",
-        rootPatterns = { ".git" },
-        debounce = 100,
-        args = { "%filepath", "--format", "json" },
-        sourceName = "tslint",
-        parseJson = {
-          line = "startPosition.line",
-          column = "startPosition.character",
-          endLine = "endPosition.line",
-          endColumn = "endPosition.character",
-          message = "[tslint] ${failure} (${ruleName})",
-          security = "ruleSeverity",
-        },
-      },
       stylelint = {
         command = "./node_modules/.bin/stylelint",
         rootPatterns = { ".git" },
@@ -296,11 +275,6 @@ lspconfig.diagnosticls.setup({
         args = { "%filepath", "--fix" },
         rootPatterns = { ".git" },
       },
-      tslintFix = {
-        command = "./node_modules/.bin/tslint",
-        args = { "%filepath", "--fix" },
-        rootPatterns = { ".git" },
-      },
       stylelintFix = {
         command = "./node_modules/.bin/stylelint",
         args = { "%filepath", "--fix" },
@@ -313,12 +287,12 @@ lspconfig.diagnosticls.setup({
       },
     },
     formatFiletypes = {
-      javascript = { "tslintFix", "eslintFix" },
-      javascriptreact = { "tslintFix", "eslintFix" },
-      ["javascript.jsx"] = { "tslintFix", "eslintFix" },
-      typescript = { "tslintFix", "eslintFix" },
-      typescriptreact = { "tslintFix", "eslintFix" },
-      ["typescript.tsx"] = { "tslintFix", "eslintFix" },
+      javascript = "eslintFix",
+      javascriptreact = "eslintFix",
+      ["javascript.jsx"] = "eslintFix",
+      typescript = "eslintFix",
+      typescriptreact = "eslintFix",
+      ["typescript.tsx"] = "eslintFix",
       css = "stylelintFix",
       scss = "stylelintFix",
       sass = "stylelintFix",
