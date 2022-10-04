@@ -36,7 +36,7 @@ local setup_key_mappings = function(bufnr)
   -- lists
   vim.keymap.set("n", "<Leader>lO", vim.lsp.buf.document_symbol, opts)
   vim.keymap.set("n", "<Leader>lS", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<Leader>lG", vim.lsp.diagnostic.set_loclist, opts)
+  vim.keymap.set("n", "<Leader>lG", vim.diagnostic.setloclist)
 
   vim.keymap.set("n", "<C-Space>", function()
     vim.diagnostic.open_float(0, { scope = "line" })
@@ -92,7 +92,7 @@ local custom_attach = function(client)
 
   vim.api.nvim_buf_set_option(0, "omnifunc", "v:lua.vim.lsp.omnifunc")
   vim.api.nvim_buf_set_option(0, "formatexpr", "v:lua.vim.lsp.formatexpr")
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     attach_formatting()
   end
 end
@@ -174,8 +174,8 @@ end
 lspconfig.tsserver.setup({
   on_attach = function(client)
     custom_attach(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
     local ts_utils = require("nvim-lsp-ts-utils")
     ts_utils.setup({})
     ts_utils.setup_client(client)
@@ -331,8 +331,8 @@ lspconfig.diagnosticls.setup({
 lspconfig.jdtls.setup({
   on_attach = function(client)
     custom_attach(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end,
   capabilities = custom_capabilities,
   use_lombok_agent = true,
