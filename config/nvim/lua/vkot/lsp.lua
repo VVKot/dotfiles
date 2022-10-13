@@ -302,15 +302,17 @@ lspconfig.diagnosticls.setup({
   },
 })
 
-lspconfig.jdtls.setup({
-  on_attach = function(client)
-    custom_attach(client)
-    client.server_capabilities.document_formatting = false
-    client.server_capabilities.document_range_formatting = false
-  end,
-  capabilities = custom_capabilities,
-  use_lombok_agent = true,
-})
+if false then
+  lspconfig.jdtls.setup({
+    on_attach = function(client)
+      custom_attach(client)
+      client.server_capabilities.document_formatting = false
+      client.server_capabilities.document_range_formatting = false
+    end,
+    capabilities = custom_capabilities,
+    use_lombok_agent = true,
+  })
+end
 
 -- Servers with default setup. {{{3
 local servers = { "vimls", "cssls", "eslint" }
