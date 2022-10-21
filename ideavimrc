@@ -28,3 +28,5 @@ nnoremap g; :<C-u>action JumpToLastChange<CR>
 nnoremap g, :<C-u>action JumpToNextChange<CR>
 
 nnoremap <C-l> :noh<CR>
+
+nnoremap <C-h> <BS>
