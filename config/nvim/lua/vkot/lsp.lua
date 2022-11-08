@@ -8,8 +8,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { signs = false, virtual_text = false })
 
 local lspconfig = require("lspconfig")
-local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
-custom_capabilities = require("cmp_nvim_lsp").update_capabilities(custom_capabilities)
+local custom_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Key maps. {{{2
 local setup_key_mappings = function(bufnr)
