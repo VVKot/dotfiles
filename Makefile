@@ -24,18 +24,18 @@ sync-mac:
 	[ -f ~/Library/Preferences/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/Library/Preferences/glow/glow.yml
 
 clean:
-	rm -f ~/.config/bat/config || true
-	rm -f ~/.config/glow/glow.yml || true
-	rm -f ~/.config/starship.toml || true
-	rm -f ~/.digrc || true
-	rm -f ~/.ideavimrc || true
-	rm -f ~/.inputrc || true
-	rm -f ~/.iterm/com.googlecode.iterm2.plist || true
-	rm -f ~/.tmux.conf || true
-	rm -f ~/.zprofile || true
-	rm -f ~/.zshrc || true
-	rm -f ~/Library/Application\ Support/Code/User/settings.json || true
-	rm -f ~/Library/Preferences/glow/glow.yml || true
-	rm -rf ~/.config/nvim || true
+	unlink ~/.config/bat/config || true
+	unlink ~/.config/glow/glow.yml || true
+	unlink ~/.config/starship.toml || true
+	unlink ~/.digrc || true
+	unlink ~/.ideavimrc || true
+	unlink ~/.inputrc || true
+	unlink ~/.iterm/com.googlecode.iterm2.plist || true
+	unlink ~/.tmux.conf || true
+	unlink ~/.zprofile || true
+	unlink ~/.zshrc || true
+	unlink ~/Library/Application\ Support/Code/User/settings.json || true
+	unlink ~/Library/Preferences/glow/glow.yml || true
+	unlink ~/.config/nvim || true
 
 .PHONY: all clean sync sync-mac build run kill
