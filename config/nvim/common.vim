@@ -136,9 +136,6 @@ augroup YankHighlight
   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
 
-" Conceal level high enough to cover markdown
-set conceallevel=2
-
 " Always move screen line-wise
 nnoremap j gj
 nnoremap k gk
