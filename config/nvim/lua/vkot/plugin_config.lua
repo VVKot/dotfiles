@@ -141,9 +141,6 @@ return packer.startup({
     -- Testing.
     use("vim-test/vim-test")
 
-    -- Utils to quick navigate to & reuse terminals.
-    use("ThePrimeagen/harpoon")
-
     -- Show all available keymaps.
     use({ "folke/which-key.nvim" })
 
