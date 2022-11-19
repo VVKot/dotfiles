@@ -30,8 +30,7 @@ telescope.setup({
     mappings = { i = insert_mappings, n = normal_mappings },
   },
   pickers = {
-    buffers = { sort_mru = true, theme = "dropdown", previewer = false },
-    builtin = { include_extensions = true, theme = "dropdown", previewer = false },
+    buffers = { sort_mru = true, previewer = false },
     lsp_code_actions = { theme = "cursor" },
     lsp_range_code_actions = { theme = "cursor" },
     marks = { theme = "dropdown", previewer = false },
