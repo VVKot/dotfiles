@@ -65,17 +65,6 @@ local setup_key_mappings = function(bufnr)
       bufnr = 0,
     })
   end, opts)
-
-  -- Typescript utils
-  vim.keymap.set("n", "<Leader>af", function()
-    vim.cmd([[TSLspImportAll]])
-  end, opts)
-  vim.keymap.set("n", "<Leader>ao", function()
-    vim.cmd([[TSLspOrganize]])
-  end, opts)
-  vim.keymap.set("n", "<Leader>ai", function()
-    vim.cmd([[TSLspImportCurrent]])
-  end, opts)
 end
 
 -- Attach handler. {{{2
@@ -175,9 +164,6 @@ lspconfig.tsserver.setup({
     custom_attach(client)
     client.server_capabilities.document_formatting = false
     client.server_capabilities.document_range_formatting = false
-    local ts_utils = require("nvim-lsp-ts-utils")
-    ts_utils.setup({})
-    ts_utils.setup_client(client)
   end,
   capabilities = custom_capabilities,
   cmd = { "typescript-language-server", "--stdio" },
@@ -300,18 +286,6 @@ lspconfig.diagnosticls.setup({
     },
   },
 })
-
-if false then
-  lspconfig.jdtls.setup({
-    on_attach = function(client)
-      custom_attach(client)
-      client.server_capabilities.document_formatting = false
-      client.server_capabilities.document_range_formatting = false
-    end,
-    capabilities = custom_capabilities,
-    use_lombok_agent = true,
-  })
-end
 
 -- Servers with default setup. {{{3
 local servers = { "vimls", "cssls", "eslint" }

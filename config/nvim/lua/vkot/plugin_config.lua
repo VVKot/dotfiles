@@ -40,10 +40,6 @@ return packer.startup({
     -- Readonly tree view.
     use("kyazdani42/nvim-tree.lua")
 
-    -- Fuzzy search for everything.
-    use("junegunn/fzf")
-    use("junegunn/fzf.vim")
-
     -- Lua-based fuzzy search.
     use({
       "nvim-telescope/telescope.nvim",
@@ -64,24 +60,15 @@ return packer.startup({
     use("rhysd/conflict-marker.vim")
     -- Git commit browser.
     use("junegunn/gv.vim")
-    use("theprimeagen/git-worktree.nvim")
 
     -- Autodetect indentation.
     use("tpope/vim-sleuth")
-
-    -- More convenient make.
-    use("tpope/vim-dispatch")
-    use("radenling/vim-dispatch-neovim")
 
     -- Matching tags.
     use("gregsexton/MatchTag")
 
     -- Editor config support.
     use("editorconfig/editorconfig-vim")
-
-    -- Zen mode.
-    use({ "folke/zen-mode.nvim" })
-    use("preservim/vim-pencil")
 
     -- Go support.
     use("fatih/vim-go")
@@ -100,7 +87,6 @@ return packer.startup({
 
     -- Neovim LSP.
     use("neovim/nvim-lspconfig")
-    use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
     -- Icons.
     use("ryanoasis/vim-devicons")
@@ -131,9 +117,6 @@ return packer.startup({
 
     -- Zettelkasten plugin.
     use({ "oberblastmeister/neuron.nvim", branch = "unstable" })
-
-    -- DOcumentation GEnerator.
-    use("kkoomen/vim-doge")
 
     -- Debug utils for Vimscript.
     use("tpope/vim-scriptease")

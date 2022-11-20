@@ -25,9 +25,7 @@ zplug "plugins/gh", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/gradle", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
-zplug "plugins/kubectx", from:oh-my-zsh
 zplug "plugins/minikube", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
 if ! zplug check --verbose; then
@@ -92,13 +90,6 @@ setopt HIST_IGNORE_DUPS
 export NVM_DIR="$HOME/.nvm"
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 
-# bumping default Node memory limit
-export NODE_OPTIONS=--max_old_space_size=8192
-
-# java language server
-export JDTLS_HOME=~/.local/share/nvim/lsp_servers/jdtls
-export PATH=$PATH:$JDTLS_HOME/bin
-
 # for pnpm completion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
@@ -110,17 +101,8 @@ export PATH=$PATH:$GOBIN
 # kubectl completion
 source <(kubectl completion zsh)
 
-# krew
-export PATH="${PATH}:${HOME}/.krew/bin"
-
 # clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# krew
-export PATH="${PATH}:${HOME}/.krew/bin"
-
-# python 3.9
-export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
 grebase() {
   local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
@@ -159,10 +141,6 @@ gmerge() {
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-dadjoke() {
-  curl -s -H "Accept: application/json" https://icanhazdadjoke.com/ | jq -r '.joke'
-}
 
 if [ -f ~/.zshrcextra ]; then
     source ~/.zshrcextra
