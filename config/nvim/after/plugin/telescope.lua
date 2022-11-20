@@ -36,6 +36,7 @@ telescope.setup({
     diagnostics = { theme = "dropdown", previewer = false },
     lsp_code_actions = { theme = "cursor" },
     lsp_range_code_actions = { theme = "cursor" },
+    git_files = { previewer = false },
   },
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },
