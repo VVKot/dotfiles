@@ -87,39 +87,6 @@ end
 
 -- Servers. {{{2
 
-lspconfig.sumneko_lua.setup({
-  cmd = require("lspcontainers").command("sumneko_lua"),
-  on_new_config = function(new_config, new_root_dir)
-    new_config.cmd = require("lspcontainers").command("sumneko_lua", {
-      root_dir = new_root_dir,
-    })
-  end,
-  on_attach = custom_attach,
-  capabilities = custom_capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (LuaJIT in the case of Neovim)
-        version = "LuaJIT",
-        -- Setup your lua path
-        path = vim.split(package.path, ";"),
-      },
-      diagnostics = {
-        enable = true,
-        -- Get the language server to recognize the `vim` global
-        globals = { "vim", "describe", "it", "before_each", "after_each" },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-        },
-      },
-    },
-  },
-})
-
 lspconfig.gopls.setup({
   on_attach = custom_attach,
   capabilities = custom_capabilities,
@@ -176,6 +143,7 @@ local dockerized_servers = {
   "jsonls",
   "pyright",
   "yamlls",
+  "sumneko_lua",
 }
 
 for _, server in pairs(dockerized_servers) do
@@ -197,44 +165,16 @@ lspconfig.diagnosticls.setup({
   on_attach = custom_attach,
   capabilities = custom_capabilities,
   filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-    "css",
-    "scss",
-    "sass",
-    "less",
     "lua",
     "markdown",
     "rst",
   },
   init_options = {
     filetypes = {
-      css = "stylelint",
-      scss = "stylelint",
-      sass = "stylelint",
-      less = "stylelint",
       markdown = "proselint",
       rst = "proselint",
     },
     linters = {
-      stylelint = {
-        command = "./node_modules/.bin/stylelint",
-        rootPatterns = { ".git" },
-        debounce = 100,
-        args = { "%filepath", "--formatter", "json" },
-        sourceName = "stylelint",
-        parseJson = {
-          errorsRoot = "[0].warnings",
-          line = "line",
-          column = "column",
-          message = "[stylelint] ${text}",
-          security = "severity",
-        },
-      },
       proselint = {
         command = "proselint",
         debounce = 100,
@@ -255,16 +195,6 @@ lspconfig.diagnosticls.setup({
       },
     },
     formatters = {
-      eslintFix = {
-        command = "./node_modules/.bin/eslint",
-        args = { "%filepath", "--fix" },
-        rootPatterns = { ".git" },
-      },
-      stylelintFix = {
-        command = "./node_modules/.bin/stylelint",
-        args = { "%filepath", "--fix" },
-        rootPatterns = { ".git" },
-      },
       styluaFix = {
         command = "stylua",
         args = { "%filepath", "--search-parent-directories" },
@@ -272,27 +202,7 @@ lspconfig.diagnosticls.setup({
       },
     },
     formatFiletypes = {
-      javascript = "eslintFix",
-      javascriptreact = "eslintFix",
-      ["javascript.jsx"] = "eslintFix",
-      typescript = "eslintFix",
-      typescriptreact = "eslintFix",
-      ["typescript.tsx"] = "eslintFix",
-      css = "stylelintFix",
-      scss = "stylelintFix",
-      sass = "stylelintFix",
-      less = "stylelintFix",
       lua = "styluaFix",
     },
   },
 })
-
--- Servers with default setup. {{{3
-local servers = { "vimls", "cssls", "eslint" }
-
-for _, server in ipairs(servers) do
-  lspconfig[server].setup({
-    on_attach = custom_attach,
-    capabilities = custom_capabilities,
-  })
-end
