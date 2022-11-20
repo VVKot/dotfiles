@@ -136,11 +136,9 @@ augroup YankHighlight
   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
 
-" Always move screen line-wise
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+" use open-browser for opening links
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 augroup neovim_terminal
     autocmd!
@@ -151,6 +149,16 @@ augroup END
 set thesaurus=~/.vim/thesaurus
 
 set laststatus=3
+set statusline=
+set statusline+=\ %F
+set statusline+=\ %m
+set statusline+=\ %r
+set statusline+=%=
+set statusline+=\ %l:%c/%L
+set statusline+=\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=\ %{get(b:,'gitsigns_head','')}
+
+set winbar=%t
 
 " COLOR SETTINGS {{{1
 set background=light

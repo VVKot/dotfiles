@@ -1,6 +1,3 @@
--- Temporary hack until https://github.com/neovim/neovim/issues/15176 is resolved
-vim.cmd([[set background=light]])
-
 local packer = require("packer")
 packer.init({ max_jobs = 50 })
 
@@ -20,33 +17,43 @@ return packer.startup({
     use("tpope/vim-repeat")
     -- Simplifies working with variants of the word.
     use("tpope/vim-abolish")
-    -- Exchange two motions.
-    use("tommcdo/vim-exchange")
     -- Handful shortcuts for *nix commands.
     use("tpope/vim-eunuch")
+    -- Autodetect indentation.
+    use("tpope/vim-sleuth")
+    -- Debug utils for Vimscript.
+    use("tpope/vim-scriptease")
+    -- Exchange two motions.
+    use("tommcdo/vim-exchange")
 
-    -- Completion for native LSP.
-    use("onsails/lspkind-nvim")
-    use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-path")
-    use("hrsh7th/cmp-nvim-lua")
-    use("quangnguyen30192/cmp-nvim-ultisnips")
+    -- Matching tags.
+    use("gregsexton/MatchTag")
+    -- Editor config support.
+    use("editorconfig/editorconfig-vim")
+    -- Better text objects.
+    use("wellle/targets.vim")
+    -- Autopairs plugin.
+    use("windwp/nvim-autopairs")
+
+    -- Neovim LSP.
+    use("neovim/nvim-lspconfig")
+    -- Docker images for LSP servers.
+    use("lspcontainers/lspcontainers.nvim")
+    -- Go support.
+    use("fatih/vim-go")
+
+    -- Syntax highlighting.
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter-textobjects")
+    use("JoosepAlviste/nvim-ts-context-commentstring")
+    use("romgrk/nvim-treesitter-context")
 
     -- Explorer that adheres to Vim philosophy.
     use("justinmk/vim-dirvish")
-    use("bounceme/remote-viewer")
-    -- Readonly tree view.
-    use("kyazdani42/nvim-tree.lua")
-
-    -- Lua-based fuzzy search.
-    use({
-      "nvim-telescope/telescope.nvim",
-      requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
-    })
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    use({ "nvim-telescope/telescope-ui-select.nvim" })
+    -- Tree for undo history.
+    use("mbbill/undotree")
+    -- Fancy start screen.
+    use("mhinz/vim-startify")
 
     -- Git plugins.
     use("tpope/vim-fugitive")
@@ -60,85 +67,18 @@ return packer.startup({
     -- Git commit browser.
     use("junegunn/gv.vim")
 
-    -- Autodetect indentation.
-    use("tpope/vim-sleuth")
-
-    -- Matching tags.
-    use("gregsexton/MatchTag")
-
-    -- Editor config support.
-    use("editorconfig/editorconfig-vim")
-
-    -- Go support.
-    use("fatih/vim-go")
-
-    -- Tree for undo history.
-    use("mbbill/undotree")
-
-    -- Fancy start screen.
-    use("mhinz/vim-startify")
-
-    -- Syntax highlighting.
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use("nvim-treesitter/nvim-treesitter-textobjects")
-    use("JoosepAlviste/nvim-ts-context-commentstring")
-    use("romgrk/nvim-treesitter-context")
-
-    -- Neovim LSP.
-    use("neovim/nvim-lspconfig")
-
+    -- Lua-based fuzzy search.
+    use({
+      "nvim-telescope/telescope.nvim",
+      requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+    })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use({ "nvim-telescope/telescope-ui-select.nvim" })
     -- Icons.
     use("ryanoasis/vim-devicons")
     use("kyazdani42/nvim-web-devicons")
 
-    -- Statusline.
-    use("nvim-lualine/lualine.nvim")
-
-    -- Better text objects.
-    use("wellle/targets.vim")
-
-    -- Snippets integration.
-    use({
-      "SirVer/ultisnips",
-      requires = { { "honza/vim-snippets", rtp = "." } },
-      config = function()
-        vim.g.UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
-        vim.g.UltiSnipsJumpForwardTrigger = "<Plug>(ultisnips_jump_forward)"
-        vim.g.UltiSnipsJumpBackwardTrigger = "<Plug>(ultisnips_jump_backward)"
-        vim.g.UltiSnipsListSnippets = "<c-x><c-s>"
-        vim.g.UltiSnipsRemoveSelectModeMappings = 0
-      end,
-    })
-    use("fhill2/telescope-ultisnips.nvim")
-
-    -- Autopairs plugin.
-    use("windwp/nvim-autopairs")
-
     -- Zettelkasten plugin.
     use({ "oberblastmeister/neuron.nvim", branch = "unstable" })
-
-    -- Debug utils for Vimscript.
-    use("tpope/vim-scriptease")
-
-    -- Testing.
-    use("vim-test/vim-test")
-
-    -- Show all available keymaps.
-    use({ "folke/which-key.nvim" })
-
-    -- Docker images for LSP servers.
-    use("lspcontainers/lspcontainers.nvim")
-
-    -- Gradle support.
-    use("tfnico/vim-gradle")
-
-    -- Support for remote copy-paste.
-    use("ojroques/vim-oscyank")
-
-    -- Cache lua modules for quicker startup.
-    use("lewis6991/impatient.nvim")
-
-    -- Server installation.
-    use("williamboman/nvim-lsp-installer")
   end,
 })

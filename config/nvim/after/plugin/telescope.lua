@@ -32,13 +32,10 @@ telescope.setup({
   pickers = {
     builtin = { theme = "dropdown", previewer = false },
     buffers = { sort_mru = true, previewer = false },
-    lsp_code_actions = { theme = "cursor" },
-    lsp_range_code_actions = { theme = "cursor" },
-    marks = { theme = "dropdown", previewer = false },
-    command_history = { theme = "dropdown" },
-    search_history = { theme = "dropdown" },
     lsp_document_symbols = { theme = "dropdown", previewer = false },
     diagnostics = { theme = "dropdown", previewer = false },
+    lsp_code_actions = { theme = "cursor" },
+    lsp_range_code_actions = { theme = "cursor" },
   },
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },
@@ -48,7 +45,6 @@ telescope.setup({
   },
 })
 
-telescope.load_extension("ultisnips")
 telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
 
@@ -66,30 +62,9 @@ end)
 vim.keymap.set("n", "<Leader>ft", function()
   builtin.grep_string({ search = vim.fn.input(":RG "), use_regex = true })
 end)
-vim.keymap.set("n", "<Leader>gt", function()
+vim.keymap.set("n", "<Leader>gs", function()
   builtin.git_status({})
-end)
-vim.keymap.set("n", "<Leader>lq", function()
-  builtin.quickfix({})
-end)
-vim.keymap.set("n", "<Leader>ll", function()
-  builtin.loclist({})
-end)
-vim.keymap.set("n", "<Leader>f<Leader>", function()
-  builtin.current_buffer_fuzzy_find({})
 end)
 vim.keymap.set("n", "<Leader>fb", function()
   builtin.buffers({})
-end)
-vim.keymap.set("n", "<Leader>fm", function()
-  builtin.marks({})
-end)
-vim.keymap.set("n", "<Leader>f:", function()
-  builtin.command_history({})
-end)
-vim.keymap.set("n", "<Leader>f/", function()
-  builtin.search_history({})
-end)
-vim.keymap.set("n", "z=", function()
-  builtin.spell_suggest({})
 end)

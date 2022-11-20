@@ -131,7 +131,8 @@ gmerge() {
   echo "Done!"
 }
 
-eval "$(starship init zsh)"
+# mimic bash
+export PS1="[%n@%m %1~]\$ "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
