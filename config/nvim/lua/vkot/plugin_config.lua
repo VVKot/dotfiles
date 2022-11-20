@@ -50,7 +50,6 @@ return packer.startup({
 
     -- Git plugins.
     use("tpope/vim-fugitive")
-    use("rhysd/git-messenger.vim")
     use({
       "tpope/vim-rhubarb",
       -- Needed for opening git files on remote as I disable netrw.
