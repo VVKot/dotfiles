@@ -25,6 +25,8 @@ nnoremap ]g :<C-u>action GotoNextError<CR>
 nnoremap [g :<C-u>action GotoPreviousError<CR>
 nnoremap g; :<C-u>action JumpToLastChange<CR>
 nnoremap g, :<C-u>action JumpToNextChange<CR>
+nnoremap ]c :<C-u>action VcsShowNextChangeMarker<CR>
+nnoremap [c :<C-u>action VcsShowPrevChangeMarker<CR>
 
 nnoremap <C-l> :noh<CR>
 
