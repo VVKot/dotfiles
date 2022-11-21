@@ -9,8 +9,8 @@ local lspconfig = require("lspconfig")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Key maps. {{{2
-local setup_key_mappings = function(bufnr)
-  local opts = { buffer = bufnr }
+local setup_key_mappings = function()
+  local opts = { buffer = true }
   -- references
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "gD", vim.lsp.buf.implementation, opts)
@@ -53,11 +53,12 @@ end
 -- Attach handler. {{{2
 
 local custom_attach = function()
-  setup_key_mappings(0)
+  setup_key_mappings()
 
-  vim.api.nvim_buf_set_option(0, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(0, "tagfunc", "v:lua.vim.lsp.tagfunc")
-  vim.api.nvim_buf_set_option(0, "formatexpr", "v:lua.vim.lsp.formatexpr")
+  local current_buffer = 0
+  vim.api.nvim_buf_set_option(current_buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_option(current_buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
+  vim.api.nvim_buf_set_option(current_buffer, "formatexpr", "v:lua.vim.lsp.formatexpr")
 end
 
 -- Servers. {{{2
