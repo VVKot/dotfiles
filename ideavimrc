@@ -19,6 +19,7 @@ nnoremap Q @q
 
 nnoremap <leader>ff :<C-u>action FindInPath<CR>
 nnoremap <leader>ar :<C-u>action RenameElement<CR>
+nnoremap - :<C-u>action SelectInProjectView<CR>
 nnoremap [n :<C-u>action VcsShowPrevChangeMarker<CR>
 nnoremap ]n :<C-u>action VcsShowNextChangeMarker<CR>
 nnoremap ]g :<C-u>action GotoNextError<CR>
