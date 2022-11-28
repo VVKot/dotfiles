@@ -54,11 +54,6 @@ end
 
 local custom_attach = function()
   setup_key_mappings()
-
-  local current_buffer = 0
-  vim.api.nvim_buf_set_option(current_buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(current_buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
-  vim.api.nvim_buf_set_option(current_buffer, "formatexpr", "v:lua.vim.lsp.formatexpr")
 end
 
 -- Servers. {{{2
