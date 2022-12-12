@@ -92,7 +92,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 # kubectl completion
-source <(kubectl completion zsh)
+if type "kubectl" > /dev/null; then
+  source <(kubectl completion zsh)
+fi
 
 # clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
