@@ -9,6 +9,17 @@ local lspconfig = require("lspconfig")
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Key maps. {{{2
+
+-- diagnostics
+
+vim.keymap.set("n", "<Leader>lg", vim.diagnostic.setloclist)
+vim.keymap.set("n", "]g", function()
+  vim.diagnostic.goto_next({ float = popup_opts })
+end)
+vim.keymap.set("n", "[g", function()
+  vim.diagnostic.goto_prev({ float = popup_opts })
+end)
+
 local setup_key_mappings = function()
   local opts = { buffer = true }
   -- references
@@ -26,14 +37,6 @@ local setup_key_mappings = function()
 
   -- lists
   vim.keymap.set("n", "<Leader>lO", vim.lsp.buf.document_symbol, opts)
-  vim.keymap.set("n", "<Leader>lg", vim.diagnostic.setloclist)
-
-  vim.keymap.set("n", "]g", function()
-    vim.diagnostic.goto_next({ float = popup_opts })
-  end, opts)
-  vim.keymap.set("n", "[g", function()
-    vim.diagnostic.goto_prev({ float = popup_opts })
-  end, opts)
 
   vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

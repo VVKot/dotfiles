@@ -41,6 +41,8 @@ return packer.startup({
     use("lspcontainers/lspcontainers.nvim")
     -- Go support.
     use("fatih/vim-go")
+    -- Diagnostics.
+    use("dense-analysis/ale")
 
     -- Syntax highlighting.
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
