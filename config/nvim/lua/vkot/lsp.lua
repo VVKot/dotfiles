@@ -70,6 +70,11 @@ lspconfig.gopls.setup({
   },
 })
 
+lspconfig.lua_ls.setup({
+  on_attach = custom_attach,
+  capabilities = custom_capabilities,
+})
+
 local dockerized_servers = {
   "bashls",
   "clangd",
@@ -77,7 +82,6 @@ local dockerized_servers = {
   "html",
   "jsonls",
   "pyright",
-  "sumneko_lua",
   "tsserver",
   "yamlls",
 }
