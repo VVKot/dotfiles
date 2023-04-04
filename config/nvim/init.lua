@@ -14,5 +14,16 @@ if filereadable(expand("~/.config/nvim/extra.vim"))
 endif
 ]])
 
+-- Make sure leader and other basic settings are set
+require("mini.basics").setup({
+  options = {
+    extra_ui = true,
+  },
+  mappings = {
+    basic = false,
+    option_toggle_prefix = "",
+  },
+})
+
 require("vkot/plugin_config")
 require("vkot/lsp")

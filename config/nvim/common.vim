@@ -1,7 +1,5 @@
 set nocompatible
 set secure
-let mapleader = " "
-let maplocalleader = " "
 
 " Increase scrolloff.
 set scrolloff=5
@@ -27,19 +25,9 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Relative line numbers + current line number.
 set relativenumber
-set number
-
-" Set tab to 4 spaces that are automatically expanded/deleted.
-set expandtab tabstop=4 softtabstop=4 shiftwidth=4
-
-" Only make search case-sensetive if pattern has uppercase letters.
-set ignorecase smartcase infercase
 
 " Highlight and visualize substitute command.
 set inccommand=nosplit
-
-" Automatically copy indentation from the previous line with an extra level.
-set smartindent
 
 " Instead of failing on unsaved changes provide a dialog.
 set confirm
@@ -51,8 +39,6 @@ set lazyredraw
 set showmatch
 
 " Don't use backups and swapfiles.
-set nobackup
-set nowritebackup
 set noswapfile
 
 " Don't show mode - cursor indicates that.
@@ -92,19 +78,9 @@ set updatetime=100
 " Don't specify filename when opening file.
 set shortmess+=c
 
-" Split below and to the right by default.
-set splitbelow
-set splitright
-
-" Show sign column.
-set signcolumn=yes
-
 " RG setup.
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
 set grepformat^=%f:%l:%c:%m
-
-" Set completeopt to have a better completion experience
-set completeopt=menu,menuone,noselect
 
 augroup set_js_filetypes
   autocmd!
@@ -112,14 +88,6 @@ augroup set_js_filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
-
-" Shortcuts for moving lines around
-nnoremap <M-j> :m .+1<CR>==
-nnoremap <M-k> :m .-2<CR>==
-inoremap <M-j> <Esc>:m .+1<CR>==gi
-inoremap <M-k> <Esc>:m .-2<CR>==gi
-vnoremap <M-j> :m '>+1<CR>gv=gv
-vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " Autofix last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -162,7 +130,6 @@ set winbar=%t
 
 " COLOR SETTINGS {{{1
 set background=light
-set fillchars=eob:\ ,
 
 highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
@@ -179,5 +146,3 @@ highlight WinSeparator guifg=black guibg=white ctermfg=black ctermbg=white
 highlight GitSignsAdd guifg=green guibg=white ctermfg=green ctermbg=white
 highlight GitSignsChange guifg=blue guibg=white ctermfg=blue ctermbg=white
 highlight GitSignsDelete guifg=red guibg=white ctermfg=red ctermbg=white
-
-set termguicolors

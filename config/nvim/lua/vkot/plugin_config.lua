@@ -25,6 +25,8 @@ return packer.startup({
     use("tpope/vim-scriptease")
     -- Exchange two motions.
     use("tommcdo/vim-exchange")
+    -- Minimal plugins for other things
+    use("echasnovski/mini.nvim")
 
     -- Matching tags.
     use("gregsexton/MatchTag")
