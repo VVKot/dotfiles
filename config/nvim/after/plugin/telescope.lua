@@ -33,7 +33,7 @@ telescope.setup({
     builtin = { theme = "dropdown", previewer = false },
     buffers = { sort_mru = true, previewer = false },
     lsp_document_symbols = { theme = "dropdown", previewer = false },
-    diagnostics = { theme = "dropdown", previewer = false },
+    diagnostics = { theme = "dropdown", previewer = false, path_display = "hidden" },
     lsp_code_actions = { theme = "cursor" },
     lsp_range_code_actions = { theme = "cursor" },
     git_files = { previewer = false },
