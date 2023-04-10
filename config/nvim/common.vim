@@ -128,6 +128,9 @@ set statusline+=\ %{get(b:,'gitsigns_head','')}
 
 set winbar=%t
 
+" better diff algorithm
+set diffopt+=linematch:50
+
 " COLOR SETTINGS {{{1
 set background=light
 
