@@ -84,5 +84,8 @@ return packer.startup({
 
     -- Zettelkasten plugin.
     use({ "oberblastmeister/neuron.nvim", branch = "unstable" })
+
+    -- Copilot
+    use("github/copilot.vim")
   end,
 })

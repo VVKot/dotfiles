@@ -15,4 +15,5 @@
     "stylelint.packageManager": "pnpm",
     "eslint.alwaysShowStatus": true,
     "terminal.integrated.shell.linux": "/bin/zsh",
+    "editor.inlineSuggest.enabled": true,
 }
