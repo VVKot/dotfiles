@@ -13,5 +13,5 @@ endif
 
 require("vkot/plugins")
 -- Needs to happen before generic LSP setup
-require('neodev').setup()
+require("neodev").setup()
 require("vkot/lsp")

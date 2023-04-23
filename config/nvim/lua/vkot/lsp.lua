@@ -6,7 +6,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { signs = false, virtual_text = false })
 
 local lspconfig = require("lspconfig")
-local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Key maps. {{{2
 
@@ -20,50 +19,52 @@ vim.keymap.set("n", "[g", function()
   vim.diagnostic.goto_prev({ float = popup_opts })
 end)
 
-local setup_key_mappings = function()
-  local opts = { buffer = true }
-  -- references
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "gD", vim.lsp.buf.implementation, opts)
-  vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
-  vim.keymap.set("n", "<Leader>gR", function()
-    vim.lsp.buf.references({ includeDeclaration = false })
-  end, opts)
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local buffer = args.buf
+    local opts = { buffer = buffer }
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.server_capabilities.completionProvider then
+      vim.bo[buffer].omnifunc = "v:lua.vim.lsp.omnifunc"
+    end
+    if client.server_capabilities.definitionProvider then
+      vim.bo[buffer].tagfunc = "v:lua.vim.lsp.tagfunc"
+    end
 
-  -- actions
-  vim.keymap.set("n", "<M-Enter>", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("v", "<M-Enter>", vim.lsp.buf.range_code_action, opts)
-  vim.keymap.set("n", "<Leader>ar", vim.lsp.buf.rename, opts)
+    -- references
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<Leader>gR", function()
+      vim.lsp.buf.references({ includeDeclaration = false })
+    end, opts)
 
-  -- lists
-  vim.keymap.set("n", "<Leader>lO", vim.lsp.buf.document_symbol, opts)
+    -- actions
+    vim.keymap.set({ "n", "v" }, "<M-Enter>", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<Leader>ar", vim.lsp.buf.rename, opts)
 
-  vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    -- lists
+    vim.keymap.set("n", "<Leader>lO", vim.lsp.buf.document_symbol, opts)
 
-  -- telescope
-  vim.keymap.set("n", "<Leader>gr", function()
-    require("telescope.builtin").lsp_references({ includeDeclaration = false })
-  end, opts)
-  vim.keymap.set("n", "<Leader>lo", function()
-    require("telescope.builtin").lsp_document_symbols({})
-  end, opts)
-  vim.keymap.set("n", "<Leader>ls", function()
-    require("telescope.builtin").lsp_dynamic_workspace_symbols({})
-  end, opts)
-end
+    vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
--- Attach handler. {{{2
-
-local custom_attach = function()
-  setup_key_mappings()
-end
+    -- telescope
+    vim.keymap.set("n", "<Leader>gr", function()
+      require("telescope.builtin").lsp_references({ includeDeclaration = false })
+    end, opts)
+    vim.keymap.set("n", "<Leader>lo", function()
+      require("telescope.builtin").lsp_document_symbols({})
+    end, opts)
+    vim.keymap.set("n", "<Leader>ls", function()
+      require("telescope.builtin").lsp_dynamic_workspace_symbols({})
+    end, opts)
+  end,
+})
 
 -- Servers. {{{2
 
 lspconfig.gopls.setup({
-  on_attach = custom_attach,
-  capabilities = custom_capabilities,
   settings = {
     gopls = {
       usePlaceholders = true,
@@ -74,8 +75,12 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.lua_ls.setup({
-  on_attach = custom_attach,
-  capabilities = custom_capabilities,
+  settings = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
 })
 
 local dockerized_servers = {
@@ -96,7 +101,5 @@ for _, server in pairs(dockerized_servers) do
     end,
     cmd = require("lspcontainers").command(server),
     root_dir = lspconfig.util.find_git_ancestor,
-    on_attach = custom_attach,
-    capabilities = custom_capabilities,
   })
 end

@@ -2,6 +2,9 @@ set secure
 
 set splitkeep=cursor
 
+" Increase scroloff to give more context.
+set scrolloff=5
+
 " Hard wrap at 120.
 set textwidth=120
 
