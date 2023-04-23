@@ -1,8 +1,6 @@
-set nocompatible
 set secure
 
-" Increase scrolloff.
-set scrolloff=5
+set splitkeep=cursor
 
 " Hard wrap at 120.
 set textwidth=120
@@ -23,12 +21,6 @@ augroup END
 " :W sudo saves the file.
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-" Relative line numbers + current line number.
-set relativenumber
-
-" Highlight and visualize substitute command.
-set inccommand=nosplit
-
 " Instead of failing on unsaved changes provide a dialog.
 set confirm
 
@@ -37,12 +29,6 @@ set lazyredraw
 
 " Highlight matching parenthesis.
 set showmatch
-
-" Don't use backups and swapfiles.
-set noswapfile
-
-" Don't show mode - cursor indicates that.
-set noshowmode
 
 " Show excessive whitespace.
 set list
@@ -54,9 +40,6 @@ nnoremap Y y$
 " Use Q to execute macros.
 noremap Q @q
 
-" Sane mapping to get out terminal mode.
-tnoremap <C-o> <C-\><C-n>
-
 " Easier indenting in visual mode.
 vmap < <gv
 vmap > >gv
@@ -64,19 +47,12 @@ vmap > >gv
 " Set correct backspace options.
 imap <C-h> <BS>
 
-" TextEdit might fail if hidden is not set.
-set hidden
-
 " Give more space for displaying messages.
 set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=100
-
-" Don't pass messages to |ins-completion-menu|.
-" Don't specify filename when opening file.
-set shortmess+=c
 
 " RG setup.
 set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
@@ -98,19 +74,12 @@ highlight Comment cterm=italic gui=italic guifg=blue ctermfg=blue
 " Built-in filter for quickfix/location lists
 packadd cfilter
 
-" Highligh on yank
-augroup YankHighlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-augroup end
-
 " use open-browser for opening links
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 augroup neovim_terminal
     autocmd!
-    autocmd TermOpen * startinsert
     autocmd TermOpen * :setlocal nonumber norelativenumber signcolumn=no
 augroup END
 
