@@ -30,8 +30,6 @@ return packer.startup({
 
     -- Matching tags.
     use("gregsexton/MatchTag")
-    -- Editor config support.
-    use("editorconfig/editorconfig-vim")
     -- Better text objects.
     use("wellle/targets.vim")
     -- Autopairs plugin.
