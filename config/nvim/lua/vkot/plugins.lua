@@ -1,8 +1,6 @@
 local lazy = require("lazy")
 
 local plugins = {
-  -- Manage packer itself.
-  { "wbthomason/packer.nvim", opt = true },
   -- Sensible defaults.
   "tpope/vim-sensible",
   -- Comments.
