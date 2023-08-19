@@ -1,6 +1,7 @@
 set secure
 
 set splitkeep=cursor
+set noswapfile
 
 " Increase scroloff to give more context.
 set scrolloff=5
