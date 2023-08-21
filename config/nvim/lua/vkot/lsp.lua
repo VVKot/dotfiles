@@ -83,23 +83,4 @@ lspconfig.lua_ls.setup({
   },
 })
 
-local dockerized_servers = {
-  "bashls",
-  "clangd",
-  "dockerls",
-  "html",
-  "jsonls",
-  "pyright",
-  "tsserver",
-  "yamlls",
-}
-
-for _, server in pairs(dockerized_servers) do
-  lspconfig[server].setup({
-    before_init = function(params)
-      params.processId = vim.NIL
-    end,
-    cmd = require("lspcontainers").command(server),
-    root_dir = lspconfig.util.find_git_ancestor,
-  })
-end
+lspconfig.pyright.setup({})

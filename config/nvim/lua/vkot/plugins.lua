@@ -28,8 +28,6 @@ local plugins = {
   "neovim/nvim-lspconfig",
   -- Additional lua configuration for plugin interactions
   "folke/neodev.nvim",
-  -- Docker images for LSP servers.
-  "lspcontainers/lspcontainers.nvim",
   -- Go support.
   "fatih/vim-go",
   -- Diagnostics.
