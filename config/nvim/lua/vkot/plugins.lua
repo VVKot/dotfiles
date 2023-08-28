@@ -71,7 +71,7 @@ local plugins = {
   { "nvim-telescope/telescope-ui-select.nvim" },
 
   -- Zettelkasten plugin.
-  { "oberblastmeister/neuron.nvim", branch = "unstable" },
+  { "vvkot/neuron.nvim", branch = "unstable" },
 
   -- Copilot
   "github/copilot.vim",
