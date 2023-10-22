@@ -34,13 +34,6 @@ set lazyredraw
 " Highlight matching parenthesis.
 set showmatch
 
-" Show excessive whitespace.
-set list
-set listchars=tab:»\ ,trail:·,extends:<,precedes:>,conceal:┊,nbsp:␣
-
-" Make Y behave like other capitals.
-nnoremap Y y$
-
 " Use Q to execute macros.
 noremap Q @q
 
