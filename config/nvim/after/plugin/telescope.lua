@@ -2,7 +2,6 @@ local telescope = require("telescope")
 
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
-local themes = require("telescope.themes")
 local insert_mappings = {
   ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
   ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
@@ -30,24 +29,19 @@ telescope.setup({
     mappings = { i = insert_mappings, n = normal_mappings },
   },
   pickers = {
-    builtin = { theme = "dropdown", previewer = false },
+    builtin = { previewer = false },
     buffers = { sort_mru = true, previewer = false },
-    lsp_document_symbols = { theme = "dropdown", previewer = false },
-    diagnostics = { theme = "dropdown", previewer = false, path_display = "hidden" },
-    lsp_code_actions = { theme = "cursor" },
-    lsp_range_code_actions = { theme = "cursor" },
-    git_files = { previewer = false },
+    lsp_document_symbols = { previewer = false },
+    diagnostics = { previewer = false, path_display = "hidden" },
+    git_files = { previewer = true },
+    find_files = { previewer = true },
   },
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },
-    ["ui-select"] = {
-      themes.get_cursor({}),
-    },
   },
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("ui-select")
 
 local builtin = require("telescope.builtin")
 

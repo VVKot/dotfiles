@@ -65,10 +65,9 @@ local plugins = {
   -- Lua-based fuzzy search.
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  { "nvim-telescope/telescope-ui-select.nvim" },
 
   -- Zettelkasten plugin.
   { "vvkot/neuron.nvim", branch = "unstable" },
