@@ -73,7 +73,12 @@ local plugins = {
   { "vvkot/neuron.nvim", branch = "unstable" },
 
   -- Copilot
-  "github/copilot.vim",
+  -- "github/copilot.vim",
+
+  {
+    "sourcegraph/sg.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
 
 local opts = {
