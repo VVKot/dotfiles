@@ -11,6 +11,8 @@ case "$OSTYPE" in
     alias ll='ls -alGpF'
     export ZPLUG_HOME=$(brew --prefix)/opt/zplug
     source $ZPLUG_HOME/init.zsh
+
+    export "JAVA_HOME=$(/usr/libexec/java_home)"
   ;;
   linux*)
     alias ls='ls --color'
