@@ -16,4 +16,7 @@
     "eslint.alwaysShowStatus": true,
     "terminal.integrated.shell.linux": "/bin/zsh",
     "editor.inlineSuggest.enabled": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
 }
