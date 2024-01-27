@@ -31,7 +31,6 @@ zplug "plugins/gradle", from:oh-my-zsh
 zplug "plugins/helm", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/minikube", from:oh-my-zsh
-zplug "plugins/rust", from:oh-my-zsh
 zplug "plugins/terraform", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
@@ -148,3 +147,8 @@ export PS1="[%n@%m %1~]\$ "
 if [ -f ~/.zshrcextra ]; then
     source ~/.zshrcextra
 fi
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+export CARGO_HOME="$HOME/.cargo"
+
+export PATH="$WASMTIME_HOME/bin:$CARGO_HOME/bin:$PATH"
