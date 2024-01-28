@@ -19,6 +19,8 @@ local plugins = {
   "tpope/vim-eunuch",
   -- Debug utils for Vimscript.
   "tpope/vim-scriptease",
+  -- Markdown.
+  "tpope/vim-markdown",
   -- Exchange two motions.
   "tommcdo/vim-exchange",
   -- Minimal plugins for other things

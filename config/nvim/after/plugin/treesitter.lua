@@ -2,6 +2,7 @@ local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup({
   ensure_installed = "all",
+  ignore_install = { "markdown", "markdown_inline" },
   highlight = { enable = true },
   indent = { enable = true },
   textobjects = {
