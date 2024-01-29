@@ -152,3 +152,9 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 export CARGO_HOME="$HOME/.cargo"
 
 export PATH="$WASMTIME_HOME/bin:$CARGO_HOME/bin:$PATH"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+
+loadnvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+}
