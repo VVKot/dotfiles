@@ -73,6 +73,13 @@ local plugins = {
 
   -- Zettelkasten plugin.
   { "vvkot/neuron.nvim", branch = "unstable" },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- use latest release instead of latest commit
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   -- Copilot
   "github/copilot.vim",
