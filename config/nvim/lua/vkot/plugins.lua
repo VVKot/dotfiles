@@ -72,7 +72,6 @@ local plugins = {
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   -- Zettelkasten plugin.
-  { "vvkot/neuron.nvim", branch = "unstable" },
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- use latest release instead of latest commit
@@ -82,26 +81,46 @@ local plugins = {
     cond = function()
       return vim.fn.isdirectory(".obsidian") ~= 0
     end,
-    opts = {
-      detect_cwd = true,
-      open_app_foreground = true,
+    config = function()
+      vim.keymap.set("n", "<C-]>", "<cmd>ObsidianFollowLink<CR>")
+      vim.keymap.set("n", "<C-t>", "<C-o>")
+      vim.keymap.set("n", "gzz", "<cmd>ObsidianSearch<CR>")
+      vim.keymap.set("n", "gzb", "<cmd>ObsidianBacklinks<CR>")
+      vim.keymap.set("n", "gzo", "<cmd>ObsidianOpen<CR>")
 
-      completion = {
-        nvim_cmp = false,
-      },
+      vim.o.textwidth = 80
+      vim.opt.spell = true
 
-      templates = {
-        subdir = "templates",
-        date_format = "%Y-%m-%d",
-        time_format = "%H:%M",
-      },
-      note_id_func = function()
-        return os.date("%Y%m%d%H%M", os.time())
-      end,
-      disable_frontmatter = true,
+      local obsidian = require("obsidian")
+      obsidian.setup({
+        open_app_foreground = true,
 
-      mappings = {},
-    },
+        completion = {
+          nvim_cmp = false,
+        },
+
+        templates = {
+          subdir = "templates",
+          date_format = "%Y-%m-%d",
+          time_format = "%H:%M",
+        },
+        note_id_func = function()
+          return os.date("%Y%m%d%H%M", os.time())
+        end,
+        disable_frontmatter = true,
+        log_level = vim.log.levels.WARN,
+
+        mappings = {},
+        workspaces = {
+          {
+            name = "no-vault",
+            path = function()
+              return assert(vim.fn.getcwd())
+            end,
+          },
+        },
+      })
+    end,
   },
 
   -- Copilot
