@@ -123,6 +123,9 @@ local plugins = {
     end,
   },
 
+  "folke/zen-mode.nvim",
+  "folke/twilight.nvim",
+
   -- Copilot
   "github/copilot.vim",
 }
