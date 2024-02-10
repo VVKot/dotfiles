@@ -82,16 +82,23 @@ local plugins = {
       return vim.fn.isdirectory(".obsidian") ~= 0
     end,
     config = function()
+      local obsidian = require("obsidian")
+
       vim.keymap.set("n", "<C-]>", "<cmd>ObsidianFollowLink<CR>")
       vim.keymap.set("n", "<C-t>", "<C-o>")
       vim.keymap.set("n", "gzz", "<cmd>ObsidianSearch<CR>")
       vim.keymap.set("n", "gzb", "<cmd>ObsidianBacklinks<CR>")
       vim.keymap.set("n", "gzo", "<cmd>ObsidianOpen<CR>")
+      vim.keymap.set("n", "gzn", function()
+        vim.cmd.ObsidianNew()
+      end)
+      vim.keymap.set("n", "gzt", function()
+        vim.cmd.ObsidianTemplate({ args = { "template.md" } })
+      end)
 
       vim.o.textwidth = 80
       vim.opt.spell = true
 
-      local obsidian = require("obsidian")
       obsidian.setup({
         open_app_foreground = true,
 
@@ -104,8 +111,13 @@ local plugins = {
           date_format = "%Y-%m-%d",
           time_format = "%H:%M",
         },
+        -- mimic ids from neuron
         note_id_func = function()
-          return os.date("%Y%m%d%H%M", os.time())
+          local note_id = {}
+          for i = 1, 8 do
+            note_id[i] = string.format('%x', math.random(0, 0xf))
+          end
+          return table.concat(note_id)
         end,
         disable_frontmatter = true,
         log_level = vim.log.levels.WARN,
