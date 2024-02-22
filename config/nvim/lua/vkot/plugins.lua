@@ -88,6 +88,7 @@ local plugins = {
       vim.keymap.set("n", "<C-t>", "<C-o>")
       vim.keymap.set("n", "gzz", "<cmd>ObsidianSearch<CR>")
       vim.keymap.set("n", "gzb", "<cmd>ObsidianBacklinks<CR>")
+      vim.keymap.set("n", "gzl", "<cmd>ObsidianLinks<CR>")
       vim.keymap.set("n", "gzo", "<cmd>ObsidianOpen<CR>")
       vim.keymap.set("n", "gzn", function()
         vim.cmd.ObsidianNew()
