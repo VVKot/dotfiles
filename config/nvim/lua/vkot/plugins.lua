@@ -116,7 +116,7 @@ local plugins = {
         note_id_func = function()
           local note_id = {}
           for i = 1, 8 do
-            note_id[i] = string.format('%x', math.random(0, 0xf))
+            note_id[i] = string.format("%x", math.random(0, 0xf))
           end
           return table.concat(note_id)
         end,
@@ -141,6 +141,9 @@ local plugins = {
 
   -- Copilot
   "github/copilot.vim",
+
+  -- tmux
+  "christoomey/vim-tmux-navigator",
 }
 
 local opts = {
