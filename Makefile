@@ -8,6 +8,7 @@ sync:
 	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
+	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux.conf ~/.tmux.conf
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 
@@ -25,6 +26,7 @@ clean:
 	unlink ~/.ideavimrc || true
 	unlink ~/.inputrc || true
 	unlink ~/.iterm/com.googlecode.iterm2.plist || true
+	unlink ~/.tmux.conf || true
 	unlink ~/.zprofile || true
 	unlink ~/.zshrc || true
 	unlink ~/Library/Application\ Support/Code/User/settings.json || true
