@@ -5,6 +5,7 @@ sync:
 
 	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
+	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
@@ -22,6 +23,7 @@ sync-mac:
 
 clean:
 	unlink ~/.config/glow/glow.yml || true
+	unlink ~/.config/starship.toml || true
 	unlink ~/.digrc || true
 	unlink ~/.ideavimrc || true
 	unlink ~/.inputrc || true

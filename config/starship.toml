@@ -1,0 +1,18 @@
+[directory]
+style = "bold green"
+
+[cmd_duration]
+style = "bold green"
+
+[git_state]
+style = "bold green"
+
+[username]
+style_user = "bold blue"
+
+[hostname]
+style = "bold green"
+
+[kubernetes]
+disabled = false
+style = "bold blue"
