@@ -90,9 +90,9 @@ export FZF_DEFAULT_OPTS="--no-mouse --layout=reverse --color=light,gutter:-1 --c
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt share_history
 
 # go
 export GOPATH=$HOME/go
