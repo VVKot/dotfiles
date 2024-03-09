@@ -13,5 +13,14 @@ require("mini.basics").setup({
   },
 })
 
--- Moving visual selection
 require("mini.move").setup()
+require("mini.pairs").setup()
+
+require("mini.completion").setup({
+  window = {
+    info = { border = "rounded" },
+    signature = { border = "rounded" },
+  },
+})
+
+require("mini.notify").setup()

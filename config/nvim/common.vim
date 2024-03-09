@@ -101,6 +101,7 @@ set diffopt+=linematch:50
 
 " COLOR SETTINGS {{{1
 set background=light
+set pumblend=15
 
 highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
