@@ -8,7 +8,6 @@ set ignorecase smartcase
 set clipboard=unnamed
 set scrolloff=5
 set sidescrolloff=1
-set ttimeoutlen=0
 set surround
 set commentary
 set ideajoin

@@ -138,6 +138,14 @@ local plugins = {
 
   "folke/zen-mode.nvim",
   "folke/twilight.nvim",
+  {
+    "folke/which-key.nvim",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 500
+    end,
+    opts = {},
+  },
   "nvim-tree/nvim-web-devicons",
   "ryanoasis/vim-devicons",
 
