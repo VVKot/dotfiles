@@ -21,17 +21,17 @@ case "$OSTYPE" in
     source $ZPLUG_HOME/init.zsh
 esac
 
-zplug "plugins/brew", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/brew", from:oh-my-zsh, defer:1
+zplug "plugins/docker", from:oh-my-zsh, defer:1
+zplug "plugins/fzf", from:oh-my-zsh, defer:1
 zplug "plugins/gh", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/golang", from:oh-my-zsh
-zplug "plugins/gradle", from:oh-my-zsh
-zplug "plugins/helm", from:oh-my-zsh
+zplug "plugins/golang", from:oh-my-zsh, defer:1
+zplug "plugins/gradle", from:oh-my-zsh, defer:1
+zplug "plugins/helm", from:oh-my-zsh, defer:1
 zplug "plugins/kubectl", from:oh-my-zsh
-zplug "plugins/minikube", from:oh-my-zsh
-zplug "plugins/terraform", from:oh-my-zsh
+zplug "plugins/minikube", from:oh-my-zsh, defer:1
+zplug "plugins/terraform", from:oh-my-zsh, defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
 if ! zplug check --verbose; then
