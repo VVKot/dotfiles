@@ -29,9 +29,12 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh, defer:1
 zplug "plugins/gradle", from:oh-my-zsh, defer:1
 zplug "plugins/helm", from:oh-my-zsh, defer:1
+zplug "plugins/kind", from:oh-my-zsh, defer:1
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/minikube", from:oh-my-zsh, defer:1
+zplug "plugins/rust", from:oh-my-zsh, defer:1
 zplug "plugins/terraform", from:oh-my-zsh, defer:1
+zplug "plugins/tmux", from:oh-my-zsh, defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
 
 if ! zplug check --verbose; then
