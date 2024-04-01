@@ -64,6 +64,10 @@ local plugins = {
   -- Git commit browser.
   "junegunn/gv.vim",
 
+  -- Testing.
+  "tpope/vim-dispatch",
+  "vim-test/vim-test",
+
   -- Lua-based fuzzy search.
   {
     "nvim-telescope/telescope.nvim",

@@ -32,7 +32,7 @@ require("gitsigns").setup({
     vim.keymap.set("n", "<leader>hu", gs.undo_stage_hunk, opts)
     vim.keymap.set("n", "<leader>hR", gs.reset_buffer, opts)
     vim.keymap.set("n", "<leader>hp", gs.preview_hunk_inline, opts)
-    vim.keymap.set("n", "<leader>td", gs.toggle_deleted, opts)
+    vim.keymap.set("n", "<leader>hd", gs.toggle_deleted, opts)
 
     -- Text object
     vim.keymap.set({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", opts)
