@@ -69,6 +69,38 @@ local plugins = {
   },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
+  {
+    "ckolkey/ts-node-action",
+    dependencies = { "nvim-treesitter" },
+    opts = {},
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.code_actions.gitsigns,
+          null_ls.builtins.code_actions.proselint,
+          null_ls.builtins.code_actions.refactoring,
+          null_ls.builtins.code_actions.ts_node_action,
+        },
+      })
+    end,
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
   -- Zettelkasten plugin.
   {
     "epwalsh/obsidian.nvim",
