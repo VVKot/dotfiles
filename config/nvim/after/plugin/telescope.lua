@@ -27,6 +27,9 @@ telescope.setup({
     layout_strategy = "flex",
     scroll_strategy = "cycle",
     mappings = { i = insert_mappings, n = normal_mappings },
+    path_display = {
+      "filename_first",
+    },
   },
   pickers = {
     builtin = { previewer = false },
