@@ -36,9 +36,6 @@ set lazyredraw
 " Highlight matching parenthesis.
 set showmatch
 
-" Use Q to execute macros.
-noremap Q @q
-
 " Easier indenting in visual mode.
 vmap < <gv
 vmap > >gv
@@ -52,10 +49,6 @@ set cmdheight=2
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=100
-
-" RG setup.
-set grepprg=rg\ --vimgrep\ --smart-case\ --no-heading
-set grepformat^=%f:%l:%c:%m
 
 augroup set_js_filetypes
   autocmd!

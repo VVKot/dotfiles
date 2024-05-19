@@ -29,9 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- lists
     vim.keymap.set("n", "gl", vim.lsp.buf.document_symbol, opts)
-
-    vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, opts)
 
     -- telescope
     vim.keymap.set("n", "<Leader>gr", function()

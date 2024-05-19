@@ -3,8 +3,6 @@ local lazy = require("lazy")
 local plugins = {
   -- Sensible defaults.
   "tpope/vim-sensible",
-  -- Comments.
-  "tpope/vim-commentary",
   -- Add/remove/change surroundings.
   "tpope/vim-surround",
   -- Useful pair-wise mappings.
