@@ -52,11 +52,7 @@ local plugins = {
 
   -- Git plugins.
   "tpope/vim-fugitive",
-  {
-    "tpope/vim-rhubarb",
-    -- Needed for opening git files on remote as I disable netrw.
-    dependencies = { "tyru/open-browser.vim" },
-  },
+  "tpope/vim-rhubarb",
   { "lewis6991/gitsigns.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   "rhysd/conflict-marker.vim",
   -- Git commit browser.

@@ -66,10 +66,6 @@ highlight Comment cterm=italic gui=italic guifg=blue ctermfg=blue
 " Built-in filter for quickfix/location lists
 packadd cfilter
 
-" use open-browser for opening links
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
 augroup neovim_terminal
     autocmd!
     autocmd TermOpen * :setlocal nonumber norelativenumber signcolumn=no
