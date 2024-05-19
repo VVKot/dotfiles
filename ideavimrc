@@ -20,8 +20,8 @@ nnoremap <leader>ar :<C-u>action RenameElement<CR>
 nnoremap - :<C-u>action SelectInProjectView<CR>
 nnoremap [n :<C-u>action VcsShowPrevChangeMarker<CR>
 nnoremap ]n :<C-u>action VcsShowNextChangeMarker<CR>
-nnoremap ]g :<C-u>action GotoNextError<CR>
-nnoremap [g :<C-u>action GotoPreviousError<CR>
+nnoremap ]d :<C-u>action GotoNextError<CR>
+nnoremap [d :<C-u>action GotoPreviousError<CR>
 nnoremap g; :<C-u>action JumpToLastChange<CR>
 nnoremap g, :<C-u>action JumpToNextChange<CR>
 nnoremap ]c :<C-u>action VcsShowNextChangeMarker<CR>

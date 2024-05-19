@@ -8,14 +8,7 @@ local lspconfig = require("lspconfig")
 
 -- diagnostics
 
-local dianostic_popup_opts = { border = "single", focusable = false }
-vim.keymap.set("n", "<Leader>lg", vim.diagnostic.setloclist)
-vim.keymap.set("n", "]g", function()
-  vim.diagnostic.goto_next({ float = dianostic_popup_opts })
-end)
-vim.keymap.set("n", "[g", function()
-  vim.diagnostic.goto_prev({ float = dianostic_popup_opts })
-end)
+vim.keymap.set("n", "<Leader>ld", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
