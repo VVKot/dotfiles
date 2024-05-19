@@ -100,6 +100,7 @@ set winbar=%t
 set diffopt+=linematch:50
 
 " COLOR SETTINGS {{{1
+colorscheme vim
 set background=light
 set pumblend=15
 
