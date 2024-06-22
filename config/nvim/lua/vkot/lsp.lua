@@ -69,3 +69,5 @@ lspconfig.lua_ls.setup({
 
 lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
+lspconfig.yamlls.setup({})
+lspconfig.helm_ls.setup({})
