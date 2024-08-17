@@ -86,7 +86,7 @@ set statusline+=\ %{get(b:,'gitsigns_head','')}
 set winbar=%t
 
 " better diff algorithm
-set diffopt+=linematch:50
+set diffopt+=linematch:60
 
 " COLOR SETTINGS {{{1
 colorscheme vim
