@@ -67,6 +67,14 @@ lspconfig.lua_ls.setup({
   },
 })
 
+lspconfig.ruff.setup({
+  init_options = {
+    settings = {
+      args = { "--preview" }
+    },
+  },
+})
+
 lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.yamlls.setup({})
