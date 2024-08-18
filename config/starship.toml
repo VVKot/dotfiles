@@ -7,6 +7,9 @@ style = "bold green"
 [git_state]
 style = "bold green"
 
+[python]
+style = "bold green"
+
 [username]
 style_user = "bold blue"
 
