@@ -32,7 +32,6 @@ zplug "plugins/helm", from:oh-my-zsh, defer:1
 zplug "plugins/kind", from:oh-my-zsh, defer:1
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/minikube", from:oh-my-zsh, defer:1
-zplug "plugins/rust", from:oh-my-zsh, defer:1
 zplug "plugins/terraform", from:oh-my-zsh, defer:1
 zplug "plugins/tmux", from:oh-my-zsh, defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
@@ -110,6 +109,10 @@ if type "kubectl" > /dev/null; then
   source <(kubectl completion zsh)
 fi
 
+if type "rustup" > /dev/null; then
+  source <(rustup completions zsh)
+fi
+
 grebase() {
   local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
   local current=$(git rev-parse --abbrev-ref HEAD)
@@ -164,6 +167,8 @@ loadnvm() {
 }
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if type "pyenv" > /dev/null; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
