@@ -86,10 +86,14 @@ lspconfig.jdtls.setup({
     java = {
       jdt = {
         ls = {
+          vmargs = "-noverify -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
           lombokSupport = {
             enabled = true,
           },
         },
+      },
+      autobuild = {
+          enabled = false,
       },
       format = {
         enabled = false,
