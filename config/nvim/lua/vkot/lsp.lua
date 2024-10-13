@@ -5,6 +5,8 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.inlay_hint.enable()
 
 local lspconfig = require("lspconfig")
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 -- Key maps. {{{2
 
@@ -70,7 +72,7 @@ lspconfig.lua_ls.setup({
 lspconfig.ruff.setup({
   init_options = {
     settings = {
-      args = { "--preview" }
+      args = { "--preview" },
     },
   },
 })
@@ -79,3 +81,48 @@ lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.helm_ls.setup({})
+
+lspconfig.jdtls.setup({
+  use_lombok_agent = true,
+  settings = {
+    java = {
+      jdt = {
+        ls = {
+          lombokSupport = {
+            enabled = true,
+          },
+        },
+      },
+      format = {
+        enabled = false,
+      },
+      eclipse = {
+        downloadSources = true,
+      },
+      maven = {
+        downloadSources = true,
+      },
+      references = {
+        includeDecompiledSources = true,
+      },
+      implementationsCodeLens = {
+        enabled = false,
+      },
+      referenceCodeLens = {
+        enabled = false,
+      },
+      inlayHints = {
+        parameterNames = {
+          enabled = "none",
+        },
+      },
+      signatureHelp = {
+        enabled = true,
+        description = {
+          enabled = true,
+        },
+      },
+    },
+    redhat = { telemetry = { enabled = false } },
+  },
+})

@@ -26,6 +26,8 @@ local plugins = {
 
   -- Neovim LSP.
   "neovim/nvim-lspconfig",
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
   -- Additional lua configuration for plugin interactions
   "folke/neodev.nvim",
   -- Go support.
