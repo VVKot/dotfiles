@@ -173,10 +173,3 @@ if type "pyenv" > /dev/null; then
   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
-
-# jdtls
-ensure_jdtls() {
-  mkdir -p "$HOME/.local/share/nvim/mason/bin"
-  # pretend to use mason to get configs for free; but use homebrew for management
-  ln -s "$HOMEBREW_PREFIX/bin/jdtls" "$HOME/.local/share/nvim/mason/bin/jdtls"
-}

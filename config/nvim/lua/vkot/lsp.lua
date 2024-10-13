@@ -5,8 +5,6 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.inlay_hint.enable()
 
 local lspconfig = require("lspconfig")
-require("mason").setup()
-require("mason-lspconfig").setup()
 
 -- Key maps. {{{2
 
