@@ -19,6 +19,7 @@ case "$OSTYPE" in
     alias ll='ls -laF --color'
     export ZPLUG_HOME=~/.zplug
     source $ZPLUG_HOME/init.zsh
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 esac
 
 zplug "plugins/brew", from:oh-my-zsh, defer:1
