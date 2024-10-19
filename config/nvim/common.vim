@@ -91,7 +91,9 @@ set diffopt+=linematch:60
 " COLOR SETTINGS {{{1
 colorscheme vim
 set background=light
-set pumblend=15
+" Ensure no transparency - doesn't work well with remote servers
+set pumblend=0
+set winblend=0
 
 highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
