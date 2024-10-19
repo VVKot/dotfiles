@@ -90,6 +90,8 @@ set diffopt+=linematch:60
 
 " COLOR SETTINGS {{{1
 colorscheme vim
+" force true color
+set termguicolors
 set background=light
 " Ensure no transparency - doesn't work well with remote servers
 set pumblend=0
