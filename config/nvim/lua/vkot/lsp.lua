@@ -80,51 +80,53 @@ lspconfig.rust_analyzer.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.helm_ls.setup({})
 
-lspconfig.jdtls.setup({
-  use_lombok_agent = true,
-  settings = {
-    java = {
-      jdt = {
-        ls = {
-          vmargs = "-noverify -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
-          lombokSupport = {
+if os.getenv("JDTLS_ENABLED") == "1" then
+  lspconfig.jdtls.setup({
+    use_lombok_agent = true,
+    settings = {
+      java = {
+        jdt = {
+          ls = {
+            vmargs = "-noverify -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
+            lombokSupport = {
+              enabled = true,
+            },
+          },
+        },
+        autobuild = {
+            enabled = false,
+        },
+        format = {
+          enabled = false,
+        },
+        eclipse = {
+          downloadSources = true,
+        },
+        maven = {
+          downloadSources = true,
+        },
+        references = {
+          includeDecompiledSources = true,
+        },
+        implementationsCodeLens = {
+          enabled = false,
+        },
+        referenceCodeLens = {
+          enabled = false,
+        },
+        inlayHints = {
+          parameterNames = {
+            enabled = "none",
+          },
+        },
+        signatureHelp = {
+          enabled = true,
+          description = {
             enabled = true,
           },
         },
       },
-      autobuild = {
-          enabled = false,
-      },
-      format = {
-        enabled = false,
-      },
-      eclipse = {
-        downloadSources = true,
-      },
-      maven = {
-        downloadSources = true,
-      },
-      references = {
-        includeDecompiledSources = true,
-      },
-      implementationsCodeLens = {
-        enabled = false,
-      },
-      referenceCodeLens = {
-        enabled = false,
-      },
-      inlayHints = {
-        parameterNames = {
-          enabled = "none",
-        },
-      },
-      signatureHelp = {
-        enabled = true,
-        description = {
-          enabled = true,
-        },
-      },
+      redhat = { telemetry = { enabled = false } },
     },
-    redhat = { telemetry = { enabled = false } },
-  },
-})
+  })
+end
