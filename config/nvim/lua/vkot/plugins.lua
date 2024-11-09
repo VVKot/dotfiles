@@ -23,6 +23,8 @@ local plugins = {
   "tommcdo/vim-exchange",
   -- Minimal plugins for other things
   "echasnovski/mini.nvim",
+  -- Another collection of minimal plugins
+  "folke/snacks.nvim",
 
   -- Neovim LSP.
   "neovim/nvim-lspconfig",
