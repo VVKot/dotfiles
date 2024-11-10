@@ -51,6 +51,7 @@ export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
 alias k="kubectl"
 alias vi="nvim"
 alias vim="nvim"
+alias vimdiff='nvim -d'
 export VISUAL="nvim"
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
