@@ -42,7 +42,6 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "romgrk/nvim-treesitter-context",
     },
-    build = ":TSUpdate",
   },
 
   -- Explorer that adheres to Vim philosophy.
