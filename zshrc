@@ -174,3 +174,5 @@ if type "pyenv" > /dev/null; then
   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+
+export K9S_CONFIG_DIR="$HOME/.config/k9s"

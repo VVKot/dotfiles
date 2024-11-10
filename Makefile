@@ -2,9 +2,12 @@ all: sync
 
 sync:
 	mkdir -p ~/.config/glow
+	mkdir -p ~/.config/k9s/skins
 
 	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
-	[ -f ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
+	[ -f ~/.config/k9s/config.yaml ] || ln -s $(PWD)/config/k9s/config.yaml ~/.config/k9s/config.yaml
+	[ -f ~/.config/k9s/skins/transparent.yaml ] || ln -s $(PWD)/config/k9s/skins/transparent.yaml ~/.config/k9s/skins/transparent.yaml
+	[ -e ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
@@ -23,6 +26,8 @@ sync-mac:
 
 clean:
 	unlink ~/.config/glow/glow.yml || true
+	unlink ~/.config/k9s/config.yaml || true
+	unlink ~/.config/k9s/skins/transparent.yaml || true
 	unlink ~/.config/starship.toml || true
 	unlink ~/.digrc || true
 	unlink ~/.ideavimrc || true
