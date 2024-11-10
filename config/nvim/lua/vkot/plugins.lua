@@ -168,7 +168,6 @@ local plugins = {
   },
 
   "folke/zen-mode.nvim",
-  "folke/twilight.nvim",
   {
     "folke/which-key.nvim",
     init = function()
