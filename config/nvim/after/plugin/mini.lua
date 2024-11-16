@@ -16,13 +16,6 @@ require("mini.basics").setup({
 require("mini.move").setup()
 require("mini.pairs").setup()
 
-require("mini.completion").setup({
-  window = {
-    info = { border = "rounded" },
-    signature = { border = "rounded" },
-  },
-})
-
 require("mini.notify").setup()
 
 local statusline = require("mini.statusline")

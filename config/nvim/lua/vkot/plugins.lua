@@ -27,7 +27,27 @@ local plugins = {
   "folke/snacks.nvim",
 
   -- Neovim LSP.
-  "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "saghen/blink.cmp" },
+    config = function(_, opts)
+      local lspconfig = require("lspconfig")
+      for server, config in pairs(opts.servers or {}) do
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
+    end
+  },
+  -- Completion.
+  {
+    "saghen/blink.cmp",
+    lazy = false,
+    -- use a release tag to download pre-built binaries
+    version = "v0.*",
+    opts = {
+      trigger = { signature_help = { enabled = true } }
+    },
+  },
   -- Additional lua configuration for plugin interactions
   "folke/neodev.nvim",
   -- Go support.
