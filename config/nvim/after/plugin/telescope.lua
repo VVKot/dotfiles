@@ -3,20 +3,10 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local insert_mappings = {
-  ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-  ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
-  ["<M-n>"] = actions.cycle_history_next,
-  ["<M-p>"] = actions.cycle_history_prev,
   ["<M-t>"] = action_layout.toggle_preview,
 }
 local normal_mappings = {
-  ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-  ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
-  ["<M-n>"] = actions.cycle_history_next,
-  ["<M-p>"] = actions.cycle_history_prev,
   ["<M-t>"] = action_layout.toggle_preview,
-  ["<C-n>"] = actions.move_selection_next,
-  ["<C-p>"] = actions.move_selection_previous,
   ["<C-c>"] = actions.close,
 }
 
@@ -32,12 +22,8 @@ telescope.setup({
     },
   },
   pickers = {
-    builtin = { previewer = false },
-    buffers = { sort_mru = true, previewer = false },
-    lsp_document_symbols = { previewer = false },
-    diagnostics = { previewer = false, path_display = "hidden" },
-    git_files = { previewer = true },
-    find_files = { previewer = true },
+    buffers = { sort_mru = true },
+    diagnostics = { path_display = "hidden" },
   },
   extensions = {
     fzf = { override_generic_sorter = true, override_file_sorter = true },
@@ -61,19 +47,33 @@ vim.keymap.set("n", "<Leader><Leader>", function()
   else
     builtin.find_files({})
   end
-end)
+end, {
+    desc = "Telescope git files/files",
+  })
 vim.keymap.set("n", "<Leader>ft", function()
-  builtin.builtin({})
-end)
+  builtin.builtin({
+    previewer = false,
+  })
+end, {
+  desc = "Telescope built-in",
+})
 vim.keymap.set("n", "<Leader>ff", function()
   builtin.live_grep({})
-end)
+end, {
+  desc = "Telescope live grep",
+})
 vim.keymap.set("n", "<Leader>fs", function()
   builtin.grep_string({ search = vim.fn.input(":RG "), use_regex = true })
-end)
+end, {
+  desc = "Telescope search",
+})
 vim.keymap.set("n", "<Leader>gs", function()
   builtin.git_status({})
-end)
+end, {
+  desc = "Telescope git status",
+})
 vim.keymap.set("n", "<Leader>fb", function()
   builtin.buffers({})
-end)
+end, {
+  desc = "Telescope buffers",
+})
