@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("vkot/ensure_lazy")
+require("custom/ensure_lazy")
 
 vim.cmd([[source ~/.config/nvim/common.vim]])
 vim.cmd([[
@@ -11,7 +11,17 @@ if filereadable(expand("~/.config/nvim/extra.vim"))
 endif
 ]])
 
-require("vkot/plugins")
--- Needs to happen before generic LSP setup
-require("neodev").setup()
-require("vkot/lsp")
+require("lazy").setup({ import = "custom/plugins" }, {
+  concurrency = 50,
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "netrwPlugin",
+      },
+    },
+  },
+  change_detection = {
+    notify = false,
+  },
+})
+require("custom/lsp")
