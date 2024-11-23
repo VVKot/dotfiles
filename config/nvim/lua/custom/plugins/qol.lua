@@ -3,6 +3,43 @@ if vim.g.vscode then
 end
 
 return {
+  -- Misc QoL improvements.
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      bigfile = { enabled = true },
+      quickfile = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+    },
+    keys = {
+      {
+        "]w",
+        function()
+          Snacks.words.jump(vim.v.count1)
+        end,
+        desc = "Next reference",
+        mode = { "n", "t" },
+      },
+      {
+        "[w",
+        function()
+          Snacks.words.jump(-vim.v.count1)
+        end,
+        desc = "Prev reference",
+        mode = { "n", "t" },
+      },
+      {
+        "<leader>sr",
+        function()
+          Snacks.rename.rename_file()
+        end,
+        desc = "Rename file",
+      },
+    },
+  },
   -- Copilot
   "github/copilot.vim",
   -- Help with remembering mappings.

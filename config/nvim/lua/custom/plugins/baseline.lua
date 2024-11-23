@@ -26,6 +26,4 @@ return {
       require("custom/mini").setup()
     end,
   },
-  -- Misc QoL improvements.
-  "folke/snacks.nvim",
 }
