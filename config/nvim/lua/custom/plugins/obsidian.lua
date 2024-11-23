@@ -1,5 +1,5 @@
 if vim.g.vscode then
-  return
+  return {}
 end
 
 return {
