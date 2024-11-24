@@ -5,6 +5,7 @@ end
 return {
   {
     "epwalsh/obsidian.nvim",
+    priority = 100,
     version = "*", -- use latest release instead of latest commit
     dependencies = {
       "nvim-lua/plenary.nvim",

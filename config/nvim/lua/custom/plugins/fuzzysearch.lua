@@ -7,6 +7,7 @@ return {
     "ibhagwan/fzf-lua",
     config = function()
       local fzf_lua = require("fzf-lua")
+      local actions = require("fzf-lua/actions")
       fzf_lua.setup({
         keymap = {
           builtin = {
@@ -20,24 +21,35 @@ return {
             ["ctrl-u"] = "preview-page-up",
           },
         },
+        actions = {
+          files = {
+            true,
+            ["ctrl-q"] = actions.file_sel_to_qf,
+            ["alt-q"] = actions.file_sel_to_ll,
+          },
+        },
       })
 
-      vim.keymap.set("n", "<Leader><Leader>", function()
-        local is_inside_work_tree = {}
-        local cwd = vim.fn.getcwd()
-        if is_inside_work_tree[cwd] == nil then
-          vim.fn.system("git rev-parse --is-inside-work-tree")
-          is_inside_work_tree[cwd] = vim.v.shell_error == 0
-        end
+      -- Customize default search command for obsidian.
+      if not vim.g.obsidian then
+        vim.keymap.set("n", "<Leader><Leader>", function()
+          local is_inside_work_tree = {}
+          local cwd = vim.fn.getcwd()
+          if is_inside_work_tree[cwd] == nil then
+            vim.fn.system("git rev-parse --is-inside-work-tree")
+            is_inside_work_tree[cwd] = vim.v.shell_error == 0
+          end
 
-        if is_inside_work_tree[cwd] then
-          fzf_lua.git_files()
-        else
-          fzf_lua.files()
-        end
-      end, {
-        desc = "FZF git files/files",
-      })
+          if is_inside_work_tree[cwd] then
+            fzf_lua.git_files()
+          else
+            fzf_lua.files()
+          end
+        end, {
+          desc = "FZF git files/files",
+        })
+      end
+
       vim.keymap.set("n", "<Leader>fs", fzf_lua.grep, {
         desc = "FZF grep",
       })

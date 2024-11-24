@@ -1,10 +1,12 @@
 local M = {}
 
 M.setup = function()
+  vim.g.obsidian = 1
   local obsidian = require("obsidian")
 
   vim.keymap.set("n", "<C-]>", "<cmd>ObsidianFollowLink<CR>")
   vim.keymap.set("n", "<C-t>", "<C-o>")
+  vim.keymap.set("n", "<Leader><Leader>", "<cmd>ObsidianSearch<CR>")
   vim.keymap.set("n", "gzz", "<cmd>ObsidianSearch<CR>")
   vim.keymap.set("n", "gzb", "<cmd>ObsidianBacklinks<CR>")
   vim.keymap.set("n", "gzl", "<cmd>ObsidianLinks<CR>")
