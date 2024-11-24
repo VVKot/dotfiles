@@ -35,17 +35,6 @@ M.setup = function()
       -- lists
       vim.keymap.set("n", "gl", vim.lsp.buf.document_symbol, opts)
       vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, opts)
-
-      -- telescope
-      vim.keymap.set("n", "<Leader>gr", function()
-        require("telescope.builtin").lsp_references({ includeDeclaration = false })
-      end, opts)
-      vim.keymap.set("n", "<Leader>lo", function()
-        require("telescope.builtin").lsp_document_symbols({})
-      end, opts)
-      vim.keymap.set("n", "<Leader>ls", function()
-        require("telescope.builtin").lsp_dynamic_workspace_symbols({})
-      end, opts)
     end,
   })
 

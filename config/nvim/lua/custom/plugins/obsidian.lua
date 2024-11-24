@@ -13,7 +13,7 @@ return {
       return vim.fn.isdirectory(".obsidian") ~= 0
     end,
     config = function()
-      require("custom/obsidian")
+      require("custom/obsidian").setup()
     end,
   },
 }
