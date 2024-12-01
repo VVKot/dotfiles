@@ -12,15 +12,15 @@ endif
 ]])
 
 require("lazy").setup({ import = "custom/plugins" }, {
-  concurrency = 50,
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "netrwPlugin",
-      },
-    },
-  },
-  change_detection = {
-    notify = false,
-  },
+	concurrency = 50,
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"netrwPlugin",
+			},
+		},
+	},
+	change_detection = {
+		notify = false,
+	},
 })
