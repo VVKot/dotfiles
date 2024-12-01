@@ -60,7 +60,7 @@ return {
 				desc = "FZF built-in",
 			})
 			vim.keymap.set("n", "<Leader>fb", fzf_lua.buffers, {
-				desc = "FZF built-in",
+				desc = "FZF buffers",
 			})
 			vim.keymap.set("n", "<Leader>gs", fzf_lua.git_status, {
 				desc = "FZF git status",
