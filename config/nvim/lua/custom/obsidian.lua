@@ -31,7 +31,12 @@ M.setup = function()
 
 	local function note_exists(name)
 		local f = io.open(name .. ".md", "r")
-		return f ~= nil and io.close(f)
+		if f ~= nil then
+			io.close(f)
+			return true
+		end
+		local fd = io.open("books/" .. name .. ".md", "r")
+		return fd ~= nil and io.close(fd)
 	end
 
 	obsidian.setup({
