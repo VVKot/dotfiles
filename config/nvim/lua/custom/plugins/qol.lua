@@ -40,6 +40,39 @@ return {
 			},
 		},
 	},
+	{
+		"folke/zen-mode.nvim",
+		opts = {
+			window = {
+				height = 0.6,
+				width = 100,
+				options = {
+					signcolumn = "no",
+					number = false,
+					relativenumber = false,
+					cursorline = false,
+					foldcolumn = "0",
+				},
+			},
+			plugins = {
+				options = {
+					ruler = false,
+					showcmd = false,
+					laststatus = 0,
+				},
+			},
+		},
+		keys = {
+			{
+				"<Leader>zz",
+				function()
+					require("zen-mode").toggle()
+				end,
+				desc = "Toggle Zen mode",
+				mode = { "n" },
+			},
+		},
+	},
 	-- Copilot
 	"github/copilot.vim",
 	-- Help with remembering mappings.
