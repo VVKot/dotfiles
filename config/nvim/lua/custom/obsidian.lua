@@ -47,10 +47,6 @@ M.setup = function()
 			nvim_cmp = false,
 		},
 
-		picker = {
-			name = "fzf-lua",
-		},
-
 		templates = {
 			subdir = "templates",
 			date_format = "%Y-%m-%d",
