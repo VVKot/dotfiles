@@ -13,9 +13,10 @@ M.setup = function()
 	vim.keymap.set("n", "gzo", "<cmd>ObsidianOpen<CR>")
 	vim.keymap.set("n", "gzn", function()
 		vim.cmd.ObsidianNew()
+		vim.cmd.ObsidianTemplate({ args = { "template.md" } })
 	end)
 	vim.keymap.set("n", "gzt", function()
-		vim.cmd.ObsidianTemplate({ args = { "template.md" } })
+		vim.cmd.ObsidianTags()
 	end)
 
 	vim.o.textwidth = 80
