@@ -50,5 +50,23 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 		},
 	},
+	{
+		"kosayoda/nvim-lightbulb",
+		config = function()
+			require("nvim-lightbulb").setup({
+				autocmd = { enabled = true },
+				sign = {
+					enabled = false,
+				},
+				float = {
+					enabled = true,
+				},
+				number = {
+					enabled = true,
+				},
+				code_lenses = true,
+			})
+		end,
+	},
 	"rafamadriz/friendly-snippets",
 }
