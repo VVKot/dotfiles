@@ -70,7 +70,6 @@ M.setup = function()
 
 	lspconfig.pyright.setup({})
 	lspconfig.rust_analyzer.setup({})
-	lspconfig.yamlls.setup({})
 	lspconfig.helm_ls.setup({})
 
 	if os.getenv("JDTLS_ENABLED") == "1" then
@@ -123,6 +122,9 @@ M.setup = function()
 			},
 		})
 	end
+
+	local yaml_companion_cfg = require("yaml-companion").setup()
+	lspconfig.yamlls.setup(yaml_companion_cfg)
 end
 
 return M
