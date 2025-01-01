@@ -58,10 +58,7 @@ return {
 				sign = {
 					enabled = false,
 				},
-				float = {
-					enabled = true,
-				},
-				number = {
+				virtual_text = {
 					enabled = true,
 				},
 				code_lenses = true,
