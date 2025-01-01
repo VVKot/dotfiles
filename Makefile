@@ -9,6 +9,8 @@ sync:
 	[ -f ~/.config/k9s/skins/transparent.yaml ] || ln -s $(PWD)/config/k9s/skins/transparent.yaml ~/.config/k9s/skins/transparent.yaml
 	[ -e ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
+	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
+	[ -e ~/.config/wezterm ] || ln -s $(PWD)/config/wezterm ~/.config/wezterm
 	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
 	[ -f ~/.inputrc ] || ln -s $(PWD)/inputrc ~/.inputrc
@@ -39,5 +41,6 @@ clean:
 	unlink ~/Library/Application\ Support/Code/User/settings.json || true
 	unlink ~/Library/Preferences/glow/glow.yml || true
 	unlink ~/.config/nvim || true
+	unlink ~/.config/wezterm || true
 
 .PHONY: all clean sync sync-mac build run kill
