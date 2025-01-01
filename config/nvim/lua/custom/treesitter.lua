@@ -51,12 +51,6 @@ M.setup = function()
 	require("treesitter-context").setup({ enable = true })
 	-- Visually distinguish tree-sitter context from regular text.
 	vim.cmd([[hi TreesitterContext guibg=lightgrey]])
-
-	vim.o.foldenable = true
-	vim.o.foldlevel = 99
-	vim.o.foldlevelstart = 99
-	vim.o.foldmethod = "expr"
-	vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 end
 
 return M
