@@ -50,7 +50,7 @@ return {
 				})
 			end
 
-			vim.keymap.set("n", "<Leader>fs", fzf_lua.grep, {
+			vim.keymap.set("n", "<Leader>fg", fzf_lua.grep, {
 				desc = "FZF grep",
 			})
 			vim.keymap.set("n", "<Leader>ff", fzf_lua.live_grep, {
@@ -65,13 +65,16 @@ return {
 			vim.keymap.set("n", "<Leader>gs", fzf_lua.git_status, {
 				desc = "FZF git status",
 			})
-			vim.keymap.set("n", "<Leader>gr", fzf_lua.lsp_references, {
+			vim.keymap.set("n", "<Leader>fd", fzf_lua.diagnostics_document, {
+				desc = "FZF diagnostics",
+			})
+			vim.keymap.set("n", "<Leader>fr", fzf_lua.lsp_references, {
 				desc = "FZF LSP reference",
 			})
-			vim.keymap.set("n", "<Leader>lo", fzf_lua.lsp_document_symbols, {
+			vim.keymap.set("n", "<Leader>fl", fzf_lua.lsp_document_symbols, {
 				desc = "FZF LSP document symbols",
 			})
-			vim.keymap.set("n", "<Leader>ls", fzf_lua.lsp_live_workspace_symbols, {
+			vim.keymap.set("n", "<Leader>fs", fzf_lua.lsp_live_workspace_symbols, {
 				desc = "FZF LSP workspace symbols",
 			})
 		end,

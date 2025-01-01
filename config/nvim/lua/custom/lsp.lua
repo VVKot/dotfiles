@@ -14,28 +14,53 @@ M.setup = function()
 
 	-- diagnostics
 
-	vim.keymap.set("n", "<Leader>ld", vim.diagnostic.setloclist)
+	vim.keymap.set("n", "<Leader>ld", vim.diagnostic.setloclist, {
+		desc = "Diagnostics",
+	})
 
 	vim.api.nvim_create_autocmd("LspAttach", {
 		callback = function(args)
 			local buffer = args.buf
-			local opts = { buffer = buffer }
 
 			-- references
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", "gD", vim.lsp.buf.implementation, opts)
-			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+				desc = "LSP definition",
+				buffer = buffer,
+			})
+			vim.keymap.set("n", "gD", vim.lsp.buf.implementation, {
+				desc = "LSP implementation",
+				buffer = buffer,
+			})
+			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, {
+				desc = "LSP type definition",
+				buffer = buffer,
+			})
 			vim.keymap.set("n", "gr", function()
 				vim.lsp.buf.references({ includeDeclaration = false })
-			end, opts)
+			end, {
+				desc = "LSP references",
+				buffer = buffer,
+			})
 
 			-- actions
-			vim.keymap.set({ "n", "v" }, "<M-Enter>", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "<Leader>ar", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<M-Enter>", vim.lsp.buf.code_action, {
+				desc = "LSP code action",
+				buffer = buffer,
+			})
+			vim.keymap.set("n", "<Leader>ar", vim.lsp.buf.rename, {
+				desc = "LSP rename",
+				buffer = buffer,
+			})
 
 			-- lists
-			vim.keymap.set("n", "gl", vim.lsp.buf.document_symbol, opts)
-			vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "gl", vim.lsp.buf.document_symbol, {
+				desc = "LSP document symbols",
+				buffer = buffer,
+			})
+			vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, {
+				desc = "LSP signature help",
+				buffer = buffer,
+			})
 		end,
 	})
 

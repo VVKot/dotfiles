@@ -12,19 +12,29 @@ return {
 			vim.g.conflict_marker_enable_mappings = 0
 			vim.keymap.set("n", "<Leader>h1", function()
 				vim.api.nvim_command([[ConflictMarkerNone]])
-			end)
+			end, {
+				desc = "conflict - accept none",
+			})
 			vim.keymap.set("n", "<Leader>h2", function()
 				vim.api.nvim_command([[ConflictMarkerOurselves]])
-			end)
+			end, {
+				desc = "conflict - accept ours",
+			})
 			vim.keymap.set("n", "<Leader>h3", function()
 				vim.api.nvim_command([[ConflictMarkerThemselves]])
-			end)
+			end, {
+				desc = "conflict - accept theirs",
+			})
 			vim.keymap.set("n", "<Leader>h4", function()
 				vim.api.nvim_command([[ConflictMarkerBoth]])
-			end)
+			end, {
+				desc = "conflict - accept both",
+			})
 			vim.keymap.set("n", "<Leader>h4", function()
 				vim.api.nvim_command([[ConflictMarkerBoth!]])
-			end)
+			end, {
+				desc = "conflict - accept both (reverse)",
+			})
 		end,
 	},
 	{
@@ -49,7 +59,9 @@ return {
 						else
 							gitsigns.nav_hunk("next")
 						end
-					end)
+					end, {
+						desc = "GitSigns next hunk",
+					})
 
 					map("n", "[c", function()
 						if vim.wo.diff then
@@ -57,25 +69,44 @@ return {
 						else
 							gitsigns.nav_hunk("prev")
 						end
-					end)
+					end, {
+						desc = "GitSigns prev hunk",
+					})
 
 					-- Actions
-					map("n", "<Leader>hs", gitsigns.stage_hunk)
-					map("n", "<Leader>hr", gitsigns.reset_hunk)
+					map("n", "<Leader>hs", gitsigns.stage_hunk, {
+						desc = "GitSigns stage hunk",
+					})
+					map("n", "<Leader>hr", gitsigns.reset_hunk, {
+						desc = "GitSigns reset hunk",
+					})
 					map("v", "<Leader>hs", function()
 						gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-					end)
+					end, {
+						desc = "GitSigns stage hunk",
+					})
 					map("v", "<Leader>hr", function()
 						gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-					end)
-					map("n", "<Leader>hS", gitsigns.stage_buffer)
-					map("n", "<Leader>hu", gitsigns.undo_stage_hunk)
-					map("n", "<Leader>hR", gitsigns.reset_buffer)
-					map("n", "<Leader>hp", gitsigns.preview_hunk)
+					end, {
+						desc = "GitSigns reset hunk",
+					})
+					map("n", "<Leader>hS", gitsigns.stage_buffer, {
+						desc = "GitSigns stage buffer",
+					})
+					map("n", "<Leader>hu", gitsigns.undo_stage_hunk, {
+						desc = "GitSigns undo hunk",
+					})
+					map("n", "<Leader>hR", gitsigns.reset_buffer, {
+						desc = "GitSigns reset buffer",
+					})
+					map("n", "<Leader>hp", gitsigns.preview_hunk, {
+						desc = "GitSigns preview hunk",
+					})
 					map("n", "<Leader>hb", function()
 						gitsigns.blame_line({ full = true })
-					end)
-					map("n", "<Leader>tb", gitsigns.toggle_current_line_blame)
+					end, {
+						desc = "GitSigns blame line",
+					})
 
 					-- Text object
 					map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
