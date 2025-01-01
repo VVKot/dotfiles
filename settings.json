@@ -19,4 +19,5 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
+    "editor.fontSize": 14,
 }
