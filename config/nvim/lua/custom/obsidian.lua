@@ -42,10 +42,6 @@ M.setup = function()
 	obsidian.setup({
 		open_app_foreground = true,
 
-		completion = {
-			nvim_cmp = false,
-		},
-
 		templates = {
 			subdir = "templates",
 			date_format = "%Y-%m-%d",
