@@ -20,7 +20,6 @@ M.setup = function()
 	end)
 
 	vim.o.textwidth = 80
-	vim.opt.spell = true
 
 	local function get_random_note_id()
 		local note_id = {}
