@@ -96,6 +96,7 @@ M.setup = function()
 	lspconfig.pyright.setup({})
 	lspconfig.rust_analyzer.setup({})
 	lspconfig.helm_ls.setup({})
+	lspconfig.clangd.setup({})
 
 	if os.getenv("JDTLS_ENABLED") == "1" then
 		lspconfig.jdtls.setup({
