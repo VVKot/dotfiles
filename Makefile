@@ -10,6 +10,7 @@ sync:
 	[ -e ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
+	[ -e ~/.config/ghostty ] || ln -s $(PWD)/config/ghostty ~/.config/ghostty
 	[ -e ~/.config/wezterm ] || ln -s $(PWD)/config/wezterm ~/.config/wezterm
 	[ -f ~/.digrc ] || ln -s $(PWD)/digrc ~/.digrc
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/ideavimrc ~/.ideavimrc
@@ -41,6 +42,7 @@ clean:
 	unlink ~/Library/Application\ Support/Code/User/settings.json || true
 	unlink ~/Library/Preferences/glow/glow.yml || true
 	unlink ~/.config/nvim || true
+	unlink ~/.config/ghostty || true
 	unlink ~/.config/wezterm || true
 
 .PHONY: all clean sync sync-mac build run kill
