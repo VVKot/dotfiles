@@ -3,6 +3,11 @@ export LANG="en_US.UTF-8"
 
 export SHELL="$(which zsh)"
 
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+eval $(brew shellenv)
+autoload -Uz compinit
+compinit
+
 # OS-specific setup
 case "$OSTYPE" in
   darwin*)
@@ -45,8 +50,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
 
 alias k="kubectl"
 alias vi="nvim"
@@ -106,11 +109,6 @@ export PATH=$PATH:$GOBIN
 # clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-# kubectl
-if type "kubectl" > /dev/null; then
-  source <(kubectl completion zsh)
-fi
-
 if type "rustup" > /dev/null; then
   source <(rustup completions zsh)
 fi
@@ -157,10 +155,8 @@ if [ -f ~/.zshrcextra ]; then
     source ~/.zshrcextra
 fi
 
-export WASMTIME_HOME="$HOME/.wasmtime"
 export CARGO_HOME="$HOME/.cargo"
-
-export PATH="$WASMTIME_HOME/bin:$CARGO_HOME/bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 
