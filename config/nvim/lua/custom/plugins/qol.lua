@@ -18,7 +18,7 @@ return {
 			{
 				"]w",
 				function()
-					Snacks.words.jump(vim.v.count1)
+					require("snacks").words.jump(vim.v.count1)
 				end,
 				desc = "Next reference",
 				mode = { "n", "t" },
@@ -26,7 +26,7 @@ return {
 			{
 				"[w",
 				function()
-					Snacks.words.jump(-vim.v.count1)
+					require("snacks").words.jump(-vim.v.count1)
 				end,
 				desc = "Prev reference",
 				mode = { "n", "t" },
@@ -34,7 +34,7 @@ return {
 			{
 				"<leader>sr",
 				function()
-					Snacks.rename.rename_file()
+					require("snacks").rename.rename_file()
 				end,
 				desc = "Rename file",
 			},
