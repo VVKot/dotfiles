@@ -1,2 +1,4 @@
 theme = "iTerm2 Light Background"
 font-size = 14
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
