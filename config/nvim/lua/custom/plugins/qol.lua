@@ -73,8 +73,6 @@ return {
 			},
 		},
 	},
-	-- Copilot
-	"github/copilot.vim",
 	-- Help with remembering mappings.
 	{
 		"folke/which-key.nvim",
