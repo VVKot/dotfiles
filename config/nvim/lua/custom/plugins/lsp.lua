@@ -10,6 +10,20 @@ return {
 		config = function()
 			vim.g.rustaceanvim = {
 				server = {
+					on_attach = function()
+						local buffer = vim.api.nvim_get_current_buf()
+						vim.keymap.set("n", "<M-Enter>", function()
+							vim.cmd.RustLsp("codeAction")
+						end, { silent = true, desc = "LSP code action", buffer = buffer })
+						vim.keymap.set("n", "K", function()
+							vim.cmd.RustLsp({ "hover", "actions" })
+						end, { silent = true, desc = "Rust hover", buffer = buffer })
+						vim.keymap.set("n", "<C-Enter>", "<Plug>RustHoverAction", {
+							silent = true,
+							desc = "Rust hover acition",
+							buffer = buffer,
+						})
+					end,
 					default_settings = {
 						["rust-analyzer"] = {
 							checkOnSave = {
