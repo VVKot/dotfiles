@@ -94,19 +94,6 @@ M.setup = function()
 	})
 
 	lspconfig.pyright.setup({})
-	lspconfig.rust_analyzer.setup({
-		setings = {
-			["rust-analyzer"] = {
-				checkOnSave = {
-					allFeatures = true,
-					command = "clippy",
-				},
-				cargo = {
-					allFeatures = true,
-				},
-			},
-		},
-	})
 	lspconfig.helm_ls.setup({})
 	lspconfig.clangd.setup({})
 

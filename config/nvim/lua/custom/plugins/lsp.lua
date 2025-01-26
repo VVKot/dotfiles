@@ -4,6 +4,35 @@ end
 
 return {
 	{
+		"mrcjkb/rustaceanvim",
+		ft = { "rust" },
+		lazy = false,
+		config = function()
+			vim.g.rustaceanvim = {
+				server = {
+					default_settings = {
+						["rust-analyzer"] = {
+							checkOnSave = {
+								allFeatures = true,
+								command = "clippy",
+							},
+							cargo = {
+								allFeatures = true,
+							},
+						},
+					},
+				},
+				dap = {
+					adapter = {
+						type = "executable",
+						command = vim.fn.exepath("lldb-dap"),
+						name = "lldb",
+					},
+				},
+			}
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{
