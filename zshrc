@@ -113,6 +113,10 @@ if type "rustup" > /dev/null; then
   source <(rustup completions zsh)
 fi
 
+if type "sccache" > /dev/null; then
+  export RUSTC_WRAPPER=$(which sccache)
+fi
+
 grebase() {
   local default=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
   local current=$(git rev-parse --abbrev-ref HEAD)
