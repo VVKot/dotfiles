@@ -9,6 +9,11 @@ return {
 		lazy = false,
 		config = function()
 			vim.g.rustaceanvim = {
+				tools = {
+					code_actions = {
+						ui_select_fallback = true,
+					},
+				},
 				server = {
 					on_attach = function()
 						local buffer = vim.api.nvim_get_current_buf()
