@@ -113,6 +113,11 @@ if type "rustup" > /dev/null; then
   source <(rustup completions zsh)
 fi
 
+# kubectl
+if type "kubectl" > /dev/null; then
+  source <(kubectl completion zsh)
+fi
+
 if type "sccache" > /dev/null; then
   export RUSTC_WRAPPER=$(which sccache)
 fi
