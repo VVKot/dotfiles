@@ -4,9 +4,6 @@ export LANG="en_US.UTF-8"
 export SHELL="$(which zsh)"
 
 export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
-eval $(brew shellenv)
-autoload -Uz compinit
-compinit
 
 # OS-specific setup
 case "$OSTYPE" in
@@ -181,3 +178,7 @@ if type "pyenv" > /dev/null; then
 fi
 
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
+
+eval $(brew shellenv)
+autoload -Uz compinit
+compinit
