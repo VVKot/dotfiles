@@ -20,12 +20,14 @@ return {
 						vim.keymap.set("n", "<M-Enter>", function()
 							vim.cmd.RustLsp("codeAction")
 						end, { silent = true, desc = "LSP code action", buffer = buffer })
+						vim.keymap.set("n", "gra", function()
+							vim.cmd.RustLsp("codeAction")
+						end, { silent = true, desc = "LSP code action", buffer = buffer })
 						vim.keymap.set("n", "K", function()
 							vim.cmd.RustLsp({ "hover", "actions" })
 						end, { silent = true, desc = "Rust hover", buffer = buffer })
-						vim.keymap.set("n", "<C-Enter>", "<Plug>RustHoverAction", {
-							silent = true,
-							desc = "Rust hover acition",
+						vim.keymap.set("n", "grh", "<Plug>RustHoverAction", {
+							desc = "Rust hover action",
 							buffer = buffer,
 						})
 					end,

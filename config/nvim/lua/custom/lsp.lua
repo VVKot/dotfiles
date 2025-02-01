@@ -15,7 +15,10 @@ M.setup = function()
 	-- diagnostics
 
 	vim.keymap.set("n", "<Leader>ld", vim.diagnostic.setloclist, {
-		desc = "Diagnostics",
+		desc = "Diagnostics to locationlist",
+	})
+	vim.keymap.set("n", "<C-Space>", vim.diagnostic.open_float, {
+		desc = "Diagnostics open float",
 	})
 
 	vim.api.nvim_create_autocmd("LspAttach", {
