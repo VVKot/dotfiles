@@ -71,7 +71,7 @@ return {
 			vim.keymap.set("n", "<Leader>fr", fzf_lua.lsp_references, {
 				desc = "FZF LSP reference",
 			})
-			vim.keymap.set("n", "<Leader>fl", fzf_lua.lsp_document_symbols, {
+			vim.keymap.set("n", "<Leader>fo", fzf_lua.lsp_document_symbols, {
 				desc = "FZF LSP document symbols",
 			})
 			vim.keymap.set("n", "<Leader>fs", fzf_lua.lsp_live_workspace_symbols, {

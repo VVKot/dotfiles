@@ -27,7 +27,7 @@ M.setup = function()
 				desc = "LSP definition",
 				buffer = buffer,
 			})
-			vim.keymap.set("n", "gD", vim.lsp.buf.implementation, {
+			vim.keymap.set("n", "gri", vim.lsp.buf.implementation, {
 				desc = "LSP implementation",
 				buffer = buffer,
 			})
@@ -35,7 +35,7 @@ M.setup = function()
 				desc = "LSP type definition",
 				buffer = buffer,
 			})
-			vim.keymap.set("n", "gr", function()
+			vim.keymap.set("n", "grr", function()
 				vim.lsp.buf.references({ includeDeclaration = false })
 			end, {
 				desc = "LSP references",
@@ -47,13 +47,17 @@ M.setup = function()
 				desc = "LSP code action",
 				buffer = buffer,
 			})
-			vim.keymap.set("n", "<Leader>ar", vim.lsp.buf.rename, {
+			vim.keymap.set({ "n", "v" }, "gra", vim.lsp.buf.code_action, {
+				desc = "LSP code action",
+				buffer = buffer,
+			})
+			vim.keymap.set("n", "grn", vim.lsp.buf.rename, {
 				desc = "LSP rename",
 				buffer = buffer,
 			})
 
 			-- lists
-			vim.keymap.set("n", "gl", vim.lsp.buf.document_symbol, {
+			vim.keymap.set("n", "gO", vim.lsp.buf.document_symbol, {
 				desc = "LSP document symbols",
 				buffer = buffer,
 			})
