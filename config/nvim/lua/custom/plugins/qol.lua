@@ -32,11 +32,18 @@ return {
 				mode = { "n", "t" },
 			},
 			{
-				"<leader>sr",
+				"<Leader>sr",
 				function()
 					require("snacks").rename.rename_file()
 				end,
 				desc = "Rename file",
+			},
+			{
+				"<Leader>fe",
+				function()
+					require("snacks").picker.explorer()
+				end,
+				desc = "File explorer",
 			},
 		},
 	},
