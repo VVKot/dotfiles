@@ -8,21 +8,23 @@ eval $(brew shellenv)
 autoload -Uz compinit
 compinit
 
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
 # OS-specific setup
 case "$OSTYPE" in
   darwin*)
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
+    export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+    source $ZPLUG_HOME/init.zsh
 
     export "JAVA_HOME=$(/usr/libexec/java_home)"
   ;;
   linux*)
     alias ls='ls --color'
     alias ll='ls -laF --color'
+    export ZPLUG_HOME=~/.zplug
+    source $ZPLUG_HOME/init.zsh
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 esac
 
 zplug "plugins/brew", from:oh-my-zsh, defer:1
