@@ -1,5 +1,6 @@
 theme = "iTerm2 Light Background"
 font-size = 14
+font-feature = -calt, -liga, -dlig
 macos-option-as-alt = true
 
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
