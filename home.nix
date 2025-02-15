@@ -7,7 +7,7 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "${vars.username}";
-  home.homeDirectory = "/Users/${vars.username}";
+  home.homeDirectory = "${vars.home}/${vars.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

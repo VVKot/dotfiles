@@ -14,25 +14,33 @@
     nixpkgs,
     home-manager,
     ...
-  }: let
-    system = "x86_64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    homeConfigurations."kot" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      modules = [./home.nix];
-
-      extraSpecialArgs = {
-        vars = {
-          username = "kot";
+  }: {
+    homeConfigurations = {
+      kot = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-darwin";
+        };
+        modules = [./home.nix];
+        extraSpecialArgs = {
+          vars = {
+            username = "kot";
+            home = "/Users";
+          };
         };
       };
 
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+      vkot = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "aarch64-darwin";
+        };
+        modules = [./home.nix];
+        extraSpecialArgs = {
+          vars = {
+            username = "vkot";
+            home = "/Users";
+          };
+        };
+      };
     };
   };
 }
