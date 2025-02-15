@@ -3,6 +3,9 @@ font-size = 14
 font-feature = -calt, -liga, -dlig
 macos-option-as-alt = true
 
+# use fish
+command = ~/.nix-profile/bin/fish --login --interactive
+
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 # HACK: CTRL-M = CR, CTRL-I = Tab, CTRL-[ = Esc don't see to work in zsh

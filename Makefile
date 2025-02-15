@@ -7,6 +7,7 @@ sync:
 	[ -f ~/.config/glow/glow.yml ] || ln -s $(PWD)/glow.yml ~/.config/glow/glow.yml
 	[ -f ~/.config/k9s/config.yaml ] || ln -s $(PWD)/config/k9s/config.yaml ~/.config/k9s/config.yaml
 	[ -f ~/.config/k9s/skins/transparent.yaml ] || ln -s $(PWD)/config/k9s/skins/transparent.yaml ~/.config/k9s/skins/transparent.yaml
+	[ -e ~/.config/nix ] || ln -s $(PWD)/config/nix ~/.config/nix
 	[ -e ~/.config/nvim ] || ln -s $(PWD)/config/nvim ~/.config/nvim
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
 	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/config/starship.toml ~/.config/starship.toml
@@ -41,6 +42,7 @@ clean:
 	unlink ~/.zshrc || true
 	unlink ~/Library/Application\ Support/Code/User/settings.json || true
 	unlink ~/Library/Preferences/glow/glow.yml || true
+	unlink ~/.config/nix || true
 	unlink ~/.config/nvim || true
 	unlink ~/.config/ghostty || true
 	unlink ~/.config/wezterm || true

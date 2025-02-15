@@ -103,6 +103,7 @@ M.setup = function()
 	lspconfig.pyright.setup({})
 	lspconfig.helm_ls.setup({})
 	lspconfig.clangd.setup({})
+	lspconfig.nil_ls.setup({})
 
 	if os.getenv("JDTLS_ENABLED") == "1" then
 		lspconfig.jdtls.setup({
