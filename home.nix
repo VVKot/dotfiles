@@ -30,10 +30,18 @@
     pkgs.nil
 
     # shell
+    pkgs.fd
     pkgs.fish
     pkgs.fzf
+    pkgs.gh
+    pkgs.git
+    pkgs.git-lfs
+    pkgs.jq
+    pkgs.ripgrep
     pkgs.starship
     pkgs.tmux
+    pkgs.tree
+    pkgs.yq
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
