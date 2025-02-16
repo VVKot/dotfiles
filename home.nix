@@ -79,8 +79,6 @@
     FZF_DEFAULT_OPTS = "--no-mouse --layout=reverse --color=light,gutter:-1 --cycle
 \--bind ctrl-a:select-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down";
 
-    JAVA_HOME = "$(/usr/libexec/java_home)";
-
     GOPATH = "$HOME/go";
     GOBIN = "$GOPATH/bin";
 
