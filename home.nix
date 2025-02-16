@@ -26,6 +26,7 @@
   home.packages = [
     # nix
     pkgs.alejandra
+    pkgs.cacert
     pkgs.nil
 
     # shell
