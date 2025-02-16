@@ -18,6 +18,9 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  # Enable XDG directory management
+  xdg.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -88,10 +91,6 @@
     GOBIN = "$GOPATH/bin";
 
     CARGO_HOME = "$HOME/.cargo";
-
-    TMUX_CONF = "$HOME/.config/tmux/tmux.conf";
-
-    K9S_CONFIG_DIR = "$HOME/.config/k9s";
   };
 
   programs.fish = {
@@ -160,6 +159,11 @@
       yank
     ];
     extraConfig = builtins.readFile ./tmux.conf;
+  };
+
+  home.file.".config" = {
+    source = ./config;
+    recursive = true;
   };
 
   # Let Home Manager install and manage itself.
