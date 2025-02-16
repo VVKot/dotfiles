@@ -21,11 +21,15 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    # nix
     pkgs.alejandra
+    pkgs.nil
+
+    # shell
     pkgs.fish
     pkgs.fzf
-    pkgs.nil
     pkgs.starship
+    pkgs.tmux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -85,6 +89,8 @@
 
     CARGO_HOME = "$HOME/.cargo";
 
+    TMUX_CONF = "$HOME/.config/tmux/tmux.conf";
+
     K9S_CONFIG_DIR = "$HOME/.config/k9s";
   };
 
@@ -136,6 +142,25 @@
     "$GOBIN"
     "$CARGO_HOME/bin"
   ];
+
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.fish}/bin/fish";
+    terminal = "tmux-256color";
+    historyLimit = 10000;
+    keyMode = "vi";
+    prefix = "C-q";
+    sensibleOnTop = true;
+    baseIndex = 1;
+    mouse = true;
+
+    plugins = with pkgs.tmuxPlugins; [
+      extrakto
+      pain-control
+      yank
+    ];
+    extraConfig = builtins.readFile ./tmux.conf;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
