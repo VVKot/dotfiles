@@ -104,9 +104,11 @@
 
       brew shellenv | source
     '';
-    shellAbbrs = {
+    shellAliases = {
       vi = "nvim";
       vim = "nvim";
+
+      k = "kubectl";
     };
     functions = {
       flushdns = "sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder";
