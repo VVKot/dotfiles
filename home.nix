@@ -22,9 +22,10 @@
   # environment.
   home.packages = [
     pkgs.alejandra
+    pkgs.fish
+    pkgs.fzf
     pkgs.nil
     pkgs.starship
-    pkgs.fish
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -113,6 +114,11 @@
     functions = {
       flushdns = "sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder";
     };
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.starship = {
