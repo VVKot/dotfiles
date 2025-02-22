@@ -14,42 +14,14 @@ case "$OSTYPE" in
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
-    export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-    source $ZPLUG_HOME/init.zsh
 
     export "JAVA_HOME=$(/usr/libexec/java_home)"
   ;;
   linux*)
     alias ls='ls --color'
     alias ll='ls -laF --color'
-    export ZPLUG_HOME=~/.zplug
-    source $ZPLUG_HOME/init.zsh
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 esac
-
-zplug "plugins/brew", from:oh-my-zsh, defer:1
-zplug "plugins/docker", from:oh-my-zsh, defer:1
-zplug "plugins/fzf", from:oh-my-zsh, defer:1
-zplug "plugins/gh", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/golang", from:oh-my-zsh, defer:1
-zplug "plugins/gradle", from:oh-my-zsh, defer:1
-zplug "plugins/helm", from:oh-my-zsh, defer:1
-zplug "plugins/kind", from:oh-my-zsh, defer:1
-zplug "plugins/kubectl", from:oh-my-zsh
-zplug "plugins/minikube", from:oh-my-zsh, defer:1
-zplug "plugins/terraform", from:oh-my-zsh, defer:1
-zplug "plugins/tmux", from:oh-my-zsh, defer:1
-zplug "zsh-users/zsh-autosuggestions", defer:2
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
 
 alias k="kubectl"
 alias vi="nvim"
