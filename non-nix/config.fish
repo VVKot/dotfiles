@@ -16,6 +16,8 @@ set -gx XDG_DATA_HOME '~/.local/share'
 set -gx XDG_STATE_HOME '~/.local/state'
 set -gx PATH "$PATH"(test -n "$PATH" && echo ':' || echo)'/nix/var/nix/profiles/default/bin:'"$HOME"'/.nix-profile/bin:'"$HOMEBREW_PREFIX"'/bin:'"$HOMEBREW_PREFIX"'/sbin:'"$GOBIN"':'"$CARGO_HOME"'/bin'
 
+/home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+
 status is-login; and begin
 
     # Login shell initialisation
@@ -44,8 +46,6 @@ status is-interactive; and begin
     bind --mode insert \cy accept-autosuggestion
     bind \ck accept-autosuggestion execute
     bind --mode insert \ck accept-autosuggestion execute
-
-    brew shellenv | source
 
     if test "$TERM" != dumb
         starship init fish | source
