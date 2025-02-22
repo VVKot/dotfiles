@@ -28,6 +28,6 @@ clean-linux:
 	unlink ~/.zshrc || true
 
 clean-mac:
-
 	unlink ~/Library/Application\ Support/Code/User/settings.json || true
+
 .PHONY: all clean-linux clean-mac sync-linux sync-mac build run kill
