@@ -63,6 +63,14 @@ return {
 				mode = { "n" },
 			},
 			{
+				"<Leader>dq",
+				function()
+					require("dap").terminate()
+				end,
+				desc = "DAP terminate",
+				mode = { "n" },
+			},
+			{
 				"<Leader>dx",
 				function()
 					require("dap").step_out()
