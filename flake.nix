@@ -16,6 +16,23 @@
     ...
   }: {
     homeConfigurations = {
+      coder = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+        };
+        modules = [
+          ./home-manager/home.nix
+          ./home-manager/kubernetes-dev.nix
+          ./home-manager/rust-dev.nix
+        ];
+        extraSpecialArgs = {
+          vars = {
+            username = "coder";
+            home = "/home";
+          };
+        };
+      };
+
       kot = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-darwin";
