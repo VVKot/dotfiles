@@ -3,6 +3,7 @@ if vim.g.vscode then
 end
 
 return {
+	"preservim/vim-pencil",
 	{
 		"epwalsh/obsidian.nvim",
 		priority = 100,
