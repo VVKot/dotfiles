@@ -199,6 +199,7 @@
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
     terminal = "tmux-256color";
+    escapeTime = 50;
     historyLimit = 10000;
     keyMode = "vi";
     prefix = "C-q";
