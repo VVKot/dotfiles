@@ -2,9 +2,6 @@ local M = {}
 
 M.setup = function()
 	vim.opt.listchars = { tab = "⇥ ", leadmultispace = "┊ ", trail = "␣", nbsp = "⍽" }
-	vim.lsp.handlers["textDocument/signatureHelp"] =
-		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
 	vim.lsp.inlay_hint.enable()
 
@@ -13,6 +10,15 @@ M.setup = function()
 	-- Key maps. {{{2
 
 	-- diagnostics
+
+	vim.diagnostic.config({
+		virtual_text = { current_line = true },
+	})
+
+	vim.keymap.set("n", "gK", function()
+		local new_config = not vim.diagnostic.config().virtual_lines
+		vim.diagnostic.config({ virtual_lines = new_config })
+	end, { desc = "Toggle diagnostic virtual_lines" })
 
 	vim.keymap.set("n", "<Leader>ld", vim.diagnostic.setloclist, {
 		desc = "Diagnostics to locationlist",

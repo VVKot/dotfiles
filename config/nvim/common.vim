@@ -85,6 +85,8 @@ set statusline+=\ %{get(b:,'gitsigns_head','')}
 
 set winbar=%t
 
+set winborder=rounded
+
 " better diff algorithm
 set diffopt+=linematch:60
 
