@@ -156,6 +156,7 @@ return {
 							luasnip.expand()
 						elseif cmp.visible() then
 							cmp.confirm({
+								behavior = cmp.ConfirmBehavior.Insert,
 								select = true,
 							})
 						else
@@ -169,6 +170,7 @@ return {
 							luasnip.jump(1)
 						elseif cmp.visible() then
 							cmp.confirm({
+								behavior = cmp.ConfirmBehavior.Insert,
 								select = true,
 							})
 						else
