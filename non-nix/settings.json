@@ -23,5 +23,11 @@
         "asvetliakov.vscode-neovim": 1
     },
     "editor.fontSize": 14,
-    "telemetry.telemetryLevel": "off"
+    "telemetry.telemetryLevel": "off",
+    "chat.agent.enabled": true,
+    "remote.defaultExtensionsIfInstalledLocally": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "GitHub.vscode-pull-request-github"
+    ]
 }
