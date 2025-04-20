@@ -6,6 +6,7 @@ M.setup = function()
 	vim.lsp.inlay_hint.enable()
 
 	local lspconfig = require("lspconfig")
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 	-- Key maps. {{{2
 
@@ -70,16 +71,13 @@ M.setup = function()
 				desc = "LSP document symbols",
 				buffer = buffer,
 			})
-			vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, {
-				desc = "LSP signature help",
-				buffer = buffer,
-			})
 		end,
 	})
 
 	-- Servers. {{{2
 
 	lspconfig.gopls.setup({
+		capabilities = capabilities,
 		settings = {
 			gopls = {
 				usePlaceholders = true,
@@ -90,6 +88,7 @@ M.setup = function()
 	})
 
 	lspconfig.lua_ls.setup({
+		capabilities = capabilities,
 		settings = {
 			Lua = {
 				workspace = { checkThirdParty = false },
@@ -99,6 +98,7 @@ M.setup = function()
 	})
 
 	lspconfig.ruff.setup({
+		capabilities = capabilities,
 		init_options = {
 			settings = {
 				args = { "--preview" },
@@ -106,14 +106,23 @@ M.setup = function()
 		},
 	})
 
-	lspconfig.pyright.setup({})
-	lspconfig.helm_ls.setup({})
-	lspconfig.clangd.setup({})
-	lspconfig.nil_ls.setup({})
+	lspconfig.pyright.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.helm_ls.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.nil_ls.setup({
+		capabilities = capabilities,
+	})
 
 	if os.getenv("JDTLS_ENABLED") == "1" then
 		lspconfig.jdtls.setup({
 			use_lombok_agent = true,
+			capabilities = capabilities,
 			settings = {
 				java = {
 					jdt = {
