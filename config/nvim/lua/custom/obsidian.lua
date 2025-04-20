@@ -58,7 +58,12 @@ M.setup = function()
 		disable_frontmatter = true,
 		log_level = vim.log.levels.WARN,
 
-		mappings = {},
+		completion = {
+			nvim_cmp = false,
+			blink = true,
+			min_chars = 2,
+		},
+
 		workspaces = {
 			{
 				name = "no-vault",

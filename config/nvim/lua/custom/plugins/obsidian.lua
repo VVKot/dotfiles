@@ -5,7 +5,7 @@ end
 return {
 	"preservim/vim-pencil",
 	{
-		"epwalsh/obsidian.nvim",
+		"obsidian-nvim/obsidian.nvim",
 		priority = 100,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
