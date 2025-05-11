@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.pandoc_3_6
+    pkgs.pandoc
     pkgs.proselint
     pkgs.vale
   ];
