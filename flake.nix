@@ -29,6 +29,7 @@
           vars = {
             username = "coder";
             home = "/home";
+            homebrewPrefix = "/home/linuxbrew/.linuxbrew";
           };
         };
       };
@@ -46,6 +47,7 @@
           vars = {
             username = "kot";
             home = "/Users";
+            homebrewPrefix = "/usr/local";
           };
         };
       };
@@ -64,6 +66,7 @@
           vars = {
             username = "vkot";
             home = "/Users";
+            homebrewPrefix = "/opt/homebrew";
           };
         };
       };

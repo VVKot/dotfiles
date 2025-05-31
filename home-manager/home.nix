@@ -128,7 +128,7 @@
       bind \ck accept-autosuggestion execute
       bind --mode insert \ck accept-autosuggestion execute
 
-      brew shellenv | source
+      ${vars.homebrewPrefix}/bin/brew shellenv | source
     '';
     shellAliases = {
       vi = "nvim";
@@ -164,7 +164,7 @@
       autoload edit-command-line;zle -N edit-command-line
       bindkey -M vicmd '^v' edit-command-line
 
-      eval $(brew shellenv)
+      eval $(${vars.homebrewPrefix}/bin/brew shellenv)
     '';
     shellAliases = {
       vi = "nvim";
