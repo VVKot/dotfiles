@@ -141,6 +141,8 @@
     };
   };
 
+  home.shell.enableFishIntegration = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
