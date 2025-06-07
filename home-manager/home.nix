@@ -32,8 +32,6 @@
     # shell
     pkgs.certigo
     pkgs.fd
-    pkgs.fish
-    pkgs.fzf
     pkgs.gh
     pkgs.git
     pkgs.git-lfs
@@ -41,9 +39,7 @@
     pkgs.htop
     pkgs.jq
     pkgs.ripgrep
-    pkgs.starship
     pkgs.tealdeer
-    pkgs.tmux
     pkgs.tree
     pkgs.unixtools.watch
     pkgs.wget
