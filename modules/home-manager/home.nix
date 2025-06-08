@@ -216,7 +216,7 @@
   };
 
   home.file.".config" = {
-    source = ../config;
+    source = ../../config;
     recursive = true;
   };
 

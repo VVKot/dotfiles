@@ -21,9 +21,9 @@
           system = "x86_64-linux";
         };
         modules = [
-          ./home-manager/home.nix
-          ./home-manager/kubernetes-dev.nix
-          ./home-manager/rust-dev.nix
+          ./modules/home-manager/home.nix
+          ./modules/home-manager/kubernetes-dev.nix
+          ./modules/home-manager/rust-dev.nix
         ];
         extraSpecialArgs = {
           vars = {
@@ -39,9 +39,9 @@
           system = "x86_64-darwin";
         };
         modules = [
-          ./home-manager/home.nix
-          ./home-manager/rust-dev.nix
-          ./home-manager/writing.nix
+          ./modules/home-manager/home.nix
+          ./modules/home-manager/rust-dev.nix
+          ./modules/home-manager/writing.nix
         ];
         extraSpecialArgs = {
           vars = {
@@ -57,10 +57,10 @@
           system = "aarch64-darwin";
         };
         modules = [
-          ./home-manager/big-data.nix
-          ./home-manager/home.nix
-          ./home-manager/kubernetes-dev.nix
-          ./home-manager/writing.nix
+          ./modules/home-manager/big-data.nix
+          ./modules/home-manager/home.nix
+          ./modules/home-manager/kubernetes-dev.nix
+          ./modules/home-manager/writing.nix
         ];
         extraSpecialArgs = {
           vars = {
