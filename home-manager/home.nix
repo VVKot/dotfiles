@@ -110,6 +110,8 @@
     GOBIN = "$GOPATH/bin";
 
     CARGO_HOME = "$HOME/.cargo";
+
+    NIXOS_OZONE_WL = "1";
   };
 
   programs.fish = {
