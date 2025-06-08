@@ -15,6 +15,18 @@
     home-manager,
     ...
   }: {
+    nixosConfigurations = {
+      hubbabubba = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/hubbabubba/configuration.nix
+        ];
+        specialArgs = {
+          inherit home-manager;
+        };
+      };
+    };
+
     homeConfigurations = {
       coder = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {

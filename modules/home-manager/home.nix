@@ -2,12 +2,13 @@
   config,
   pkgs,
   vars,
+  lib,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "${vars.username}";
-  home.homeDirectory = "${vars.home}/${vars.username}";
+  home.homeDirectory = lib.mkForce "${vars.home}/${vars.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -126,7 +127,9 @@
       bind \ck accept-autosuggestion execute
       bind --mode insert \ck accept-autosuggestion execute
 
-      ${vars.homebrewPrefix}/bin/brew shellenv | source
+      if test -x "${vars.homebrewPrefix}/bin/brew"
+        eval (${"${vars.homebrewPrefix}/bin/brew shellenv"})
+      end
     '';
     shellAliases = {
       vi = "nvim";
@@ -162,7 +165,9 @@
       autoload edit-command-line;zle -N edit-command-line
       bindkey -M vicmd '^v' edit-command-line
 
-      eval $(${vars.homebrewPrefix}/bin/brew shellenv)
+      if [ -x "${vars.homebrewPrefix}/bin/brew" ]; then
+        eval "$(${vars.homebrewPrefix}/bin/brew shellenv)"
+      fi
     '';
     shellAliases = {
       vi = "nvim";
