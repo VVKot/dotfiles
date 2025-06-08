@@ -220,6 +220,18 @@
     recursive = true;
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # cannot use Ghostty because it is broken on Darwin: https://github.com/NixOS/nixpkgs/issues/388984
+  xdg.configFile."ghostty/config".text = ''
+    command = "${pkgs.fish}/bin/fish"
+
+    theme = "iTerm2 Light Background"
+    font-size = 14
+    font-feature = -calt, -liga, -dlig
+    macos-option-as-alt = true
+
+    # HACK: CTRL-M = CR, CTRL-I = Tab, CTRL-[ = Esc don't see to work in zsh
+    keybind = ctrl+m=text:\x0D
+    keybind = ctrl+i=text:\x09
+    keybind = ctrl+[=text:\x1B
+  '';
 }
