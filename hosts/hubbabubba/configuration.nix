@@ -46,11 +46,13 @@ in {
   };
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
     displayManager.gdm = {
       enable = true;

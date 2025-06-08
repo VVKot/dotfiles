@@ -153,7 +153,7 @@
       append = true;
       ignoreAllDups = true;
     };
-    initExtra = ''
+    initContent = ''
       export KEYTIMEOUT=1 # * 10 ms
       bindkey -v
       bindkey '\e' vi-cmd-mode
