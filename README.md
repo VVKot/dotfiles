@@ -1,9 +1,5 @@
 # dotfiles
 
-`brew bundle` to install apps and tools.
+`home-manager switch --flake .` to install the majority of tools and write configuration.
 
-`make` to create symlinks to dotfiles.
-
-OR
-
-`home-manager switch --flake .` when using Nix.
+`brew bundle` to install apps and MacOS-specific tools.

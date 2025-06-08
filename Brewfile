@@ -9,7 +9,6 @@ cask "docker"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "jetbrains-toolbox"
-cask "ghostty"
 cask "spotify"
 cask "visual-studio-code"
 
