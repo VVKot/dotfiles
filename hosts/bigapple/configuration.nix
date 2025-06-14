@@ -37,6 +37,71 @@ in {
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "x86_64-darwin";
 
+  system = {
+    primaryUser = "${vars.username}";
+    defaults = {
+      dock = {
+        autohide = true;
+        autohide-delay = 0.0;
+        tilesize = 64;
+        show-recents = false;
+        # group windows by application
+        expose-group-apps = true;
+        mru-spaces = false;
+        launchanim = false;
+        persistent-apps = [
+          {app = "/Applications/Safari.app";}
+          {app = "/Applications/Ghostty.app";}
+          {app = "/Applications/Amazon Kindle.app";}
+          {app = "/Applications/Obsidian.app";}
+          {app = "/System/Applications/Notes.app";}
+          {app = "/System/Applications/Reminders.app";}
+          {app = "/System/Applications/Messages.app";}
+        ];
+      };
+      finder = {
+        AppleShowAllExtensions = true;
+        # current folder
+        FXDefaultSearchScope = "SCcf";
+        FXEnableExtensionChangeWarning = false;
+        ShowPathbar = true;
+      };
+      NSGlobalDomain = {
+        "com.apple.keyboard.fnState" = true;
+        NSAutomaticWindowAnimationsEnabled = false;
+        NSWindowShouldDragOnGesture = true;
+      };
+      CustomUserPreferences = {
+        "com.apple.screencapture" = {
+          location = "~/Desktop";
+          type = "png";
+        };
+        "com.apple.AdLib" = {
+          allowApplePersonalizedAdvertising = false;
+        };
+        "com.apple.SoftwareUpdate" = {
+          AutomaticCheckEnabled = true;
+          ScheduleFrequency = 1;
+          AutomaticDownload = 1;
+          CriticalUpdateInstall = 1;
+        };
+      };
+    };
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
+  };
+
+  security.pam.services.sudo_local = {
+    enable = true;
+    touchIdAuth = true;
+  };
+
+  fonts.packages = [
+    pkgs.jetbrains-mono
+  ];
+
   users.users.${vars.username} = {
     name = "${vars.username}";
     home = "${vars.home}/${vars.username}";
