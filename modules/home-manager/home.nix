@@ -35,6 +35,7 @@
     # shell
     pkgs.certigo
     pkgs.fd
+    pkgs.gawk
     pkgs.gh
     pkgs.git
     pkgs.git-lfs
@@ -205,7 +206,10 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
-    terminal = "tmux-256color";
+    terminal =
+      if pkgs.stdenv.isDarwin
+      then "xterm-ghostty"
+      else "tmux-256color";
     escapeTime = 50;
     historyLimit = 10000;
     keyMode = "vi";
@@ -216,6 +220,12 @@
 
     plugins = with pkgs.tmuxPlugins; [
       extrakto
+      {
+        plugin = fingers;
+        extraConfig = ''
+          set -g @fingers-pattern-0 '[a-z0-9]+-[^ ]+'
+        '';
+      }
       pain-control
       yank
     ];
