@@ -93,6 +93,25 @@ in {
     };
   };
 
+  homebrew = {
+    enable = true;
+
+    taps = [];
+    brews = ["cmatrix"];
+    casks = ["aerospace"];
+  };
+
+  services = {
+    aerospace.enable = true;
+    jankyborders = {
+      enable = true;
+      # blue
+      active_color = "0xff0000ff";
+      # invisible
+      inactive_color = "0x00ffffff";
+    };
+  };
+
   security.pam.services.sudo_local = {
     enable = true;
     touchIdAuth = true;
