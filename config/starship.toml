@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+right_format='$kubernetes'
+
 [directory]
 style = "bold green"
 
@@ -20,4 +22,8 @@ style = "bold green"
 
 [kubernetes]
 disabled = false
-style = "bold blue"
+style = "bold red"
+
+[[kubernetes.contexts]]
+context_pattern = ".*kind.*"
+style = "bold green"
