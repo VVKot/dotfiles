@@ -31,6 +31,7 @@
     pkgs.alejandra
     pkgs.cacert
     pkgs.nil
+    pkgs.nix-your-shell
 
     # shell
     pkgs.certigo
@@ -133,6 +134,8 @@
       if test -x "${vars.homebrewPrefix}/bin/brew"
         eval (${"${vars.homebrewPrefix}/bin/brew shellenv"})
       end
+
+      nix-your-shell fish | source
     '';
     shellAliases = {
       vi = "nvim";
@@ -171,6 +174,8 @@
       if [ -x "${vars.homebrewPrefix}/bin/brew" ]; then
         eval "$(${vars.homebrewPrefix}/bin/brew shellenv)"
       fi
+
+      nix-your-shell zsh | source /dev/stdin
     '';
     shellAliases = {
       vi = "nvim";
