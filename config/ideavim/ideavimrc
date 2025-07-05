@@ -5,7 +5,7 @@ set noerrorbells
 set number
 set incsearch hlsearch
 set ignorecase smartcase
-set clipboard=unnamed
+set clipboard=unnamedplus
 set scrolloff=5
 set sidescrolloff=1
 set surround
