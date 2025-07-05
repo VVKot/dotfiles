@@ -12,7 +12,7 @@ set scrolloff=5
 set textwidth=120
 
 " Automatically paste from the system clipboard and copy to it.
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " No visual blink on error and no sound.
 set visualbell t_vb=

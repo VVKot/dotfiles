@@ -93,6 +93,7 @@ return {
 		config = function()
 			vim.g.ale_use_neovim_diagnostics_api = 1
 			vim.g.ale_fix_on_save = 1
+			vim.g.ale_languagetool_executable = "languagetool-commandline"
 		end,
 	},
 	{

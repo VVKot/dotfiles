@@ -10,7 +10,7 @@
     username = "kot";
     home = "/Users";
     git-username = "VVKot";
-    email = "volodymyr.kot.ua@gmail.com";
+    email = "";
     homebrewPrefix = "/usr/local";
   };
 in {
