@@ -110,12 +110,7 @@
     FZF_DEFAULT_OPTS = "--no-mouse --layout=reverse --color=light,gutter:-1 --cycle
 \--bind ctrl-a:select-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down";
 
-    GOPATH = "$HOME/go";
-    GOBIN = "$GOPATH/bin";
-
     CARGO_HOME = "$HOME/.cargo";
-
-    NIXOS_OZONE_WL = "1";
   };
 
   programs.fish = {
