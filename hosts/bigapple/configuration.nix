@@ -43,7 +43,7 @@ in {
     primaryUser = "${vars.username}";
     defaults = {
       dock = {
-        autohide = true;
+        autohide = false;
         autohide-delay = 0.0;
         tilesize = 64;
         show-recents = false;
