@@ -261,8 +261,78 @@
     userName = "${vars.git-username}";
     userEmail = "${vars.email}";
     ignores = [".DS_Store"];
+    lfs.enable = true;
     extraConfig = {
-      push.autoSetupRemote = true;
+      core = {
+        editor = "nvim";
+      };
+
+      column = {
+        ui = "auto";
+      };
+
+      branch = {
+        sort = "-committerdate";
+      };
+
+      diff = {
+        tool = "nvim -d";
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
+      };
+
+      merge = {
+        tool = "nvim -d";
+      };
+
+      git = {
+        rebase = true;
+      };
+
+      pull = {
+        rebase = true;
+      };
+
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+        updateRefs = true;
+      };
+
+      commit = {
+        verbose = true;
+      };
+
+      help = {
+        autocorrect = "prompt";
+      };
+
+      tag = {
+        sort = "version:refname";
+      };
+
+      rerere = {
+        enabled = true;
+        autoupdate = true;
+      };
+
+      fetch = {
+        prune = true;
+        pruneTags = true;
+        all = true;
+      };
+
+      checkout = {
+        defaultRemote = "origin";
+      };
+
+      push = {
+        autoSetupRemote = true;
+        default = "simple";
+        followTags = true;
+      };
     };
   };
 }
