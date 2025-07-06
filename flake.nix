@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of kot";
+  description = "NixOS configuration of kot";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -82,6 +82,14 @@
           };
         };
       };
+    };
+
+    homeManagerModules = {
+      big-data = ./modules/home-manager/big-data.nix;
+      home = ./modules/home-manager/home.nix;
+      kubernetes-dev = ./modules/home-manager/kubernetes-dev.nix;
+      rust-dev = ./modules/home-manager/rust-dev.nix;
+      writing = ./modules/home-manager/writing.nix;
     };
   };
 }
