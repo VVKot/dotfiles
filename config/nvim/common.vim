@@ -95,9 +95,6 @@ colorscheme vim
 " force true color
 set termguicolors
 set background=light
-" Enable transparency
-set pumblend=15
-set winblend=15
 
 highlight Title ctermfg=blue guifg=blue
 highlight NonText guifg=gray ctermfg=gray
