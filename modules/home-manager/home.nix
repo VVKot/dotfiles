@@ -38,7 +38,6 @@
     pkgs.fd
     pkgs.gawk
     pkgs.gh
-    pkgs.git
     pkgs.git-lfs
     pkgs.graphviz
     pkgs.htop
@@ -256,4 +255,14 @@
     keybind = ctrl+i=text:\x09
     keybind = ctrl+[=text:\x1B
   '';
+
+  programs.git = {
+    enable = true;
+    userName = "${vars.git-username}";
+    userEmail = "${vars.email}";
+    ignores = [".DS_Store"];
+    extraConfig = {
+      push.autoSetupRemote = true;
+    };
+  };
 }
