@@ -160,7 +160,6 @@ in {
     ghostty
     spotify
     obsidian
-    languagetool
     wl-clipboard
 
     neovim
