@@ -12,7 +12,7 @@
     username = "katz";
     home = "/home";
     git-username = "VVKot";
-    email = "";
+    email = "volodymyr.kot.ua@gmail.com";
     homebrewPrefix = "/home/linuxbrew/.linuxbrew";
   };
 in {
