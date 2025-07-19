@@ -29,7 +29,12 @@
         "gsconnect@andyholmes.github.io"
         "just-perfection-desktop@just-perfection"
       ];
-      favorite-apps = [];
+      favorite-apps = [
+        "librewolf.desktop"
+        "com.mitchellh.ghostty.desktop"
+        "obsidian.desktop"
+        "spotify.desktop"
+      ];
       # make sure bluetooth icon is always present
       had-bluetooth-devices-setup = true;
       # remove welcome tour
