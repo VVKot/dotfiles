@@ -54,8 +54,6 @@ in {
         persistent-apps = [
           {app = "/Applications/Safari.app";}
           {app = "/Applications/Ghostty.app";}
-          {app = "/Applications/Amazon Kindle.app";}
-          {app = "/Applications/Obsidian.app";}
           {app = "/System/Applications/Notes.app";}
           {app = "/System/Applications/Reminders.app";}
           {app = "/System/Applications/Messages.app";}
