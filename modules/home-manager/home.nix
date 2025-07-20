@@ -42,6 +42,7 @@
     pkgs.graphviz
     pkgs.htop
     pkgs.jq
+    pkgs.pnpm
     pkgs.ripgrep
     pkgs.tealdeer
     pkgs.tree
@@ -329,6 +330,42 @@
         default = "simple";
         followTags = true;
       };
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+
+    extensions = with pkgs.vscode-extensions; [
+      k--kato.intellij-idea-keybindings
+      asvetliakov.vscode-neovim
+    ];
+
+    userSettings = {
+      "workbench.colorTheme" = "Default Light Modern";
+      "editor.renderWhitespace" = "all";
+      "explorer.confirmDelete" = false;
+      "workbench.editor.enablePreview" = false;
+      "workbench.editor.enablePreviewFromQuickOpen" = false;
+      "vscode-neovim.neovimExecutablePaths.darwin" = "${pkgs.neovim}/bin/nvim";
+      "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
+      "java.semanticHighlighting.enabled" = true;
+      "editor.fontFamily" = "JetBrains Mono; Menlo, Monaco, 'Courier New', monospace";
+      "npm.packageManager" = "pnpm";
+      "eslint.packageManager" = "pnpm";
+      "tslint.packageManager" = "pnpm";
+      "stylelint.packageManager" = "pnpm";
+      "eslint.alwaysShowStatus" = true;
+      "terminal.integrated.defaultProfile.linux" = "fish";
+      "terminal.integrated.defaultProfile.osx" = "fish";
+      "terminal.integrated.shell.linux" = "fish";
+      "terminal.integrated.shell.osx" = "fish";
+      "editor.inlineSuggest.enabled" = true;
+      "extensions.experimental.affinity" = {
+        "asvetliakov.vscode-neovim" = 1;
+      };
+      "editor.fontSize" = 14;
+      "telemetry.telemetryLevel" = "off";
     };
   };
 }
