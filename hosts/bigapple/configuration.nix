@@ -25,6 +25,8 @@ in {
   # Because I use Determinate System's installer
   nix.enable = false;
 
+  nixpkgs.config.allowUnfree = true;
+
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
   programs.fish.enable = true;
