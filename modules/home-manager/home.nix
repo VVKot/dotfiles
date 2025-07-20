@@ -47,6 +47,7 @@
     pkgs.tree
     pkgs.unixtools.watch
     pkgs.wget
+    pkgs.xh
     pkgs.yq
 
     # neovim
