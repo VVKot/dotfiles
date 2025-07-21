@@ -55,10 +55,11 @@ in {
         launchanim = false;
         persistent-apps = [
           {app = "/Applications/Safari.app";}
-          {app = "/Applications/Ghostty.app";}
+          {app = "/System/Applications/Preview.app";}
           {app = "/System/Applications/Notes.app";}
           {app = "/System/Applications/Reminders.app";}
           {app = "/System/Applications/Messages.app";}
+          {app = "/Applications/Ghostty.app";}
         ];
       };
       finder = {
@@ -97,10 +98,36 @@ in {
 
   homebrew = {
     enable = true;
+    global.autoUpdate = false;
+    onActivation.cleanup = "uninstall";
 
     taps = [];
-    brews = [];
-    casks = [];
+    brews = [
+      "node"
+      "gh"
+      "pipx"
+      "mas"
+    ];
+    casks = [
+      "balenaetcher"
+      "docker"
+      "docker-desktop"
+      "firefox"
+      "ghostty"
+      "libreoffice"
+      "macs-fan-control"
+      "microsoft-auto-update"
+      "microsoft-teams"
+      "teamviewer"
+    ];
+    masApps = {
+      "Keynote" = 409183694;
+      "Microsoft Excel" = 462058435;
+      "Microsoft Word" = 462054704;
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Xcode" = 497799835;
+    };
   };
 
   security.pam.services.sudo_local = {
@@ -110,6 +137,7 @@ in {
 
   fonts.packages = [
     pkgs.jetbrains-mono
+    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   users.users.${vars.username} = {
