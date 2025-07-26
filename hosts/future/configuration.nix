@@ -176,7 +176,7 @@ in {
 
   services.ollama = {
     enable = true;
-    loadModels = ["llama3.2:3b"];
+    loadModels = [];
   };
 
   services.languagetool.enable = true;
