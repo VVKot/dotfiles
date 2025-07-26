@@ -238,6 +238,11 @@
     recursive = true;
   };
 
+  programs.readline.extraConfig = ''
+    set editing-mode vi
+    set keymap vi
+  '';
+
   # cannot use Ghostty because it is broken on Darwin: https://github.com/NixOS/nixpkgs/issues/388984
   xdg.configFile."ghostty/config".text = ''
     command = "${pkgs.fish}/bin/fish"
