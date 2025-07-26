@@ -7,9 +7,4 @@ args @ {pkgs, ...}: {
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/librewolf.nix
   ];
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
 }

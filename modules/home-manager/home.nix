@@ -101,6 +101,12 @@
   #
   #  /etc/profiles/per-user/kot/etc/profile.d/hm-session-vars.sh
   #
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   home.sessionVariables = {
     LC_ALL = "en_US.UTF-8";
     LANG = "en_US.UTF-8";
