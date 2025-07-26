@@ -124,7 +124,7 @@ in {
     isNormalUser = true;
     description = "${vars.username}";
     home = "${vars.home}/${vars.username}";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -166,9 +166,13 @@ in {
     gnumake
     gcc
     nodejs_24
-    docker
     strace
   ];
+
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+  };
 
   services.ollama = {
     enable = true;
