@@ -89,13 +89,11 @@ in {
     serviceConfig.Type = "simple";
   };
 
-  services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
 
   hardware.framework.laptop13.audioEnhancement = {
     enable = true;
-    rawDeviceName = "alsa_output.pci-0000_00_1f.3.analog-stereo";
   };
 
   hardware.graphics.enable = true;
