@@ -17,7 +17,7 @@ in {
   imports = [
     home-manager.darwinModules.home-manager
   ];
-  environment.systemPackages = [pkgs.neovim];
+  environment.systemPackages = with pkgs; [neovim comma];
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
