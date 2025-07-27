@@ -49,7 +49,6 @@
     };
 
     homeManagerModules = {
-      big-data = ./modules/home-manager/big-data.nix;
       home = ./modules/home-manager/home.nix;
       kubernetes-dev = ./modules/home-manager/kubernetes-dev.nix;
       rust-dev = ./modules/home-manager/rust-dev.nix;
