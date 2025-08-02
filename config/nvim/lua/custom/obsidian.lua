@@ -4,13 +4,13 @@ M.setup = function()
 	vim.g.obsidian = 1
 	local obsidian = require("obsidian")
 
-	vim.keymap.set("n", "<C-]>", "<cmd>ObsidianFollowLink<CR>")
+	vim.keymap.set("n", "<C-]>", "<cmd>Obsidian follow_link<CR>")
 	vim.keymap.set("n", "<C-t>", "<C-o>")
-	vim.keymap.set("n", "<Leader><Leader>", "<cmd>ObsidianSearch<CR>")
-	vim.keymap.set("n", "gzz", "<cmd>ObsidianSearch<CR>")
-	vim.keymap.set("n", "gzb", "<cmd>ObsidianBacklinks<CR>")
-	vim.keymap.set("n", "gzl", "<cmd>ObsidianLinks<CR>")
-	vim.keymap.set("n", "gzo", "<cmd>ObsidianOpen<CR>")
+	vim.keymap.set("n", "<Leader><Leader>", "<cmd>Obsidian search<CR>")
+	vim.keymap.set("n", "gzz", "<cmd>Obsidian search<CR>")
+	vim.keymap.set("n", "gzb", "<cmd>Obsidian backlinks<CR>")
+	vim.keymap.set("n", "gzl", "<cmd>Obsidian links<CR>")
+	vim.keymap.set("n", "gzo", "<cmd>Obsidian open<CR>")
 	vim.keymap.set("n", "gzn", function()
 		vim.cmd.ObsidianNew()
 		vim.cmd.ObsidianTemplate({ args = { "template.md" } })
@@ -40,8 +40,7 @@ M.setup = function()
 	end
 
 	obsidian.setup({
-		open_app_foreground = true,
-
+		legacy_commands = false,
 		templates = {
 			subdir = "templates",
 			date_format = "%Y-%m-%d",
