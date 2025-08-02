@@ -5,6 +5,10 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +23,7 @@
     self,
     nixpkgs,
     nixos-hardware,
+    nix-index-database,
     nix-darwin,
     home-manager,
     ...
@@ -29,6 +34,8 @@
         modules = [
           ./hosts/future/configuration.nix
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
+          nix-index-database.nixosModules.nix-index
+          {programs.nix-index-database.comma.enable = true;}
         ];
         specialArgs = {
           inherit home-manager;

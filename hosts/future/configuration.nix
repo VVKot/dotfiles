@@ -165,7 +165,6 @@ in {
     gcc
     nodejs_24
     strace
-    comma
   ];
 
   virtualisation.docker = {
