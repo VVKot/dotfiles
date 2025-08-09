@@ -118,6 +118,9 @@ M.setup = function()
 	lspconfig.nil_ls.setup({
 		capabilities = capabilities,
 	})
+	lspconfig.texlab.setup({
+		capabilities = capabilities,
+	})
 
 	if os.getenv("JDTLS_ENABLED") == "1" then
 		lspconfig.jdtls.setup({
