@@ -20,6 +20,7 @@ M.setup = function()
 			layout_strategy = "flex",
 			scroll_strategy = "cycle",
 			mappings = { i = insert_mappings, n = normal_mappings },
+			wrap_results = true,
 			path_display = {
 				"filename_first",
 			},
