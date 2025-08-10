@@ -15,7 +15,6 @@ M.setup = function()
 
 	telescope.setup({
 		defaults = {
-			border = false,
 			sorting_strategy = "ascending",
 			layout_config = { prompt_position = "top" },
 			layout_strategy = "flex",
