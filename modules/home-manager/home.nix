@@ -255,7 +255,7 @@
     command = "${pkgs.fish}/bin/fish"
 
     theme = "iTerm2 Light Background"
-    font-size = 14
+    font-size = 12
     font-feature = -calt, -liga, -dlig
     macos-option-as-alt = true
 
