@@ -33,12 +33,12 @@ return {
 					end,
 					default_settings = {
 						["rust-analyzer"] = {
-							checkOnSave = {
-								allFeatures = true,
+							check = {
+								features = "all",
 								command = "clippy",
 							},
 							cargo = {
-								allFeatures = true,
+								features = "all",
 							},
 						},
 					},
