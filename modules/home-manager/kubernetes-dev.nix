@@ -1,14 +1,15 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.cilium-cli
-    pkgs.dive
-    pkgs.gopls
-    pkgs.helm-ls
-    pkgs.k9s
-    pkgs.kind
-    pkgs.kubectl
-    pkgs.kubernetes-helm
-    pkgs.kyverno-chainsaw
-    pkgs.yaml-language-server
+  home.packages = with pkgs; [
+    cilium-cli
+    dive
+    gopls
+    helm-ls
+    k9s
+    kind
+    kubectl
+    krew
+    kubernetes-helm
+    kyverno-chainsaw
+    yaml-language-server
   ];
 }

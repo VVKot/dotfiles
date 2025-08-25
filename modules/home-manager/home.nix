@@ -204,6 +204,8 @@
     "/nix/var/nix/profiles/default/bin"
     "$HOME/.nix-profile/bin"
 
+    "$HOME/.krew/bin"
+
     "$HOMEBREW_PREFIX/bin"
     "$HOMEBREW_PREFIX/sbin"
 
