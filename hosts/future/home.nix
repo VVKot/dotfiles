@@ -5,6 +5,7 @@ args @ {pkgs, ...}: {
     (import ../../modules/home-manager/rust-dev.nix args)
     (import ../../modules/home-manager/writing.nix args)
     ../../modules/nixos/gnome.nix
+    ../../modules/nixos/gtk.nix
     ../../modules/nixos/librewolf.nix
     ../../modules/nixos/zathura.nix
   ];
