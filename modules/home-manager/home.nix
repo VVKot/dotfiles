@@ -261,7 +261,7 @@
     command = "${pkgs.fish}/bin/fish"
 
     theme = "iTerm2 Light Background"
-    font-size = 12
+    font-size = 14
     font-feature = -calt, -liga, -dlig
     macos-option-as-alt = true
 
@@ -370,7 +370,7 @@
           "vscode-neovim.neovimExecutablePaths.darwin" = "${pkgs.neovim}/bin/nvim";
           "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
           "java.semanticHighlighting.enabled" = true;
-          "editor.fontFamily" = "JetBrains Mono; Menlo, Monaco, 'Courier New', monospace";
+          "editor.fontFamily" = "JetBrains Mono";
           "npm.packageManager" = "pnpm";
           "eslint.packageManager" = "pnpm";
           "tslint.packageManager" = "pnpm";
@@ -380,6 +380,10 @@
           "terminal.integrated.defaultProfile.osx" = "fish";
           "terminal.integrated.shell.linux" = "fish";
           "terminal.integrated.shell.osx" = "fish";
+          "terminal.integrated.fontFamily" = "JetBrains Mono";
+          "terminal.integrated.letterSpacing" = 0;
+          "terminal.integrated.fontSize" = 14;
+          "terminal.integrated.fontLigatures" = true;
           "editor.inlineSuggest.enabled" = true;
           "extensions.experimental.affinity" = {
             "asvetliakov.vscode-neovim" = 1;
