@@ -86,6 +86,9 @@ M.setup = function()
 			},
 		},
 	})
+	lspconfig.rust_analyzer.setup({
+		capabilities = capabilities,
+	})
 
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
@@ -105,8 +108,7 @@ M.setup = function()
 			},
 		},
 	})
-
-	lspconfig.pyright.setup({
+	lspconfig.basedpyright.setup({
 		capabilities = capabilities,
 	})
 	lspconfig.helm_ls.setup({
@@ -121,61 +123,9 @@ M.setup = function()
 	lspconfig.texlab.setup({
 		capabilities = capabilities,
 	})
-
-	if os.getenv("JDTLS_ENABLED") == "1" then
-		lspconfig.jdtls.setup({
-			use_lombok_agent = true,
-			capabilities = capabilities,
-			settings = {
-				java = {
-					jdt = {
-						ls = {
-							vmargs = "-noverify -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
-							lombokSupport = {
-								enabled = true,
-							},
-						},
-					},
-					autobuild = {
-						enabled = false,
-					},
-					format = {
-						enabled = false,
-					},
-					eclipse = {
-						downloadSources = true,
-					},
-					maven = {
-						downloadSources = true,
-					},
-					references = {
-						includeDecompiledSources = true,
-					},
-					implementationsCodeLens = {
-						enabled = false,
-					},
-					referenceCodeLens = {
-						enabled = false,
-					},
-					inlayHints = {
-						parameterNames = {
-							enabled = "none",
-						},
-					},
-					signatureHelp = {
-						enabled = true,
-						description = {
-							enabled = true,
-						},
-					},
-				},
-				redhat = { telemetry = { enabled = false } },
-			},
-		})
-	end
-
-	local yaml_companion_cfg = require("yaml-companion").setup()
-	lspconfig.yamlls.setup(yaml_companion_cfg)
+	lspconfig.yamlls.setup({
+		capabilities = capabilities,
+	})
 end
 
 return M

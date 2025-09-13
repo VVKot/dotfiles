@@ -7,7 +7,6 @@ return {
 	event = "VimEnter",
 	version = "1.*",
 	dependencies = {
-		"fang2hou/blink-copilot",
 		{
 			"L3MON4D3/LuaSnip",
 			version = "2.*",
@@ -32,24 +31,13 @@ return {
 		keymap = {
 			preset = "super-tab",
 			["<CR>"] = { "select_and_accept", "fallback" },
-			["<M-\\>"] = {
-				function(cmp)
-					cmp.show({ providers = { "copilot" } })
-				end,
-			},
 		},
 		completion = {
 			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		},
 		sources = {
-			default = { "lsp", "copilot", "path", "snippets", "buffer", "lazydev" },
+			default = { "lsp", "path", "snippets", "buffer", "lazydev" },
 			providers = {
-				copilot = {
-					name = "copilot",
-					module = "blink-copilot",
-					score_offset = 100,
-					async = true,
-				},
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 			},
 		},

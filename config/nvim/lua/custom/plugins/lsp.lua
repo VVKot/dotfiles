@@ -4,59 +4,6 @@ end
 
 return {
 	{
-		"mrcjkb/rustaceanvim",
-		ft = { "rust" },
-		lazy = false,
-		config = function()
-			vim.g.rustaceanvim = {
-				tools = {
-					code_actions = {
-						ui_select_fallback = true,
-					},
-				},
-				server = {
-					on_attach = function()
-						local buffer = vim.api.nvim_get_current_buf()
-						vim.keymap.set("n", "<M-Enter>", function()
-							vim.cmd.RustLsp("codeAction")
-						end, { silent = true, desc = "LSP code action", buffer = buffer })
-						vim.keymap.set("n", "gra", function()
-							vim.cmd.RustLsp("codeAction")
-						end, { silent = true, desc = "LSP code action", buffer = buffer })
-						vim.keymap.set("n", "K", function()
-							vim.cmd.RustLsp({ "hover", "actions" })
-						end, { silent = true, desc = "Rust hover", buffer = buffer })
-						vim.keymap.set("n", "grh", "<Plug>RustHoverAction", {
-							desc = "Rust hover action",
-							buffer = buffer,
-						})
-					end,
-					default_settings = {
-						["rust-analyzer"] = {
-							check = {
-								features = "all",
-								command = "clippy",
-							},
-							cargo = {
-								features = "all",
-							},
-							diagnostics = {
-								disabled = { "inactive-code" },
-							},
-						},
-					},
-				},
-				dap = {
-					adapter = {
-						type = "executable",
-						command = vim.fn.exepath("lldb-dap"),
-						name = "lldb",
-					},
-				},
-			}
-		end,
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Allows extra capabilities provided by blink.cmp
@@ -100,13 +47,6 @@ return {
 		end,
 	},
 	{
-		"ThePrimeagen/refactoring.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-	},
-	{
 		"kosayoda/nvim-lightbulb",
 		config = function()
 			require("nvim-lightbulb").setup({
@@ -120,16 +60,5 @@ return {
 				code_lenses = true,
 			})
 		end,
-	},
-	{
-		"someone-stole-my-name/yaml-companion.nvim",
-		config = function()
-			require("telescope").load_extension("yaml_schema")
-		end,
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
 	},
 }
