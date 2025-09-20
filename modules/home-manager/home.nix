@@ -275,7 +275,7 @@
     enable = true;
     userName = "${vars.git-username}";
     userEmail = "${vars.email}";
-    ignores = [".DS_Store"];
+    ignores = [".DS_Store" ".idea"];
     lfs.enable = true;
     extraConfig = {
       core = {
