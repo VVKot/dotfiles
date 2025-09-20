@@ -7,6 +7,7 @@ args @ {pkgs, ...}: {
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/gtk.nix
     ../../modules/nixos/librewolf.nix
+    ../../modules/nixos/rust-rover.nix
     ../../modules/nixos/zathura.nix
   ];
 }

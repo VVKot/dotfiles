@@ -163,9 +163,21 @@ in {
     neovim
     gnumake
     gcc
+    pkg-config
     nodejs_24
     strace
   ];
+
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+    jemalloc
+    gcc
+    libz
+    stdenv.cc.cc.lib
+  ];
+
+  services.envfs.enable = true;
 
   virtualisation.docker = {
     enable = true;
