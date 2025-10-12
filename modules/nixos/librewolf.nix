@@ -9,7 +9,7 @@ args @ {pkgs, ...}: {
         isDefault = true;
         search = {
           force = true;
-          default = "ddg";
+          default = "google";
 
           order = [
             "ddg"
