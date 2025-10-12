@@ -177,8 +177,6 @@ in {
     stdenv.cc.cc.lib
   ];
 
-  services.envfs.enable = true;
-
   virtualisation.docker = {
     enable = true;
     autoPrune.enable = true;
