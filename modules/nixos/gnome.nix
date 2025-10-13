@@ -112,5 +112,8 @@
       command = "ghostty";
       binding = "<Super>Return";
     };
+    "org/gnome/settings-daemon/plugins/power" = {
+      idle-dim = false;
+    };
   };
 }
