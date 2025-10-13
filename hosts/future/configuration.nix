@@ -157,7 +157,6 @@ in {
     ungoogled-chromium
     ghostty
     spotify
-    obsidian
     wl-clipboard
 
     neovim
