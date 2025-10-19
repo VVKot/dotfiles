@@ -32,6 +32,7 @@
       favorite-apps = [
         "librewolf.desktop"
         "com.mitchellh.ghostty.desktop"
+        "obsidian.desktop"
         "spotify.desktop"
       ];
       # make sure bluetooth icon is always present
