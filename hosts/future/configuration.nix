@@ -128,18 +128,31 @@ in {
     ];
   };
 
+  services.syncthing = {
+    enable = true;
+    user = "${vars.username}";
+    dataDir = "${vars.home}/${vars.username}/syncthing";
+    configDir = "${vars.home}/${vars.username}/.config/syncthing";
+  };
   programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
   };
   networking.firewall = rec {
+    allowedTCPPorts = [8384 22000];
     allowedTCPPortRanges = [
       {
         from = 1714;
         to = 1764;
       }
     ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
+    allowedUDPPorts = [21027 22000];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
   };
 
   home-manager.useGlobalPkgs = true;
@@ -159,6 +172,7 @@ in {
     spotify
     obsidian
     wl-clipboard
+    syncthing
 
     neovim
     gnumake
