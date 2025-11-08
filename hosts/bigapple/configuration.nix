@@ -60,8 +60,6 @@ in {
           {app = "/System/Applications/Reminders.app";}
           {app = "/System/Applications/Messages.app";}
           {app = "/Applications/Ghostty.app";}
-          {app = "/Applications/Obsidian.app";}
-          {app = "/Applications/Amazon Kindle.app";}
         ];
       };
       finder = {
@@ -111,20 +109,17 @@ in {
     ];
     casks = [
       "balenaetcher"
-      "docker"
       "docker-desktop"
-      "firefox"
       "ghostty"
       "libreoffice"
+      "librewolf"
       "macs-fan-control"
       "microsoft-auto-update"
       "microsoft-teams"
-      "obsidian"
       "teamviewer"
     ];
     masApps = {
       "Keynote" = 409183694;
-      "Kindle" = 302584613;
       "Microsoft Excel" = 462058435;
       "Microsoft Word" = 462054704;
       "Numbers" = 409203825;

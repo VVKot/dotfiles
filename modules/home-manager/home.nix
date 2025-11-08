@@ -276,11 +276,14 @@
 
   programs.git = {
     enable = true;
-    userName = "${vars.git-username}";
-    userEmail = "${vars.email}";
     ignores = [".DS_Store" ".idea"];
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "${vars.git-username}";
+        email = "${vars.email}";
+      };
+
       core = {
         editor = "nvim";
       };
