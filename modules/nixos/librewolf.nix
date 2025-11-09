@@ -115,4 +115,9 @@ args @ {pkgs, ...}: {
       "dom.battery.enabled" = false;
     };
   };
+
+  programs.browserpass = {
+    enable = true;
+    browsers = ["librewolf"];
+  };
 }
