@@ -171,9 +171,12 @@ in {
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
     ghostty
-    spotify
-    obsidian
     wl-clipboard
+
+    kdePackages.okular
+    krita
+    obsidian
+    spotify
     syncthing
 
     neovim
