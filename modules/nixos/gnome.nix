@@ -5,7 +5,6 @@
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
     gnomeExtensions.just-perfection
-    gnomeExtensions.steal-my-focus-window
   ];
 
   dconf.settings = {
