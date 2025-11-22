@@ -96,6 +96,8 @@
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
+      natural-scroll = true;
+      scroll-factor = 1.2;
     };
     "org/gnome/tweaks" = {
       show-extensions-notice = false;
