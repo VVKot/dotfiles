@@ -141,15 +141,23 @@ in {
     package = pkgs.gnomeExtensions.gsconnect;
   };
   networking.firewall = rec {
-    allowedTCPPorts = [8384 22000];
+    allowedTCPPorts = [
+      8384 # syncthing
+      22000 # syncthing
+    ];
     allowedTCPPortRanges = [
+      # KDE Connect
       {
         from = 1714;
         to = 1764;
       }
     ];
-    allowedUDPPorts = [21027 22000];
+    allowedUDPPorts = [
+      21027 # syncthing
+      22000 # syncthing
+    ];
     allowedUDPPortRanges = [
+      # KDE Connect
       {
         from = 1714;
         to = 1764;
