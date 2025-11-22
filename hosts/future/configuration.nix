@@ -151,6 +151,11 @@ in {
         from = 1714;
         to = 1764;
       }
+      # Chromecast
+      {
+        from = 8008;
+        to = 8010;
+      }
     ];
     allowedUDPPorts = [
       21027 # syncthing
@@ -161,6 +166,11 @@ in {
       {
         from = 1714;
         to = 1764;
+      }
+      # Chromecast
+      {
+        from = 8008;
+        to = 8010;
       }
     ];
   };

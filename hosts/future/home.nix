@@ -9,6 +9,7 @@ args @ {pkgs, ...}: {
     ../../modules/nixos/keypass.nix
     ../../modules/nixos/librewolf.nix
     ../../modules/nixos/rust-rover.nix
+    ../../modules/nixos/media.nix
     ../../modules/nixos/zathura.nix
   ];
 }
