@@ -363,7 +363,6 @@
     profiles = {
       default = {
         extensions = with pkgs.vscode-extensions; [
-          k--kato.intellij-idea-keybindings
           asvetliakov.vscode-neovim
         ];
 
