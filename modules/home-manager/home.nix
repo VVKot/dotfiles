@@ -374,13 +374,7 @@
           "workbench.editor.enablePreviewFromQuickOpen" = false;
           "vscode-neovim.neovimExecutablePaths.darwin" = "${pkgs.neovim}/bin/nvim";
           "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
-          "java.semanticHighlighting.enabled" = true;
           "editor.fontFamily" = "JetBrains Mono";
-          "npm.packageManager" = "pnpm";
-          "eslint.packageManager" = "pnpm";
-          "tslint.packageManager" = "pnpm";
-          "stylelint.packageManager" = "pnpm";
-          "eslint.alwaysShowStatus" = true;
           "terminal.integrated.defaultProfile.linux" = "fish";
           "terminal.integrated.defaultProfile.osx" = "fish";
           "terminal.integrated.shell.linux" = "fish";
