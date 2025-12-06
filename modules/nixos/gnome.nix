@@ -32,6 +32,7 @@
       favorite-apps = [
         "librewolf.desktop"
         "com.mitchellh.ghostty.desktop"
+        "code.desktop"
         "obsidian.desktop"
         "spotify.desktop"
       ];
