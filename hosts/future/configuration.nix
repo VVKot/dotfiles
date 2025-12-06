@@ -83,6 +83,11 @@ in {
     config.common.default = ["gtk"];
   };
 
+  # Power management settings
+  services.thermald.enable = true;
+  powerManagement.powertop.enable = true;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
