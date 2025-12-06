@@ -5,8 +5,9 @@ M.setup = function()
 
 	vim.lsp.inlay_hint.enable()
 
-	local lspconfig = require("lspconfig")
-	local capabilities = require("blink.cmp").get_lsp_capabilities()
+	vim.lsp.config("*", {
+		capabilities = require("blink.cmp").get_lsp_capabilities(),
+	})
 
 	-- Key maps. {{{2
 
@@ -76,55 +77,17 @@ M.setup = function()
 
 	-- Servers. {{{2
 
-	lspconfig.gopls.setup({
-		capabilities = capabilities,
-		settings = {
-			gopls = {
-				usePlaceholders = true,
-				analyses = { unusedparams = true },
-				staticcheck = true,
-			},
-		},
-	})
-	lspconfig.rust_analyzer.setup({
-		capabilities = capabilities,
-	})
-
-	lspconfig.lua_ls.setup({
-		capabilities = capabilities,
-		settings = {
-			Lua = {
-				workspace = { checkThirdParty = false },
-				telemetry = { enable = false },
-			},
-		},
-	})
-
-	lspconfig.ruff.setup({
-		capabilities = capabilities,
-		init_options = {
-			settings = {
-				args = { "--preview" },
-			},
-		},
-	})
-	lspconfig.basedpyright.setup({
-		capabilities = capabilities,
-	})
-	lspconfig.helm_ls.setup({
-		capabilities = capabilities,
-	})
-	lspconfig.clangd.setup({
-		capabilities = capabilities,
-	})
-	lspconfig.nil_ls.setup({
-		capabilities = capabilities,
-	})
-	lspconfig.texlab.setup({
-		capabilities = capabilities,
-	})
-	lspconfig.yamlls.setup({
-		capabilities = capabilities,
+	vim.lsp.enable({
+		"gopls",
+		"rust_analyzer",
+		"lua_ls",
+		"ruff",
+		"basedpyright",
+		"helm_ls",
+		"clangd",
+		"nil_ls",
+		"texlab",
+		"yamlls",
 	})
 end
 
