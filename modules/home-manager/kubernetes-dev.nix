@@ -9,7 +9,6 @@
     kubectl
     krew
     kubernetes-helm
-    kyverno-chainsaw
     yaml-language-server
   ];
 }
