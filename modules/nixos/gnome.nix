@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     dconf-editor
+    gnome-power-manager
     gnome-tweaks
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
