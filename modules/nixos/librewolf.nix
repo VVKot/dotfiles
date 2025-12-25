@@ -120,4 +120,9 @@ args @ {pkgs, ...}: {
     enable = true;
     browsers = ["librewolf"];
   };
+
+  home.sessionVariables = {
+    DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
+    BROWSER = "${pkgs.librewolf}/bin/librewolf";
+  };
 }
