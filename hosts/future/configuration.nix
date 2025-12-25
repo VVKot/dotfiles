@@ -11,7 +11,7 @@
   vars = {
     username = "katz";
     home = "/home";
-    git-username = "VVKot";
+    git-username = "Volodymyr Kot";
     email = "volodymyr.kot.ua@gmail.com";
     homebrewPrefix = "/home/linuxbrew/.linuxbrew";
   };

@@ -9,7 +9,7 @@
   vars = {
     username = "kot";
     home = "/Users";
-    git-username = "VVKot";
+    git-username = "Volodymyr Kot";
     email = "volodymyr.kot.ua@gmail.com";
     homebrewPrefix = "/usr/local";
   };
