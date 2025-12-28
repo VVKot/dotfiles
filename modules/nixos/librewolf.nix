@@ -107,6 +107,12 @@ args @ {pkgs, ...}: {
       "devtools.policy.disabled" = true;
 
       "webgl.disabled" = false;
+      "gfx.webrender.all" = true;
+      "media.ffmpeg.vaapi.enabled" = true;
+      "media.ffmpeg.dmabuf-textures.enabled" = true;
+      "widget.wayland-dmabuf-vaapi.enabled" = true;
+      "layers.acceleration.force-enabled" = true;
+
       "privacy.clearOnShutdown.cookies" = false;
       "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
 
