@@ -98,6 +98,23 @@ args @ {pkgs, ...}: {
                 }
               ];
             };
+            "imdb" = {
+              icon = "https://www.imdb.com/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = ["@imdb"];
+
+              urls = [
+                {
+                  template = "https://www.imdb.com/find";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+            };
           };
         };
       };
