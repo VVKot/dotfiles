@@ -60,6 +60,7 @@ in {
           {app = "/System/Applications/Reminders.app";}
           {app = "/System/Applications/Messages.app";}
           {app = "/Applications/Ghostty.app";}
+          {app = "/Applications/Amazon Kindle.app";}
         ];
       };
       finder = {
@@ -120,6 +121,7 @@ in {
     ];
     masApps = {
       "Keynote" = 409183694;
+      "Kindle" = 302584613;
       "Microsoft Excel" = 462058435;
       "Microsoft Word" = 462054704;
       "Numbers" = 409203825;
