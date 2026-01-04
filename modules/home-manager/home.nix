@@ -191,6 +191,7 @@
 
       k = "kubectl";
     };
+    dotDir = ".config/zsh";
   };
 
   programs.fzf = {
