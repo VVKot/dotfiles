@@ -105,6 +105,13 @@ in {
 
   hardware.graphics.enable = true;
 
+  hardware.fw-fanctrl = {
+    enable = true;
+    config = {
+      defaultStrategy = "aeolus";
+    };
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -203,6 +210,7 @@ in {
     ungoogled-chromium
     ghostty
     wl-clipboard
+    fw-fanctrl
 
     kdePackages.okular
     krita

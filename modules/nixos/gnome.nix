@@ -4,6 +4,7 @@
     gnome-power-manager
     gnome-tweaks
     gnomeExtensions.caffeine
+    gnomeExtensions.framework-fan-control
     gnomeExtensions.gsconnect
     gnomeExtensions.just-perfection
   ];
@@ -27,6 +28,7 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "caffeine@patapon.info"
+        "fw-fanctrl-revived@willow.sh"
         "gsconnect@andyholmes.github.io"
         "just-perfection-desktop@just-perfection"
       ];
