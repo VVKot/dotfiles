@@ -51,9 +51,8 @@
     pkgs.xh
     pkgs.yq
 
-    # neovim
+    # for Neovim
     pkgs.lua-language-server
-    pkgs.neovim
     pkgs.stylua
     pkgs.tree-sitter
 
@@ -113,13 +112,19 @@
     nix-direnv.enable = true;
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
+
   home.sessionVariables = {
     LC_ALL = "en_US.UTF-8";
     LANG = "en_US.UTF-8";
 
-    EDITOR = "nvim";
     MANPAGER = "nvim +Man!";
-    VISUAL = "nvim";
 
     FZF_DEFAULT_OPTS = "--no-mouse --layout=reverse --color=light,gutter:-1 --cycle
 \--bind ctrl-a:select-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down";
@@ -146,9 +151,6 @@
       nix-your-shell fish | source
     '';
     shellAliases = {
-      vi = "nvim";
-      vim = "nvim";
-
       k = "kubectl";
     };
     functions = {
@@ -186,9 +188,6 @@
       nix-your-shell zsh | source /dev/stdin
     '';
     shellAliases = {
-      vi = "nvim";
-      vim = "nvim";
-
       k = "kubectl";
     };
     dotDir = ".config/zsh";
