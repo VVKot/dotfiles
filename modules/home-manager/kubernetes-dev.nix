@@ -6,9 +6,10 @@
     helm-ls
     k9s
     kind
-    kubectl
     krew
+    kubectl
     kubernetes-helm
+    systemd-lsp
     yaml-language-server
   ];
 }

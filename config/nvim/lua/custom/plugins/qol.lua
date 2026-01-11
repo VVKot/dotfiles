@@ -107,4 +107,5 @@ return {
 	"nvim-tree/nvim-web-devicons",
 	"ryanoasis/vim-devicons",
 	"lambdalisue/vim-suda",
+	"wgwoods/vim-systemd-syntax",
 }

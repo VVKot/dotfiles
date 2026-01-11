@@ -78,14 +78,15 @@ M.setup = function()
 	-- Servers. {{{2
 
 	vim.lsp.enable({
-		"gopls",
-		"rust_analyzer",
-		"lua_ls",
-		"ruff",
 		"basedpyright",
-		"helm_ls",
 		"clangd",
+		"gopls",
+		"helm_ls",
+		"lua_ls",
 		"nil_ls",
+		"ruff",
+		"rust_analyzer",
+		"systemd_lsp",
 		"texlab",
 		"yamlls",
 	})
