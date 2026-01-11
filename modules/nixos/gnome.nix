@@ -97,6 +97,11 @@
     "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
     };
+    "org/gnome/desktop/sound" = {
+      event-sounds = false;
+      input-feedback-sounds = false;
+      theme-name = "";
+    };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
