@@ -16,7 +16,6 @@ M.setup = function()
 	})
 
 	require("mini.move").setup()
-	require("mini.pairs").setup()
 
 	require("mini.notify").setup()
 

@@ -36,7 +36,6 @@ M.setup = function()
 				},
 			},
 		},
-		autopairs = { enable = true },
 		incremental_selection = {
 			enable = true,
 			keymaps = {
