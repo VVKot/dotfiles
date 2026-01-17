@@ -17,6 +17,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
   };
 
   outputs = {
@@ -26,6 +29,7 @@
     nix-index-database,
     nix-darwin,
     home-manager,
+    neovim-nightly-overlay,
     ...
   }: {
     nixosConfigurations = {
@@ -36,6 +40,11 @@
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
           nix-index-database.nixosModules.nix-index
           {programs.nix-index-database.comma.enable = true;}
+          {
+            nixpkgs.overlays = [
+              neovim-nightly-overlay.overlays.default
+            ];
+          }
         ];
         specialArgs = {
           inherit home-manager;
