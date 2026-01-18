@@ -28,6 +28,10 @@
       url = "github:nix-community/impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -40,6 +44,7 @@
     neovim-nightly-overlay,
     disko,
     impermanence,
+    nur,
     ...
   }: {
     nixosConfigurations = {
@@ -57,6 +62,7 @@
           {programs.nix-index-database.comma.enable = true;}
           {
             nixpkgs.overlays = [
+              nur.overlays.default
               neovim-nightly-overlay.overlays.default
             ];
           }

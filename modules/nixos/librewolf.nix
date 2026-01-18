@@ -7,6 +7,20 @@ args @ {pkgs, ...}: {
         id = 0;
         name = "Default";
         isDefault = true;
+        extensions = {
+          force = true;
+          # https://gitlab.com/rycee/nur-expressions/-/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            consent-o-matic
+            flagfox
+            keepassxc-browser
+            languagetool
+            privacy-badger
+            sponsorblock
+            tranquility-1
+            ublock-origin
+          ];
+        };
         search = {
           force = true;
           default = "google";
@@ -136,6 +150,11 @@ args @ {pkgs, ...}: {
       "dom.push.enabled" = false;
       "dom.push.connection.enabled" = false;
       "dom.battery.enabled" = false;
+
+      "extensions.autoDisableScopes" = 0;
+      "extensions.update.enabled" = false;
+      # for home-manager
+      "extensions.webextensions.ExtensionStorageIDB.enabled" = false;
     };
   };
 
