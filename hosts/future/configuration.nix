@@ -30,12 +30,40 @@ in {
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # https://github.com/nix-community/impermanence?tab=readme-ov-file#btrfs-subvolumes
+  boot.initrd.postResumeCommands = lib.mkAfter ''
+    mkdir /btrfs_tmp
+    mount /dev/root_vg/root /btrfs_tmp
+    if [[ -e /btrfs_tmp/root ]]; then
+        mkdir -p /btrfs_tmp/old_roots
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+        mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+    fi
+
+    delete_subvolume_recursively() {
+        IFS=$'\n'
+        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$i"
+        done
+        btrfs subvolume delete "$1"
+    }
+
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+        delete_subvolume_recursively "$i"
+    done
+
+    btrfs subvolume create /btrfs_tmp/root
+    umount /btrfs_tmp
+  '';
+
   # Firmware.
   services.fwupd.enable = true;
 
   networking.hostName = "future"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via
   # wpa_supplicant.
+
+  programs.fuse.userAllowOther = true;
 
   # Configure network proxy if necessary networking.proxy.default =
   # "http://user:password@proxy:port/"; networking.proxy.noProxy =
@@ -131,12 +159,35 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  environment.persistence."/persistent" = {
+    enable = true;
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/var/lib/systemd/timers"
+      "/etc/NetworkManager/system-connections"
+      {
+        directory = "/var/lib/colord";
+        user = "colord";
+        group = "colord";
+        mode = "u=rwx,g=rx,o=";
+      }
+    ];
+    files = [
+      "/etc/machine-id"
+    ];
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${vars.username} = {
     isNormalUser = true;
     description = "${vars.username}";
     home = "${vars.home}/${vars.username}";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "fuse"];
+    initialPassword = "nixos";
     packages = with pkgs; [
       #  thunderbird
     ];
