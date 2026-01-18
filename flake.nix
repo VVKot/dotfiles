@@ -20,6 +20,14 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -30,14 +38,21 @@
     nix-darwin,
     home-manager,
     neovim-nightly-overlay,
+    disko,
+    impermanence,
     ...
   }: {
     nixosConfigurations = {
       future = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/future/disko.nix
+          disko.nixosModules.disko
+          impermanence.nixosModules.impermanence
+
           ./hosts/future/configuration.nix
           nixos-hardware.nixosModules.framework-intel-core-ultra-series1
+
           nix-index-database.nixosModules.nix-index
           {programs.nix-index-database.comma.enable = true;}
           {
