@@ -58,6 +58,7 @@ args @ {pkgs, ...}: {
     ];
     files = [
       "~/.config/dconf/user"
+      "~/.local/share/fish/fish_history"
     ];
   };
 }
