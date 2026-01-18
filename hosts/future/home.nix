@@ -52,9 +52,12 @@ args @ {pkgs, ...}: {
         directory = ".local/share/keyrings";
         mode = "0700";
       }
+      ".config/syncthing"
       ".librewolf"
       ".local/share/direnv"
     ];
-    files = [];
+    files = [
+      "~/.config/dconf/user"
+    ];
   };
 }
