@@ -33,6 +33,7 @@ args @ {pkgs, ...}: {
   home.persistence."/persistent" = {
     directories = [
       "git"
+      "syncthing"
       "Downloads"
       "Music"
       "Pictures"
@@ -51,6 +52,7 @@ args @ {pkgs, ...}: {
         directory = ".local/share/keyrings";
         mode = "0700";
       }
+      ".librewolf"
       ".local/share/direnv"
     ];
     files = [];
