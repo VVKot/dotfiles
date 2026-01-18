@@ -13,6 +13,8 @@ args @ {pkgs, ...}: {
     ../../modules/nixos/zathura.nix
   ];
 
+  xdg.autostart.enable = true;
+
   programs.git = {
     settings = {
       sendemail = {
