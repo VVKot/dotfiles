@@ -56,6 +56,11 @@ in {
     umount /btrfs_tmp
   '';
 
+  security.sudo.extraConfig = ''
+    # skip lecture after each reboot
+    Defaults lecture = never
+  '';
+
   # Firmware.
   services.fwupd.enable = true;
 
@@ -161,6 +166,7 @@ in {
     hideMounts = true;
     directories = [
       "/var/lib/bluetooth"
+      "/var/lib/fprint"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/lib/systemd/timers"
@@ -174,6 +180,7 @@ in {
       }
     ];
     files = [
+      "/etc/katz-password"
       "/etc/machine-id"
     ];
   };
@@ -185,6 +192,7 @@ in {
     home = "${vars.home}/${vars.username}";
     extraGroups = ["networkmanager" "wheel" "docker" "fuse"];
     initialPassword = "nixos";
+    hashedPasswordFile = "/persist/etc/katz-password";
     packages = with pkgs; [
       #  thunderbird
     ];

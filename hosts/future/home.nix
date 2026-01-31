@@ -52,13 +52,16 @@ args @ {pkgs, ...}: {
         directory = ".local/share/keyrings";
         mode = "0700";
       }
+      {
+        directory = ".local/share/nvim/lazy/";
+        mode = "0700";
+      }
       ".cache/librewolf"
       ".config/syncthing"
       ".librewolf"
       ".local/share/direnv"
     ];
     files = [
-      ".config/dconf/user"
       ".local/share/fish/fish_history"
     ];
   };
