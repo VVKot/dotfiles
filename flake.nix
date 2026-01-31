@@ -17,9 +17,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +38,6 @@
     nix-index-database,
     nix-darwin,
     home-manager,
-    neovim-nightly-overlay,
     disko,
     impermanence,
     nur,
@@ -63,7 +59,6 @@
           {
             nixpkgs.overlays = [
               nur.overlays.default
-              neovim-nightly-overlay.overlays.default
             ];
           }
         ];
