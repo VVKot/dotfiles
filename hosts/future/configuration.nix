@@ -156,16 +156,16 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  environment.persistence."/persistent" = {
+  environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
     directories = [
-      "/var/log"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/lib/systemd/timers"
       "/etc/NetworkManager/system-connections"
+      "/etc/ssh"
       {
         directory = "/var/lib/colord";
         user = "colord";

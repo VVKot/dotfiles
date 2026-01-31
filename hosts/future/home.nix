@@ -30,7 +30,8 @@ args @ {pkgs, ...}: {
     };
   };
 
-  home.persistence."/persistent" = {
+  home.persistence."/persist/home/${args.vars.username}" = {
+    allowOther = true;
     directories = [
       "git"
       "syncthing"
