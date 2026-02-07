@@ -57,7 +57,9 @@ args @ {pkgs, ...}: {
         mode = "0700";
       }
       ".cache/gsconnect"
+      ".cache/keepassxc"
       ".cache/librewolf"
+      ".config/keepassxc"
       ".config/syncthing"
       ".librewolf"
       ".local/share/direnv"
