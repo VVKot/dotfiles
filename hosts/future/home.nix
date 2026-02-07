@@ -56,6 +56,7 @@ args @ {pkgs, ...}: {
         directory = ".local/share/nvim/lazy/";
         mode = "0700";
       }
+      ".cache/gsconnect"
       ".cache/librewolf"
       ".config/syncthing"
       ".librewolf"
