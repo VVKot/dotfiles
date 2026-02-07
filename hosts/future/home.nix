@@ -13,7 +13,13 @@ args @ {pkgs, ...}: {
     ../../modules/nixos/zathura.nix
   ];
 
-  xdg.autostart.enable = true;
+  xdg.autostart = {
+    enable = true;
+    entries = [
+      "${pkgs.librewolf}/share/applications/librewolf.desktop"
+      "${pkgs.ghostty}/share/applications/com.mitchellh.ghostty.desktop"
+    ];
+  };
 
   programs.git = {
     settings = {
