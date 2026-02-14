@@ -17,6 +17,8 @@ return {
 	"tpope/vim-scriptease",
 	-- Markdown.
 	"tpope/vim-markdown",
+	-- .env support.
+	"tpope/vim-dotenv",
 	-- Exchange two motions.
 	"tommcdo/vim-exchange",
 	-- Minimal QoL plugins.

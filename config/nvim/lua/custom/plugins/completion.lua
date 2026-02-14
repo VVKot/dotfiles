@@ -24,6 +24,10 @@ return {
 			opts = {},
 		},
 		"folke/lazydev.nvim",
+		{
+			"kristijanhusak/vim-dadbod-completion",
+			ft = { "sql", "mysql", "plsql" },
+		},
 	},
 	--- @module 'blink.cmp'
 	--- @type blink.cmp.Config
@@ -36,9 +40,10 @@ return {
 			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			},
 		},
 		snippets = { preset = "luasnip" },
