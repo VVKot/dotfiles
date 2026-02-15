@@ -238,9 +238,9 @@
     plugins = with pkgs.tmuxPlugins; [
       extrakto
       {
-        plugin = fingers;
+        plugin = tmux-thumbs;
         extraConfig = ''
-          set -g @fingers-pattern-0 '[a-z0-9]+-[^ ]+'
+          set -g @thumbs-regexp-1 '[a-z0-9]+-[^ ]+'
         '';
       }
       pain-control
