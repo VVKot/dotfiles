@@ -268,6 +268,7 @@
     font-feature = -calt, -liga, -dlig
     macos-option-as-alt = true
     shell-integration-features = sudo, title, ssh-env
+    clipboard-read = allow
 
     # HACK: CTRL-M = CR, CTRL-I = Tab, CTRL-[ = Esc don't see to work in zsh
     keybind = ctrl+m=text:\x0D
