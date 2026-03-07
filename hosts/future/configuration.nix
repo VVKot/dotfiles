@@ -130,10 +130,6 @@ in {
     serviceConfig.Type = "simple";
   };
 
-  hardware.framework.laptop13.audioEnhancement = {
-    enable = true;
-  };
-
   hardware.graphics.enable = true;
 
   hardware.fw-fanctrl = {
