@@ -108,7 +108,10 @@ in {
       "mas"
       "node"
       "pipx"
-      "syncthing"
+      {
+        name = "syncthing";
+        restart_service = "changed";
+      }
     ];
     casks = [
       "balenaetcher"
