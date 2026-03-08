@@ -61,6 +61,7 @@ in {
           {app = "/System/Applications/Messages.app";}
           {app = "/Applications/Ghostty.app";}
           {app = "/Applications/Amazon Kindle.app";}
+          {app = "/Applications/Obsidian.app";}
         ];
       };
       finder = {
@@ -104,9 +105,10 @@ in {
 
     taps = [];
     brews = [
+      "mas"
       "node"
       "pipx"
-      "mas"
+      "syncthing"
     ];
     casks = [
       "balenaetcher"
@@ -117,6 +119,7 @@ in {
       "macs-fan-control"
       "microsoft-auto-update"
       "microsoft-teams"
+      "obsidian"
       "teamviewer"
     ];
     masApps = {
