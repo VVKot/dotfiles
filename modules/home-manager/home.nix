@@ -264,7 +264,7 @@
     command = "${pkgs.fish}/bin/fish"
 
     theme = "iTerm2 Light Background"
-    font-size = 14
+    font-size = 16
     font-feature = -calt, -liga, -dlig
     macos-option-as-alt = true
     shell-integration-features = sudo, title, ssh-env
