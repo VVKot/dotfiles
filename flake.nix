@@ -29,9 +29,6 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
   };
 
   outputs = {
@@ -44,7 +41,6 @@
     disko,
     impermanence,
     nur,
-    ghostty,
     ...
   }: {
     nixosConfigurations = {
@@ -67,7 +63,7 @@
           }
         ];
         specialArgs = {
-          inherit home-manager ghostty;
+          inherit home-manager;
         };
       };
     };

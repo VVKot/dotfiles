@@ -6,7 +6,6 @@
   pkgs,
   home-manager,
   lib,
-  ghostty,
   ...
 }: let
   vars = {
@@ -261,7 +260,7 @@ in {
   # search wget
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
-    ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ghostty
     wl-clipboard
     fw-fanctrl
 
