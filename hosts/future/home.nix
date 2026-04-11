@@ -65,6 +65,7 @@ args @ {pkgs, ...}: {
       ".cache/gsconnect"
       ".cache/keepassxc"
       ".cache/librewolf"
+      ".config/dconf"
       ".config/gsconnect"
       ".config/keepassxc"
       ".config/syncthing"
