@@ -263,6 +263,7 @@ in {
     ghostty
     wl-clipboard
     fw-fanctrl
+    brightnessctl
 
     kdePackages.okular
     krita
@@ -298,6 +299,31 @@ in {
   };
 
   services.languagetool.enable = true;
+
+  systemd.user.services = {
+    set-brightness = {
+      description = "Set default screen brightness";
+
+      wantedBy = ["graphical-session.target"];
+
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.brightnessctl}/bin/brightnessctl set 80%";
+      };
+    };
+
+    set-volume = {
+      description = "Set default audio volume";
+
+      after = ["wireplumber.service"];
+      wantedBy = ["graphical-session.target"];
+
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%";
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions. programs.mtr.enable = true;
