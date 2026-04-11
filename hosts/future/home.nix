@@ -71,6 +71,7 @@ args @ {pkgs, ...}: {
       ".config/syncthing"
       ".librewolf"
       ".local/share/direnv"
+      ".local/state/wireplumber"
     ];
     files = [
       ".local/share/fish/fish_history"
