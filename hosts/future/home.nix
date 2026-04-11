@@ -6,7 +6,7 @@ args @ {pkgs, ...}: {
     (import ../../modules/home-manager/writing.nix args)
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/gtk.nix
-    ../../modules/nixos/keypass.nix
+    ../../modules/nixos/keepass.nix
     ../../modules/nixos/librewolf.nix
     ../../modules/nixos/rust-rover.nix
     ../../modules/nixos/media.nix
