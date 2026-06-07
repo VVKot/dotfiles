@@ -227,8 +227,8 @@
       if pkgs.stdenv.isDarwin
       then "xterm-ghostty"
       else "tmux-256color";
-    escapeTime = 50;
-    historyLimit = 10000;
+    escapeTime = 0;
+    historyLimit = 50000;
     keyMode = "vi";
     prefix = "C-q";
     sensibleOnTop = true;
