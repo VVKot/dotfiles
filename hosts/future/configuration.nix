@@ -151,6 +151,10 @@ in {
   };
 
   hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-compute-runtime # bundles intel-level-zero-gpu, intel-opencl-icd, intel-gmmlib
+    intel-media-driver # optional, for media decode/encode
+  ];
 
   hardware.fw-fanctrl = {
     enable = true;
@@ -207,7 +211,7 @@ in {
     isNormalUser = true;
     description = "${vars.username}";
     home = "${vars.home}/${vars.username}";
-    extraGroups = ["networkmanager" "wheel" "docker" "fuse"];
+    extraGroups = ["networkmanager" "wheel" "docker" "fuse" "video" "render"];
     initialPassword = "nixos";
     hashedPasswordFile = "/persist/etc/katz-password";
     packages = with pkgs; [
@@ -316,6 +320,7 @@ in {
 
   services.ollama = {
     enable = true;
+    package = pkgs.ollama-vulkan;
     loadModels = [];
   };
 
