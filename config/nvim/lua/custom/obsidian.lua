@@ -54,12 +54,12 @@ M.setup = function()
 			end
 			return id
 		end,
-		disable_frontmatter = true,
+		frontmatter = {
+			enabled = false,
+		},
 		log_level = vim.log.levels.WARN,
 
 		completion = {
-			nvim_cmp = false,
-			blink = true,
 			min_chars = 2,
 		},
 
