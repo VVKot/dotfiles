@@ -4,6 +4,7 @@ args @ {pkgs, ...}: {
     (import ../../modules/home-manager/kubernetes-dev.nix args)
     (import ../../modules/home-manager/rust-dev.nix args)
     (import ../../modules/home-manager/writing.nix args)
+    ../../modules/nixos/comms.nix
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/gtk.nix
     ../../modules/nixos/keepass.nix
