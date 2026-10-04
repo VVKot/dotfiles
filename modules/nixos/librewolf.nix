@@ -155,6 +155,13 @@ args @ {pkgs, ...}: {
       "extensions.update.enabled" = false;
       # for home-manager
       "extensions.webextensions.ExtensionStorageIDB.enabled" = false;
+
+      "browser.newtabpage.activity-stream.feeds.section.highlights" = true;
+      "browser.newtabpage.activity-stream.section.highlights.rows" = 1;
+      "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = true;
+      "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+      "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+      "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
     };
   };
 
